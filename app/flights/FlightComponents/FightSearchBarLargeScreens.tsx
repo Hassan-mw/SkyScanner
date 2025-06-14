@@ -11,6 +11,7 @@ import PlanePerson from "../../Components_Custom/PlanePerson"
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import Image from "next/image";
 import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
+import Link from "next/link";
 
 
 const jost=Jost({
@@ -140,11 +141,11 @@ const FightSearchBarLargeScreens = () => {
      
 
       {/* Buttons_Searching */}
-      <div className="w-full flex items-center justify-center h-full   rounded-xl ">
+      <Link href="/flights/PK" className="w-full flex items-center justify-center h-full   rounded-xl ">
     <div className="w-full ml-3 max-w-[80%] h-full max-h-[88%]  2xl:max-w-full rounded-xl  flex items-center justify-center text-white font-semibold bg-blue-600 duration-700 hover:bg-blue-700 ">
     <h2 className={`${jost.className} text-sm`}>Search </h2>
     </div>
-      </div>
+      </Link>
 
 
    </Menubar>
