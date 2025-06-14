@@ -5,9 +5,9 @@ import { MdTripOrigin } from "react-icons/md";
 import { FaArrowRight } from "react-icons/fa6";
 import { useState } from "react"
 import { MdLocationOn } from "react-icons/md";
-import CustomDatePicker from "../../Components/CustomDatePicker"
-import PlanesearchPlane from "../../Components/PlaneSearchBarPlace"
-import PlanePerson from "../../Components/PlanePerson"
+import CustomDatePicker from "../../Components_Custom/CustomDatePicker"
+import PlanesearchPlane from "../../Components_Custom/PlaneSearchBarPlace"
+import PlanePerson from "../../Components_Custom/PlanePerson"
 import { TbSTurnDown } from "react-icons/tb";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover";
