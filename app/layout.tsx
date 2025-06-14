@@ -29,7 +29,7 @@ export default function RootLayout({
        <body className="w-screen h-screen flex flex-col items-center justify-start bg-[#05203c] overflow-hidden overflow-y-scroll">
        <div className=" bg-[#05203c] flex items-center justify-center  w-full"> <Navigation/></div> 
         {children}
-       <div className=" bg-[#05203c] flex items-center justify-center  w-full"> <Footer/></div> 
+       <Footer/>
       </body>
     </html>
   );
