@@ -4,6 +4,7 @@ import PlanePlace from "./FlightComponents/PlanePlace"
 import FlightSearchBarSmallSceen from "./FlightComponents/FlightSearchBarSmallSceen"
 import FightSearchBarLargeScreens from "./FlightComponents/FightSearchBarLargeScreens"
 import ShowDetails from "./FlightComponents/ShowDetails"
+import MoreDetails from "./FlightComponents/MoreDetails"
 
 
 
@@ -21,13 +22,12 @@ function Country({params}:{params:URLSearchParams}) {
 
     {/* Below_Data */}
     <div className="p-3 flex flex-col space-y-16 items-center w-full h-full bg-white max-w-screen-xl ">
-    {/* Show current page */}
+ 
      <ShowDetails/>
 
-    {/* Data */}
-    <div className="w-full ">
-      <PlanePlace params={params} />
-    </div>
+     <PlanePlace />
+    
+     <MoreDetails/>
     </div>
 
 
