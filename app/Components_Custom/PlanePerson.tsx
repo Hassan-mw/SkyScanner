@@ -1,15 +1,15 @@
 'use client';
 
-import {  useState } from "react";
+import {  SetStateAction, useEffect, useState } from "react";
 
-const PlanePerson = ({room,setRoom}) => {
-   const [countAdults,setCountAdults]=useState(room?.adult);
-  const [countChilren,setCountChildren]=useState(0);
-  const [className,setClassName]=useState('Ecnomic');
+const PlanePerson = ({adult,setAdult,children,setChildren,roomType,setRoomType}:{ person:number,setPerson:SetStateAction<number>}) => {
+  const [countAdults,setCountAdults]=useState(adult);
+  const [countChildren,setCountChildren]=useState(children);
+  const [className,setClassName]=useState(roomType);
+ console.log(countAdults,countChildren)
 
-
-
-    function handleCount({type,countType}){
+    // handle button click
+    function handleCount({type,countType}:{type:string,countType:string}){
 
     if(type==="Adults"){
       if(countType==="inc"){
@@ -23,17 +23,26 @@ const PlanePerson = ({room,setRoom}) => {
 
     if(type==="children"){
       if(countType==="inc"){
-        if(countChilren>=6)  return 
+        if(countChildren>=6)  return 
          setCountChildren((pre)=>pre+1)
       }else{
-        if(countChilren <=0 )  return 
+        if(countChildren <=0 )  return 
         setCountChildren((pre)=>pre-1)
       }
     }
       
       } 
+    
+    // putting data on chages
+      useEffect(()=>{
+        setAdult(countAdults)
+        setChildren(countChildren)
+      },[countChildren,countAdults])
 
 
+    useEffect(()=>{
+    setRoomType(className)
+    },[className])
     
  
   return (
@@ -47,7 +56,7 @@ const PlanePerson = ({room,setRoom}) => {
        
         <select className="p-2  w-full outline-none border rounded-md border-slate-400" value={className} onChange={(e)=>setClassName(e.target.value)} >
               <option value="Ecnomic">Ecnomic</option>
-              <option value="Premium Economy">Premium Economy</option>
+              <option value="Premium class">Premium class</option>
               <option value="Business Class">Business Class</option>
               <option value="First Class">First Class</option>
         </select>
@@ -101,7 +110,7 @@ const PlanePerson = ({room,setRoom}) => {
               +
             </div>
 
-            <div className="text-xl">{countChilren}</div>
+            <div className="text-xl">{countChildren}</div>
             <div
               onClick={() => handleCount({ type: 'children', countType: 'dec' })}
               className="border size-8 flex items-center justify-center text-sm bg-slate-400 hover:bg-slate-500 rounded-md"
@@ -119,7 +128,7 @@ const PlanePerson = ({room,setRoom}) => {
     {/* text */}
     <p className="text-xs text-slate-500">Age limits and policies for travelling with children may vary so please check with the airline before booking.</p>  
      
-    <div className="w-full flex items-center justify-center text-white hover:cursor-pointer duration-500 hover:bg-blue-700  text-xl p-2 rounded-md bg-[#0062e3]">Apply</div>
+    <div  className="w-full flex items-center justify-center text-white hover:cursor-pointer duration-500 hover:bg-blue-700  text-xl p-2 rounded-md bg-[#0062e3]">Apply</div>
       
 
     </div>

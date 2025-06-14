@@ -4,13 +4,14 @@ import { Jost } from "next/font/google"
 
 
 import { TbSTurnDown } from "react-icons/tb";
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import CustomDatePicker from "../../Components_Custom/CustomDatePicker"
 import PlanesearchPlane from "../../Components_Custom/PlaneSearchBarPlace"
 import PlanePerson from "../../Components_Custom/PlanePerson"
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import Image from "next/image";
-import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@radix-ui/react-menubar";
+import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
+
 
 const jost=Jost({
     weight:['400'],
@@ -18,23 +19,23 @@ const jost=Jost({
 })
 
 const FightSearchBarLargeScreens = () => {
-    const [showSideBar,setshowSidebar]=useState(false)
-    const [crrentForm,setCurrentForm]=useState("")
+
     const [startPlace,setStartPlace]=useState('')
     const [endPlace,setEndPlace]=useState('')
-    console.log(startPlace)
-    const [checkInDate,setCheckInDate] = useState();
-    const [departDate,setDepartDate] = useState();
-    const [returnDate,setReturnDate] = useState();
-    const [date,setDate] = useState();
-    const [room,setRoom]=useState({adult:1})
-    console.log(room)
+    const [departDate,setDepartDate] = useState('');
+    const [returnDate,setReturnDate] = useState('');
+    const [adult,setAdult]=useState(1)
+    const [children,setChildre]=useState(0)
+    const [roomType,setRoomType]=useState('Economy')
+    const [totaltraveller,setTotalTraveller]=useState(0)
+   console.log(totaltraveller)
+    useEffect(()=>{
 
+    setTotalTraveller(adult+children)
+
+    },[adult,children])
     
-    function handleClick({clickOn}){
-        setshowSidebar(true)
-         setCurrentForm(clickOn)
-    }
+    
 
     return (
     <div   className="flex justify-center items-center  min-w-full    ">
@@ -94,7 +95,7 @@ const FightSearchBarLargeScreens = () => {
             <div className="w-full  flex flex-col justify-start   ">
                <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start  border w-full">
                   <span className="text-[#626971] font-semibold text-sm">Depart Date </span>
-                  {departDate ?<span>{departDate.toLocaleDateString() }</span>  :<span className="text-slate-600"> date </span>}
+                  {departDate ?<span>{departDate?.toLocaleDateString() }</span>  :<span className="text-slate-600"> date </span>}
               </div>
             </div>
           </MenubarTrigger>
@@ -127,13 +128,13 @@ const FightSearchBarLargeScreens = () => {
             <div className="w-full  flex flex-col justify-start   ">
                <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start rounded-r-xl  border w-full">
                   <span className="text-[#626971] font-semibold text-sm"> Persons </span>
-                   <div className="text-slate-800 truncate">{`${room.adult} adul`}</div>
+                   <div className="text-slate-800 truncate">{`${totaltraveller} ${totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</div>
               </div>
             </div>
           </MenubarTrigger>
         <MenubarContent>
             {/* Data */}
-            <PlanePerson room={room} setRoom={setRoom}/>
+            <PlanePerson adult={adult} setAdult={setAdult} children={children} setChildren={setChildre} roomType={roomType} setRoomType={setRoomType} />
         </MenubarContent>
       </MenubarMenu>
      
