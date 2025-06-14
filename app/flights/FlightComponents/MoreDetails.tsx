@@ -1,7 +1,7 @@
 import { Jost } from 'next/font/google';
 import React from 'react'
 import { MdError } from "react-icons/md";
-
+import { MdChangeCircle } from "react-icons/md";
 import {
   Accordion,
   AccordionContent,
@@ -20,7 +20,7 @@ const jost=Jost({
 
 const MoreDetails = () => {
   return (
-    <div className='w-full flex flex-col space-y-4 p-3'>
+    <div className='w-full flex flex-col space-y-12 p-3 py-10'>
 
       {/* 1 */}
        <div className='w-full flex items-center justify-start gap-x-2 border rounded-md p-2 border-[#c1c7cf]'>
@@ -71,7 +71,7 @@ const MoreDetails = () => {
        </div> 
         
       {/* 3 */}
-      <div className='w-full flex flex-col items-center justify-center bg-[#eff3f8] py-4 px-6 rounded-md'>
+      <div className='w-full flex flex-col items-center justify-center space-y-9 bg-[#eff3f8] p-7 rounded-md'>
         
         {/* Text_Center */}
         <div className='flex flex-col items-center'>
@@ -79,35 +79,71 @@ const MoreDetails = () => {
           <p className='text-center text-sm'>It’s easy around here. 100 million travellers use us as their go-to tool, comparing flight deals and offers from more than 1,200 airlines and travel providers. With so many options to choose from in one place, you can say hello to savings, and goodbye to stress – here’s how.</p>
         </div>
         
+        {/* text_box */}
+        <div className='w-full grid grid-cols-1 items-center md:grid-cols-3 gap-12 '>
          {/* 1  */}
-         <div className='flex flex-col items-center'>
-           <Image height={150} width={150} src="/world.svg" alt='world' />
-          <div className='flex flex-col text-center'>
+         <div className='flex flex-col items-center space-y-3'>
+           <Image height={150} width={150} className='  md:h-52' src="/world.svg" alt='world' />
+          <div className='flex flex-col text-center space-y-1   md:h-52'>
             <h1 className={`${jost.className} text-center text-2xl`}>Search ‘Everywhere’, explore anywhere</h1>
-            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm`}>Enter your departure airport and travel dates, then hit ‘Everywhere’. You’ll see flights to every destination in the world, cheapest first.</p>
+            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm md:text-md`}>Enter your departure airport and travel dates, then hit ‘Everywhere’. You’ll see flights to every destination in the world, cheapest first.</p>
           </div>
          </div>
 
          {/* 2  */}
-         <div className='flex flex-col items-center'>
-           <Image height={150} width={150} src="/packet.svg" alt='world' />
-          <div className='flex flex-col text-center'>
-            <h1 className={`${jost.className} text-center text-2xl`}>Pay less, go further with transparent pricing</h1>
-            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm`}>The cheapest flight deals. No hidden fees. No funny business. With us, the price you see when you search is what you’ll pay.</p>
+         <div className='flex flex-col items-center space-y-3'>
+           <Image height={150} width={150}  className=' md:h-52'  src="/packet.svg" alt='world' />
+          <div className='flex flex-col text-center space-y-1  md:h-52'>
+            <h1 className={`${jost.className} text-center text-2xl`}>Pay less and go further with clear prices</h1>
+            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm md:text-md`}>The cheapest flight deals. No hidden fees. No funny business. With us, the price you see when you search is what you’ll pay.</p>
           </div>
          </div>
 
          {/* 3  */}
-         <div className='flex flex-col items-center'>
-           <Image height={150} width={150} src="/clock.svg" alt='world' />
-          <div className='flex flex-col text-center'>
-            <h1 className={`${jost.className} text-center text-2xl`}>Book when it's best with Price Alerts</h1>
-            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm`}>Found your flight, but not quite ready to book? Set up Price Alerts and we’ll let you know when your flight price goes up or down.</p>
+         <div className='flex flex-col items-center space-y-3'>
+           <Image height={150} width={150}  className='md:h-52'  src="/clock.svg" alt='world' />
+          <div className='flex flex-col text-center space-y-1  md:h-52'>
+            <h1 className={`${jost.className} text-center text-2xl`}>Book smart with instant price alerts</h1>
+            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm md:text-md`}>Found your flight, but not quite ready to book? Set up Price Alerts and we’ll let you know when your flight price goes up or down.</p>
           </div>
          </div>
-
+        </div>
 
       </div>
+
+      {/* 4 */}
+      <div className='flex flex-col items-start justify-start space-y-1'>
+        <h1 className={`${jost.className} text-3xl`}>Plan your journey with peace of mind</h1>
+        <p className={`${jost.className} text-sm text-slate-700`}>We've made it our mission to help you travel with confidence and make your journey as smooth as possible.</p>
+      </div>
+
+      {/* 5 */}
+      <div className='w-full grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-12 '>
+
+      {/* 1 */}
+      <div className='flex items-start justify-start gap-x-5'> 
+      <MdChangeCircle className='' size={30}  />
+      <div className='flex flex-col items-start'>
+      <h1 className={`${jost.className} text-lg `}>Find flexible flight deals</h1>
+      <p className={`${jost.className} text-sm text-[#626b71]`}>Explore flexible flight ticket deals so you won't lose out if your flight is changed or cancelled</p>
+      </div>
+      </div>
+
+      {/* 2 */}
+      <div className='flex items-start justify-start gap-x-5'> 
+      <MdChangeCircle className='' size={30}  />
+      <div className='flex flex-col items-start'>
+      <h1 className={`${jost.className} text-lg `}>Add hotels and car hire</h1>
+      <p className={`${jost.className} text-sm text-[#626b71]`}>Plan your journey with hotels and car hire, and keep your bookings all in one place</p>
+      </div>
+
+      </div>
+
+     
+
+
+      </div> 
+
     </div>
   )
 }
