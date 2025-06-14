@@ -8,6 +8,9 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+
+import { FaMobile } from "react-icons/fa";
+
 const jost=Jost({
     subsets:['latin'],
     weight:['500']
@@ -15,8 +18,15 @@ const jost=Jost({
 
 const page = () => {
   return (
-    <div className='w-full bg-[#05203c]  px-8 flex flex-col items-start justify-start space-y-10 py-8'>
+    <div className='w-full max-w-screen-xl bg-[#05203c]  p-8 flex flex-col items-start justify-start md:items-center space-y-10'>
+    <div className='w-full bg-[#05203c] grid grid-cols-1 md:grid-cols-4 gap-9'>
     
+    {/* 0 */}
+    <div className='w-full flex items-center h-9 justify-start bg-[#1e3750] text-white gap-x-2 rounded-md p-2'>
+    <FaMobile /> 
+    <p className={`${jost.className} text-sm`}>Get our App</p>
+    </div>
+
     {/* 1 */}
     <div className=' flex flex-col  space-y-2 text-white'>
     <span className={`${jost.className} text-sm `}>Help</span>
@@ -73,6 +83,12 @@ const page = () => {
     </Accordion>
     </div> 
 
+
+    </div>
+
+
+    {/* Copy_right */}
+    <span style={{fontWeight:300}} className={`${jost.className} text-sm text-white`}>© Skyscanner Ltd 2002 – 2025</span> 
     </div>
   )
 }

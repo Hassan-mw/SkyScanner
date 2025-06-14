@@ -154,19 +154,19 @@ const FightSearchBarLargeScreens = () => {
    <h2 className={`${jost.className} text-white text-md`}>Popular filters:</h2>
    
     {/* 1 */}
-    <div className="putting_flex_center text-white gap-x-2 ">
+    <div className="flex items-center justify-center text-white gap-x-2 ">
       <input className="size-[15px]" type="checkbox"/>
       <p className={`${jost.className} text-md `}>Free cancelation</p>
     </div>
 
     {/* 2 */}
-    <div className="putting_flex_center  text-white gap-x-2 ">
+    <div className="flex items-center justify-center  text-white gap-x-2 ">
       <input className="size-[15px]" type="checkbox"/>
       <p className={`${jost.className} text-md `}>4 stars</p>
     </div>
 
     {/* 3 */}
-    <div className="putting_flex_center text-white gap-x-2 ">
+    <div className="flex items-center justify-center text-white gap-x-2 ">
       <input className="size-[15px]" type="checkbox"/>
       <p className={`${jost.className} text-md `}>5 stars</p>
     </div>
