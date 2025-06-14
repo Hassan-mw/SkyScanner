@@ -18,7 +18,8 @@ const jost=Jost({
 
 const page = () => {
   return (
-    <div className='w-full max-w-screen-xl bg-[#05203c]  p-8 flex flex-col items-start justify-start md:items-center space-y-10'>
+    <div className='w-full max-w-screen-xl bg-[#05203c]  py-8 px-4 flex flex-col items-start justify-start md:items-center space-y-10 md:space-y-16 '>
+   
     <div className='w-full bg-[#05203c] grid grid-cols-1 md:grid-cols-4 gap-9'>
     
     {/* 0 */}
@@ -88,7 +89,7 @@ const page = () => {
 
 
     {/* Copy_right */}
-    <span style={{fontWeight:300}} className={`${jost.className} text-sm text-white`}>© Skyscanner Ltd 2002 – 2025</span> 
+    <span style={{fontWeight:300}} className={`${jost.className} text-md text-white`}>© Skyscanner Ltd 2002 – 2025</span> 
     </div>
   )
 }

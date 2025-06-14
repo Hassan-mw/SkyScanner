@@ -24,8 +24,8 @@ const MoreDetails = () => {
 
       {/* 1 */}
        <div className='w-full flex items-center justify-start gap-x-2 border rounded-md p-2 border-[#c1c7cf]'>
-         <span className='text-[#626971]'><MdError /></span>
-         <p className={`${jost.className}  text-md`}> <span className={`font-semibold  text-md `}>  How did we find these deals?</span> We looked at every economy class flight from Pakistan leaving in the next three months. These fares have the biggest savings when compared to the average price. They were found in the last four days and prices are subject to change.</p>
+         <span className='text-[#626971]'><MdError size={20} /></span>
+         <p className={`${jost.className} text-gray-600 text-md`}> <span style={{fontWeight:500}}  className={`font-semibold  text-md text-black`}>  How did we find these deals?</span> We looked at every economy class flight from Pakistan leaving in the next three months. These fares have the biggest savings when compared to the average price. They were found in the last four days and prices are subject to change.</p>
        </div>
 
       {/* 2 */}
