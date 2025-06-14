@@ -92,8 +92,17 @@ const MoreDetails = () => {
          <div className='flex flex-col items-center'>
            <Image height={150} width={150} src="/packet.svg" alt='world' />
           <div className='flex flex-col text-center'>
-            <h1 className={`${jost.className} text-center text-2xl`}>Search ‘Everywhere’, explore anywhere</h1>
-            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm`}>Enter your departure airport and travel dates, then hit ‘Everywhere’. You’ll see flights to every destination in the world, cheapest first.</p>
+            <h1 className={`${jost.className} text-center text-2xl`}>Pay less, go further with transparent pricing</h1>
+            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm`}>The cheapest flight deals. No hidden fees. No funny business. With us, the price you see when you search is what you’ll pay.</p>
+          </div>
+         </div>
+
+         {/* 3  */}
+         <div className='flex flex-col items-center'>
+           <Image height={150} width={150} src="/clock.svg" alt='world' />
+          <div className='flex flex-col text-center'>
+            <h1 className={`${jost.className} text-center text-2xl`}>Book when it's best with Price Alerts</h1>
+            <p style={{fontWeight:300}} className={`${jost.className} text-center text-[#161616] text-sm`}>Found your flight, but not quite ready to book? Set up Price Alerts and we’ll let you know when your flight price goes up or down.</p>
           </div>
          </div>
 
