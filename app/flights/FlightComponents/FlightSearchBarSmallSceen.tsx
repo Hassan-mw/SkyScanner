@@ -24,15 +24,13 @@ const FlightSearchBarSmallSceen = () => {
     const [crrentForm,setCurrentForm]=useState("")
     const [startPlace,setStartPlace]=useState('')
     const [endPlace,setEndPlace]=useState('')
-    console.log(startPlace)
     const [checkInDate,setCheckInDate] = useState();
     const [date,setDate] = useState();
     const [room,setRoom]=useState({adult:1})
-    console.log(room)
-    function handleClick({clickOn}){
-        setshowSidebar(true)
-         setCurrentForm(clickOn)
-    }
+    
+    
+
+
     return (
     <div   className="flex flex-col   gap-y-[3px] xl:gap-y-4 w-full p-5 pr-2 max-w-screen-xl hover:cursor-pointer space-y-3 ">
 

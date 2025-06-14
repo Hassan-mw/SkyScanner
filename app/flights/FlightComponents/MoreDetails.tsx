@@ -19,7 +19,7 @@ const jost=Jost({
 
 const MoreDetails = () => {
   return (
-    <div className='w-full flex flex-col space-y-4'>
+    <div className='w-full flex flex-col space-y-4 p-3'>
 
        {/* 1 */}
        <div className='w-full flex items-center justify-start gap-x-2 border rounded-md p-2 border-[#c1c7cf]'>
@@ -28,7 +28,7 @@ const MoreDetails = () => {
        </div>
 
        {/* 2 */}
-       <div className='flex flex-col items-start justify-start'>
+       <div className='flex flex-col items-start justify-start space-y-4'>
        <h1  className={`${jost.className} text-3xl`}>Finding flight deals: frequently asked questions</h1>
         <Accordion
       type="single"
@@ -37,46 +37,33 @@ const MoreDetails = () => {
       defaultValue="item-1"
     >
       <AccordionItem value="item-1">
-        <AccordionTrigger>Product Information</AccordionTrigger>
+        <AccordionTrigger className='text-md'>How can I find best flight deals?</AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
-          <p>
-            Our flagship product combines cutting-edge technology with sleek
-            design. Built with premium materials, it offers unparalleled
-            performance and reliability.
-          </p>
-          <p>
-            Key features include advanced processing capabilities, and an
-            intuitive user interface designed for both beginners and experts.
-          </p>
+          <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto possimus facilis velit dolore corrupti, maiores expedita dolores deleniti? Dolorum, quidem, temporibus rem doloribus ratione corporis nostrum quasi similique totam eos pariatur deleniti odio delectus.</p>
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-2">
-        <AccordionTrigger>Shipping Details</AccordionTrigger>
+        <AccordionTrigger className='text-md'>How can I find the best last minute flight deals?</AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
-          <p>
-            We offer worldwide shipping through trusted courier partners.
-            Standard delivery takes 3-5 business days, while express shipping
-            ensures delivery within 1-2 business days.
-          </p>
-          <p>
-            All orders are carefully packaged and fully insured. Track your
-            shipment in real-time through our dedicated tracking portal.
-          </p>
+          <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto possimus facilis velit dolore corrupti, maiores expedita dolores deleniti? Dolorum, quidem, temporibus rem doloribus ratione corporis nostrum quasi similique totam eos pariatur deleniti odio delectus.</p>
         </AccordionContent>
       </AccordionItem>
       <AccordionItem value="item-3">
-        <AccordionTrigger>Return Policy</AccordionTrigger>
+        <AccordionTrigger className='text-md'>How can I stay updated on flight deals and low fares?</AccordionTrigger>
         <AccordionContent className="flex flex-col gap-4 text-balance">
-          <p>
-            We stand behind our products with a comprehensive 30-day return
-            policy. If you&apos;re not completely satisfied, simply return the
-            item in its original condition.
-          </p>
-          <p>
-            Our hassle-free return process includes free return shipping and
-            full refunds processed within 48 hours of receiving the returned
-            item.
-          </p>
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto possimus facilis velit dolore corrupti, maiores expedita dolores deleniti? Dolorum, quidem, temporibus rem doloribus ratione corporis nostrum quasi similique totam eos pariatur deleniti odio delectus.</p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-4">
+        <AccordionTrigger className='text-md'>What happens after I've booked my flight?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto possimus facilis velit dolore corrupti, maiores expedita dolores deleniti? Dolorum, quidem, temporibus rem doloribus ratione corporis nostrum quasi similique totam eos pariatur deleniti odio delectus.</p>
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-5">
+        <AccordionTrigger className='text-md'>Where should I book a flight to right now?</AccordionTrigger>
+        <AccordionContent className="flex flex-col gap-4 text-balance">
+        <p> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Architecto possimus facilis velit dolore corrupti, maiores expedita dolores deleniti? Dolorum, quidem, temporibus rem doloribus ratione corporis nostrum quasi similique totam eos pariatur deleniti odio delectus.</p>
         </AccordionContent>
       </AccordionItem>
     </Accordion>

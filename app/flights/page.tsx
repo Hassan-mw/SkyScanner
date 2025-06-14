@@ -28,7 +28,7 @@ function Country({params}:{params:URLSearchParams}) {
      <PlanePlace />
     
      <MoreDetails/>
-    </div>
+     </div>
 
 
         </div>
