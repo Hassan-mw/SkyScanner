@@ -1,6 +1,7 @@
+'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React from 'react'
+import React, { useState } from 'react'
 
 import image from "../../public/Pakistan.jpg"
 import { Jost } from 'next/font/google'
@@ -12,7 +13,9 @@ const jost=Jost({
 })
 
 const FlightsArray = () => {
+//Data comes fomr server fro above ==> params
 
+ const [filteroptons,setFileroptions]=useState('')
 
  const areas = [
   {
@@ -144,53 +147,82 @@ const FlightsArray = () => {
     ]
   }
 ];
+const fileredOptionsArray=[
+    {id:1,text:"Cheapest flights"},
+    {id:2,text:"Suggested for you"},
+    {id:3,text:"Great  food"},
+    {id:4,text:"Outdoor advantages"},
+]
 
 
 
   let country='India'
 
   return (
-    <div className='w-full flex flex-col space-y-7 items-center justify-center bg-[#eff3f8] p-5'>
+    <div className='w-full   flex items-center justify-center bg-[#eff3f8] p-5'>
+
+
+    <div className='w-full  max-w-screen-xl flex flex-col space-y-7 py-8 items-center justify-center  '>
+
+       {/* Hero_Section */}
+       <div className='w-full flex flex-col items-start justify-start space-y-2'>
        {/* Text */}
-       <h1 className={`${jost.className} text-xl w-full font-semibold`}>Explore Iran from Thu 19 to Thu 26 June</h1>
-       
+       <h1 className={`${jost.className} text-2xl sm:text-3xl w-full font-semibold`}>Explore Iran from Thu 19 to Thu 26 June</h1>
+       {/* filtered-array */}
+       <div className='w-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3'>
+       {fileredOptionsArray.map((data,index)=>
+       <span onClick={()=>setFileroptions(data.text)}  key={index} className={`hover:cursor-pointer px-3 py-2 rounded-md text-xs text-center border ${data.text===filteroptons ? 'text-white bg-[#05203c] border-[#05203c]' :' bg-transparent  border-slate-300'}`}>{data.text}</span>)}
+       </div>
+       </div>
+
+
+
        {/* Data */}
-       <div className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
+       <div className="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
             {/* Countres 1 */}
             {areas.map((data,index)=>
-        <Link href={`${country}/selectDepart/${data.city}`}  key={index} className="hover:cursor-pointer h-32 sm:h-80 b  shadow-sm hover:shadow-lg  duration-500   flex sm:flex-col  white items-center justify-center w-full border rounded-md   ">
+        <Link href={`${country}/departlocation/${data.city}`}  key={index} className="hover:cursor-pointer h-32 sm:h-80 b  shadow-sm hover:shadow-lg  duration-500   flex sm:flex-col  white items-center justify-center w-full border rounded-md   ">
         
-      
-        {/* Image */}
-         <Image height={350} width={350} src={image} className="h-full sm:max-h-[65%] rounded-l-md sm:rounded-bl-none sm:rounded-t-md object-cover w-full max-w-[30%] sm:max-w-full " alt="bbbb" />
+           {/* Image */}
+           <Image height={350} width={350} src={image} className="h-full sm:max-h-[65%] rounded-l-md sm:rounded-bl-none sm:rounded-t-md object-cover w-full max-w-[30%] sm:max-w-full " alt="bbbb" />
 
         {/* Data */}
         <div className="w-full  h-full max-w-[70%] sm:max-w-full sm:max-h-[35%]  flex flex-col space-y-2 item-center justify-center bg-white p-3 sm:p-5 rounded-r-md sm:rounded-none sm:rounded-b-md  ">
           <span className={`${jost.className} text-lg sm:text-xl font-semibold`}>Tehran</span>
 
-          {/* flights */}
           <div className='flex flex-col items-center justify-between'>
-          <div className="w-full flex item-center justify-between ">
-            <span className={`${jost.className} text-sm sm:text-lg font-semibold`} >Flights</span>
-            <div className="flex item-center justify-center gap-x-1">
-              <span className={`${jost.className} text-md sm:text-lg font-semibold`}>Rs 120,301</span> <span className='hidden sm:block pt-1'><LuExternalLink /></span>
-            </div>
+             {/* flights */}
+              <div className="w-full flex item-center justify-between ">
+                 {/* Left */}
+                 <span className={`${jost.className} text-sm sm:text-lg font-semibold`} >Flights</span>
+                 {/* right */}
+                 <div className="flex item-center justify-center gap-x-1">
+                    <span className={`${jost.className} text-md sm:text-lg font-semibold`}>Rs 120,301</span> <span className='hidden sm:block pt-1'><LuExternalLink /></span>
+                 </div>
+               </div>
+
+              {/* hotels */}
+              <div className="w-full flex item-center justify-between">
+                 {/* Left */}
+                 <span className={`${jost.className} text-sm  sm:text-lg  font-semibold`}>Hotels</span>
+                 {/* right */}                 
+                 <div className="flex item-center justify-center gap-x-1">
+                    <span className={`${jost.className} text-md sm:text-lg font-semibold`}>Rs 19,964</span>  <span className='hidden sm:block pt-1'><LuExternalLink /></span>
+                 </div>
+              </div>
+
           </div>
 
-          {/* hotels */}
-          <div className="w-full flex item-center justify-between">
-            <span className={`${jost.className} text-sm  sm:text-lg  font-semibold`}>Hotels</span>
-            <div className="flex item-center justify-center gap-x-1">
-              <span className={`${jost.className} text-md sm:text-lg font-semibold`}>Rs 19,964</span>  <span className='hidden sm:block pt-1'><LuExternalLink /></span>
-            </div>
-          </div>
-          </div>
+
         </div>
          </Link>
    )}
 
 
         </div>
+    </div>
+
+
     </div>
   )
 }

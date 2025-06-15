@@ -3,7 +3,7 @@ import React from 'react'
 import { IoMdSearch } from "react-icons/io";
 
 const jost=Jost({
-    weight:['500'],
+    weight:['300'],
     subsets:['latin']
 })
 
