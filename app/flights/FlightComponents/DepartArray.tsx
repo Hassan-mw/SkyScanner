@@ -20,6 +20,9 @@ const DepartArray = () => {
     {id:1,text:"Cheapest flights"},
     {id:2,text:"All avaliable locations"}
 ]
+const country="India"
+const depart="Islamabad"
+const city="ab"
 
   return (
   <div className='w-full   flex items-center justify-center bg-[#eff3f8] p-5'>
@@ -40,7 +43,7 @@ const DepartArray = () => {
        <div className="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8"> 
        
        {/* 1 */}
-       <div className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
+       <Link href={`/flights/${country}/departlocation/${depart}/avaliableflights/${city}`}  className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
         <h1 className={`${jost.className} text-xl`}>Karachi</h1>
         <div className='w-full flex items-center justify-between'>
         <span className={`text-slate-500 text-xs `} >Flight from</span>
@@ -48,7 +51,7 @@ const DepartArray = () => {
         </div>
         <span className={`text-slate-500 text-xs `} >1+ stops</span>
 
-       </div> 
+       </Link> 
 
        {/* 1 */}
        <div className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
@@ -60,7 +63,7 @@ const DepartArray = () => {
         <span className={`text-slate-500 text-xs `} >1+ stops</span>
 
        </div> 
-       
+
        {/* 1 */}
        <div className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
         <h1 className={`${jost.className} text-xl`}>Karachi</h1>
