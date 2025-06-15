@@ -3,7 +3,7 @@ import SearchFlights from '../FlightComponents/SearchFlights'
 
 const page = () => {
   return (
-    <div className='bg-white w-full'>
+    <div className=' w-full p-3  mr-5'>
     <SearchFlights/>
 
     </div>
