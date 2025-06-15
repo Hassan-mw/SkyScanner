@@ -26,11 +26,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <div className="w-full h-full flex flex-col  bg-[#05203c] overflow-hidden overflow-x-hidden">
+
+       <body className="w-full h-full flex flex-col  bg-[#05203c] overflow-hidden overflow-x-hidden">
        <div className=" bg-[#05203c] flex items-center justify-center  w-full"> <Navigation/></div> 
         {children}
        <Footer/>
-      </div>
-    </html>
+      </body>
+ 
+      </html>
   );
 }

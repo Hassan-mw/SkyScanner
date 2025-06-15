@@ -3,6 +3,14 @@ import Link from 'next/link'
 import React from 'react'
 
 import image from "../../public/Pakistan.jpg"
+import { Jost } from 'next/font/google'
+import { LuExternalLink } from "react-icons/lu";
+
+const jost=Jost({
+    weight:['500'],
+    subsets:['latin']
+})
+
 const FlightsArray = () => {
 
 
@@ -142,32 +150,40 @@ const FlightsArray = () => {
   let country='India'
 
   return (
-    <div className='w-full flex flex-col items-center justify-center bg-white '>
+    <div className='w-full flex flex-col space-y-7 items-center justify-center bg-[#eff3f8] p-5'>
        {/* Text */}
-       <h1 className='text-2xl'>Explore Iran from Thu 19 to Thu 26 June</h1>
-    <div className="w-full max-w-screen-xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3   gap-8">
+       <h1 className={`${jost.className} text-xl w-full font-semibold`}>Explore Iran from Thu 19 to Thu 26 June</h1>
+       
+       {/* Data */}
+       <div className="w-full max-w-screen-xl grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
             {/* Countres 1 */}
             {areas.map((data,index)=>
-         <Link href={`${country}/selectDepart/${data.city}`}  key={index} className="hover:cursor-pointer hover:shadow-slate-400 duration-300 flex sm:flex-col overflow-hidden white items-center justify-center w-full border rounded-2xl shadow-xl  sm:max-w-[600px]  ">
-            <div className="sm:max-h-[180px] overflow-hidden">
-                <Image height={200} width={200} src={image} className="max-w-[170px]  sm:max-w-full rounded-l-2xl min-h-[150px] object-cover sm:rounded-none sm:rounded-t-2xl " alt="bbbb" /></div>
-            <div className="w-full h-[35%] flex flex-col  item-start justify-start">
-          <span className="text-2xl font-semibold">Tehran</span>
+        <Link href={`${country}/selectDepart/${data.city}`}  key={index} className="hover:cursor-pointer h-32 sm:h-80 b  shadow-sm hover:shadow-lg  duration-500   flex sm:flex-col  white items-center justify-center w-full border rounded-md   ">
+        
+      
+        {/* Image */}
+         <Image height={350} width={350} src={image} className="h-full sm:max-h-[65%] rounded-l-md sm:rounded-bl-none sm:rounded-t-md object-cover w-full max-w-[30%] sm:max-w-full " alt="bbbb" />
+
+        {/* Data */}
+        <div className="w-full  h-full max-w-[70%] sm:max-w-full sm:max-h-[35%]  flex flex-col space-y-2 item-center justify-center bg-white p-3 sm:p-5 rounded-r-md sm:rounded-none sm:rounded-b-md  ">
+          <span className={`${jost.className} text-lg sm:text-xl font-semibold`}>Tehran</span>
 
           {/* flights */}
-          <div className="w-full flex item-center justify-between">
-            <span>Flights</span>
-            <div className="flex item-center justify-center">
-              <span>Explore flights</span> +
+          <div className='flex flex-col items-center justify-between'>
+          <div className="w-full flex item-center justify-between ">
+            <span className={`${jost.className} text-sm sm:text-lg font-semibold`} >Flights</span>
+            <div className="flex item-center justify-center gap-x-1">
+              <span className={`${jost.className} text-md sm:text-lg font-semibold`}>Rs 120,301</span> <span className='hidden sm:block pt-1'><LuExternalLink /></span>
             </div>
           </div>
 
           {/* hotels */}
           <div className="w-full flex item-center justify-between">
-            <span>Hotels</span>
-            <div className="flex item-center justify-center">
-              <span>Rs 19,964</span> +
+            <span className={`${jost.className} text-sm  sm:text-lg  font-semibold`}>Hotels</span>
+            <div className="flex item-center justify-center gap-x-1">
+              <span className={`${jost.className} text-md sm:text-lg font-semibold`}>Rs 19,964</span>  <span className='hidden sm:block pt-1'><LuExternalLink /></span>
             </div>
+          </div>
           </div>
         </div>
          </Link>
