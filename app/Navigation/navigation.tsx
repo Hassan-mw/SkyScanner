@@ -32,7 +32,7 @@ function Navigation() {
          </Link>
 
         {/* favourite_login  */}
-        <div className="flex items-center justify-center  space-x-5 mr-3 ">
+        <div className="flex items-center justify-center  space-x-5 ">
           <h2 className="flex text-sm"> ENG </h2>
           <span className="text-xl "><FaHeart /></span>
           <span className="md:hidden text-2xl"><IoPersonCircleSharp /></span>

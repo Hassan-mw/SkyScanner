@@ -12,12 +12,12 @@ function Country({params}:{params:URLSearchParams}) {
 
     return (
      
-    <div className="w-full  flex flex-col space-y-10 items-center bg-white mr-4 ">
+    <div className="w-full  flex flex-col space-y-10 items-center bg-white  ">
 
     {/*Search_bar  */}
     <div className="bg-[#05203c] flex items-center justify-center w-full">
      <div className="hidden md:block w-full "> <FightSearchBarLargeScreens/></div>
-     <div className="md:hidden w-full mr-2"> <FlightSearchBarSmallSceen/></div>
+     <div className="md:hidden w-full "> <FlightSearchBarSmallSceen/></div>
     </div>
 
     {/* Below_Data */}

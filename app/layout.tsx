@@ -26,11 +26,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <body className="w-screen h-screen flex flex-col items-center justify-start bg-[#05203c] overflow-hidden overflow-y-scroll">
+       <div className="w-full h-full flex flex-col  bg-[#05203c] overflow-hidden overflow-x-hidden">
        <div className=" bg-[#05203c] flex items-center justify-center  w-full"> <Navigation/></div> 
         {children}
        <Footer/>
-      </body>
+      </div>
     </html>
   );
 }
