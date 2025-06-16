@@ -23,8 +23,8 @@ const FightSearchBarLargeScreens = () => {
 
     const [startPlace,setStartPlace]=useState('')
     const [endPlace,setEndPlace]=useState('')
-    const [departDate,setDepartDate] = useState('9/17/25');
-    const [returnDate,setReturnDate] = useState('9/17/25');
+    const [departDate,setDepartDate] = useState('');
+    const [returnDate,setReturnDate] = useState('');
     const [adult,setAdult]=useState(1)
     const [children,setChildre]=useState(0)
     const [roomType,setRoomType]=useState('Economy')
