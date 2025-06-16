@@ -33,35 +33,36 @@ function PlaneFlights({country,depart,finalcity}) {
 
 const filterArray=flightsArray
 
-  function handleClickSelectFlight(data,id){
+  function handleClickSelectFlight(data:string,id:string){
    setShowSelectFlight(true)
     setCheckAirline(data)
     setId(id)
  
   }
-//   handle side bars function
-function handleShowSidebar(data){
-console.log(data)
-if(data==="Filter"){
+  //   handle side bars function
+ function handleShowSidebar(data:string){
+
+  if(data==="Filter"){
     setShowSideBar(true)
     setShowSideBarSort(false)
-    return;
-}else{
+   
+   }else{
     setShowSideBar(false)
     setShowSideBarSort(true)
-    return ;
-}
-setShowSideBar(false)
-    setShowSideBarSort(false)
-}
+   
+  }
+  
+  }
     return (
-        <div className="w-full flex  min-h-full lg:flex  lg:space-x-10 bg-slate-200 py-5 ">
-{/* Show sidebar at alarge */}
-<div className="hidden lg:block min-w-[300px] "><SideBarFilter range={range} setRange={setRange}  setCheckStops={setCheckStops} /> </div>  
-{/* Whole flights body */}
-              <div className="w-full h-full  flex flex-col items-center justify-center  max-w-screen-lg ">
+        <div className="w-full flex  min-h-full lg:flex  lg:space-x-10 bg-[#eff3f8] py-5 ">
+
+        {/* Show sidebar at alarge */}
+        <div className="hidden lg:block min-w-[300px] "><SideBarFilter range={range} setRange={setRange}  setCheckStops={setCheckStops} /> </div>  
+        
+        {/* //!  Main_body */}
+        <div className="w-full h-full  flex flex-col items-center justify-center  max-w-screen-lg ">
           
- {/* Top filter show at large */}
+        {/* Top filter show at large */}
               <FinalPageFilter handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
 {/* Plane fliters  */}
                 <div className="w-full flex items-center  justify-center px-5">
@@ -82,7 +83,8 @@ setShowSideBar(false)
                     <div className="flex flex-col  ">
                        <div className="text-xs">{data.hours} hours</div>
                        <div className="flex items-center justify-center space-x-4 ">
-                        <div className="border-t-2 pb-2 min-w-[60px] border-slate-400"></div><div className=""><ion-icon name="airplane-outline"></ion-icon></div>
+                        <div className="border-t-2 pb-2 min-w-[60px] border-slate-400"></div><div className="">
+                            <ion-icon name="airplane-outline"></ion-icon></div>
                        </div>
                         <div>{data.stop}</div>
                     </div>

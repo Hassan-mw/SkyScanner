@@ -6,7 +6,7 @@ const page = () => {
 const depart='dep'
 const finalcity='g'
   return (
-    <div className="w-full   px-2 py-8 bg-slate-300   overflow-y-auto">
+    <div className="w-full   px-2 py-8 bg-[#eff3f8]  overflow-y-auto">
             
             <div className="w-full h-full flex  items-center justify-center space-y-5  ">
             <div className="w-full h-full ">
