@@ -2,7 +2,7 @@
 
 import {  SetStateAction, useEffect, useState } from "react";
 
-const PlanePerson = ({adult,setAdult,children,setChildren,roomType,setRoomType}:{ person:number,setPerson:SetStateAction<number>}) => {
+const PlanePerson = ({adult,setAdult,children,setChildren,roomType,setRoomType}:{ adult:number,setPerson:SetStateAction<number>}) => {
   const [countAdults,setCountAdults]=useState(adult);
   const [countChildren,setCountChildren]=useState(children);
   const [className,setClassName]=useState(roomType);

@@ -24,7 +24,7 @@ function Menubar({
 
 function MenubarMenu({
   ...props
-}: React.ComponentProps<typeof MenubarPrimitive.Menu>) {
+}: React.ComponentProps<typeof MenubarPrimitive.Menu >) {
   return <MenubarPrimitive.Menu data-slot="menubar-menu" {...props} />
 }
 
@@ -56,7 +56,7 @@ function MenubarTrigger({
     <MenubarPrimitive.Trigger
       data-slot="menubar-trigger"
       className={cn(
-        "focus:bg-accent focus:text-accent-foreground data-[state=open]:bg-accent data-[state=open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none",
+        " focus:text-accent-foreground  data-[state=open]:text-accent-foreground flex items-center rounded-sm px-2 py-1 text-sm font-medium outline-hidden select-none",
         className
       )}
       {...props}
