@@ -12,6 +12,7 @@ import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import Image from "next/image";
 import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import Link from "next/link";
+import { DatePicker } from "@/components/ui/DatePicker";
 
 
 const jost=Jost({
@@ -23,8 +24,8 @@ const FightSearchBarLargeScreens = () => {
 
     const [startPlace,setStartPlace]=useState('')
     const [endPlace,setEndPlace]=useState('')
-    const [departDate,setDepartDate] = useState('');
-    const [returnDate,setReturnDate] = useState('');
+    const [departDate,setDepartDate] = useState<Date>();
+    const [returnDate,setReturnDate] =useState<Date>();
     const [adult,setAdult]=useState(1)
     const [children,setChildre]=useState(0)
     const [roomType,setRoomType]=useState('Economy')
@@ -57,99 +58,78 @@ const FightSearchBarLargeScreens = () => {
 
 
     {/*//!  Form */}
-   <Menubar className="w-full bg-[#05203c] h-20 grid grid-cols-6  border-[#05203c]">
+   <Menubar className="w-full bg-[#05203c] h-20  grid grid-cols-6  border-[#05203c]">
       
-      {/* Journey Start Place */}
-      <MenubarMenu  >
-        <MenubarTrigger className="w-full  col-span-1 bg-transparent   p-0 ">
-            <div className="w-full relative flex flex-col justify-start   ">
-               <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start rounded-l-xl border w-full">
+    {/* Journey Start Place */}
+    <MenubarMenu  >
+        <MenubarTrigger className="w-full relative h-full bg-white col-span-1  rounded-none rounded-l-md  p-0 ">
+            {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
+               <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
                   <span className="text-[#626971] font-semibold text-sm"> From </span>
                   <span>{startPlace ? startPlace : 'Anywhere'}</span>
               </div>
 
                   <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
-            </div>
+            {/* </div> */}
           </MenubarTrigger>
         <MenubarContent >
             {/* Data */}
         <PlanesearchPlane value={startPlace} setValue={setStartPlace}  />
         </MenubarContent>
-      </MenubarMenu>
+    </MenubarMenu>
 
 
-       {/* Journey End Place*/}
-      <MenubarMenu  >
-        <MenubarTrigger className="w-full   col-span-1    p-0 ">
-            <div className="w-full  flex flex-col justify-start   ">
-               <div className="bg-white  flex flex-col items-start py-3 px-4 pl-7 justify-start  border w-full">
+    {/* Journey End Place*/}
+    <MenubarMenu  >
+        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none  pl-5  ">
+            {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
+              <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
                   <span className="text-[#626971] font-semibold text-sm"> To </span>
                   <span>{endPlace ? endPlace : 'Anywhere'}</span>
               </div>
-            </div>
-          </MenubarTrigger>
-        <MenubarContent>
-            {/* Data */}
-             <PlanesearchPlane value={endPlace} setValue={setEndPlace}  />
-        </MenubarContent>
-      </MenubarMenu>
 
-
-       {/* Depart_Date  */}
-      <MenubarMenu >
-        <MenubarTrigger className="w-full   col-span-1  data-[state=open]:bg-transparent   p-0 ">
-            <div className="w-full  flex flex-col justify-start   ">
-               <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start  border w-full">
-                  <span className="text-[#626971] font-semibold text-sm">Depart Date </span>
-                  {departDate ?<span>{departDate }</span>  :<span className="text-slate-600"> date </span>}
-              </div>
-            </div>
+              <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
+            {/* </div> */}
           </MenubarTrigger>
         <MenubarContent >
             {/* Data */}
-            <CustomDatePicker date={departDate} setDateSelect={setDepartDate} />
+        <PlanesearchPlane value={endPlace} setValue={setEndPlace}  />
         </MenubarContent>
-      </MenubarMenu>
+    </MenubarMenu>
 
-       {/*Return_ Date  */}
-      <MenubarMenu  >
-        <MenubarTrigger className="w-full   col-span-1  data-[state=open]:bg-transparent   p-0 ">
-            <div className="w-full  flex flex-col justify-start   ">
-               <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start  border w-full">
-                  <span className="text-[#626971] font-semibold text-sm">Return Date </span>
-                  {returnDate ?<span>{returnDate }</span>  :<span className="text-slate-600"> date </span>}
-              </div>
-            </div>
-          </MenubarTrigger>
-        <MenubarContent>
-            {/* Data */}
-            <CustomDatePicker date={returnDate} setDateSelect={setReturnDate} />
-        </MenubarContent>
-      </MenubarMenu>
-
-
+      {/* Depart_Date  */}
+      <DatePicker place="Depart" date={departDate} setDate={setDepartDate} />
+      
+      {/*Return_ Date  */}
+      <DatePicker  place="Return" date={returnDate} setDate={setReturnDate} />
+       
       {/* Person Selection */}
       <MenubarMenu  >
-        <MenubarTrigger className="w-full   col-span-1 mr-8 data-[state=open]:bg-transparent     p-0 ">
-            <div className="w-full  flex flex-col justify-start   ">
-               <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start rounded-r-xl  border w-full overflow-hidden ">
-                  <span className="text-[#626971] font-semibold text-sm"> Persons </span>
-                   <div className="text-slate-800 truncate pr-1 max-w-full">
+        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none rounded-r-xl   p-0 ">
+            {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
+              <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
+                  <span className="text-[#626971] font-semibold text-sm"> Person </span>
+                     <div className="text-slate-800 truncate pr-1 max-w-full">
                     <span>{`${totaltraveller} ${Array.isArray(totaltraveller) &&   totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</span>
                     </div>
+
               </div>
-            </div>
+
+              <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
+            {/* </div> */}
           </MenubarTrigger>
-        <MenubarContent>
+        <MenubarContent >
             {/* Data */}
-            <PlanePerson adult={adult} setAdult={setAdult} children={children} setChildren={setChildre} roomType={roomType} setRoomType={setRoomType} />
+        <PlanePerson adult={adult} setAdult={setAdult} children={children} setChildren={setChildre} roomType={roomType} setRoomType={setRoomType} />
         </MenubarContent>
       </MenubarMenu>
-     
+
+
+    
 
       {/* Buttons_Searching */}
       <Link href="/flights/PK" className="w-full flex items-center justify-center h-full   rounded-xl ">
-    <div className="w-full ml-3 max-w-[80%] h-full max-h-[88%]  2xl:max-w-full rounded-xl  flex items-center justify-center text-white font-semibold bg-blue-600 duration-700 hover:bg-blue-700 ">
+    <div className="w-full ml-3 max-w-[80%] h-full   2xl:max-w-full rounded-xl  flex items-center justify-center text-white font-semibold bg-blue-600 duration-700 hover:bg-blue-700 ">
     <h2 className={`${jost.className} text-sm`}>Search </h2>
     </div>
       </Link>
