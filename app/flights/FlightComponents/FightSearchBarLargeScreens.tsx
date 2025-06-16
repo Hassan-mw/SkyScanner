@@ -68,8 +68,7 @@ const FightSearchBarLargeScreens = () => {
                   <span className="text-[#626971] font-semibold text-sm"> From </span>
                   <span>{startPlace ? startPlace : 'Anywhere'}</span>
               </div>
-
-                  <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
+                <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
             {/* </div> */}
           </MenubarTrigger>
         <MenubarContent >
@@ -88,7 +87,7 @@ const FightSearchBarLargeScreens = () => {
                   <span>{endPlace ? endPlace : 'Anywhere'}</span>
               </div>
 
-              <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
+           
             {/* </div> */}
           </MenubarTrigger>
         <MenubarContent >
@@ -97,14 +96,14 @@ const FightSearchBarLargeScreens = () => {
         </MenubarContent>
     </MenubarMenu>
 
-      {/* Depart_Date  */}
-      <DatePicker place="Depart" date={departDate} setDate={setDepartDate} />
+    {/* Depart_Date  */}
+    <DatePicker place="Depart" date={departDate} setDate={setDepartDate} />
       
-      {/*Return_ Date  */}
-      <DatePicker  place="Return" date={returnDate} setDate={setReturnDate} />
+    {/*Return_ Date  */}
+    <DatePicker  place="Return" date={returnDate} setDate={setReturnDate} />
        
-      {/* Person Selection */}
-      <MenubarMenu  >
+    {/* Person Selection */}
+    <MenubarMenu  >
         <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none rounded-r-xl   p-0 ">
             {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
               <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
@@ -112,27 +111,23 @@ const FightSearchBarLargeScreens = () => {
                      <div className="text-slate-800 truncate pr-1 max-w-full">
                     <span>{`${totaltraveller} ${Array.isArray(totaltraveller) &&   totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</span>
                     </div>
-
               </div>
-
-              <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
-            {/* </div> */}
           </MenubarTrigger>
         <MenubarContent >
-            {/* Data */}
+   
         <PlanePerson adult={adult} setAdult={setAdult} children={children} setChildren={setChildre} roomType={roomType} setRoomType={setRoomType} />
         </MenubarContent>
-      </MenubarMenu>
+    </MenubarMenu>
 
 
     
 
       {/* Buttons_Searching */}
-      <Link href="/flights/PK" className="w-full flex items-center justify-center h-full   rounded-xl ">
-    <div className="w-full ml-3 max-w-[80%] h-full   2xl:max-w-full rounded-xl  flex items-center justify-center text-white font-semibold bg-blue-600 duration-700 hover:bg-blue-700 ">
-    <h2 className={`${jost.className} text-sm`}>Search </h2>
-    </div>
-      </Link>
+    <Link href="/flights/PK" className="w-full flex items-center justify-center h-full   rounded-xl ">
+      <div className="w-full ml-3 max-w-[80%] h-full   2xl:max-w-full rounded-xl  flex items-center justify-center text-white font-semibold bg-blue-600 duration-700 hover:bg-blue-700 ">
+         <h2 className={`${jost.className} text-sm`}>Search </h2>
+      </div>
+    </Link>
 
 
    </Menubar>
