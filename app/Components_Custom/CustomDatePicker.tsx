@@ -8,7 +8,7 @@ import "react-day-picker/dist/style.css";
 const CustomDatePicker = ({date,setDateSelect}) => {
       const [selectedDate, setSelectedDate] = useState(date);
      const [selectedRange, setSelectedRange] = useState({ from: undefined, to: undefined });
-  console.log(date)
+  console.log(typeof selectedDate)
    useEffect(()=>{
   
     setDateSelect(selectedDate)

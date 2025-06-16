@@ -23,8 +23,8 @@ const FightSearchBarLargeScreens = () => {
 
     const [startPlace,setStartPlace]=useState('')
     const [endPlace,setEndPlace]=useState('')
-    const [departDate,setDepartDate] = useState<number | null>(null);
-    const [returnDate,setReturnDate] = useState('');
+    const [departDate,setDepartDate] = useState(0);
+    const [returnDate,setReturnDate] = useState(0);
     const [adult,setAdult]=useState(1)
     const [children,setChildre]=useState(0)
     const [roomType,setRoomType]=useState('Economy')
@@ -47,11 +47,15 @@ const FightSearchBarLargeScreens = () => {
     {/* //!    data */}
     <div   className="absolute  h-full   w-full top-0  left-0 flex  items-center justify-center    ">
     <div   className="bg-[#05203c] 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-5 pb-5 max-w-screen-xl  space-y-3 ">
+    
+    
     {/* //! Header_text */}
     <div className=" w-full flex flex-col items-start   ">
     <h1 style={{fontWeight:700}} className={`${jost.className} pb-12 text-3xl text-white 2xl:hidden `}>Millions of cheap flights. One simple search.</h1>
     <div className=" flex items-center justify-start gap-x-3 text-white"> <TbSTurnDown /> <h2 className=" font-semibold text-md  ">Crete a multi-city route</h2> </div >
     </div>
+
+
     {/*//!  Form */}
    <Menubar className="w-full bg-[#05203c] h-20 grid grid-cols-6  border-[#05203c]">
       
@@ -152,6 +156,7 @@ const FightSearchBarLargeScreens = () => {
 
 
    </Menubar>
+
 
    {/* //!  Filter icons */}
    <div className="w-full flex items-start justify-start    ">

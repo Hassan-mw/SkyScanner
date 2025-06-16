@@ -62,7 +62,7 @@ const PlanePlace = () => {
   
   <Link href="/"  key={index} className="w-full h-[400px] border-2 rounded-md border-slate-100 shadow-lg hover:shadow-xl duration-500 ">
   
-   <img  src={data.image} className="w-full h-[45%] object-cover rounded-t-md  " alt="country_name"/>
+   {/* <img  src={data.image} className="w-full h-[45%] object-cover rounded-t-md  " alt="country_name"/> */}
     
     {/* Content */}
    <div className="w-full flex flex-col items-start justify-between h-[55%] p-3  rounded-b-md">
