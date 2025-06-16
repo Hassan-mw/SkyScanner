@@ -1,8 +1,17 @@
 'use client';
 
-import {  SetStateAction, useEffect, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-const PlanePerson = ({adult,setAdult,children,setChildren,roomType,setRoomType}:{ adult:number,setPerson:SetStateAction<number>}) => {
+interface PlanePersonDataType {
+   adult:number;
+   setAdult: Dispatch<SetStateAction<number>>;
+   children:number,
+   setChildren:Dispatch<SetStateAction<number>>;
+   roomType:string;
+   setRoomType:Dispatch<SetStateAction<string>>;
+}
+
+const PlanePerson = ({adult,setAdult,children,setChildren,roomType,setRoomType}:PlanePersonDataType) => {
   const [countAdults,setCountAdults]=useState(adult);
   const [countChildren,setCountChildren]=useState(children);
   const [className,setClassName]=useState(roomType);

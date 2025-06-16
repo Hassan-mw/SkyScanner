@@ -29,7 +29,8 @@ const FightSearchBarLargeScreens = () => {
     const [children,setChildre]=useState(0)
     const [roomType,setRoomType]=useState('Economy')
     const [totaltraveller,setTotalTraveller]=useState<Number>(0)
-   console.log(typeof totaltraveller)
+
+    
     useEffect(()=>{
 
     setTotalTraveller(adult+children)
@@ -112,7 +113,7 @@ const FightSearchBarLargeScreens = () => {
             <div className="w-full  flex flex-col justify-start   ">
                <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start  border w-full">
                   <span className="text-[#626971] font-semibold text-sm">Return Date </span>
-                  {returnDate ?<span>{returnDate?.toLocaleDateString() }</span>  :<span className="text-slate-600"> date </span>}
+                  {returnDate ?<span>{returnDate }</span>  :<span className="text-slate-600"> date </span>}
               </div>
             </div>
           </MenubarTrigger>
