@@ -1,3 +1,6 @@
+
+
+
 'use client'
 import { Jost } from "next/font/google"
 
@@ -23,14 +26,13 @@ const FightSearchBarLargeScreens = () => {
 
     const [startPlace,setStartPlace]=useState('')
     const [endPlace,setEndPlace]=useState('')
-    const [departDate,setDepartDate] = useState('9/17/25');
-    const [returnDate,setReturnDate] = useState('9/17/25');
+    const [departDate,setDepartDate] = useState('');
+    const [returnDate,setReturnDate] = useState('');
     const [adult,setAdult]=useState(1)
     const [children,setChildre]=useState(0)
     const [roomType,setRoomType]=useState('Economy')
-    const [totaltraveller,setTotalTraveller]=useState<Number>(0)
-
-    
+    const [totaltraveller,setTotalTraveller]=useState(0)
+   console.log(totaltraveller)
     useEffect(()=>{
 
     setTotalTraveller(adult+children)
@@ -47,21 +49,17 @@ const FightSearchBarLargeScreens = () => {
     {/* //!    data */}
     <div   className="absolute  h-full   w-full top-0  left-0 flex  items-center justify-center    ">
     <div   className="bg-[#05203c] 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-5 pb-5 max-w-screen-xl  space-y-3 ">
-    
-    
     {/* //! Header_text */}
     <div className=" w-full flex flex-col items-start   ">
     <h1 style={{fontWeight:700}} className={`${jost.className} pb-12 text-3xl text-white 2xl:hidden `}>Millions of cheap flights. One simple search.</h1>
     <div className=" flex items-center justify-start gap-x-3 text-white"> <TbSTurnDown /> <h2 className=" font-semibold text-md  ">Crete a multi-city route</h2> </div >
     </div>
-
-
     {/*//!  Form */}
    <Menubar className="w-full bg-[#05203c] h-20 grid grid-cols-6  border-[#05203c]">
       
       {/* Journey Start Place */}
-      <MenubarMenu  >
-        <MenubarTrigger className="w-full  col-span-1 bg-transparent   p-0 ">
+      <MenubarMenu className="w-full   col-span-1" >
+        <MenubarTrigger className="  data-[state=open]:bg-transparent   p-0 ">
             <div className="w-full relative flex flex-col justify-start   ">
                <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start rounded-l-xl border w-full">
                   <span className="text-[#626971] font-semibold text-sm"> From </span>
@@ -79,8 +77,8 @@ const FightSearchBarLargeScreens = () => {
 
 
        {/* Journey End Place*/}
-      <MenubarMenu  >
-        <MenubarTrigger className="w-full   col-span-1    p-0 ">
+      <MenubarMenu className="w-full   col-span-1" >
+        <MenubarTrigger className="  data-[state=open]:bg-transparent   p-0 ">
             <div className="w-full  flex flex-col justify-start   ">
                <div className="bg-white  flex flex-col items-start py-3 px-4 pl-7 justify-start  border w-full">
                   <span className="text-[#626971] font-semibold text-sm"> To </span>
@@ -96,12 +94,12 @@ const FightSearchBarLargeScreens = () => {
 
 
        {/* Depart_Date  */}
-      <MenubarMenu >
-        <MenubarTrigger className="w-full   col-span-1  data-[state=open]:bg-transparent   p-0 ">
+      <MenubarMenu className="w-full   col-span-1" >
+        <MenubarTrigger className="  data-[state=open]:bg-transparent   p-0 ">
             <div className="w-full  flex flex-col justify-start   ">
                <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start  border w-full">
                   <span className="text-[#626971] font-semibold text-sm">Depart Date </span>
-                  {departDate ?<span>{departDate }</span>  :<span className="text-slate-600"> date </span>}
+                  {departDate ?<span>{departDate?.toLocaleDateString() }</span>  :<span className="text-slate-600"> date </span>}
               </div>
             </div>
           </MenubarTrigger>
@@ -112,12 +110,12 @@ const FightSearchBarLargeScreens = () => {
       </MenubarMenu>
 
        {/*Return_ Date  */}
-      <MenubarMenu  >
-        <MenubarTrigger className="w-full   col-span-1  data-[state=open]:bg-transparent   p-0 ">
+      <MenubarMenu className="w-full   col-span-1" >
+        <MenubarTrigger className="  data-[state=open]:bg-transparent   p-0 ">
             <div className="w-full  flex flex-col justify-start   ">
                <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start  border w-full">
                   <span className="text-[#626971] font-semibold text-sm">Return Date </span>
-                  {returnDate ?<span>{returnDate }</span>  :<span className="text-slate-600"> date </span>}
+                  {returnDate ?<span>{returnDate?.toLocaleDateString() }</span>  :<span className="text-slate-600"> date </span>}
               </div>
             </div>
           </MenubarTrigger>
@@ -129,14 +127,12 @@ const FightSearchBarLargeScreens = () => {
 
 
       {/* Person Selection */}
-      <MenubarMenu  >
-        <MenubarTrigger className="w-full   col-span-1 mr-8 data-[state=open]:bg-transparent     p-0 ">
+      <MenubarMenu className="w-full   col-span-1 mr-8" >
+        <MenubarTrigger className="data-[state=open]:bg-transparent     p-0 ">
             <div className="w-full  flex flex-col justify-start   ">
-               <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start rounded-r-xl  border w-full overflow-hidden ">
+               <div className="bg-white  flex flex-col items-start py-3 px-4 justify-start rounded-r-xl  border w-full">
                   <span className="text-[#626971] font-semibold text-sm"> Persons </span>
-                   <div className="text-slate-800 truncate pr-1 max-w-full">
-                    <span>{`${totaltraveller} ${Array.isArray(totaltraveller) &&   totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</span>
-                    </div>
+                   <div className="text-slate-800 truncate">{`${totaltraveller} ${totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</div>
               </div>
             </div>
           </MenubarTrigger>
@@ -156,7 +152,6 @@ const FightSearchBarLargeScreens = () => {
 
 
    </Menubar>
-
 
    {/* //!  Filter icons */}
    <div className="w-full flex items-start justify-start    ">
@@ -197,10 +192,3 @@ const FightSearchBarLargeScreens = () => {
 
 
 export default FightSearchBarLargeScreens
-
-
-
-
-
-
-
