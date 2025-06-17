@@ -19,7 +19,7 @@ import { IoAlertCircle } from "react-icons/io5";
 
 function finalPageFilters({handleShowSidebar,setShowSideBar,setShowSideBarSort}:finalPageFilerDataType) {
     return (
-        <div  className=" w-full flex flex-col  items-center justify-center  rounded-2xl px-3 space-y-3 ">
+        <div  className=" w-full flex flex-col  items-center justify-center  rounded-2xl px-3 space-y-3 pt-2">
 
             {/* Filters button */}
             <div className=" w-full flex items-center justify-between space-x-3  ">

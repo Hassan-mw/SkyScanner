@@ -8,10 +8,10 @@ const depart='dep'
 const finalcity='g'
   return (
     <div className="w-full    bg-[#eff3f8] flex items-center justify-center  ">
-      <div className="w-full    max-w-screen-xl flex items-center justify-center  ">
+      <div className="w-full    max-w-screen-xl flex flex-col items-center justify-center  ">
        {/* Params_changer  */}
          <AvaliableFlightDataChanger/>
-            <div className="w-full h-full flex  items-center justify-center space-y-5  ">
+          <div className="w-full h-full flex  items-center justify-center space-y-5  ">
             <div className="w-full h-full ">
              <PlaneFlights country={country} depart={depart} finalcity={finalcity}/>
             </div>

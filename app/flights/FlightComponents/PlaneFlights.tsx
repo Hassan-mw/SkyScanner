@@ -66,7 +66,7 @@ const filterArray=flightsArray
         {/* Top filter show at large */}
         <FinalPageFilter handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
 
-       {/* Plane fliters_3_Cols  */}
+       {/* Plane Prices_FIlter _3*/}
         <div className="w-full flex items-center  justify-center ">
         <div className=" w-full"> <PlaneFilterFlight/></div>  
         </div>
