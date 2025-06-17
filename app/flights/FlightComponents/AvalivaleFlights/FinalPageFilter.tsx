@@ -25,11 +25,11 @@ function finalPageFilters({handleShowSidebar,setShowSideBar,setShowSideBarSort}:
             <div className=" w-full flex items-center justify-between space-x-3  ">
               <h1 onClick={()=>handleShowSidebar("Filter")} className={`${jost.className} flex items-center justify-center  w-full rounded-md p-2  text-md font-semibold duration-300 bg-[#e0e4e9] hover:cursor-pointer hover:bg-[#c0c3c7] `}> Filter</h1>
               <h1 onClick={()=>handleShowSidebar("Sort")} className={`${jost.className} flex items-center justify-center  w-full rounded-md p-2  text-md font-semibold duration-300 text-black bg-[#e0e4e9] hover:cursor-pointer hover:bg-[#c0c3c7]`}> Sort</h1>
-              <div className="size-10 w-[20%] flex items-center justify-center bg-[#e0e4e9] hover:cursor-pointer hover:bg-[#c0c3c7] duration-500 border rounded-sm text-black"><FaBell /></div>
+              <div className="size-10 w-24 flex items-center justify-center bg-[#e0e4e9] hover:cursor-pointer hover:bg-[#c0c3c7] duration-500 border rounded-sm text-black"><FaBell /></div>
             </div>
 
             {/* Filter otion show at large */}
-             <div className="w-full flex items-center justify-between  ">
+             <div className="w-full flex items-center justify-between  pb-2">
              
             <div className="flex items-center justify-center gap-x-2"> <span  className={`${jost.className} text-md`} >298 results sorted by Best</span> <IoAlertCircle size={20} /></div>
 

@@ -78,7 +78,10 @@ const filterArray=flightsArray
 
         <div key={index} className=" w-full  p-2  bg-white  shadow-lg rounded-2xl flex items-center justify-center space-x-4 border ">
 
-        <div className="w-full flex flex-col sm:flex-row  items-center justify-center space-y-1 md:space-y-0 md:space-x-2  ">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-3   items-center justify-center space-y-1  ">
+       
+        {/* Plane_Deport_Return */}
+        <div className="w-full flex flex-col  sm:col-span-2 items-center justify-center space-y-1 md:space-y-0 md:space-x-2 sm:pr-2 ">
           
           {/* 1 */}
           <div className="w-full  flex items-center justify-between   gap-x-12  px-3  ">
@@ -145,9 +148,10 @@ const filterArray=flightsArray
               </div>
 
           </div>
-
-
-          <div className="w-full sm:w-[40%] flex items-end justify-end  md:border-l border-slate-900  py-2 ">
+        </div>
+          
+        {/* Plane_Price_Data */}
+          <div className="w-full  sm:col-span-1 bg-red-400   flex items-end justify-end sm:items-center sm:justify-center  sm:border-l border-slate-900  py-2 ">
           {/*Pricing_btton  */}
           <div className="flex sm:flex-col items-center justify-center space-x-2">
           {/* price */}
