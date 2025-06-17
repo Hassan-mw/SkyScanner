@@ -55,12 +55,13 @@ const filterArray=flightsArray
   }
     return (
         <div className="w-full flex  min-h-full lg:flex  lg:space-x-10 bg-[#eff3f8] ">
-
+       
         {/* Show sidebar at alarge */}
         <div className="hidden lg:block min-w-[300px] "><SideBarFilter range={range} setRange={setRange}  setCheckStops={setCheckStops} /> </div>  
         
         {/* //!  Main_body */}
         <div className="w-full h-full  flex flex-col items-center justify-center  max-w-screen-lg ">
+          
           
         {/* Top filter show at large */}
         <FinalPageFilter handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
