@@ -54,7 +54,7 @@ const filterArray=flightsArray
   
   }
     return (
-        <div className="w-full flex  min-h-full lg:flex  lg:space-x-10 bg-[#eff3f8] py-5 ">
+        <div className="w-full flex  min-h-full lg:flex  lg:space-x-10 bg-[#eff3f8] ">
 
         {/* Show sidebar at alarge */}
         <div className="hidden lg:block min-w-[300px] "><SideBarFilter range={range} setRange={setRange}  setCheckStops={setCheckStops} /> </div>  
@@ -63,70 +63,110 @@ const filterArray=flightsArray
         <div className="w-full h-full  flex flex-col items-center justify-center  max-w-screen-lg ">
           
         {/* Top filter show at large */}
-              <FinalPageFilter handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
-{/* Plane fliters  */}
-                <div className="w-full flex items-center  justify-center px-5">
-                <div className=" w-full"> <PlaneFilterFlight/></div>  
-                </div>
-{/* plane pricing Array*/}
-               <div className="w-full h-full grid grid-cols-1  gap-3 p-3 ">
-            {filterArray.map((data,index)=>
-             <div key={index} className=" w-full h-[200px] bg-white p-5  rounded-2xl flex items-center justify-center space-x-4 border ">
-              <div className="w-full flex flex-col sm:flex-row  items-center justify-center space-y-3 md:space-y-0 md:space-x-2  ">
-              
-               <div className="w-full flex items-center justify-between border-b border-slate-700 sm:border-none gap-x-12  p-3 0 ">
+        <FinalPageFilter handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
 
-                <div><Image height={90} width={90}  className=" " src="/pia.png" alt="pia-logo"/></div>
+       {/* Plane fliters_3_Cols  */}
+        <div className="w-full flex items-center  justify-center ">
+        <div className=" w-full"> <PlaneFilterFlight/></div>  
+        </div>
 
-                <div className="w-full flex  items-center justify-center space-x-3">
-                    {/* Plane_start */}
-                    <div className="flex flex-col items-start justify-center space-y-1">  
-                       <span className="font-semibold">{data.startTime}</span>
-                       <span className="text-slate-400 text-xs">UET</span>
-                    </div>
-                    {/* Middle_body */}
-                    <div className="w-full flex flex-col items-center ">
-                       <span className="text-xs">{data.hours} hours</span>
-                       {/* middle */}
-                       <div className="w-full flex items-center justify-center space-x-4 ">
-                            <div className="border-t-2  w-full border-slate-400"></div>
-                             <span className="rotate-90"><IoMdAirplane /></span>
-                       </div>
-                       {/* Stops */}
-                        <span className="text-xs">{data.stop}</span>
-                    </div>
 
-                      {/* Plane_End */}
-                    <div className="flex flex-col items-start justify-center space-y-1">  
-                       <span className="font-semibold">{data.endTime}:00</span>
-                       <span className="text-slate-400 text-xs">UET</span>
-                    </div>
+        {/*//!  Main_Body  */}
+        <div className="w-full h-full grid grid-cols-1  gap-3 p-3 ">
+        {filterArray.map((data,index)=>
 
+        <div key={index} className=" w-full  p-2  bg-white  shadow-lg rounded-2xl flex items-center justify-center space-x-4 border ">
+
+        <div className="w-full flex flex-col sm:flex-row  items-center justify-center space-y-1 md:space-y-0 md:space-x-2  ">
+          
+          {/* 1 */}
+          <div className="w-full  flex items-center justify-between   gap-x-12  px-3  ">
+              <div><Image height={90} width={90}  className=" " src="/pia.png" alt="pia-logo"/></div>
+              <div className="w-full flex  items-center justify-center space-x-3">
+                
+                {/* Plane_start */}
+                <div className="flex flex-col items-start justify-center space-y-1">  
+                    <span className="font-semibold">{data.startTime}</span>
+                    <span className="text-slate-400 text-xs">UET</span>
                 </div>
 
-               </div>
-
-
-               <div className="w-full sm:w-[40%] flex items-end justify-end  md:border-l border-slate-900 ">
-                  {/*Pricing_btton  */}
-                <div className="flex sm:flex-col items-center justify-center space-x-2">
-                    {/* price */}
-                    <div className="flex flex-col items-end">
-                    <p className="text-[10px] text-slate-500">1 deal</p>
-                    <span className="text-xl ">Rs 63,500</span>
-                    <p className="text-[10px] text-slate-500">Rs 1,424 total</p>
+                {/* Middle_body */}
+                <div className="w-full flex flex-col items-center ">
+                    <span className="text-xs">{data.hours} hours</span>
+                    {/* middle */}
+                    <div className="w-full flex items-center justify-center space-x-4 ">
+                        <span className="border-t-2  w-full border-slate-400"></span>
+                        <span className="rotate-90"><IoMdAirplane /></span>
                     </div>
-                    {/* cta */}
-                    <div onClick={()=>handleClickSelectFlight(data.airline,data.id)} className="px-3  py-1 gap-x-2 flex items-center justify-center bg-[#05203c] text-white rounded-md  hover:cursor-pointer  ">
-                    <span  className=" ">Select</span>
-                     <FaArrowRight />
-                    </div>
+                    {/* Stops */}
+                    <span className="text-xs">{data.stop}</span> 
                 </div>
 
+                {/* Plane_End */}
+                <div className="flex flex-col items-start justify-center space-y-1">  
+                    <span className="font-semibold">{data.endTime}:00</span>
+                    <span className="text-slate-400 text-xs">UET</span>
                 </div>
+
               </div>
+
+          </div>
+          
+          {/* 2 */}
+          <div className="w-full flex  items-center justify-between border-b pb-2 border-slate-300 sm:border-none gap-x-12  px-3  ">
+              <div><Image height={90} width={90}  className=" " src="/pia.png" alt="pia-logo"/></div>
+              <div className="w-full flex  items-center justify-center space-x-3">
+                
+                {/* Plane_start */}
+                <div className="flex flex-col items-start justify-center space-y-1">  
+                    <span className="font-semibold">{data.startTime}</span>
+                    <span className="text-slate-400 text-xs">UET</span>
+                </div>
+
+                {/* Middle_body */}
+                <div className="w-full flex flex-col items-center ">
+                    <span className="text-xs">{data.hours} hours</span>
+                    {/* middle */}
+                    <div className="w-full flex items-center justify-center space-x-4 ">
+                        <span className="border-t-2  w-full border-slate-400"></span>
+                        <span className="rotate-90"><IoMdAirplane /></span>
+                    </div>
+                    {/* Stops */}
+                    <span className="text-xs">{data.stop}</span> 
+                </div>
+
+                {/* Plane_End */}
+                <div className="flex flex-col items-start justify-center space-y-1">  
+                    <span className="font-semibold">{data.endTime}:00</span>
+                    <span className="text-slate-400 text-xs">UET</span>
+                </div>
+
+              </div>
+
+          </div>
+
+
+          <div className="w-full sm:w-[40%] flex items-end justify-end  md:border-l border-slate-900  py-2 ">
+          {/*Pricing_btton  */}
+          <div className="flex sm:flex-col items-center justify-center space-x-2">
+          {/* price */}
+          <div className="flex flex-col items-end">
+          <p className="text-[10px] text-slate-500">1 deal</p>
+          <span className="text-xl ">Rs 63,500</span>
+          <p className="text-[10px] text-slate-500">Rs 1,424 total</p>
+          </div>
+          {/* cta */}
+          <div onClick={()=>handleClickSelectFlight(data.airline,data.id)} className="px-3  py-1 gap-x-2 flex items-center justify-center bg-[#05203c] text-white rounded-md  hover:cursor-pointer  ">
+          <span  className=" ">Select</span>
+          <FaArrowRight />
+          </div>
+          </div>
+
+          </div>
+
+        </div>
                {/* <div>🖤</div> */}
-             </div>
+          </div>
             )}
             
            
