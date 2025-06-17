@@ -9,6 +9,9 @@ import SideBarSort from  "../FlightComponents/AvalivaleFlights/SideBarSort"
 import ShowSelectedFlightFinal from  "../FlightComponents/AvalivaleFlights/ShowSelectedFlightFinal"
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
+import imageF from "./../../public/adds_1.svg"
+
+
 
 function PlaneFlights({country,depart,finalcity}) {
  
@@ -226,7 +229,7 @@ const filterArray=flightsArray
          <div className="w-full flex flex-col items-center justify-center space-y-3 p-3 bg-white rounded-md shadow-lg">
              {/* Image */}
             <div className="flex items-center justify-center space-x-1">
-            <Image height={70} width={70} src="/adds_1.svg" alt="adds_1" />    
+            <Image height={70} width={70} src="/karachi.jpg" alt="adds_1" />    
             <Image height={70} width={70} src="/adds_2.svg" alt="adds_1" />    
             <Image height={70} width={70} src="/adds_3.svg" alt="adds_1" />    
              </div>
