@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
-import image from "../../public/Pakistan.jpg"
 import { Jost } from 'next/font/google'
 import { LuExternalLink } from "react-icons/lu";
 
@@ -184,7 +183,7 @@ const fileredOptionsArray=[
         <Link href={`${country}/departlocation/${data.city}`}  key={index} className="hover:cursor-pointer h-32 sm:h-80 b  shadow-sm hover:shadow-lg  duration-500   flex sm:flex-col  white items-center justify-center w-full border rounded-md   ">
         
            {/* Image */}
-           <Image height={350} width={350} src={image} className="h-full sm:max-h-[65%] rounded-l-md sm:rounded-bl-none sm:rounded-t-md object-cover w-full max-w-[30%] sm:max-w-full " alt="bbbb" />
+           <Image height={350} width={350} src="/Pakistan.jpg"  className="h-full sm:max-h-[65%] rounded-l-md sm:rounded-bl-none sm:rounded-t-md object-cover w-full max-w-[30%] sm:max-w-full " alt="bbbb" />
 
         {/* Data */}
         <div className="w-full  h-full max-w-[70%] sm:max-w-full sm:max-h-[35%]  flex flex-col space-y-2 item-center justify-center bg-white p-3 sm:p-5 rounded-r-md sm:rounded-none sm:rounded-b-md  ">

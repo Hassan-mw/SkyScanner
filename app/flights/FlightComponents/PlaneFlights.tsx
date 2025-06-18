@@ -9,7 +9,13 @@ import SideBarSort from  "../FlightComponents/AvalivaleFlights/SideBarSort"
 import ShowSelectedFlightFinal from  "../FlightComponents/AvalivaleFlights/ShowSelectedFlightFinal"
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-import imageF from "./../../public/adds_1.svg"
+import { Jost } from "next/font/google";
+   
+ const jost=Jost({
+   subsets:['latin'],
+   weight:['500']
+   
+ })
 
 
 
@@ -223,17 +229,49 @@ const filterArray=flightsArray
          </div>
 
         {/* Adds */}
-        <div className="w-[300px] hidden xl:block bg-green-400  ">
-        <div className="w-full bg-red-400 flex flex-col    space-y-4 items-center justify-center">
+        <div className="w-[220px] hidden xl:block pt-2  ">
+        <div className="w-full  flex flex-col    space-y-4 items-center justify-center">
+        
          {/* 1 */}
          <div className="w-full flex flex-col items-center justify-center space-y-3 p-3 bg-white rounded-md shadow-lg">
              {/* Image */}
-            <div className="flex items-center justify-center space-x-1">
-            <Image height={70} width={70} src="/karachi.jpg" alt="adds_1" />    
-            <Image height={70} width={70} src="/adds_2.svg" alt="adds_1" />    
-            <Image height={70} width={70} src="/adds_3.svg" alt="adds_1" />    
-             </div>
-        </div>
+            <div className="flex items-center justify-center space-x-2">
+              <Image height={25} width={25} src="/adds_1.svg" alt="adds_1" />    
+              <Image height={25} width={25} src="/adds_2.svg" alt="adds_1" />    
+              <Image height={25} width={25} src="/adds_3.svg" alt="adds_1" />    
+            </div>
+
+            {/* Text */}
+            <span style={{fontWeight:600}} className={`${jost.className} text-center tracking-widest text-sm text-[#05203c]`}>Found fights? Now find a hotel</span>
+        
+            {/* Text */}
+            <span style={{fontWeight:200}} className={`${jost.className} text-center text-xs text-[#05203c]`}>Get results from all top hotel sites right here on Skyscnner.</span>
+            
+            {/* cta */}
+            <div className="w-full bg-[#05203c] rounded-md text-sm py-1 flex items-center justify-center text-white">
+              Explore hotels
+
+            </div>
+         </div>
+        
+
+         {/* 2 */}
+         <div className="w-full flex flex-col items-center justify-center space-y-3 p-3 bg-white rounded-md shadow-lg">
+            {/* 1 */}
+            <div className="flex items-center justify-baseline w-full"></div>
+
+            {/* Text */}
+            <span style={{fontWeight:600}} className={`${jost.className} text-center tracking-widest text-sm text-[#05203c]`}>Found fights? Now find a hotel</span>
+        
+            {/* Text */}
+            <span style={{fontWeight:200}} className={`${jost.className} text-center text-xs text-[#05203c]`}>Get results from all top hotel sites right here on Skyscnner.</span>
+            
+            {/* cta */}
+            <div className="w-full bg-[#05203c] rounded-md text-sm py-1 flex items-center justify-center text-white">
+              Explore hotels
+
+            </div>
+         </div>
 
         </div>
         </div>
