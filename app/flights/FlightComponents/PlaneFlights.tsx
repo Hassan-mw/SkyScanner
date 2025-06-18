@@ -60,10 +60,10 @@ const filterArray=flightsArray
         <div className="w-full flex  min-h-full lg:flex items-center justify-center lg:items-start lg:justify-start  lg:space-x-3 bg-[#eff3f8] ">
        
         {/* Show sidebar at alarge */}
-        <div className="hidden lg:block min-w-[230px] b "><SideBarFilter range={range} setRange={setRange}  setCheckStops={setCheckStops} /> </div>  
+        <div className="hidden lg:block min-w-[230px]  "><SideBarFilter range={range} setRange={setRange}  setCheckStops={setCheckStops} /> </div>  
         
         {/* //!  Main_body */}
-        <div className="w-full h-full  lg:max-w-xl  flex flex-col items-center justify-center  max-w-[900px]  ">
+        <div className="w-full h-full  lg:max-w-[650px]  flex flex-col items-center justify-center  max-w-[900px]  ">
           
           
         {/* Top filter show at large */}
@@ -75,25 +75,25 @@ const filterArray=flightsArray
 
 
         {/*//!  Main_Body  */}
-        <MainplaneFlightBody  filterArray={filterArray}  handleClickSelectFlight={handleClickSelectFlight} /> 
+         <MainplaneFlightBody  filterArray={filterArray}  handleClickSelectFlight={handleClickSelectFlight} /> 
 
 
-       {/* Show large side bae */}
+         {/* Show large side bae */}
 
-       {/* Filter */}
-       <Filter range={range} setRange={setRange}  showSideBar={showSideBar} showSideBarsort={showSideBarsort}  setShowSideBar={setShowSideBar} setCheckStops={setCheckStops}  />
-     {/* SORT */}
-       <Sort checkSort={checkSort} setCheckSort={setCheckSort} showSideBarsort={showSideBarsort} showSideBar={showSideBar} setShowSideBarSort={setShowSideBarSort} /> 
+     
+         <Filter range={range} setRange={setRange}  showSideBar={showSideBar} showSideBarsort={showSideBarsort}  setShowSideBar={setShowSideBar} setCheckStops={setCheckStops}  />
+        
+          <Sort checkSort={checkSort} setCheckSort={setCheckSort} showSideBarsort={showSideBarsort} showSideBar={showSideBar} setShowSideBarSort={setShowSideBarSort} /> 
 
 
 
         
        
-        <ShowFlight showSelectFlight={showSelectFlight} id={id} filterArray={filterArray}  checkAirline={checkAirline} country={country} depart={depart} finalcity={finalcity}  setShowSelectFlight={setShowSelectFlight} />
+          <ShowFlight showSelectFlight={showSelectFlight} id={id} filterArray={filterArray}  checkAirline={checkAirline} country={country} depart={depart} finalcity={finalcity}  setShowSelectFlight={setShowSelectFlight} />
     </div>
 
 
-     <Adds/>
+           <Adds/>
          
          </div>
     )

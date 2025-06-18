@@ -12,7 +12,7 @@ const finalcity='g'
       <div className="w-full    max-w-screen-xl flex flex-col items-center justify-center  ">
        {/* Params_changer  */}
           <div className="w-full h-full flex  items-center justify-center space-y-5  ">
-            <div className="w-full h-full ">
+            <div className="w-full h-full pb-8 ">
              <PlaneFlights country={country} depart={depart} finalcity={finalcity}/>
             </div>
             </div>

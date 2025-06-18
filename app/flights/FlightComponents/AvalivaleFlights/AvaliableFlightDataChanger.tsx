@@ -8,11 +8,11 @@ const AvaliableFlightDataChanger = () => {
     <div className='w-full max-w-screen-xl flex flex-col lg:flex-row  gap-3 px-3'>
     
     {/* top */}
-     <div className='w-full py-1  bg-[#1e3750] flex items-center justify-center rounded-md px-3'>
+     <div className='w-full py-1  bg-[#1e3750] flex items-center justify-center rounded-md px-[7px]'>
      
       {/* Search_Icon */}
       <div className='flex   items-start justify-start '>
-        <div className=' bg-blue-600 flex items-center justify-center size-7 rounded-sm text-white'> <IoIosSearch size={20} /> </div>
+        <div className=' bg-blue-600 flex items-center justify-center size-6 rounded-sm text-white'> <IoIosSearch size={20} /> </div>
       </div>
 
       {/* Flight_Details */}

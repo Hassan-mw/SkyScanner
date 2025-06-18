@@ -13,7 +13,7 @@ const MainplaneFlightBody = ({filterArray,handleClickSelectFlight}) => {
         <div className="w-full grid grid-cols-1 sm:grid-cols-3   items-center justify-center space-y-1  ">
        
         {/* Plane_Deport_Return */}
-        <div className="w-full pl-2 max-w-[80%]  flex flex-col  sm:col-span-2 items-center justify-center space-y-1 md:space-y-0 md:space-x-2  ">
+        <div className="w-full pl-2 max-w-[80%] lg:max-w-[95%] flex flex-col  sm:col-span-2 items-center justify-center space-y-1 md:space-y-0 md:space-x-2  ">
           
           {/* 1 */}
           <div className="w-full  flex items-center justify-between   gap-x-12    ">
@@ -31,7 +31,7 @@ const MainplaneFlightBody = ({filterArray,handleClickSelectFlight}) => {
                     <span className="text-xs">{data.hours} hours</span>
                     {/* middle */}
                     <div className="w-full flex items-center justify-center space-x-4 ">
-                        <span className="border-t-2  w-full border-slate-400"></span>
+                        <span className="border-t-2  w-full border-slate-200"></span>
                         <span className="rotate-90"><IoMdAirplane /></span>
                     </div>
                     {/* Stops */}
@@ -64,7 +64,7 @@ const MainplaneFlightBody = ({filterArray,handleClickSelectFlight}) => {
                     <span className="text-xs">{data.hours} hours</span>
                     {/* middle */}
                     <div className="w-full flex items-center justify-center space-x-4 ">
-                        <span className="border-t-2  w-full border-slate-400"></span>
+                        <span className="border-t-2  w-full border-slate-200"></span>
                         <span className="rotate-90"><IoMdAirplane /></span>
                     </div>
                     {/* Stops */}

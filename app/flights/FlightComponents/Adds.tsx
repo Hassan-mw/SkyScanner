@@ -12,7 +12,7 @@ import { FaArrowRight } from 'react-icons/fa6'
 
 const Adds = () => {
   return (
-     <div className="w-[250px] hidden xl:block pt-2  ">
+     <div className="w-[220px] hidden xl:block pt-2  ">
         <div className="w-full  flex flex-col    space-y-4 items-center justify-center">
         
          {/* 1 */}
