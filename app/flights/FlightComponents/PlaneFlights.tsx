@@ -1,16 +1,9 @@
 'use client'
 
 import { useState } from "react"
-import { IoMdAirplane } from "react-icons/io";
 import PlaneFilterFlight from  "../FlightComponents/AvalivaleFlights/PlaneFilterFlight"
 import FinalPageFilter from  "../FlightComponents/AvalivaleFlights/FinalPageFilter"
 import SideBarFilter from  "../FlightComponents/AvalivaleFlights/SideBarFilter"
-import SideBarSort from  "../FlightComponents/AvalivaleFlights/SideBarSort"
-import ShowSelectedFlightFinal from  "../FlightComponents/AvalivaleFlights/ShowSelectedFlightFinal"
-import Image from "next/image";
-import { FaArrowRight } from "react-icons/fa";
-import { Jost } from "next/font/google";
-import { FaArrowLeft } from "react-icons/fa";
 import MainplaneFlightBody from "./MainplaneFlightBody";
 import Filter from "./Filter";
 import Sort from "./Sort";
@@ -76,10 +69,9 @@ const filterArray=flightsArray
         {/* Top filter show at large */}
         <FinalPageFilter handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
 
-       {/* Plane Prices_FIlter _3*/}
-        <div className="w-full flex items-center  justify-center ">
-        <div className=" w-full"> <PlaneFilterFlight/></div>  
-        </div>
+      
+         <PlaneFilterFlight/>
+       
 
 
         {/*//!  Main_Body  */}
@@ -96,12 +88,12 @@ const filterArray=flightsArray
 
 
         
-        {/* Show flight */}
+       
         <ShowFlight showSelectFlight={showSelectFlight} id={id} filterArray={filterArray}  checkAirline={checkAirline} country={country} depart={depart} finalcity={finalcity}  setShowSelectFlight={setShowSelectFlight} />
-         </div>
+    </div>
 
-        {/* Adds */}
-         <Adds/>
+
+     <Adds/>
          
          </div>
     )

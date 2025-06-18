@@ -25,7 +25,7 @@ const Adds = () => {
             </div>
 
             {/* Text */}
-            <span style={{fontWeight:600}} className={`${jost.className} text-center tracking-widest text-sm text-[#05203c]`}>Found fights? Now find a hotel</span>
+            <span  className={`${jost.className} text-center  text-sm text-[#05203c]`}>Found fights? Now find a hotel</span>
         
             {/* Text */}
             <span style={{fontWeight:200}} className={`${jost.className} text-center text-xs text-[#05203c]`}>Get results from all top hotel sites right here on Skyscnner.</span>

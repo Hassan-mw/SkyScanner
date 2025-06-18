@@ -22,7 +22,7 @@ function Navigation() {
     const pathname=usePathname();
     
     return (
-        <div className="w-full flex flex-col max-w-screen-xl items-center justify-center  p-3 md:p-6 space-y-8 bg-[#05203c]">
+        <div className="w-full flex flex-col max-w-screen-xl items-center justify-center  p-3  space-y-8 bg-[#05203c]">
           
         <div className="flex w-full items-center justify-between  bg-[#05203c] text-white">
         {/* Home_page_logo */}
