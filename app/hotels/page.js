@@ -1,32 +1,29 @@
-import PlaneContenents from "../(flightpageOptions)/PlaneContenents"
-import PlanePlace from "../(flightpageOptions)/PlanePlace"
 
-import FastFactMainHotel from "../(hotelPageoptions)/FastFactMainHotel"
-import HotelNearOwncity from "../(hotelPageoptions)/HotelNearOwnCity"
-import HotelPlace from "../(hotelPageoptions)/HotelPlace"
-import ShowCurrentPage from "../(hotelPageoptions)/ShowCurrentPage"
-import ShowCurrentPageHotel from "../(hotelPageoptions)/ShowCurrentPageHotels"
-import CustomHotelsLogo from "../components/CustomHotelsLogo"
-import CustomSearchBar from "../components/CustomSearchBar"
-import CustomSearchBarHotel from "../components/CustomSearchBarHotel"
-import CustomShowDetails from "../utils/CustomShowDetails"
+// import FastFactMainHotel from "../(hotelPageoptions)/FastFactMainHotel"
+// import HotelNearOwncity from "../(hotelPageoptions)/HotelNearOwnCity"
+// import HotelPlace from "../(hotelPageoptions)/HotelPlace"
+// import ShowCurrentPageHotel from "../(hotelPageoptions)/ShowCurrentPageHotels"
+// import CustomHotelsLogo from "../components/CustomHotelsLogo"
+import CustomSearchBarHotel from "./hotelsComponent/CustomSearchBarCar"
+
+
 
 function MainPageHotel() {
     return (
       <div className="w-full h-full flex flex-col space-y-10 items-center  bg-white overflow-y-auto  overflow-x-hidden">
          <div className="bg-[#05203c] flex items-center justify-center w-full"><CustomSearchBarHotel/></div>
       <div className="flex flex-col items-center justify-center space-y-16 w-full p-2   max-w-screen-xl">
-     <ShowCurrentPageHotel/>
+     {/* <ShowCurrentPageHotel/> */}
  
       {/* //! Hotels Logo */}
-      <CustomHotelsLogo text='Compare hotels across your favourite brands' />
+      {/* <CustomHotelsLogo text='Compare hotels across your favourite brands' /> */}
       </div>
       <div className="p-3 flex flex-col space-y-44 items-center w-full h-full bg-white max-w-screen-xl ">
         
-         <div className="w-full "><HotelNearOwncity/></div>
-       <div className="w-full "><HotelPlace/></div>
+         {/* <div className="w-full "><HotelNearOwncity/></div> */}
+       {/* <div className="w-full "><HotelPlace/></div> */}
        <div className="w-full flex items-center justify-center">
-            <FastFactMainHotel/>
+            {/* <FastFactMainHotel/> */}
         </div> 
       </div>
       </div>
