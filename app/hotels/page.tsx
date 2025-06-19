@@ -4,6 +4,7 @@
 // import HotelPlace from "../(hotelPageoptions)/HotelPlace"
 // import ShowCurrentPageHotel from "../(hotelPageoptions)/ShowCurrentPageHotels"
 // import CustomHotelsLogo from "../components/CustomHotelsLogo"
+import CustomHotelsLogo from "./hotelsComponent/CustomHotelsLogo"
 import CustomSearchBarHotel from "./hotelsComponent/CustomSearchBarCar"
 import ShowCurrentPageHotel from "./hotelsComponent/ShowCurrentPageHotel"
 
@@ -18,7 +19,7 @@ function MainPageHotel() {
      <ShowCurrentPageHotel/>
  
       {/* //! Hotels Logo */}
-      {/* <CustomHotelsLogo text='Compare hotels across your favourite brands' /> */}
+      <CustomHotelsLogo  />
       </div>
       <div className="p-3 flex flex-col space-y-44 items-center w-full h-full bg-white max-w-screen-xl ">
         
