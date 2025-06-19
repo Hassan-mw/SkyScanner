@@ -1,8 +1,11 @@
 'use client'
 import Image from "next/image";
 import Link from "next/link"
-import { useRouter } from "next/navigation";
-import { FaLongArrowAltLeft } from "react-icons/fa";
+import { Jost } from 'next/font/google'
+ const jost=Jost({
+   subsets:['latin'],
+   weight:['500']
+ })
 import { FaArrowLeft } from "react-icons/fa6";
 
 function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setShowSelectFlight,data}) {
@@ -10,8 +13,9 @@ function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setSh
     return (
  <div className="w-full flex items-start justify-center    ">
    <div className="w-full flex flex-col items-center justify-center bg-[#05203c] ">
-     
-    <div className="max-w-screen-xl flex flex-col items-center justify-center w-full    ">
+
+     {/* Navbar */}
+    <div className="max-w-screen-xl flex flex-col items-center justify-center w-full py-3   ">
         
         {/* top */}
         <div className="relative w-full flex items-center justify-center p-2">
@@ -30,16 +34,14 @@ function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setSh
 
 
 
+        {/* bottom */}
+        <div className="flex  flex-col space-y-1 text-white  w-full  items-start p-3 ">
+            <span className={`${jost.className} text-5xl font-semibold `}> {depart}</span>
+            <span className={`${jost.className} text-sm font-semibold `}>1 traveller - Economy class</span>
+        </div>
 
-         <div className="flex  flex-col text-white  w-full  items-start p-3 ">
 
-            <div className="text-5xl font-semibold ">
-             {depart}
-            </div>
-            <div>1 traveller - Economy class</div>
-         </div>
-            
-            </div>
+    </div>
 
 
 
