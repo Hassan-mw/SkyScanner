@@ -14,7 +14,7 @@ function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setSh
  <div className="w-full flex items-start justify-center    ">
    <div className="w-full flex flex-col items-center justify-center bg-[#05203c] ">
 
-     {/* Navbar */}
+    {/* Navbar */}
     <div className="max-w-screen-xl flex flex-col items-center justify-center w-full py-3   ">
         
         {/* top */}
@@ -46,9 +46,9 @@ function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setSh
 
 
 
-            {/* Show real data */}
-         <div className="flex items-center justify-center w-full bg-slate-300 ">
-         <div className="flex flex-col w-full  p-3 space-y-3  max-w-screen-lg">
+    {/* Show real data */}
+    <div className="flex items-center justify-center w-full bg-slate-300 ">
+    <div className="flex flex-col w-full bg-green-400 p-3 space-y-3  max-w-screen-lg">
        {/* Outbonding -- Return */}
        <div className="flex items-center justify-between w-full px-3">
         <div className="text-slate-900 font-semibold">Outbonding <span className="text-slate-500 font-thin"> 1 Feb,2025 </span></div>
