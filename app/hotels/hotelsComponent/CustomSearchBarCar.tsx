@@ -54,7 +54,7 @@ const CustomSearchBarHotel = () => {
 
     {/* //!    data */}
     <div   className="absolute  h-full   w-full top-0  left-0 flex  items-center justify-center    ">
-    <div   className=" bg-[#05203c] lg:bg-transparent 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-2 pb-5 max-w-screen-lg  space-y-3 lg:space-y-1 ">
+    <div   className=" bg-[#05203c] lg:bg-transparent 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-2 pb-5 max-w-screen-xl  space-y-3 lg:space-y-1 ">
     
     
     {/* //! Header_text */}
@@ -66,7 +66,7 @@ const CustomSearchBarHotel = () => {
 
    
     {/*//!  Form */}
-   <Menubar className="w-full bg-[#05203c]  h-32  grid grid-cols-1 md:grid-cols-2 gap-2 lg:gap-0 border-[#05203c]">
+   <Menubar className="w-full bg-[#05203c]  h-32  grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-0 border-[#05203c]">
       
     {/* Hotel_Name */}
     <MenubarMenu  >
@@ -177,6 +177,8 @@ const CustomSearchBarHotel = () => {
          <FaArrowRight />
     </Link>
    </div>
+
+
    </div>
  
 
