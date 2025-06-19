@@ -5,15 +5,17 @@
 // import ShowCurrentPageHotel from "../(hotelPageoptions)/ShowCurrentPageHotels"
 // import CustomHotelsLogo from "../components/CustomHotelsLogo"
 import CustomSearchBarHotel from "./hotelsComponent/CustomSearchBarCar"
+import ShowCurrentPageHotel from "./hotelsComponent/ShowCurrentPageHotel"
 
 
 
 function MainPageHotel() {
     return (
+      
       <div className="w-full h-full flex flex-col space-y-10 items-center  bg-white overflow-y-auto  overflow-x-hidden">
          <div className="bg-[#05203c] flex items-center justify-center w-full"><CustomSearchBarHotel/></div>
       <div className="flex flex-col items-center justify-center space-y-16 w-full p-2   max-w-screen-xl">
-     {/* <ShowCurrentPageHotel/> */}
+     <ShowCurrentPageHotel/>
  
       {/* //! Hotels Logo */}
       {/* <CustomHotelsLogo text='Compare hotels across your favourite brands' /> */}
