@@ -49,7 +49,7 @@ const CustomSearchBarHotel = () => {
 
     return (
     <div   className="flex justify-center items-center  min-w-full    ">
-    <div className="relative h-[300px] 2xl:h-[550px]  w-full">
+    <div className="relative h-[300px] 2xl:h-[450px]  w-full">
     <Image className="hidden 2xl:block object-cover w-[100vw] " fill src="/hotel_main_image.webp" alt="large_screen_bg_image" />
 
     {/* //!    data */}
@@ -147,23 +147,23 @@ const CustomSearchBarHotel = () => {
    {/* //!  Filter icons */}
   <div className="w-full flex items-start justify-between    ">
     {/* 1 */}
-   <div className="  justify-start gap-1  grid grid-cols-2  ">
+   <div className="  justify-start gap-1 lg:gap-3  grid grid-cols-2 lg:grid-cols-4   ">
    <h2 className={`${jost.className} text-white text-xs`}>Popular filters:</h2>
    
     {/* 1 */}
-    <div className="flex items-start justify-start text-white gap-x-2 ">
+    <div className="flex items-start justify-start lg:items-center lg:justify-center text-white gap-x-2 ">
       <input className="size-3" type="checkbox"/>
       <p className={`${jost.className} text-xs `}>Free cancelation</p>
     </div>
 
     {/* 2 */}
-    <div className="flex items-start justify-start  text-white gap-x-2 ">
+    <div className="flex items-start justify-start lg:items-center lg:justify-center  text-white gap-x-2 ">
       <input className="size-3" type="checkbox"/>
       <p className={`${jost.className} text-xs `}>4 stars</p>
     </div>
 
     {/* 3 */}
-    <div className="flex items-start justify-start text-white gap-x-2 ">
+    <div className="flex items-start justify-start lg:items-center lg:justify-center text-white gap-x-2 ">
       <input className="size-3" type="checkbox"/>
       <p className={`${jost.className} text-xs `}>5 stars</p>
     </div> 
