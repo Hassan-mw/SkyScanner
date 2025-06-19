@@ -47,12 +47,21 @@ function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setSh
 
 
     {/* Show real data */}
-    <div className="flex items-center justify-center w-full bg-slate-300 ">
+    <div className="flex items-center justify-center w-full bg-[#eff3f8] ">
     <div className="flex flex-col w-full  p-3 space-y-3  max-w-screen-lg">
        {/* Outbonding -- Return */}
        <div className="flex items-center justify-between w-full ">
-        <span className="text-slate-900 font-semibold">Outbonding <span className="text-slate-500 font-thin"> 1 Feb,2025 </span></span>
-        <span className="text-slate-900 font-semibold">Return <span className="text-slate-500 font-thin">25 Feb,2025 </span></span>
+       
+        <div className="flex items-center justify-center gap-x-1 border-b border-slate-950">
+             <span className={`${jost.className} text-md`}>Outbonding :</span>
+             <span style={{fontWeight:300}} className={`${jost.className} text-slate-600 text-md`}> 1 Feb,2025 </span>
+        </div>
+        <div className="flex items-center justify-center gap-x-1 border-b border-slate-950">
+             <span className={`${jost.className} text-md`}>Return :</span>
+             <span style={{fontWeight:300}} className={`${jost.className} text-slate-600 text-md`}> 25 Feb,2025 </span>
+        </div>
+       
+
        </div>
        {/* fligthData */}
          <div className="w-full h-full grid grid-cols-1  gap-3 ">
