@@ -54,7 +54,7 @@ const CustomSearchBarHotel = () => {
 
     {/* //!    data */}
     <div   className="absolute  h-full   w-full top-0  left-0 flex  items-center justify-center    ">
-    <div   className=" bg-[#05203c] lg:bg-transparent 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-2 pb-5 max-w-screen-xl  space-y-3 lg:space-y-1 ">
+    <div   className=" bg-[#05203c] lg:bg-transparent 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-2 pb-5 max-w-screen-lg  space-y-3 lg:space-y-1 ">
     
     
     {/* //! Header_text */}
@@ -66,14 +66,14 @@ const CustomSearchBarHotel = () => {
 
    
     {/*//!  Form */}
-   <Menubar className="w-full bg-[#05203c]  h-32  grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-0 border-[#05203c]">
+   <Menubar className="w-full bg-[#05203c]  h-32  grid grid-cols-1 md:grid-cols-2 gap-2 lg:gap-0 border-[#05203c]">
       
     {/* Hotel_Name */}
     <MenubarMenu  >
-        <MenubarTrigger className="w-full  flex flex-col space-y-2 items-start justify-start   rounded-md  p-0 ">
+        <MenubarTrigger className="w-full  flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
             <span className="text-[9px]  text-white">Where do you want to stay?</span>
             <div className="bg-white    rounded-md  md:rounded-r-none  md:rounded-l-md  w-full">
-                 <input type="text"  value={startPlace && startPlace  } placeholder='Enter the destination or hotel name' style={{fontWeight:400}}  className={` w-full text-sm p-2 placeholder:text-gray-400 focus:outline-none`} />                 
+                 <input type="text"  value={startPlace && startPlace  } placeholder='Enter the destination or hotel name' style={{fontWeight:400}}  className={` border-r w-full text-sm p-2 placeholder:text-gray-400 focus:outline-none`} />                 
             </div>      
           </MenubarTrigger>
         <MenubarContent >
@@ -84,13 +84,13 @@ const CustomSearchBarHotel = () => {
 
 
      <div className=" w-full flex items-center justify-between gap-2 md:gap-0">
-    
+
     {/* Check_In_Date*/}
     <MenubarMenu  >
-        <MenubarTrigger className="p-0 w-1/2  flex flex-col space-y-1 items-start justify-start   ">
+        <MenubarTrigger className="w-1/2   flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
            <div className="text-[9px]   flex text-white">Check-in </div>
-            <div className="bg-white w-full flex items-start justify-start p-[5px] rounded-sm md:rounded-none  ">
-            <span className={`${jost.className} text-slate-800 truncate text-md`}>{checkInDate? checkInDate: '26/7/25'}</span>
+            <div className="bg-white w-full flex items-start justify-start p-2 rounded-sm  md:rounded-none  border-r ">
+             <span className={`${jost.className} text-slate-800 truncate text-sm`}>{checkInDate? checkInDate: '26/7/25'}</span>
             </div>      
           </MenubarTrigger>
         <MenubarContent >
@@ -101,13 +101,13 @@ const CustomSearchBarHotel = () => {
         </MenubarContent>
     </MenubarMenu>
 
-
+    
     {/* Check_Out_Date*/}
     <MenubarMenu  >
         <MenubarTrigger className="w-1/2   flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
            <div className="text-[9px]   flex text-white">Check-out </div>
-            <div className="bg-white w-full flex items-start justify-start p-2 rounded-sm  md:rounded-none  ">
-            <span className={`${jost.className} text-slate-800 truncate text-xs`}>{checkInDate? checkInDate: '26/7/25'}</span>
+            <div className="bg-white w-full flex items-start justify-start p-2 rounded-sm  md:rounded-none  border-r ">
+            <span className={`${jost.className} text-slate-800 truncate text-sm`}>{checkInDate? checkInDate: '26/7/25'}</span>
             </div>      
           </MenubarTrigger>
         <MenubarContent >
@@ -129,15 +129,6 @@ const CustomSearchBarHotel = () => {
               <span className={`${jost.className} text-sm `}>{`${totaltraveller} ${Array.isArray(totaltraveller) &&   totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</span>
             </div>      
           </MenubarTrigger>
-        {/* <MenubarTrigger className="w-full     rounded-none rounded-r-xl   p-0 ">
-          
-              <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
-                  <span className="text-white text-xs"> Guests and rooms </span>
-                     <div className="text-slate-800 bg-white truncate pr-1 w-full p-2 rounded-md">
-                    <span>{`${totaltraveller} ${Array.isArray(totaltraveller) &&   totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</span>
-                    </div>
-              </div>
-          </MenubarTrigger> */}
         <MenubarContent >
    
         <PlanePerson adult={adult} setAdult={setAdult} children={children} setChildren={setChildre} roomType={roomType} setRoomType={setRoomType} />
