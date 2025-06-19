@@ -8,12 +8,12 @@ import { FaArrowLeft } from "react-icons/fa6";
 function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setShowSelectFlight,data}) {
     const filterArray=data.filter((data)=>data.id===id)
     return (
-        <div className="w-full flex items-start justify-center  bg-amber-300  ">
+        <div className="w-full flex items-start justify-center    ">
           <div className="w-full flex flex-col items-center justify-center  ">
      
      
           <div className="flex flex-col items-center justify-center w-full    bg-[#05203c]">
-               <div className="bg-green-500 w-full flex items-center justify-center p-2">
+               <div className=" w-full flex items-center justify-center p-2">
                 
                 <div onClick={()=>setShowSelectFlight(false)} className="text-white bg-blue-400 hover:cursor-pointer w-44  flex items-center justify-center gap-x-2">
                   <FaArrowLeft size={12} />
@@ -21,7 +21,7 @@ function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setSh
                 </div>
           
 
-                <div className="w-full flex items-center justify-center text-white bg-red-500  gap-x-1 ">
+                <div className="w-full flex items-center justify-center text-white   gap-x-1 ">
                  <Link  href="/"><Image height={30} width={30}  src="/skyscanner.gif" alt="main_logo" /></Link>
                  <span className="pt-1">SkyScanner</span>
                   </div>
