@@ -1,11 +1,11 @@
 'use client'
 import { Jost } from "next/font/google"
 
-
+ import Hotelsearchplace from "./HotelsearchPlace"
 
 import { TbSTurnDown } from "react-icons/tb";
 import { useEffect, useState } from "react"
-import CustomDatePicker from "../../Components_Custom/CustomDatePicker"
+import CustomDatePicker from "./CustomDatePicker"
 import PlanesearchPlane from "../../Components_Custom/PlaneSearchBarPlace"
 import PlanePerson from "../../Components_Custom/PlanePerson"
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
@@ -13,6 +13,9 @@ import Image from "next/image";
 import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import Link from "next/link";
 import { DatePicker } from "@/components/ui/DatePicker";
+import { IoMdSearch } from "react-icons/io";
+import { FaCalendarAlt } from "react-icons/fa";
+import { Calendar } from "lucide-react";
 
 
 const jost=Jost({
@@ -23,6 +26,9 @@ const jost=Jost({
 
 const CustomSearchBarHotel = () => {
 
+    const [value,setValue]=useState('')
+    const [checkInDate,setCheckInDate]=useState('')
+    const [date,setDate]=useState('')
     const [startPlace,setStartPlace]=useState('')
     const [endPlace,setEndPlace]=useState('')
     const [departDate,setDepartDate] =useState<Date>();
@@ -44,83 +50,99 @@ const CustomSearchBarHotel = () => {
     return (
     <div   className="flex justify-center items-center  min-w-full    ">
     <div className="relative h-[350px] 2xl:h-[550px]  w-full">
-    <Image className="hidden 2xl:block object-cover w-[100vw] " fill src="/large_screen_bg_image.webp" alt="large_screen_bg_image" />
+    <Image className="hidden 2xl:block object-cover w-[100vw] " fill src="/hotel_main_image.webp" alt="large_screen_bg_image" />
 
     {/* //!    data */}
     <div   className="absolute  h-full   w-full top-0  left-0 flex  items-center justify-center    ">
-    <div   className="bg-[#05203c] 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-5 pb-5 max-w-screen-xl  space-y-3 ">
+    <div   className="bg-[#05203c] 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-2 pb-5 max-w-screen-xl  space-y-3 ">
     
     
     {/* //! Header_text */}
-    <div className=" w-full flex flex-col items-start   ">
-    <h1 style={{fontWeight:700}} className={`${jost.className} pb-12 text-3xl text-white 2xl:hidden `}>Find the right hotel today</h1>
-    <div className=" flex items-center justify-start gap-x-3 text-white"> <TbSTurnDown /> <h2 className=" font-semibold text-md  ">Where do you want to stay?</h2> </div >
+    <div className=" w-full flex  items-start   ">
+    <h1 style={{fontWeight:700}} className={`${jost.className} pb-12 text-2xl text-white 2xl:hidden px-3`}>Find the right hotel today</h1>
     </div>
 
 
     {/*//!  Form */}
-   <Menubar className="w-full bg-[#05203c] h-20  grid grid-cols-6  border-[#05203c]">
+   <Menubar className="w-full bg-[#05203c] h-20  grid grid-cols-1 gap-5 border-[#05203c]">
       
-    {/* Journey Start Place */}
+    {/* Hotel_Name */}
     <MenubarMenu  >
-        <MenubarTrigger className="w-full relative h-full bg-white col-span-1  rounded-none rounded-l-md  p-0 ">
-            {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
-               <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
-                  <span className="text-[#626971] font-semibold text-sm"> From </span>
-                  <span>{startPlace ? startPlace : 'Anywhere'}</span>
-              </div>
-                <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
-            {/* </div> */}
+        <MenubarTrigger className="w-full  flex flex-col space-y-2 items-start justify-start   rounded-md  p-0 ">
+            <span className="text-xs text-white">Where do you want to stay?</span>
+            <div className="bg-white    rounded-md  w-full">
+                 <input type="text"  value={startPlace ? startPlace : 'Anywhere'}  className="w-full text-sm p-2 focus:outline-none" />                 
+            </div>      
           </MenubarTrigger>
         <MenubarContent >
             {/* Data */}
-        <PlanesearchPlane value={startPlace} setValue={setStartPlace}  />
+         <Hotelsearchplace value={value} setValue={setValue}  />
         </MenubarContent>
     </MenubarMenu>
 
 
-    {/* Journey End Place*/}
+     <div className=" w-full flex items-center justify-between gap-x-2">
+    
+    {/* Check_In_Date*/}
     <MenubarMenu  >
-        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none  pl-5  ">
-            {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
-              <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
-                  <span className="text-[#626971] font-semibold text-sm"> To </span>
-                  <span>{endPlace ? endPlace : 'Anywhere'}</span>
-              </div>
-
-           
-            {/* </div> */}
+        <MenubarTrigger className="p-0 w-1/2  flex flex-col space-y-1 items-start justify-start   ">
+           <div className="text-xs   flex text-white">Check-in </div>
+            <div className="bg-white w-full flex items-center justify-center p-[5px] rounded-sm  ">
+            <span className="text-slate-800 truncate text-md">{checkInDate? checkInDate: '26/7/25'}</span>
+            </div>      
           </MenubarTrigger>
         <MenubarContent >
             {/* Data */}
-        <PlanesearchPlane value={endPlace} setValue={setEndPlace}  />
+             <CustomDatePicker date={checkInDate} setDateSelect={setCheckInDate} />
+
+
         </MenubarContent>
     </MenubarMenu>
 
-    {/* Depart_Date  */}
-    <DatePicker place="Depart" date={departDate} setDate={setDepartDate} />
-      
-    {/*Return_ Date  */}
-    <DatePicker  place="Return" date={returnDate} setDate={setReturnDate} />
+
+    {/* Check_Out_Date*/}
+    <MenubarMenu  >
+        <MenubarTrigger className="w-1/2   flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
+           <div className="text-xs  flex text-white">Check-out </div>
+            <div className="bg-white w-full flex items-center justify-center p-2 rounded-sm  ">
+            <span className="text-slate-800 truncate text-xs">{checkInDate? checkInDate: '26/7/25'}</span>
+            </div>      
+          </MenubarTrigger>
+        <MenubarContent >
+            {/* Data */}
+             <CustomDatePicker date={checkInDate} setDateSelect={setCheckInDate} />
+
+
+        </MenubarContent>
+    </MenubarMenu>
+
+    
+    
        
-    {/* Person Selection */}
+    {/* Guest_Room */}
     <MenubarMenu  >
-        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none rounded-r-xl   p-0 ">
-            {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
+       <MenubarTrigger className="w-full  flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
+            <span className="text-white text-xs"> Guests and rooms </span>
+            <div className="bg-white w-full flex items-center justify-center p-2 rounded-sm  ">
+              <span>{`${totaltraveller} ${Array.isArray(totaltraveller) &&   totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</span>
+            </div>      
+          </MenubarTrigger>
+        {/* <MenubarTrigger className="w-full     rounded-none rounded-r-xl   p-0 ">
+          
               <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
-                  <span className="text-[#626971] font-semibold text-sm"> Person </span>
-                     <div className="text-slate-800 truncate pr-1 max-w-full">
+                  <span className="text-white text-xs"> Guests and rooms </span>
+                     <div className="text-slate-800 bg-white truncate pr-1 w-full p-2 rounded-md">
                     <span>{`${totaltraveller} ${Array.isArray(totaltraveller) &&   totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</span>
                     </div>
               </div>
-          </MenubarTrigger>
+          </MenubarTrigger> */}
         <MenubarContent >
    
         <PlanePerson adult={adult} setAdult={setAdult} children={children} setChildren={setChildre} roomType={roomType} setRoomType={setRoomType} />
         </MenubarContent>
     </MenubarMenu>
 
-
+    </div>
     
 
       {/* Buttons_Searching */}
@@ -135,33 +157,33 @@ const CustomSearchBarHotel = () => {
 
 
    {/* //!  Filter icons */}
-   <div className="w-full flex items-start justify-start    ">
+   {/* <div className="w-full flex items-start justify-start    ">
    <div className="w-full max-w-xl justify-start   grid grid-cols-4  ">
-   <h2 className={`${jost.className} text-white text-md`}>Popular filters:</h2>
+   <h2 className={`${jost.className} text-white text-md`}>Popular filters:</h2> */}
    
     {/* 1 */}
-    <div className="flex items-center justify-center text-white gap-x-2 ">
-      <input className="size-[15px]" type="checkbox"/>
-      <p className={`${jost.className} text-md `}>Free cancelation</p>
-    </div>
-
+    {/* <div className="flex items-center justify-center text-white gap-x-2 "> */}
+      {/* <input className="size-[15px]" type="checkbox"/> */}
+      {/* <p className={`${jost.className} text-md `}>Free cancelation</p> */}
+    {/* </div> */}
+{/*  */}
     {/* 2 */}
-    <div className="flex items-center justify-center  text-white gap-x-2 ">
-      <input className="size-[15px]" type="checkbox"/>
-      <p className={`${jost.className} text-md `}>4 stars</p>
-    </div>
+    {/* <div className="flex items-center justify-center  text-white gap-x-2 "> */}
+      {/* <input className="size-[15px]" type="checkbox"/> */}
+      {/* <p className={`${jost.className} text-md `}>4 stars</p> */}
+    {/* </div> */}
 
     {/* 3 */}
-    <div className="flex items-center justify-center text-white gap-x-2 ">
+    {/* <div className="flex items-center justify-center text-white gap-x-2 ">
       <input className="size-[15px]" type="checkbox"/>
       <p className={`${jost.className} text-md `}>5 stars</p>
-    </div>
+    </div> */}
 
-   </div>
+   {/* </div> */}
    </div>
  
 
-    </div>
+    {/* </div> */}
     </div>
 
     </div>  
@@ -251,7 +273,7 @@ export default CustomSearchBarHotel
 //             <div className="w-full flex flex-col items-center space-y-2 ">
 //            <div className="text-xs text-white font-semibold flex items-start w-full">Pick-up Location</div>
 //             <div   className="bg-white  sm:p-3 flex items-center justify-start p-2 gap-2 rounded-sm lg:rounded-r-none border w-full">
-//                 <div className="text-sm"><ion-icon name="location-outline"></ion-icon></div>
+//                 {/* <div className="text-sm"><ion-icon name="location-outline"></ion-icon></div> */}
             
 //             {startPlace ?<span>{startPlace} </span>  :<span className="text-slate-600"> From </span>}
 //             </div>
@@ -270,7 +292,7 @@ export default CustomSearchBarHotel
 //             <div className="w-full flex flex-col items-center space-y-2 ">
 //            <div className="text-xs text-white font-semibold flex items-start w-full">Pick - Up Location</div>
 //             <div   className="bg-white  sm:p-3 flex items-center justify-start p-2 gap-2 rounded-sm lg:rounded-none border w-full">
-//                 <div className="text-sm"><ion-icon name="location-outline"></ion-icon></div>
+//                 {/* <div className="text-sm"><ion-icon name="location-outline"></ion-icon></div> */}
             
 //                 {pickUpPlace ?<span>{pickUpPlace} </span>  :<span className="text-slate-600"> pick - up place </span>}
     
@@ -291,7 +313,7 @@ export default CustomSearchBarHotel
 //                <div className="text-xs text-white font-semibold flex items-start w-full ">Pick - Up Time</div>
 //                 <div className=" min-w-full flex items-center justify-start p-2 gap-2 rounded-sm lg:rounded-none border bg-white  sm:p-3"><div className="text-sm"><ion-icon name="calendar-outline"></ion-icon></div>
 //                 <div className="text-slate-800 truncate">
-//                 {pickUpDate ?<span>{pickUpDate.toLocaleDateString() }</span>  :<span className="text-slate-600">  pick - up time </span>}
+//                 {/* {pickUpDate ?<span>{pickUpDate.toLocaleDateString() }</span>  :<span className="text-slate-600">  pick - up time </span>} */}
     
 //                     {/* {date? date.toLocaleDateString(): 'date'} */}
 //                     </div>
@@ -300,7 +322,7 @@ export default CustomSearchBarHotel
 //                 </div>      
 //                 </PopoverTrigger>
 //             <PopoverContent>
-//                 <CustomDatePicker setDateSelect={setPickUpDate} />
+//                 {/* <CustomDatePicke setDateSelect={setPickUpDate} /> */}
        
 //             </PopoverContent>
 //             </Popover>
@@ -315,7 +337,7 @@ export default CustomSearchBarHotel
 //             <div className="w-full flex flex-col items-center space-y-2 ">
 //            <div className="text-xs text-white font-semibold flex items-start w-full">Pick - Off Location</div>
 //             <div   className="bg-white  sm:p-3 flex items-center justify-start p-2 gap-2 rounded-sm lg:rounded-none border w-full">
-//                 <div className="text-sm"><ion-icon name="location-outline"></ion-icon></div>
+//                 {/* <div className="text-sm"><ion-icon name="location-outline"></ion-icon></div> */}
             
 //                 {pickOffPlace ?<span>{pickOffPlace} </span>  :<span className="text-slate-600"> pick - off place </span>}
     
@@ -334,7 +356,7 @@ export default CustomSearchBarHotel
 //                <div className="text-xs text-white font-semibold flex items-start w-full ">Pick - Off Time</div>
 //                 <div className=" min-w-full flex items-center justify-start p-2 gap-2 rounded-sm lg:rounded-none border bg-white  sm:p-3"><div className="text-sm"><ion-icon name="calendar-outline"></ion-icon></div>
 //                 <div className="text-slate-800 truncate">
-//                 {pickOffDate ?<span>{pickOffDate.toLocaleDateString() }</span>  :<span className="text-slate-600">  pick - off time </span>}
+//                 {/* {pickOffDate ?<span>{pickOffDate.toLocaleDateString() }</span>  :<span className="text-slate-600">  pick - off time </span>} */}
     
 //                     {/* {date? date.toLocaleDateString(): 'date'} */}
 //                     </div>
@@ -343,7 +365,7 @@ export default CustomSearchBarHotel
 //                 </div>      
 //                 </PopoverTrigger>
 //             <PopoverContent>
-//                 <CustomDatePicker setDateSelect={setPickOffDate} />
+//                 {/* <CustomDatePicker setDateSelect={setPickOffDate} /> */}
        
 //             </PopoverContent>
 //             </Popover>
@@ -384,7 +406,7 @@ export default CustomSearchBarHotel
 //     </div>
 //             <div className=" rounded-lg text-white font-semibold bg-blue-600 hover:bg-blue-700 p-3 w-full sm:max-w-[200px] flex items-center justify-center sm:justify-end space-x-3"><div className="text-base">
 //             <span className="text-3xl sm:text-xl">Search Hotel</span></div>
-//             <ion-icon size="large" name="arrow-forward-outline"></ion-icon>
+//             {/* <ion-icon size="large" name="arrow-forward-outline"></ion-icon> */}
 //             </div>
 //        </div>
     

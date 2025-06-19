@@ -25,12 +25,7 @@ function PlanesearchPlane({value,setValue}) {
     function handleClearValue(){
       setValue("")
     }
-
-
-    // Filter    
-    const filteredHotel=value===''? hotelArray  : hotelArray.filter((data)=>data.toLowerCase().includes(value.toLowerCase())) 
-    
- const countryArray = [
+ const hotelArray = [
   "Pakistan",
   "India",
   "China",
@@ -42,6 +37,11 @@ function PlanesearchPlane({value,setValue}) {
   "Malaysia",
   "Indonesia"
 ];
+
+    // Filter    
+    const filteredHotel=value===''? hotelArray  : hotelArray.filter((data)=>data.toLowerCase().includes(value.toLowerCase())) 
+    
+
 
 
 
