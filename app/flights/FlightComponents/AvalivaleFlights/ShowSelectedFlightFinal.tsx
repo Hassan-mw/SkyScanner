@@ -9,14 +9,14 @@ function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setSh
     const filterArray=data.filter((data)=>data.id===id)
     return (
  <div className="w-full flex items-start justify-center    ">
-   <div className="w-full flex flex-col items-center justify-center  ">
+   <div className="w-full flex flex-col items-center justify-center bg-[#05203c] ">
      
-    <div className="flex flex-col items-center justify-center w-full    bg-[#05203c]">
+    <div className="max-w-screen-xl flex flex-col items-center justify-center w-full    ">
         
         {/* top */}
         <div className="relative w-full flex items-center justify-center p-2">
                 
-           <div onClick={()=>setShowSelectFlight(false)} className="text-white absolute top-3 left-2 hover:cursor-pointer w-44  flex items-center justify-center gap-x-2">
+           <div onClick={()=>setShowSelectFlight(false)} className="text-white absolute top-3  left-3 hover:cursor-pointer w-44  flex items-center justify-start gap-x-2">
               <FaArrowLeft size={12} />
               <p className="text-sm">Back to result </p>
             </div>
@@ -31,7 +31,7 @@ function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setSh
 
 
 
-         <div className="flex bg-green-500 flex-col text-white  w-full  items-start p-3 ">
+         <div className="flex  flex-col text-white  w-full  items-start p-3 ">
 
             <div className="text-5xl font-semibold ">
              {depart}
