@@ -1,22 +1,36 @@
 'use client'
+import Image from "next/image";
 import Link from "next/link"
+import { useRouter } from "next/navigation";
+import { FaLongArrowAltLeft } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa6";
 
 function ShowSelectedFlightFinal({id,checkAirline,country,depart,finalcity,setShowSelectFlight,data}) {
     const filterArray=data.filter((data)=>data.id===id)
     return (
-        <div className="min-w-full h-full flex items-start justify-center  bg-slate-300 p-5 ">
-          <div className="w-full flex flex-col items-center justify-center max-w-screen-xl ">
-          {/* Back btton */}
-          <div className="flex flex-col items-center justify-center w-full p-3 rounded-2xl  bg-blue-800">
-               <div className="flex items-center justify-center w-full">
-               <div   onClick={()=>setShowSelectFlight(false)} className="cursor-pointer text-2xl text-white p-3">
-                 {/* <ion-icon name="arrow-back-outline"></ion-icon> */}
-                 </div>
-                <div className="w-full flex items-center justify-center text-xl font-semibold">
-                 <Link  href="/"><img className="w-36" src="/logomain.png" /></Link>
-                  </div>
+        <div className="w-full flex items-start justify-center  bg-amber-300  ">
+          <div className="w-full flex flex-col items-center justify-center  ">
+     
+     
+          <div className="flex flex-col items-center justify-center w-full    bg-[#05203c]">
+               <div className="bg-green-500 w-full flex items-center justify-center p-2">
+                
+                <div onClick={()=>setShowSelectFlight(false)} className="text-white bg-blue-400 hover:cursor-pointer w-44  flex items-center justify-center gap-x-2">
+                  <FaArrowLeft size={12} />
+                  <p className="text-sm">Back to result </p>
                 </div>
-         {/* Show depart city */}
+          
+
+                <div className="w-full flex items-center justify-center text-white bg-red-500  gap-x-1 ">
+                 <Link  href="/"><Image height={30} width={30}  src="/skyscanner.gif" alt="main_logo" /></Link>
+                 <span className="pt-1">SkyScanner</span>
+                  </div>
+
+                </div>
+
+
+
+
          <div className="flex flex-col text-white  w-full  items-start ">
 
             <div className="text-5xl font-semibold ">
