@@ -19,7 +19,7 @@ function MainPageHotel() {
       {/* //! Hotels Logo */}
       <CustomHotelsLogo  />
       </div>
-      <div className="p-3 flex flex-col space-y-44 items-center w-full h-full bg-white max-w-screen-xl ">
+      <div className="p-3 flex flex-col space-y-20 items-center w-full h-full bg-white max-w-screen-xl ">
         
          <div className="w-full "><HotelNearOwncity/></div>
        <div className="w-full "><HotelPlace/></div>
