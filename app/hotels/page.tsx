@@ -1,9 +1,4 @@
 
-// import FastFactMainHotel from "../(hotelPageoptions)/FastFactMainHotel"
-// import HotelNearOwncity from "../(hotelPageoptions)/HotelNearOwnCity"
-// import HotelPlace from "../(hotelPageoptions)/HotelPlace"
-// import ShowCurrentPageHotel from "../(hotelPageoptions)/ShowCurrentPageHotels"
-// import CustomHotelsLogo from "../components/CustomHotelsLogo"
 import CustomHotelsLogo from "./hotelsComponent/CustomHotelsLogo"
 import CustomSearchBarHotel from "./hotelsComponent/CustomSearchBarCar"
 import FastFactMainHotel from "./hotelsComponent/FastFactMainHotel"
