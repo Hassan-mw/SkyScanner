@@ -6,6 +6,7 @@
 // import CustomHotelsLogo from "../components/CustomHotelsLogo"
 import CustomHotelsLogo from "./hotelsComponent/CustomHotelsLogo"
 import CustomSearchBarHotel from "./hotelsComponent/CustomSearchBarCar"
+import HotelNearOwncity from "./hotelsComponent/HotelNearOwnCity"
 import ShowCurrentPageHotel from "./hotelsComponent/ShowCurrentPageHotel"
 
 
@@ -23,7 +24,7 @@ function MainPageHotel() {
       </div>
       <div className="p-3 flex flex-col space-y-44 items-center w-full h-full bg-white max-w-screen-xl ">
         
-         {/* <div className="w-full "><HotelNearOwncity/></div> */}
+         <div className="w-full "><HotelNearOwncity/></div>
        {/* <div className="w-full "><HotelPlace/></div> */}
        <div className="w-full flex items-center justify-center">
             {/* <FastFactMainHotel/> */}
