@@ -25,7 +25,7 @@ function HotelNearOwncity() {
    ]
     return (
     
-        <div className="w-full flex-col space-y-7 flex items-center justify-center ">
+        <div className="w-full flex-col space-y-7 flex items-center justify-center p-3">
        {/* Text */}
        <div className="flex flex-col space-y-2 w-full items-start justify-start">
       <div className="text-3xl font-semibold sm:text-4xl">Hotels in your home country</div>
