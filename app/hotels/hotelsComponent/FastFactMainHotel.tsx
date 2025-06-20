@@ -21,7 +21,7 @@ function FastFactMainHotel() {
                    <span className="text-sm text-slate-600">Sleep easy, armed with the stuff that's good to know before you go.</span>
                </div>
 
-               
+                {/* Fast facts */}
                <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-8 lg:">
                 {/* 1 */}
                  <div className="flex flex-col w-full items-start space-y-2">
