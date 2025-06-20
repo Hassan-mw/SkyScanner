@@ -5,35 +5,41 @@ import {
     AccordionTrigger,
   } from "@/components/ui/accordion"
 import Link from "next/link"
+import { FaLocationDot } from "react-icons/fa6"
+import { IoBed } from "react-icons/io5"
+import { LuBuilding2 } from "react-icons/lu"
    
 function FastFactMainHotel() {
     return (
         <div className="w-full h-full flex flex-col space-y-10 items-center justify-center max-w-screen-xl px-3 ">
             {/* First */}
             <div className="w-full h-full flex flex-col space-y-7 items-center justify-center">
+              
                 {/* Upper text */}
                <div className="flex flex-col w-full items-start space-y-3">
-                   <div className="text-2xl md:text-3xl font-semibold">Fast facts</div>
-                   <div className="text-sm text-slate-600">Sleep easy, armed with the stuff that's good to know before you go.</div>
+                   <h1 className="text-2xl md:text-3xl font-semibold">Fast facts</h1>
+                   <span className="text-sm text-slate-600">Sleep easy, armed with the stuff that's good to know before you go.</span>
                </div>
-               <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-8">
+
+               
+               <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-8 lg:">
                 {/* 1 */}
-                 <div className="flex flex-col w-full items-start">
-                   <div className="text-2xl font-semibold"><ion-icon name="business-outline"></ion-icon></div>
-                   <div className="text-sm text-slate-600">Hotel brands to choose from</div>
-                   <div className="font-semibold">60+</div>
+                 <div className="flex flex-col w-full items-start space-y-2">
+                   <div className="text-2xl font-semibold"><LuBuilding2 /></div>
+                   <h1 className="text-sm text-slate-600">Hotel brands to choose from</h1>
+                   <span className="font-semibold">60+</span>
                </div>
                 {/* 2 */}
-                 <div className="flex flex-col w-full items-start">
-                   <div className="text-2xl font-semibold"><ion-icon name="business-outline"></ion-icon></div>
-                   <div className="text-sm text-slate-600">Hotel destinations to explore</div>
-                   <div className="font-semibold">5,000+</div>
+                 <div className="flex flex-col w-full items-start space-y-2">
+                   <div className="text-2xl font-semibold"><FaLocationDot /></div>
+                   <h1 className="text-sm text-slate-600">Hotel destinations to explore</h1>
+                   <span className="font-semibold">5,000+</span>
                </div>
                 {/* 3 */}
-                 <div className="flex flex-col w-full items-start">
-                   <div className="text-2xl font-semibold"><ion-icon name="business-outline"></ion-icon></div>
-                   <div className="text-sm text-slate-600">Hotels available worldwide</div>
-                   <div className="font-semibold">3.2 million</div>
+                 <div className="flex flex-col w-full items-start space-y-2">
+                   <div className="text-2xl font-semibold"><IoBed /></div>
+                   <h1 className="text-sm text-slate-600">Hotels available worldwide</h1>
+                   <span className="font-semibold">3.2 million</span>
                </div>
                </div>
               
@@ -44,24 +50,25 @@ function FastFactMainHotel() {
             {/* Tag-1 */}
             <div className="flex flex-col items-center justify-center space-y-3  w-full ">
              <div className="h-40"><img className="size-28 h-32" src="/tag.svg"/></div>
-             <div className="text-xl font-semibold">Great hotel deals</div>
-             <div className="max-w-[400px]">We search for deals with the world’s leading hotels, and share our findings with you.</div>
+             <span className="text-xl font-semibold">Great hotel deals</span>
+             <span className="max-w-[400px]">We search for deals with the world’s leading hotels, and share our findings with you.</span>
             </div>
             {/* Tag-2 */}
             <div className="flex flex-col items-center justify-center space-y-3  w-full ">
              <div className="h-40"><img className="size-28 h-32" src="/Illustration_hotel_bell.svg"/></div>
-             <div className="text-xl font-semibold">Up-to-date pricing</div>
-             <div className="max-w-[400px]">We always show you the most recent pricing overview we can find, so you know exactly what to expect</div>
+             <span className="text-xl font-semibold">Up-to-date pricing</span>
+             <span className="max-w-[400px]">We always show you the most recent pricing overview we can find, so you know exactly what to expect</span>
             </div>
             {/* Tag-3 */}
             <div className="flex flex-col items-center justify-center space-y-3  w-full ">
              <div className="h-40"><img className="size-28 h-32" src="/Illustration_hotel_compare_scales.svg"/></div>
-             <div className="text-xl font-semibold">Precise searching</div>
-             <div className="max-w-[400px]">Find hotels with swimming pools, free cancellation, and flexible booking. Or whatever matters most to you.</div>
+             <span className="text-xl font-semibold">Precise searching</span>
+             <span className="max-w-[400px]">Find hotels with swimming pools, free cancellation, and flexible booking. Or whatever matters most to you.</span>
             </div>
         
           
             </div>
+
             {/* Third */}
             <div className="w-full h-full flex flex-col space-y-7 items-center justify-center">
                 <div className="w-full flex items-start text-3xl  font-semibold">FAQs</div>
