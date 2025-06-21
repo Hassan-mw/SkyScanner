@@ -11,7 +11,13 @@ import {
 } from "@/components/ui/carousel"
 import { useState } from "react"
 import Image from "next/image"
+import { Jost } from "next/font/google"
  
+
+const jost=Jost({
+    subsets:['latin'],
+    weight:['500']
+})
 
 
 function HotelNearOwncity() {
@@ -29,55 +35,71 @@ function HotelNearOwncity() {
         <div className="w-full flex-col space-y-7 flex items-center justify-center p-3">
        {/* Text */}
        <div className="flex flex-col space-y-2 w-full items-start justify-start">
-      <div className="text-3xl font-semibold sm:text-4xl">Hotels in your home country</div>
-     <div className="text-slate-800 text-md">Your next adventure may be closer than you think. Discover hotels just beyond your doorstep.</div>
-       <div className="w-full flex space-x-3 ">
+      <h1 className="text-3xl font-semibold sm:text-4xl">Hotels in your home country</h1>
+         <span className="text-slate-800 text-md">Your next adventure may be closer than you think. Discover hotels just beyond your doorstep.</span>
+       
+       
+       <div className="w-full  flex space-x-3 ">
         {
           cityArray.map((data)=>
-        <div key={data.id} onClick={()=>setSelectedRegion(data.city)} className={`border rounded-lg  px-3 py-1 text-md font-medium hover:cursor-pointer ${selectedRegin===data.city &&  'bg-[#05203c] text-white'}`}>{data.city}</div>
-          
+          <span style={{fontWeight:300}} key={data.id} onClick={()=>setSelectedRegion(data.city)} className={`${jost.className} border text-sm rounded-sm  hover:border-slate-700  px-4 py-1 text-md font-medium hover:cursor-pointer ${selectedRegin===data.city &&  'bg-[#05203c] border-[#05203c] text-white'}`}>{data.city}</span>
           )
         }
        </div>
        </div>
+
+
        {/* City Slide */}
       <div className="w-full flex items-center justify-center ">
-  <Carousel
-      opts={{
-        align: "start",
-      }}
+      <Carousel
+      opts={{ align: "start"}}
       className="w-full bg-white "
-    >
+       >
       <CarouselContent  className="w-full  ">
       
 
-          <CarouselItem   className="basis-full md:basis-1/2 xl:basis-1/3 " >
+          <CarouselItem   className="basis-full sm:basis-1/2 lg:basis-1/3 " >
             <div className=" ">
              {/* <Card className="border-none bg-blue-600 gap-4"> */}
 
-             <Link
+            <Link
             href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer  hover:shadow-slate-400 duration-300 flex flex-col   items-center justify-center w-full   hover:shadow-sm "
+            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
             >
 
             <Image 
               height={300} 
               width={300} 
-              src="/POstcard_London-TM.webp"
+              src="/hotel_1.jpg"
               alt="image"
-              className="w-full object-cover rounded-t-sm"
+              className="w-full object-cover  rounded-t-md  "
              />
 
 
-            <div className="flex items-center justify-between w-full border bg-white rounded-b-sm  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <span className="  font-semibold text-xl sm:text-md">Manchester</span>
-                  <p className=" text-xs font-thin">united Kingdom</p>
+            <div className="flex items-center flex-col space-y-2 bg-white rounded-b-md   border  w-full ">
+              
+               <div className="flex  w-full items-start justify-between border-b pb-3 border-slate-300 p-3  ">
+                   {/* Hotel_detail */}
+                  <div className="felx flex-col items-start justify-start space-y-0 ">
+                     <h1 className={`${jost.className} font-semibold text-xl sm:text-md `}>Hotel Bilal</h1>
+                     <span style={{fontWeight:300}} className={`${jost.className} text-xs`}>3.54 km from city center</span>
+                     <div  className="flex items-center justify-start gap-x-1 pt-2">
+                     <div  className="flex items-end justify-end  ">
+                        <span className={`${jost.className} font-semibold text-sm text-black `}>4.2</span>
+                        <span  style={{fontWeight:200}} className={`${jost.className} text-[11px] text-slate-500`}>/5</span> 
+                     </div>
+                        <span className={`${jost.className} font-semibold text-sm text-black `}>Very good</span>
+                        <span style={{fontWeight:200}} className={`${jost.className} pt-1  text-[12px] text-slate-400`}>1 review</span>
+                     </div>
+                  </div>
+                  {/* Hotel_review */}
+                  <div className="text-xs">⭐⭐⭐⭐⭐</div>
+
                </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
+
+               <div className="flex flex-col items-end justify-end    w-full p-3 ">
+                  <h1 className={`${jost.className} text-lg  text-black`}>Rs 3,643</h1>
+                  <p className="text-[11px] text-slate-600">Per night</p>
                </div>
             </div>
           </Link>  
@@ -91,33 +113,49 @@ function HotelNearOwncity() {
 
 
          
-          <CarouselItem   className="basis-full md:basis-1/2 xl:basis-1/3 " >
+
+          <CarouselItem   className="basis-full sm:basis-1/2 lg:basis-1/3 " >
             <div className=" ">
              {/* <Card className="border-none bg-blue-600 gap-4"> */}
 
-             <Link
+            <Link
             href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer  hover:shadow-slate-400 duration-300 flex flex-col   items-center justify-center w-full   hover:shadow-sm "
+            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
             >
 
             <Image 
               height={300} 
               width={300} 
-              src="/POstcard_London-TM.webp"
+              src="/hotel_2.jpg"
               alt="image"
-              className="w-full object-cover rounded-t-sm"
+              className="w-full object-cover  rounded-t-md  "
              />
 
 
-            <div className="flex items-center justify-between w-full border bg-white rounded-b-sm  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <span className="  font-semibold text-xl sm:text-md">Manchester</span>
-                  <p className=" text-xs font-thin">united Kingdom</p>
+            <div className="flex items-center flex-col space-y-2 bg-white rounded-b-md   border  w-full ">
+              
+               <div className="flex  w-full items-start justify-between border-b pb-3 border-slate-300 p-3  ">
+                   {/* Hotel_detail */}
+                  <div className="felx flex-col items-start justify-start space-y-0 ">
+                     <h1 className={`${jost.className} font-semibold text-xl sm:text-md `}>Hotel Bilal</h1>
+                     <span style={{fontWeight:300}} className={`${jost.className} text-xs`}>3.54 km from city center</span>
+                     <div  className="flex items-center justify-start gap-x-1 pt-2">
+                     <div  className="flex items-end justify-end  ">
+                        <span className={`${jost.className} font-semibold text-sm text-black `}>4.2</span>
+                        <span  style={{fontWeight:200}} className={`${jost.className} text-[11px] text-slate-500`}>/5</span> 
+                     </div>
+                        <span className={`${jost.className} font-semibold text-sm text-black `}>Very good</span>
+                        <span style={{fontWeight:200}} className={`${jost.className} pt-1  text-[12px] text-slate-400`}>1 review</span>
+                     </div>
+                  </div>
+                  {/* Hotel_review */}
+                  <div className="text-xs">⭐⭐⭐⭐⭐</div>
+
                </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
+
+               <div className="flex flex-col items-end justify-end    w-full p-3 ">
+                  <h1 className={`${jost.className} text-lg  text-black`}>Rs 3,643</h1>
+                  <p className="text-[11px] text-slate-600">Per night</p>
                </div>
             </div>
           </Link>  
@@ -129,72 +167,49 @@ function HotelNearOwncity() {
             </div>
           </CarouselItem>
 
-         
-          <CarouselItem   className="basis-full md:basis-1/2 xl:basis-1/3 " >
+
+          <CarouselItem   className="basis-full sm:basis-1/2 lg:basis-1/3 " >
             <div className=" ">
              {/* <Card className="border-none bg-blue-600 gap-4"> */}
 
-             <Link
+            <Link
             href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer  hover:shadow-slate-400 duration-300 flex flex-col   items-center justify-center w-full   hover:shadow-sm "
+            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
             >
 
             <Image 
               height={300} 
               width={300} 
-              src="/POstcard_London-TM.webp"
+              src="/hotel_3.jpg"
               alt="image"
-              className="w-full object-cover rounded-t-sm"
+              className="w-full object-cover  rounded-t-md  "
              />
 
 
-            <div className="flex items-center justify-between w-full border bg-white rounded-b-sm  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <span className="  font-semibold text-xl sm:text-md">Manchester</span>
-                  <p className=" text-xs font-thin">united Kingdom</p>
+            <div className="flex items-center flex-col space-y-2 bg-white rounded-b-md   border  w-full ">
+              
+               <div className="flex  w-full items-start justify-between border-b pb-3 border-slate-300 p-3  ">
+                   {/* Hotel_detail */}
+                  <div className="felx flex-col items-start justify-start space-y-0 ">
+                     <h1 className={`${jost.className} font-semibold text-xl sm:text-md `}>Hotel Bilal</h1>
+                     <span style={{fontWeight:300}} className={`${jost.className} text-xs`}>3.54 km from city center</span>
+                     <div  className="flex items-center justify-start gap-x-1 pt-2">
+                     <div  className="flex items-end justify-end  ">
+                        <span className={`${jost.className} font-semibold text-sm text-black `}>4.2</span>
+                        <span  style={{fontWeight:200}} className={`${jost.className} text-[11px] text-slate-500`}>/5</span> 
+                     </div>
+                        <span className={`${jost.className} font-semibold text-sm text-black `}>Very good</span>
+                        <span style={{fontWeight:200}} className={`${jost.className} pt-1  text-[12px] text-slate-400`}>1 review</span>
+                     </div>
+                  </div>
+                  {/* Hotel_review */}
+                  <div className="text-xs">⭐⭐⭐⭐⭐</div>
+
                </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
-               </div>
-            </div>
-          </Link>  
 
-
-           
-      
-             {/* </Card> */}
-            </div>
-          </CarouselItem>
-          
-          <CarouselItem   className="basis-full md:basis-1/2 xl:basis-1/3 " >
-            <div className=" ">
-             {/* <Card className="border-none bg-blue-600 gap-4"> */}
-
-             <Link
-            href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer  hover:shadow-slate-400 duration-300 flex flex-col   items-center justify-center w-full   hover:shadow-sm "
-            >
-
-            <Image 
-              height={300} 
-              width={300} 
-              src="/POstcard_London-TM.webp"
-              alt="image"
-              className="w-full object-cover rounded-t-sm"
-             />
-
-
-            <div className="flex items-center justify-between w-full border bg-white rounded-b-sm  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <span className="  font-semibold text-xl sm:text-md">Manchester</span>
-                  <p className=" text-xs font-thin">united Kingdom</p>
-               </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
+               <div className="flex flex-col items-end justify-end    w-full p-3 ">
+                  <h1 className={`${jost.className} text-lg  text-black`}>Rs 3,643</h1>
+                  <p className="text-[11px] text-slate-600">Per night</p>
                </div>
             </div>
           </Link>  
@@ -208,33 +223,49 @@ function HotelNearOwncity() {
 
 
          
-          <CarouselItem   className="basis-full md:basis-1/2 xl:basis-1/3 " >
+
+          <CarouselItem   className="basis-full sm:basis-1/2 lg:basis-1/3 " >
             <div className=" ">
              {/* <Card className="border-none bg-blue-600 gap-4"> */}
 
-             <Link
+            <Link
             href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer  hover:shadow-slate-400 duration-300 flex flex-col   items-center justify-center w-full   hover:shadow-sm "
+            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
             >
 
             <Image 
               height={300} 
               width={300} 
-              src="/POstcard_London-TM.webp"
+              src="/hotel_4.jpg"
               alt="image"
-              className="w-full object-cover rounded-t-sm"
+              className="w-full object-cover  rounded-t-md  "
              />
 
 
-            <div className="flex items-center justify-between w-full border bg-white rounded-b-sm  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <span className="  font-semibold text-xl sm:text-md">Manchester</span>
-                  <p className=" text-xs font-thin">united Kingdom</p>
+            <div className="flex items-center flex-col space-y-2 bg-white rounded-b-md   border  w-full ">
+              
+               <div className="flex  w-full items-start justify-between border-b pb-3 border-slate-300 p-3  ">
+                   {/* Hotel_detail */}
+                  <div className="felx flex-col items-start justify-start space-y-0 ">
+                     <h1 className={`${jost.className} font-semibold text-xl sm:text-md `}>Hotel Bilal</h1>
+                     <span style={{fontWeight:300}} className={`${jost.className} text-xs`}>3.54 km from city center</span>
+                     <div  className="flex items-center justify-start gap-x-1 pt-2">
+                     <div  className="flex items-end justify-end  ">
+                        <span className={`${jost.className} font-semibold text-sm text-black `}>4.2</span>
+                        <span  style={{fontWeight:200}} className={`${jost.className} text-[11px] text-slate-500`}>/5</span> 
+                     </div>
+                        <span className={`${jost.className} font-semibold text-sm text-black `}>Very good</span>
+                        <span style={{fontWeight:200}} className={`${jost.className} pt-1  text-[12px] text-slate-400`}>1 review</span>
+                     </div>
+                  </div>
+                  {/* Hotel_review */}
+                  <div className="text-xs">⭐⭐⭐⭐⭐</div>
+
                </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
+
+               <div className="flex flex-col items-end justify-end    w-full p-3 ">
+                  <h1 className={`${jost.className} text-lg  text-black`}>Rs 3,643</h1>
+                  <p className="text-[11px] text-slate-600">Per night</p>
                </div>
             </div>
           </Link>  
@@ -245,54 +276,17 @@ function HotelNearOwncity() {
              {/* </Card> */}
             </div>
           </CarouselItem>
+
 
          
-          <CarouselItem   className="basis-full md:basis-1/2 xl:basis-1/3 " >
-            <div className=" ">
-             {/* <Card className="border-none bg-blue-600 gap-4"> */}
-
-             <Link
-            href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer  hover:shadow-slate-400 duration-300 flex flex-col   items-center justify-center w-full   hover:shadow-sm "
-            >
-
-            <Image 
-              height={300} 
-              width={300} 
-              src="/POstcard_London-TM.webp"
-              alt="image"
-              className="w-full object-cover rounded-t-sm"
-             />
-
-
-            <div className="flex items-center justify-between w-full border bg-white rounded-b-sm  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <span className="  font-semibold text-xl sm:text-md">Manchester</span>
-                  <p className=" text-xs font-thin">united Kingdom</p>
-               </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
-               </div>
-            </div>
-          </Link>  
-
-
-           
-      
-             {/* </Card> */}
-            </div>
-          </CarouselItem>
-
-
+       
          
         
       </CarouselContent>
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-            </div>
+   </div>
   
     
         </div>
