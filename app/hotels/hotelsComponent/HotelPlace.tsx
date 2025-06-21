@@ -6,7 +6,7 @@ import Link from "next/link"
 function HotelPlace() {
 
 return (
-<div className="flex flex-col w-full space-y-3">
+<div className="flex flex-col w-full space-y-3 p-3">
      {/* Text */}
      <div className="flex flex-col space-y-2 w-full items-start justify-start">
           <h1 className="text-3xl font-semibold sm:text-4xl">Hotels for fab city breaks</h1>
