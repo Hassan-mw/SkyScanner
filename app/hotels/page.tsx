@@ -21,11 +21,9 @@ function MainPageHotel() {
       </div>
       <div className="p-3 flex flex-col space-y-20 items-center w-full h-full bg-white max-w-screen-xl ">
         
-         <div className="w-full "><HotelNearOwncity/></div>
-       <div className="w-full "><HotelPlace/></div>
-       <div className="w-full flex items-center justify-center">
-            <FastFactMainHotel/>
-        </div> 
+      <HotelNearOwncity/>
+      <HotelPlace/>
+      <FastFactMainHotel/>
       </div>
       </div>
 
