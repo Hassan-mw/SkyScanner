@@ -1,26 +1,9 @@
-// import ShowCarFlight from "@/app/(hotelPageoptions)/ShowCarFlight"
-// import ShowHotelHomeFilter from "@/app/(hotelPageoptions)/ShowHotelHomeFilter"
-// import ShowHotelsArray from "@/app/(hotelPageoptions)/ShowHotelsArray"
-// import ShowMapOption from "@/app/(hotelPageoptions)/ShowMapOption"
-// import PlaneContenents from "../(flightpageOptions)/PlaneContenents"
-// import PlanePlace from "../(flightpageOptions)/PlanePlace"
-// import BelowHotel from "../(hotelPageoptions)/BelowHotel"
-// import HotelNearOwncity from "../(hotelPageoptions)/HotelNearOwnCity"
-// import HotelPlace from "../(hotelPageoptions)/HotelPlace"
-// import CustomSearchBar from "../components/CustomSearchBar"
-// import CustomSearchBarHotel from "../components/CustomSearchBarHotel"
-// import CustomShowDetails from "../utils/CustomShowDetails"
 
 import FastFactCountryHotel from "./../hotelsComponent/FastFactCountryHotel"
-// import ShowCarFlight from "@/app/(hotelPageoptions)/ShowCarFlight"
 import ShowCurrentPage from "./../hotelsComponent/ShowCurrentPage"
-import ShowCurrentPageHotel from "./../hotelsComponent/ShowCurrentPageHotels"
 import ShowHotelHomeFilter from "./../hotelsComponent/ShowHotelHomeFilter"
 import ShowHotelsArray from "./../hotelsComponent/ShowHotelsArray"
 import ShowMapOption from "./../hotelsComponent/ShowMapOption"
-
-// import CustomShowDetails from "@/app/utils/CustomShowDetails"
-import { Link } from "lucide-react"
 
  async function page({params}) {
    const {country}=await params
@@ -43,7 +26,7 @@ const arr=[,1,1,1,11,1,1,1,1,1,1]
   {/*//! Hotels all */}
    
   <div className="w-full h-full flex flex-col items-center  space-y-5 py-14  max-w-screen-xl px-4">
-  <div className="w-full flex items-start justify-start  text-2xl  sm:text-4xl font-semibold ">See all hotel in {country}</div>
+  <div className="w-full flex items-start justify-start  text-2xl  sm:text-4xl font-semibold ">See all hotel in jjjj {country}</div>
     
     <div className="w-full h-[300px]">
         <ShowMapOption country={country}/> 
