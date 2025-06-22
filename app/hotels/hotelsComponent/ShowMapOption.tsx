@@ -2,6 +2,8 @@
 // components/Map.js
 import React from 'react';
 import { GoogleMap, LoadScript, Marker, MarkerF } from '@react-google-maps/api';
+import {MapContainer,TileLayer}  from "react-leaflet"
+import "leaflet/dist/leaflet.css"
 
 const containerStyle = {
   width: '100%',
@@ -53,20 +55,38 @@ const points = [
 ];
 
 
-function ShowMapOption({country}) {
+function ShowMapOption({country}:{country:string}) {
     return (
-      // <div className='w-full h-full'>
-   <LoadScript googleMapsApiKey="AIzaSyAGzV9Dsxun971k4mu6QMfG3yF1Fbar9gE">
+      <div className='w-full h-[360px]  space-y-3'>
+        
+   <h1 className="w-full flex items-start justify-start  text-2xl  sm:text-4xl font-semibold ">See all hotel in {country}</h1>   
+   <MapContainer className='h-[300px] ' center={[48.8566,2.3522]} zoom={13}>
+      <TileLayer 
+        
+         attribution= '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          url='https://tile.openstreetmap.org/{z}/{x}/{y}.png'
+      />
+
+
+   
+   </MapContainer>
+ 
+  <div id="map" className='h-[500px] w-[500px]'></div>
+
+
+
+
+   {/* <LoadScript googleMapsApiKey="AIzaSyAGzV9Dsxun971k4mu6QMfG3yF1Fbar9gE">
       <GoogleMap 
         mapContainerStyle={containerStyle}
         center={centerDefault}
         zoom={11}
       >
-        {/* <Marker/> */}
+        
       {points.map((data,index)=>  <MarkerF key={index} position={data} ></MarkerF> )}
       </GoogleMap>
-    </LoadScript>
-      // </div>
+    </LoadScript> */}
+       </div>
         // <div className="w-full h-full ">
       //   <div className="w-full h-full   overflow-hidden  rounded-2xl flex flex-col justify-between"> {/* Increased height */}
        

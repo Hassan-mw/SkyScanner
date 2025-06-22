@@ -4,7 +4,7 @@ function CustomHotelsLogo() {
     return (
         <div>
              {/*//! Hottels Logo */}
-  <div className="w-full  flex flex-col space-y-3 items-start justify-start  max-w-screen-xl p-3">
+  <div className="w-full  flex flex-col space-y-3 items-start justify-start  ">
       <div className="w-full flex items-start justify-start  text-2xl  sm:text-4xl font-semibold ">Trusted Dubai hotel providers</div>
      
       <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 gap-x-4  lg:gap-10">

@@ -17,7 +17,7 @@ const country="Paksitan"
     <div className="w-full h-full flex flex-col space-y-10 items-center bg-white overflow-y-auto  overflow-x-hidden">
     <div className="bg-blue-950 flex items-center justify-center w-full"><CustomSearchBarHotel/></div>
    
-    <div className=" w-full max-w-screen-xl flex flex-col items-center justify-center  space-y-16 p-3 ">
+    <div className=" w-full max-w-screen-xl flex flex-col   space-y-16 p-3  ">
      
     {/*//! Hottels Logo */}
     <ShowCurrentPage country={country}/>
@@ -26,7 +26,6 @@ const country="Paksitan"
 
 
   
-   <h1 className="w-full flex items-start justify-start  text-2xl  sm:text-4xl font-semibold ">See all hotel in ++</h1>   
    <ShowMapOption country={country}/> 
    <ShowHotelHomeFilter/>
    {/*//! Hotels all */}
