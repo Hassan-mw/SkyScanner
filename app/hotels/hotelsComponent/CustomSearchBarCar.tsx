@@ -73,7 +73,7 @@ const CustomSearchBarHotel = () => {
         <MenubarTrigger className="w-full  flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
             <span className="text-[9px]  text-white">Where do you want to stay?</span>
             <div className="bg-white    rounded-md  md:rounded-r-none  md:rounded-l-md  w-full">
-                 <input type="text"  value={startPlace && startPlace  } placeholder='Enter the destination or hotel name' style={{fontWeight:400}}  className={` border-r w-full text-sm p-2 placeholder:text-gray-400 focus:outline-none`} />                 
+                 <input type="text"  value={startPlace && startPlace  } placeholder='Enter the destination or hotel name' style={{fontWeight:400}}  className={`  w-full text-sm p-2 placeholder:text-gray-400 focus:outline-none`} />                 
             </div>      
           </MenubarTrigger>
         <MenubarContent >
