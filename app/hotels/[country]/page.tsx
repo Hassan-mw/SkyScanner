@@ -17,23 +17,19 @@ const country="Paksitan"
     <div className="w-full h-full flex flex-col space-y-10 items-center bg-white overflow-y-auto  overflow-x-hidden">
     <div className="bg-blue-950 flex items-center justify-center w-full"><CustomSearchBarHotel/></div>
    
-    <div className="flex flex-col items-center justify-center  space-y-16 w-full px-4 max-w-screen-xl">
+    <div className=" w-full max-w-screen-xl flex flex-col items-center justify-center  space-y-16 p-3 ">
      
-  {/*//! Hottels Logo */}
- <div className="w-full flex items-center justify-center"> <ShowCurrentPage country={country}/></div>
-   <div className="w-full"> <CustomHotelsLogo  /></div>
-      </div>
+    {/*//! Hottels Logo */}
+    <ShowCurrentPage country={country}/>
+    <CustomHotelsLogo  />
+      
 
 
-  {/*//! Hotels all */}
-   
-  <div className="w-full h-full flex flex-col items-center  space-y-5 py-14  max-w-screen-xl px-4">
-  <div className="w-full flex items-start justify-start  text-2xl  sm:text-4xl font-semibold ">See all hotel in ++</div>
-    
-    <div className="w-full h-[300px]">
-        <ShowMapOption country={country}/> 
-        </div> 
+  
+   <h1 className="w-full flex items-start justify-start  text-2xl  sm:text-4xl font-semibold ">See all hotel in ++</h1>   
+   <ShowMapOption country={country}/> 
    <ShowHotelHomeFilter/>
+   {/*//! Hotels all */}
        <div className="flex  flex-col items-center justify-center w-full space-y-10">
 
           {  arr.map((data,index)=>
@@ -42,7 +38,7 @@ const country="Paksitan"
          </div> 
         )}
 
-                <FastFactCountryHotel/>
+        <FastFactCountryHotel/>
             </div>
         </div>
    
