@@ -2,7 +2,7 @@ import React from 'react'
 import Link from "next/link"
 import { MdOutlineAirplanemodeActive } from "react-icons/md";
 import { FaCalendarDays } from "react-icons/fa6";
-import { IoIosPricetag, IoMdPricetag } from "react-icons/io";
+import { IoIosPricetag, IoMdArrowDropright, IoMdPricetag } from "react-icons/io";
 import { IoIosArrowForward } from "react-icons/io";
 import { Jost } from 'next/font/google';
 import { IoCameraReverse, IoSearchOutline } from 'react-icons/io5';
@@ -13,11 +13,11 @@ const jost=Jost({
 })
 const ShowCurrentPageHotel = () => {
   return (
-     <div className="flex flex-col space-y-2 w-full p-3">
+     <div className="flex flex-col space-y-2 w-full p-3 bg-red-600">
 
     <div className="flex items-start justify-start space-x-2 w-full pb-6"> 
-        <div className="flex items-center justify-center space-x-2 font-semibold"> <Link href="/" className={`${jost.className} text-blue-600 border-b border-white  hover:border-blue-800`}>Home</Link> <span className="text-slate-600"><IoIosArrowForward size={16} /></span></div>
-        <span className={`${jost.className} text-blue-600  `}>Hotels</span>  
+        <div className="flex items-center justify-center space-x-2 font-semibold"> <Link href="/" className={`${jost.className} text-blue-600 border-b border-white  hover:border-blue-800`}>Home</Link> <span className="text-slate-600"><IoMdArrowDropright /></span></div>
+        <span className={`${jost.className} text-blue-600  `}>Hotelsaaa</span>  
     </div>
 
     <div className="flex flex-col sm:flex-row items-start justify-between w-full space-y-5 sm:space-y-0 sm:space-x-8 font-base  text-slate-900">
