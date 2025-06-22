@@ -12,7 +12,7 @@ function CustomHotelsLogo() {
       <div className=" bg-white"><Image height={110} width={110} className=" " src="/d_ct.png" alt="hotels_logo" /></div>
       <div className=" bg-white"><Image height={110} width={110} className=" " src="/h_hc.png" alt="hotels_logo" /></div>
       <div className=" bg-white"><Image height={110} width={110} className="" src="/h_xp.png" alt="hotels_logo" /></div>
-      <div className=" bg-white"><Image height={110} width={110} className="" src="/h_ic.png" alt="hotels_logo" /></div>
+      <div className=" bg-white"><Image height={130} width={130} className="" src="/h_ic.png" alt="hotels_logo" /></div>
         </div>
    </div>
         </div>
