@@ -48,7 +48,7 @@ const CustomSearchBarHotel = () => {
     
 
     return (
-    <div   className="flex justify-center items-center  min-w-full    ">
+    <div   className="flex justify-center items-center  min-w-full   bg-[#05203c] ">
     <div className="relative h-[300px] 2xl:h-[450px]  w-full">
     <Image className="hidden 2xl:block object-cover w-[100vw] " fill src="/hotel_main_image.webp" alt="large_screen_bg_image" />
 

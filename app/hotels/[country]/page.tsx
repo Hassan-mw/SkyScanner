@@ -15,10 +15,10 @@ const country="Paksitan"
 
 
     <div className="w-full h-full flex flex-col space-y-10 items-center bg-white overflow-y-auto  overflow-x-hidden">
-    <div className="bg-blue-950 flex items-center justify-center w-full"><CustomSearchBarHotel/></div>
+   <CustomSearchBarHotel/>
    
     <div className=" w-full max-w-screen-xl flex flex-col   space-y-16 p-3  ">
-     
+      
     {/*//! Hottels Logo */}
     <ShowCurrentPage country={country}/>
     <CustomHotelsLogo  />

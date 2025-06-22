@@ -1,6 +1,15 @@
 'use client';
 import Link from "next/link"
 
+  import { Jost } from "next/font/google"
+  
+
+const jost=Jost({
+  subsets:['latin'],
+  weight:['500']
+})
+
+
 function ShowHotelsArray({country,text}) {
   const hotelname='hotel123'  
   return (
