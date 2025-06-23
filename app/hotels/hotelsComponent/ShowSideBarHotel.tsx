@@ -1,11 +1,10 @@
 'use client';
 
 
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { GiRotaryPhone } from "react-icons/gi";
-// import SideBarFilter from "../(flightpageOptions)/SideBarFilter";
 
-function ShowSideBarHotel({setShowSideBar}) {
+function ShowSideBarHotel({setShowSideBar}:{setShowSideBar:Dispatch<SetStateAction<boolean>>}) {
     const [currentPrriceId,setCheckCurentPriceId]=useState(1)
     const [currentStarId,setCheckCurentStarsId]=useState(1)
     console.log(currentPrriceId)
@@ -36,77 +35,75 @@ function ShowSideBarHotel({setShowSideBar}) {
         {id:5,type:'pool'},
     ]
     return (
-    <div className="flex flex-col items-start   w-[300px]    space-y-6 p-4 pb-36 ">
+    <div className="flex flex-col items-start  px-2   space-y-6 py-4 pb-36  ">
           
            {/* button */}
            <span className="2xl:hidden p-2 fixed top-0 left-0 bg-blue-700 hover:bg-blue-900 duration-200 shadow-2xl  text-white rounded-br-2xl text-2xl font-semibold w-1/2 flex items-center justify-center" onClick={()=>setShowSideBar(false)} >Close</span>
           
            {/* Startup deals*/}
-            <div className="flex items-center justify-start gap-x-3 border-t pt-5">
+            <div className="flex items-center justify-start gap-x-3 border-t pt-5 w-full">
                 <div className="text-[#626971]"><GiRotaryPhone /></div>
                <span className="text-[#161616] font-semibold">Book with the piece of mind  </span>           
             </div>
                 
 
-       
+            {/* Options */}
            <div className="flex flex-col items-start space-y-2">
                {/* CANCELATION */}
                <div className="flex items-center justify-center space-x-2">
-                    <input className="size-4 " type="checkbox"/>
-                    <div className="text-lg pb-1 text-slate-500">Free cancellation</div>
+                    <input className="size-3 " type="checkbox"/>
+                    <span  className="text-md font-normal pb-1 text-[#161616]">Free cancellation</span>
+               </div>
+               {/* BREAKFAST */}
+               <div className="flex items-center justify-center space-x-2">
+                    <input className="size-3 " type="checkbox"/>
+                    <span  className="text-md font-normal pb-1 text-[#161616]">Breakfast included</span>
                </div>
           
-        {/* BREAKFAST */}
-        <div className="flex items-center justify-between ">
-            <div className="flex items-center justify-center space-x-2">
-                <div><input  className="size-4" type="checkbox"/></div>
-                <div className="text-lg pb-1 text-slate-500">Breakfast included</div>
             </div>
-            {/* <div className="text-sm pt-1 text-slate-700">151</div> */}
-        </div>
-                   </div>
+
+
             {/* Pricing */}
-                <div className="flex items-start w-full   space-x-2 text-slate-700"><div className="text-lg font-semibold">Price</div></div>   
-                  <div className="flex flex-col space-y-2">
-           {priceArray.map((data,index)=>
-           
-        <div key={data.id} className="flex items-center justify-between ">
-            <div className="flex items-center justify-center space-x-2">
-                <div><input checked={data.id===currentPrriceId} onChange={()=>setCheckCurentPriceId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
-                <div className="text-lg pb-1 text-slate-500">Rs {data.start} - Rs {data.end}</div>
+            <div className="flex flex-col space-y-2">
+            <span className="text-[#161616] text-lg font-semibold">Price</span>
+            {priceArray.map((data,index)=>          
+              <div key={data.id} className="flex items-center justify-between ">
+                  <div className="flex items-center justify-center space-x-2">
+                     <div><input checked={data.id===currentPrriceId} onChange={()=>setCheckCurentPriceId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
+                     <span className="text-md pb-1 text-[#161616]">Rs {data.start} - Rs {data.end}</span>
+                  </div>
+              </div>
+            )}
             </div>
-        </div>
-          )}
+
+
+            {/* Stars */}
+            <div className="flex flex-col space-y-2">
+            <span className="text-[#161616] text-lg font-semibold">Hotel star rating</span>
+            {hotelStarArray.map((data,index)=>          
+              <div key={data.id} className="flex items-center justify-between ">
+                  <div className="flex items-center justify-center space-x-2">
+                     <div><input checked={data.id===currentStarId} onChange={()=>setCheckCurentStarsId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">{data.type}</span><span className="pb-1 text-xs"> {data.start}</span> </div> 
                   </div>
-            {/* STARS */}
-                 <div className="flex items-start w-full   space-x-2 text-slate-700"><div className="text-lg font-semibold">Hotel star rating</div></div>   
-                 <div className="flex flex-col space-y-2">
-                 {hotelStarArray.map((data,index)=>
-           
-                  <div key={data.id} className="flex items-center justify-between ">
-                 <div className="flex items-center justify-center space-x-2">
-                <div><input checked={data.id===currentStarId} onChange={()=>setCheckCurentStarsId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
-                <div className="text-lg pb-1 text-slate-500">{data.type} {data.start}</div>
-                  </div>
-                </div>
-                  )}
-                   </div>
+              </div>
+            )}
+            </div>
+
             {/* FACALITILES */}
-                 <div className="flex items-start w-full   space-x-2 text-slate-700"><div className="text-lg font-semibold">Amenities</div></div>   
-                 <div className="flex flex-col space-y-2">
-                 {hotelfacilitiesArray.map((data,index)=>
-           
-                  <div key={data.id} className="flex items-center justify-between ">
-                 <div className="flex items-center justify-center space-x-2">
-                <div><input checked={data.id===currentStarId} onChange={()=>setCheckCurentStarsId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
-                <div className="text-lg pb-1 text-slate-500">{data.type} {data.start}</div>
+            <div className="flex flex-col space-y-2">
+            <span className="text-[#161616] text-lg font-semibold">Amenities</span>
+            {hotelfacilitiesArray.map((data,index)=>          
+              <div key={data.id} className="flex items-center justify-between ">
+                  <div className="flex items-center justify-center space-x-2">
+                     <div><input checked={data.id===currentStarId} onChange={()=>setCheckCurentStarsId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
+                     <span className="text-md pb-1 text-[#161616]">{data.type}</span>
                   </div>
-                </div>
-                  )}
-                   </div>
-           
-    
-        </div>
+              </div>
+            )}
+            </div>
+
+    </div>
     )
 }
 

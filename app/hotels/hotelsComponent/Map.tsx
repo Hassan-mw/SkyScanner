@@ -1,15 +1,14 @@
 'use client'
 // components/Map.js
 import React from 'react';
-import { GoogleMap, LoadScript, Marker, MarkerF } from '@react-google-maps/api';
-import {MapContainer,TileLayer}  from "react-leaflet"
+// import { GoogleMap, LoadScript, Marker, MarkerF } from '@react-google-maps/api';
+import {MapContainer,Popup,TileLayer,Marker}  from "react-leaflet"
 import "leaflet/dist/leaflet.css"
+import { FaMapMarkerAlt } from 'react-icons/fa';
+import L from 'leaflet';
+import markerIcon from 'leaflet/dist/images/marker-icon.png';
 
 
-const containerStyle = {
-  width: '100%',
-  height: '100%'
-};
 
 
 
@@ -59,18 +58,32 @@ const points = [
   }
 ];
 
+const customIcon=new L.Icon ({
+iconUrl:markerIcon.src
+
+})
 
 const Map = ({country}:{country:string}) => {
   return (
-      <div className='w-full h-full  space-y-3 p-1 border-4 border-white rounded-md'>
+      <div className='w-full h-full  space-y-3 p-1  border-white rounded-md xl:border-green-500 xl:rounded-none xl:p-none'>
         
     
-    <MapContainer className='h-full' center={[48.8566,2.3522]} zoom={13}>
+    <MapContainer className='h-full' center={[ 21.5760,   39.1565]} zoom={14}>
        <TileLayer 
         
           attribution= '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
            url='https://tile.openstreetmap.org/{z}/{x}/{y}.png'
        />
+      {points.map((data,index)=> 
+        //  <MarkerF position={data} ></MarkerF>
+       <Marker  key={index} position={data} icon={customIcon} >
+         <Popup>
+          <b>GGGGGGGGGGGGGG</b>
+         </Popup>
+       </Marker>
+         )}
+         
+
 
 
    

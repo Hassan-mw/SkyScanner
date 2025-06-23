@@ -24,19 +24,19 @@ const [showSideBae,setShowSideBar]=useState(false)
         <div className="w-full h-full flex flex-col items-center justify-center bg-[#eff3f8] overflow-hidden">
 
        {/* <CustomSearchBarHotel/> */}
-        <div className="w-full flex flex-col   xl:flex-row  max-w-[2000px]">
+        <div className="w-full flex flex-col    xl:flex-row  max-w-[2000px]">
            
              {/* //! SIDEBAR AT LARGE SCREENS */}
-            <div className={` 2xl:min-w-[10%] w-full  h-[90vh] bg-white hidden 2xl:block overflow-hidden  overflow-y-auto `}>
+            <div className={` 2xl:max-w-[280px] w-full   h-[90vh]  hidden 2xl:block overflow-hidden  overflow-y-auto `}>
                 <ShowSideBarHotel setShowSideBar={setShowSideBar}/>
             </div>
             
             {/* //! MIDDLE BOX */}
-            <div className="w-full  flex flex-col lg:min-w-[70%] 2xl:min-w-[58%] overflow-y-auto">
+            <div className="w-full  flex flex-col lg:min-w-[70%] 2xl:min-w-[50%] pb-20 overflow-y-auto">
               
             <div className=" w-full flex flex-col items-center    max-w-screen-xl space-y-3 p-2">
             <div className="w-full"><FilterHotelsShower setShowSideBar={setShowSideBar}/></div>
-            <div className="w-full  h-[300px] hidden sm:block xl:hidden ">
+            <div className="w-full border-4 rounded-md border-slate-200 h-[300px] hidden sm:block xl:hidden ">
               
                  <Map country={country}/>
                   
@@ -45,7 +45,7 @@ const [showSideBae,setShowSideBar]=useState(false)
               
             </div>
              {/* //! HOTELS ARRAY */}
-            <div className="lg:min-w-[70%] 2xl:min-w-[50%] max-w-screen-xl h-full  py-2 p-2 ">
+            <div className="lg:min-w-[60%] 2xl:min-w-[50%] max-w-screen-xl h-full  py-2 p-2 ">
             <div className="flex flex-col w-full space-y-10 pr-3"> 
                {/* Text */}
               <div className="p-2 bg-white rounded-sm w-full flex items-center justify-start gap-x-1 ">
@@ -67,12 +67,8 @@ const [showSideBae,setShowSideBar]=useState(false)
             </div>
            
             {/* //! MAP */}
-            {/* hide map and show on xl */}
-            <div className=" lg:min-w-[30%] 2xl:min-w-[25%] w-full h-[90vh] bg-red-400 overflow-hidden   hidden xl:block rounded-none p-1 ">
-
-
+            <div className=" lg:min-w-[30%] 2xl:min-w-[30%] w-full h-[90vh]  overflow-hidden   hidden xl:block rounded-none p-1 xl:p-0 ">
             <Map country={country}/>
-  
             </div>
       
         </div>

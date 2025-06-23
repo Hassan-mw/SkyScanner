@@ -10,17 +10,17 @@ const jost=Jost({
 })
 
 
-function ShowHotelsArray({country,text}) {
+function ShowHotelsArray({country,text}:{country:string,text:string}) {
   const hotelname='hotel123'  
   return (
         <div className="w-full h-full flex flex-col   sm:flex-row  ">
 
         {/* IMAGE */}
-         <div className="w-full bg-blue-500 max-h-60 sm:w-[40%]  overflow-hidden rounded-t-md sm:rounded-none sm:rounded-l-sm">
+         <div className="w-full bg-blue-500 max-h-60 sm:w-[40%]  overflow-hidden rounded-t-sm sm:rounded-none sm:rounded-l-sm">
           <img className="object-cover w-full  sm:h-full  " src="/hotel.webp"/>
           </div>
         {/* CONTENT */}
-         <div className="flex max-h-60 flex-col py-2 sm:justify-center md:flex-row bg-white overflow-hidden w-full  border rounded-b-2xl sm:rounded-none sm:rounded-r-sm  ">
+         <div className="flex max-h-60 flex-col py-2 sm:justify-center md:flex-row bg-white overflow-hidden w-full  border rounded-b-sm sm:rounded-none sm:rounded-r-sm  ">
           {/* Details*/}
          <div className="flex flex-col w-full items-start justify-center  md:justify-start md:pt-6 p-2 md:px-7 space-y-2 md:border-r  border-slate-300  ">
           <div className="flex  items-center  md:space-x-9 justify-between w-full space-x-3">
