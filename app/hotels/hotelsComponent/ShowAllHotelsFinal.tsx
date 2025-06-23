@@ -11,19 +11,20 @@ import ShowSideBarHotel from "./ShowSideBarHotel";
 import { Jost } from "next/font/google";
 import Map from "./Map";
 import CustomSearchBarHotel from "./CustomSearchBarCar";
+import HotelSearchBar from "./HotelSearchBar";
 
 const jost=Jost({
     subsets:['latin'],
     weight:['500']
 })
 
-function ShowAllHotelsFinal({country}) {
+function ShowAllHotelsFinal({country}:{country:string}) {
 const arr=[,1,1,1,11,1,1,1,1,1,1]
 const [showSideBae,setShowSideBar]=useState(false)
     return (
         <div className="w-full h-full flex flex-col items-center justify-center bg-[#eff3f8] overflow-hidden">
 
-       {/* <CustomSearchBarHotel/> */}
+       <HotelSearchBar/>
         <div className="w-full flex flex-col    xl:flex-row  max-w-[2000px]">
            
              {/* //! SIDEBAR AT LARGE SCREENS */}

@@ -35,7 +35,7 @@ function ShowSideBarHotel({setShowSideBar}:{setShowSideBar:Dispatch<SetStateActi
         {id:5,type:'pool'},
     ]
     return (
-    <div className="flex flex-col items-start  px-2   space-y-6 py-4 pb-36  ">
+    <div className="flex flex-col items-start  px-3   space-y-6 py-4 pb-36  ">
           
            {/* button */}
            <span className="2xl:hidden p-2 fixed top-0 left-0 bg-blue-700 hover:bg-blue-900 duration-200 shadow-2xl  text-white rounded-br-2xl text-2xl font-semibold w-1/2 flex items-center justify-center" onClick={()=>setShowSideBar(false)} >Close</span>
