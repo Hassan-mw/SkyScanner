@@ -1,0 +1,85 @@
+'use client';
+// import FilterHotelsShower from "@/app/(hotelPageoptions)/FilterHotelsShower"
+// import ShowHotelsArray from "@/app/(hotelPageoptions)/ShowHotelsArray"
+
+// import ShowSideBarHotel from "@/app/(hotelPageoptions)/ShowSideBarHotel"
+import { useState } from "react"
+import FilterHotelsShower from "./FilterHotelsShower";
+import ShowHotelsArray from "./ShowHotelsArray";
+import ShowMapOption from "./ShowMapOption";
+import ShowSideBarHotel from "./ShowSideBarHotel";
+import { Jost } from "next/font/google";
+import Map from "./Map";
+import CustomSearchBarHotel from "./CustomSearchBarCar";
+
+const jost=Jost({
+    subsets:['latin'],
+    weight:['500']
+})
+
+function ShowAllHotelsFinal({country}) {
+const arr=[,1,1,1,11,1,1,1,1,1,1]
+const [showSideBae,setShowSideBar]=useState(false)
+    return (
+        <div className="w-full h-full flex flex-col items-center justify-center bg-[#eff3f8] overflow-hidden">
+
+       {/* <CustomSearchBarHotel/> */}
+        <div className="w-full flex flex-col   xl:flex-row  max-w-[2000px]">
+           
+             {/* //! SIDEBAR AT LARGE SCREENS */}
+            <div className={` 2xl:min-w-[10%] w-full  h-[90vh] bg-white hidden 2xl:block overflow-hidden  overflow-y-auto `}>
+                <ShowSideBarHotel setShowSideBar={setShowSideBar}/>
+            </div>
+            
+            {/* //! MIDDLE BOX */}
+            <div className="w-full  flex flex-col lg:min-w-[70%] 2xl:min-w-[58%] overflow-y-auto">
+              
+            <div className=" w-full flex flex-col items-center    max-w-screen-xl space-y-3 p-2">
+            <div className="w-full"><FilterHotelsShower setShowSideBar={setShowSideBar}/></div>
+            <div className="w-full  h-[300px] hidden sm:block xl:hidden ">
+              
+                 <Map country={country}/>
+                  
+              </div>
+               
+              
+            </div>
+             {/* //! HOTELS ARRAY */}
+            <div className="lg:min-w-[70%] 2xl:min-w-[50%] max-w-screen-xl h-full  py-2 p-2 ">
+            <div className="flex flex-col w-full space-y-10 pr-3"> 
+               {/* Text */}
+              <div className="p-2 bg-white rounded-sm w-full flex items-center justify-start gap-x-1 ">
+                 <span style={{fontWeight:300}} className={`${jost.className} text-xs  `}>  We search for prices from hundreds of providers — what they pay us may affect our sort order . <span  style={{fontWeight:300}} className={`${jost.className} text-blue-500  text-xs  `}>Learn how Skyscanner works</span></span>
+                
+              </div>
+
+              {/* Main_Data */}
+              { 
+               arr.map((data,index)=>
+               <div key={index} className="w-full">
+                    <ShowHotelsArray text="Go to site" country={country}/>
+                </div> )
+              }
+
+                      
+            </div>
+            </div>
+            </div>
+           
+            {/* //! MAP */}
+            {/* hide map and show on xl */}
+            <div className=" lg:min-w-[30%] 2xl:min-w-[25%] w-full h-[90vh] bg-red-400 overflow-hidden   hidden xl:block rounded-none p-1 ">
+
+
+            <Map country={country}/>
+  
+            </div>
+      
+        </div>
+       
+         
+    </div>
+    )
+}
+
+export default ShowAllHotelsFinal

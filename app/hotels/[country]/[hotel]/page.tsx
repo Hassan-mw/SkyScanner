@@ -1,4 +1,6 @@
-import ShowAllHotelsFinal from "@/app/(hotelPageoptions)/ShowAllHotelsFinal"
+// import ShowAllHotelsFinal from "@/app/ShowAllHotelsFinal"
+
+import ShowAllHotelsFinal from "../../hotelsComponent/ShowAllHotelsFinal"
 
 async function page({params}) {
 const {country}=await params
