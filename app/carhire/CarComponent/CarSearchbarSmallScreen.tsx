@@ -26,12 +26,7 @@ const CarSearchbarSmallScreen = () => {
     const [pickupTime,setPickupTime] = useState('');
     const [pickoffDate,setPickoffDate] = useState<Date>();
     const [pickoffTime,setPickoffTime] = useState('');
-    const [showSideBar,setshowSidebar]=useState(false)
-    const [crrentForm,setCurrentForm]=useState("")
-    const [endPlace,setEndPlace]=useState('')
-    const [checkInDate,setCheckInDate] = useState();
-    const [room,setRoom]=useState({adult:1})
-    const [date,setDate] = useState<Date>();
+
     
 
 
@@ -66,40 +61,20 @@ const CarSearchbarSmallScreen = () => {
     </PopoverContent>
    </Popover>
 
-
-   {/* //!Journey End Place*/}
-   <Popover >
-    <PopoverTrigger> 
-        <div className="w-full flex flex-col items-center space-y-2 ">
-       {/* <div className="text-xs text-white font-semibold flex items-start w-full">Select the place to end journey</div> */}
-        <div   className="bg-white   flex items-center justify-start px-3 py-3 gap-2  xl:rounded-none border w-full">
-            <div className="text-sm"><MdLocationOn /></div>
-        
-            {endPlace ?<span>{endPlace} </span>  :<span className="text-black"> Everywhere </span>}
-
-        </div>
-       </div>
-       </PopoverTrigger>
-    <PopoverContent  > 
-    <PlanesearchPlane value={endPlace} setValue={setEndPlace}  />
-    
-    </PopoverContent>
-   </Popover>
        
-    {/* Date + Numbers */}
+    {/* pick_up_date_time*/}
     <div className=" grid grid-cols-2 gap-x-[2px]">
+
     {/* //! Date */}
     <Popover >
             <PopoverTrigger>
             <div className="w-full flex flex-col items-center space-y-2   ">
-           {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Selecy Date</div> */}
-            <div className=" min-w-full flex items-center justify-start p-3 gap-2 rounded-bl-xl  lg:rounded-none border bg-white  sm:p-3">
-            <div className="text-sm text-gray-500"><FaCalendarAlt /></div>
-            <div className="text-black truncate">
-                 {pickupDate ?<span>{pickupDate.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
-            </div>
-          
-            </div>    
+              <div className=" min-w-full flex items-center justify-start p-3 gap-2  border bg-white  sm:p-3">
+                <div className="text-sm text-gray-500"><FaCalendarAlt /></div>
+                <div className="text-black truncate">
+                   {pickupDate ?<span>{pickupDate.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
+                </div>
+              </div>    
             </div>      
             </PopoverTrigger>
         <PopoverContent>
@@ -112,7 +87,7 @@ const CarSearchbarSmallScreen = () => {
             <PopoverTrigger>
             <div className=" flex flex-col items-center space-y-2 w-full ">
            {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Persons</div> */}
-            <div className=" min-w-full flex items-center justify-start gap-2 rounded-br-xl lg:rounded-l-none border bg-white p-3 sm:p-3">
+            <div className=" min-w-full flex items-center justify-start gap-2 border bg-white p-3 sm:p-3">
                 <div className="text-sm text-gray-400"><GoClockFill /></div>
                  <span>{pickupTime ? pickupTime : '10:00'}</span>
             </div>    
@@ -122,7 +97,46 @@ const CarSearchbarSmallScreen = () => {
             <CarPickTime time={pickupTime} setTime={setPickupTime}  />
         </PopoverContent>
     </Popover>
+    
+    </div>
 
+
+    {/*pick_off_date_time */}
+    <div className=" grid grid-cols-2 gap-x-[2px]">
+
+    {/* //! Date */}
+    <Popover >
+            <PopoverTrigger>
+            <div className="w-full flex flex-col items-center space-y-2   ">
+           {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Selecy Date</div> */}
+            <div className=" min-w-full flex items-center justify-start p-3 gap-2 rounded-bl-xl  lg:rounded-none border bg-white  sm:p-3">
+            <div className="text-sm text-gray-500"><FaCalendarAlt /></div>
+            <div className="text-black truncate">
+                 {pickoffDate ?<span>{pickoffDate.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
+            </div>
+          
+            </div>    
+            </div>      
+            </PopoverTrigger>
+        <PopoverContent>
+            <CustomDatePicker date={pickoffDate}  setDateSelect={setPickoffDate} />
+        </PopoverContent>
+    </Popover>
+       
+    {/* //! Room Selection */}
+   <Popover >
+        <PopoverTrigger>
+            <div className=" flex flex-col items-center space-y-2 w-full ">
+              <div className=" min-w-full flex items-center justify-start gap-2 rounded-br-xl lg:rounded-l-none border bg-white p-3 sm:p-3">
+                  <div className="text-sm text-gray-400"><GoClockFill /></div>
+                 <span>{pickoffTime ? pickoffTime : '10:00'}</span>
+              </div>    
+            </div>      
+        </PopoverTrigger>
+        <PopoverContent className=" w-[200px]">
+            <CarPickTime time={pickoffTime} setTime={setPickoffTime}  />
+        </PopoverContent>
+    </Popover>
 
     </div>
 
