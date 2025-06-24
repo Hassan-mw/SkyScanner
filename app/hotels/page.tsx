@@ -1,6 +1,7 @@
 
+
 import CustomHotelsLogo from "./hotelsComponent/CustomHotelsLogo"
-import CustomSearchBarHotel from "./hotelsComponent/CustomSearchBarCar"
+import CustomSearchBarHotel from "./hotelsComponent/CustomSearchBarhotel"
 import FastFactMainHotel from "./hotelsComponent/FastFactMainHotel"
 import HotelNearOwncity from "./hotelsComponent/HotelNearOwnCity"
 import HotelPlace from "./hotelsComponent/HotelPlace"

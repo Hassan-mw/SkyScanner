@@ -7,7 +7,7 @@ import ShowMapOption from "./ShowMapOption";
 import ShowSideBarHotel from "./ShowSideBarHotel";
 import { Jost } from "next/font/google";
 import Map from "./Map";
-import CustomSearchBarHotel from "./CustomSearchBarCar";
+import CustomSearchBarHotel from "./CustomSearchBarhotel";
 import HotelSearchBar from "./HotelSearchBar";
 
 const jost=Jost({

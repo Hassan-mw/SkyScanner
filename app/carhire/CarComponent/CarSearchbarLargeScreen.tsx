@@ -48,11 +48,11 @@ const CarSearchbarLargeScreen = () => {
       <div className="w-full bg-[#05203c] p-2 rounded-sm flex flex-col space-y-2">
 
     {/*//!  Form */}
-   <Menubar className="w-full bg-[#05203c] h-20  grid grid-cols-6  border-[#05203c]">
+     <Menubar className="w-full bg-[#05203c]  h-44 lg:h-16  grid grid-cols-1 lg:grid-cols-2 lg:gap-0 border-[#05203c]">
       
     {/* Journey Start Place */}
     <MenubarMenu  >
-        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none rounded-l-md  p-0 ">
+        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none rounded-t-md lg:rounded-none lg:rounded-l-md  p-0 ">
             {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
                <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
                   <span className="text-[#626971] font-semibold text-sm"> Pick-up location </span>
@@ -67,9 +67,10 @@ const CarSearchbarLargeScreen = () => {
     </MenubarMenu>
 
 
-
+     <div className=" w-full lg:h-full flex items-center justify-between gap-1 lg:gap-0">
+   
     {/* Pick-up_Date  */}
-    <DatePicker place="Pick-up date" date={pickupDate} setDate={setPickupDate} />
+     <div className="w-full bg-white flex rounded-bl-md lg:rounded-none items-center justify-center">  <DatePicker place="Pick-up date" date={pickupDate} setDate={setPickupDate} /></div>
     
     {/* pick_up time */}
     <MenubarMenu  >
@@ -89,12 +90,12 @@ const CarSearchbarLargeScreen = () => {
 
     
     {/*pick-off_ Date  */}
-    <DatePicker  place="Pick-off date" date={pickoffDate} setDate={setPickoffDate} />
+    <div className="w-full bg-white flex items-center justify-center"><DatePicker  place="Pick-off date" date={pickoffDate} setDate={setPickoffDate} /></div>
        
     
     {/* pick_off time */}
     <MenubarMenu  >
-        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none rounded-r-xl   p-0 ">
+        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none rounded-br-md lg:rounded-none lg:rounded-r-md p-0 ">
             {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
               <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
                   <span className="text-[#626971] font-semibold text-sm"> Time </span>
@@ -108,22 +109,22 @@ const CarSearchbarLargeScreen = () => {
         </MenubarContent>
     </MenubarMenu>
 
-
-    
-
-      {/* Buttons_Searching */}
-    <Link href="/flights/PK" className="w-full flex items-center justify-center h-full   rounded-xl ">
-      <div className="w-full ml-3 max-w-[80%] h-full   2xl:max-w-full rounded-xl  flex items-center justify-center text-white font-semibold bg-blue-600 duration-700 hover:bg-blue-700 ">
+   
+   
+      <Link href="/flights/PK" className="w-full  h-full hidden lg:block ml-4">
+      <div className="w-full h-full   rounded-md  flex items-center justify-center text-white font-semibold bg-blue-600 duration-700 hover:bg-blue-700 ">
          <h2 className={`${jost.className} text-sm`}>Search </h2>
       </div>
     </Link>
 
+    
 
+ </div>
    </Menubar>
 
 
    {/* //!  Filter icons */}
-   <div className="w-full flex items-start justify-start    ">
+   <div className="w-full flex flex-col items-start justify-start lg:p-2 space-y-2 lg:space-y-0  ">
    <div className="w-full max-w-xl justify-start    grid grid-cols-2  ">
    
     {/* 1 */}
@@ -135,15 +136,24 @@ const CarSearchbarLargeScreen = () => {
     {/* 2 */}
     <div className="flex items-center justify-start  text-white gap-x-2 ">
       <input className="size-[15px]" type="checkbox"/>
-      <p className={`${jost.className} text-md `}>Return cr to a different location</p>
+      <p className={`${jost.className} text-md `}>Return car to a different location</p>
     </div>
 
    
 
    </div>
+  
+    {/* Buttons_Searching */}
+    <Link href="/flights/PK" className="w-full h-11  lg:hidden ">
+     <div className="w-full flex items-center justify-center h-full bg-[#0062e3] duration-500 hover:bg-blue-700 text-xl  text-white rounded-md">
+     Search
+     </div>  
+    </Link>
    </div>
  
 </div>
+
+
     </div>
     </div>
 
