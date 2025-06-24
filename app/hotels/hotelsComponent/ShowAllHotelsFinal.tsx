@@ -25,15 +25,15 @@ const [showSideBae,setShowSideBar]=useState(false)
         <div className="w-full flex flex-col    xl:flex-row  max-w-[2000px]">
            
              {/* //! SIDEBAR AT LARGE SCREENS */}
-            <div className={` 2xl:max-w-[280px] w-full   h-[90vh]  hidden 2xl:block overflow-hidden  overflow-y-auto `}>
+            {/* <div className={` 2xl:max-w-[280px] w-full   h-[90vh]  hidden 2xl:block overflow-hidden  overflow-y-auto `}> */}
                 <ShowSideBarHotel setShowSideBar={setShowSideBar}/>
-            </div>
+            {/* </div> */}
             
             {/* //! MIDDLE BOX */}
             <div className="w-full  flex flex-col lg:min-w-[70%] 2xl:min-w-[50%] pb-20 overflow-y-auto">
               
             <div className=" w-full flex flex-col items-center    max-w-screen-xl space-y-3 p-2">
-            <div className="w-full"><FilterHotelsShower setShowSideBar={setShowSideBar}/></div>
+           <FilterHotelsShower setShowSideBar={setShowSideBar}/>
             <div className="w-full border-4 rounded-md border-slate-200 h-[300px] hidden sm:block xl:hidden ">
               
                  <Map country={country}/>

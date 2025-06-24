@@ -35,6 +35,7 @@ function ShowSideBarHotel({setShowSideBar}:{setShowSideBar:Dispatch<SetStateActi
         {id:5,type:'pool'},
     ]
     return (
+    <div className={` 2xl:max-w-[280px] w-full   h-[90vh]  hidden 2xl:block overflow-hidden  overflow-y-auto `}>
     <div className="flex flex-col items-start  px-3   space-y-6 py-4 pb-36  ">
           
            {/* button */}
@@ -103,6 +104,7 @@ function ShowSideBarHotel({setShowSideBar}:{setShowSideBar:Dispatch<SetStateActi
             )}
             </div>
 
+    </div>
     </div>
     )
 }

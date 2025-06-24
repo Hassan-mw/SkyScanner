@@ -21,7 +21,7 @@ function FilterHotelsShower({setShowSideBar}:{setShowSideBar:Dispatch<SetStateAc
         {id:5,data:'Middle price'}
     ]
     return (
-        <div className="flex flex-col space-y-2">
+        <div className="w-full flex flex-col space-y-2">
 
        <div className="flex flex-col items-start  justify-start space-y-3 w-full">
        
