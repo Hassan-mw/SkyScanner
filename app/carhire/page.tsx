@@ -3,12 +3,12 @@
 
 import FastFactMainHotel from "./CarComponent/FastFactMainHotel"
 import HotelNearOwncity from "./CarComponent/HotelNearOwnCity"
-import HotelPlace from "../(hotelPageoptions)/HotelPlace"
+import HotelPlace from "./CarComponent/HotelPlace"
 // import CustomSearchBar from "../components/CustomSearchBar"
-import CustomSearchBarHotel from "../components//CustomSearchBarCar"
+import CustomSearchBarHotel from "./CarComponent/CustomSearchBarCar"
 // import CustomShowDetails from "../utils/CustomShowDetails"
-import ShowCurrentPageHotel from "../(hotelPageoptions)/ShowCurrentPageHotels"
-import CustomHotelsLogo from "../components/CustomHotelsLogo"
+import ShowCurrentPageHotel from "./CarComponent/FastFactMainHotel"
+import CustomHotelsLogo from "./CarComponent/CustomHotelsLogo"
 
 function MainPageCar() {
     return (
