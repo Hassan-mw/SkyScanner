@@ -11,7 +11,8 @@ import PlanePerson from "../../Components_Custom/PlanePerson"
 import { TbSTurnDown } from "react-icons/tb";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover";
-
+import { FaCalendarAlt } from "react-icons/fa";
+import { GoClockFill } from "react-icons/go";
 
 
 const jost=Jost({
@@ -48,13 +49,13 @@ const FlightSearchBarSmallSceen = () => {
    {/* //!  Journey Start Place */}
    <Popover >
     <PopoverTrigger> 
-    <div className="relative w-full flex flex-col items-center  ">
+    <div className=" w-full flex flex-col items-center  ">
           {/* <h2 className="text-xs text-white font-semibold flex items-start w-full">Select the place to start journey</h2> */}
         <div className="bg-white   flex items-center justify-start p-3 gap-2 rounded-t-xl lg:rounded-r-none border w-full">
           <span className="text-xs text-slate-500"><MdTripOrigin /></span>
-          {startPlace ?<span>{startPlace} </span>  :<span className="text-black"> From </span>}
+          <span>{startPlace ? startPlace : 'City,airport or station'}</span>
         </div>
-        <div className="absolute left-[85%] rotate-90 -bottom-5 bg-white border-[#05203c] size-10 flex border-2 items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
+        {/* <div className="absolute left-[85%] rotate-90 -bottom-5 bg-white border-[#05203c] size-10 flex border-2 items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div> */}
     </div>
        </PopoverTrigger>
     <PopoverContent  > 
@@ -64,25 +65,6 @@ const FlightSearchBarSmallSceen = () => {
     </PopoverContent>
    </Popover>
 
-
-   {/* //!Journey End Place*/}
-   <Popover >
-    <PopoverTrigger> 
-        <div className="w-full flex flex-col items-center space-y-2 ">
-       {/* <div className="text-xs text-white font-semibold flex items-start w-full">Select the place to end journey</div> */}
-        <div   className="bg-white   flex items-center justify-start px-3 py-3 gap-2  xl:rounded-none border w-full">
-            <div className="text-sm"><MdLocationOn /></div>
-        
-            {endPlace ?<span>{endPlace} </span>  :<span className="text-black"> Everywhere </span>}
-
-        </div>
-       </div>
-       </PopoverTrigger>
-    <PopoverContent  > 
-    <PlanesearchPlane value={endPlace} setValue={setEndPlace}  />
-    
-    </PopoverContent>
-   </Popover>
        
     {/* Date + Numbers */}
     <div className=" grid grid-cols-2 gap-x-[2px]">
@@ -91,8 +73,52 @@ const FlightSearchBarSmallSceen = () => {
             <PopoverTrigger>
             <div className="w-full flex flex-col items-center space-y-2   ">
            {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Selecy Date</div> */}
+            <div className=" min-w-full flex items-center justify-start p-3 gap-2  border bg-white  sm:p-3">
+            <div className="text-sm text-gray-500"><FaCalendarAlt /></div>
+            <div className="text-black truncate">
+            {date ?<span>{date.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
+            </div>
+          
+            </div>    
+            </div>      
+            </PopoverTrigger>
+        <PopoverContent>
+            <CustomDatePicker setDateSelect={setDate} />
+   
+        </PopoverContent>
+    </Popover>
+       
+    {/* //! Room Selection */}
+   <Popover >
+            <PopoverTrigger>
+            <div className=" flex flex-col items-center space-y-2 w-full ">
+           {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Persons</div> */}
+            <div className=" min-w-full flex items-center justify-start gap-2  border bg-white p-3 sm:p-3">
+                <div className="text-sm text-gray-400"><GoClockFill /></div>
+                <div className="text-black truncate">{`10:00`}</div>
+            
+            </div>    
+            </div>      
+            </PopoverTrigger>
+        <PopoverContent>
+        <PlanePerson room={room} setRoom={setRoom}/>
+        </PopoverContent>
+    </Popover>
+
+
+    </div>
+
+
+
+    {/* Date + Numbers */}
+    <div className=" grid grid-cols-2 gap-x-[2px]">
+    {/* //! Date */}
+    <Popover >
+            <PopoverTrigger>
+            <div className="w-full flex flex-col items-center space-y-2   ">
+           {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Selecy Date</div> */}
             <div className=" min-w-full flex items-center justify-start p-3 gap-2 rounded-bl-xl  lg:rounded-none border bg-white  sm:p-3">
-            <div className="text-sm text-gray-500"><ion-icon name="calendar-outline"></ion-icon></div>
+            <div className="text-sm text-gray-500"><FaCalendarAlt /></div>
             <div className="text-black truncate">
             {date ?<span>{date.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
             </div>
@@ -112,7 +138,7 @@ const FlightSearchBarSmallSceen = () => {
             <div className=" flex flex-col items-center space-y-2 w-full ">
            {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Persons</div> */}
             <div className=" min-w-full flex items-center justify-start gap-2 rounded-br-xl lg:rounded-l-none border bg-white p-3 sm:p-3">
-                <div className="text-sm text-gray-400"><IoPerson /></div>
+                <div className="text-sm text-gray-400"><GoClockFill /></div>
             <div className="text-black truncate">{`${room.adult} adul`}</div>
             
             </div>    
@@ -125,6 +151,10 @@ const FlightSearchBarSmallSceen = () => {
 
 
     </div>
+
+
+
+
 
     </div>
 
