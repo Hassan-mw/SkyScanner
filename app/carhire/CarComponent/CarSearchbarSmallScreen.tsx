@@ -11,7 +11,9 @@ import PlanePerson from "../../Components_Custom/PlanePerson"
 import { TbSTurnDown } from "react-icons/tb";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import { Popover, PopoverContent, PopoverTrigger } from "@radix-ui/react-popover";
-
+import { FaCalendarAlt } from "react-icons/fa";
+import { GoClockFill } from "react-icons/go";
+import CarPickTime from "./CarPickTime";
 
 
 const jost=Jost({
@@ -19,14 +21,17 @@ const jost=Jost({
     subsets:['latin']
 })
 const CarSearchbarSmallScreen = () => {
+    const [startPlace,setStartPlace]=useState('')
+    const [pickupDate,setPickupDate] = useState<Date>();
+    const [pickupTime,setPickupTime] = useState('');
+    const [pickoffDate,setPickoffDate] = useState<Date>();
+    const [pickoffTime,setPickoffTime] = useState('');
     const [showSideBar,setshowSidebar]=useState(false)
     const [crrentForm,setCurrentForm]=useState("")
-    const [startPlace,setStartPlace]=useState('')
     const [endPlace,setEndPlace]=useState('')
     const [checkInDate,setCheckInDate] = useState();
-    const [date,setDate] = useState();
     const [room,setRoom]=useState({adult:1})
-    
+    const [date,setDate] = useState<Date>();
     
 
 
@@ -47,13 +52,11 @@ const CarSearchbarSmallScreen = () => {
    {/* //!  Journey Start Place */}
    <Popover >
     <PopoverTrigger> 
-    <div className="relative w-full flex flex-col items-center  ">
-          {/* <h2 className="text-xs text-white font-semibold flex items-start w-full">Select the place to start journey</h2> */}
+    <div className=" w-full flex flex-col items-center  ">
         <div className="bg-white   flex items-center justify-start p-3 gap-2 rounded-t-xl lg:rounded-r-none border w-full">
           <span className="text-xs text-slate-500"><MdTripOrigin /></span>
-          {startPlace ?<span>{startPlace} </span>  :<span className="text-black"> From </span>}
+          {startPlace ?<span>{startPlace} </span>  :<span className="text-black"> Pick-up location </span>}
         </div>
-        <div className="absolute left-[85%] rotate-90 -bottom-5 bg-white border-[#05203c] size-10 flex border-2 items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
     </div>
        </PopoverTrigger>
     <PopoverContent  > 
@@ -91,17 +94,16 @@ const CarSearchbarSmallScreen = () => {
             <div className="w-full flex flex-col items-center space-y-2   ">
            {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Selecy Date</div> */}
             <div className=" min-w-full flex items-center justify-start p-3 gap-2 rounded-bl-xl  lg:rounded-none border bg-white  sm:p-3">
-            <div className="text-sm text-gray-500"><ion-icon name="calendar-outline"></ion-icon></div>
+            <div className="text-sm text-gray-500"><FaCalendarAlt /></div>
             <div className="text-black truncate">
-            {date ?<span>{date.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
+                 {pickupDate ?<span>{pickupDate.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
             </div>
           
             </div>    
             </div>      
             </PopoverTrigger>
         <PopoverContent>
-            <CustomDatePicker  setDateSelect={setDate} />
-   
+            <CustomDatePicker date={pickupDate}  setDateSelect={setPickupDate} />
         </PopoverContent>
     </Popover>
        
@@ -111,14 +113,13 @@ const CarSearchbarSmallScreen = () => {
             <div className=" flex flex-col items-center space-y-2 w-full ">
            {/* <div className="text-xs text-white font-semibold flex items-start w-full ">Persons</div> */}
             <div className=" min-w-full flex items-center justify-start gap-2 rounded-br-xl lg:rounded-l-none border bg-white p-3 sm:p-3">
-                <div className="text-sm text-gray-400"><IoPerson /></div>
-            <div className="text-black truncate">{`${room.adult} adul`}</div>
-            
+                <div className="text-sm text-gray-400"><GoClockFill /></div>
+                 <span>{pickupTime ? pickupTime : '10:00'}</span>
             </div>    
             </div>      
             </PopoverTrigger>
-        <PopoverContent>
-        <PlanePerson room={room} setRoom={setRoom}/>
+        <PopoverContent className=" w-[200px]">
+            <CarPickTime time={pickupTime} setTime={setPickupTime}  />
         </PopoverContent>
     </Popover>
 

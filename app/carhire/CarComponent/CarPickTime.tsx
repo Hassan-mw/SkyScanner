@@ -35,7 +35,7 @@ const CarPickTime = ({time,setTime}:{time:string,setTime:Dispatch<SetStateAction
     }
 
   return (
-    <div className='w-full bg-white py-3 px-1 h-[400px] overflow-y-auto rounded-md flex flex-col space-y-3'>
+    <div className='w-full bg-white py-3 px-1 h-[400px] overflow-y-auto flex flex-col space-y-3'>
         {timeArray.map((data,index)=>
          <span className='hover:cursor-pointer hover:bg-blue-500 hover:text-white' onClick={()=>handleTime(data)} key={data}>{data}</span>
         )}

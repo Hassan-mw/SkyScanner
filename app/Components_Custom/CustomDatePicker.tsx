@@ -11,7 +11,7 @@ const CustomDatePicker = ({date,setDateSelect}) => {
   console.log(date)
    useEffect(()=>{
   
-    setDateSelect(selectedDate.toLocaleDateString())
+    setDateSelect(selectedDate)
    },[selectedDate])
 
   return (
