@@ -18,7 +18,7 @@ function MainPageHotel() {
       <ShowCurrentPageHotel/>
  
       {/* //! Hotels Logo */}
-      <CustomHotelsLogo  />
+      {/* <CustomHotelsLogo  /> */}
       </div>
       <div className="p-3 flex flex-col space-y-20 items-center w-full h-full bg-white max-w-screen-xl ">
         
