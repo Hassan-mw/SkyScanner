@@ -1,8 +1,5 @@
 'use client';
-// import FilterHotelsShower from "@/app/(hotelPageoptions)/FilterHotelsShower"
-// import ShowHotelsArray from "@/app/(hotelPageoptions)/ShowHotelsArray"
 
-// import ShowSideBarHotel from "@/app/(hotelPageoptions)/ShowSideBarHotel"
 import { useState } from "react"
 import FilterHotelsShower from "./FilterHotelsShower";
 import ShowHotelsArray from "./ShowHotelsArray";

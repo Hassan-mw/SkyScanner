@@ -24,7 +24,7 @@ function ShowHotelsArray({country,text}:{country:string,text:string}) {
           {/* Details*/}
          <div className="flex flex-col w-full items-start justify-center  md:justify-start md:pt-6 p-2 md:px-7 space-y-2 md:border-r  border-slate-300  ">
           <div className="flex  items-center  md:space-x-9 justify-between w-full space-x-3">
-            <span className={`${jost.className} text-sm  md:text-lg lg:text-2xl font-semibold`}>JOUDYAN Red Sea Mall Jeddah By Elaf</span><span className="text-sm">⭐⭐⭐⭐⭐</span></div>
+            <span className={`${jost.className} text-sm  md:text-lg lg:text-xl font-semibold`}>JOUDYAN Red Sea Mall Jeddah By Elaf</span><span className="text-sm">⭐⭐⭐⭐⭐</span></div>
           <span style={{fontWeight:300}} className={`${jost.className}  text-sm text-gray-700`}>12.10 km from city centre</span>
             <div  className="flex items-center justify-start gap-x-1 ">
                      <div  className="flex items-end justify-end  ">
