@@ -56,7 +56,7 @@ const HotelSearchBar = () => {
     
        
         {/*//!  Form */}
-       <Menubar className="w-full max-w-screen-xl bg-[#05203c]  h-32 md:h-20  grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-0 border-[#05203c] ">
+       <Menubar className="w-full max-w-screen-xl bg-[#05203c] px-3 h-32 md:h-20  grid grid-cols-1 md:grid-cols-2 gap-1 md:gap-0 border-[#05203c] ">
           
         {/* Hotel_Name */}
         <MenubarMenu  >

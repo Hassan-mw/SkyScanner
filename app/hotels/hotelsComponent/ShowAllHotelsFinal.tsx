@@ -18,60 +18,53 @@ const jost=Jost({
 function ShowAllHotelsFinal({country}:{country:string}) {
 const arr=[,1,1,1,11,1,1,1,1,1,1]
 const [showSideBae,setShowSideBar]=useState(false)
-    return (
-        <div className="w-full h-full flex flex-col items-center justify-center bg-[#eff3f8] overflow-hidden">
+return (
+    <div className="w-full h-full flex flex-col items-center justify-center bg-[#eff3f8] overflow-hidden">
 
-       <HotelSearchBar/>
+        <HotelSearchBar/>
         <div className="w-full flex flex-col    xl:flex-row  max-w-[2000px]">
            
-             {/* //! SIDEBAR AT LARGE SCREENS */}
-            {/* <div className={` 2xl:max-w-[280px] w-full   h-[90vh]  hidden 2xl:block overflow-hidden  overflow-y-auto `}> */}
-                <ShowSideBarHotel setShowSideBar={setShowSideBar}/>
-            {/* </div> */}
+            {/* //! SIDEBAR AT LARGE SCREENS */}
+            <ShowSideBarHotel setShowSideBar={setShowSideBar}/>
+          
             
             {/* //! MIDDLE BOX */}
             <div className="w-full  flex flex-col lg:min-w-[70%] 2xl:min-w-[50%] pb-20 overflow-y-auto">
-              
-            <div className=" w-full flex flex-col items-center    max-w-screen-xl space-y-3 p-2">
-           <FilterHotelsShower setShowSideBar={setShowSideBar}/>
-            <div className="w-full border-4 rounded-md border-slate-200 h-[300px] hidden sm:block xl:hidden ">
-              
-                 <Map country={country}/>
-                  
-              </div>
-               
-              
-            </div>
-             {/* //! HOTELS ARRAY */}
-            <div className="lg:min-w-[60%] 2xl:min-w-[50%] max-w-screen-xl h-full  py-2 p-2 ">
-            <div className="flex flex-col w-full space-y-10 pr-3"> 
-               {/* Text */}
-              <div className="p-2 bg-white rounded-sm w-full flex items-center justify-start gap-x-1 ">
-                 <span style={{fontWeight:300}} className={`${jost.className} text-xs  `}>  We search for prices from hundreds of providers — what they pay us may affect our sort order . <span  style={{fontWeight:300}} className={`${jost.className} text-blue-500  text-xs  `}>Learn how Skyscanner works</span></span>
-                
-              </div>
+                <div className=" w-full flex flex-col items-center    max-w-screen-xl space-y-3 p-2">
+                  <FilterHotelsShower setShowSideBar={setShowSideBar}/>
+                  <div className="w-full border-4 rounded-md border-slate-200 h-[300px] hidden sm:block xl:hidden ">
+                    <Map country={country}/>
+                  </div>
+                </div>
 
-              {/* Main_Data */}
-              { 
-               arr.map((data,index)=>
-               <div key={index} className="w-full">
+                {/* //! HOTELS ARRAY */}
+                <div className="lg:min-w-[60%] 2xl:min-w-[50%] max-w-screen-xl h-full  py-2 p-2 ">
+                  <div className="flex flex-col w-full space-y-10 pr-3"> 
+                
+                  {/* Text */}
+                  <div className="p-2 bg-white rounded-sm w-full flex items-center justify-start gap-x-1 ">
+                      <span style={{fontWeight:300}} className={`${jost.className} text-xs  `}>  We search for prices from hundreds of providers — what they pay us may affect our sort order . <span  style={{fontWeight:300}} className={`${jost.className} text-blue-500  text-xs  `}>Learn how Skyscanner works</span></span>              
+                  </div>
+
+                  {/* Main_Data */}
+                  { 
+                  arr.map((data,index)=>
+                   <div key={index} className="w-full">
                     <ShowHotelsArray text="Go to site" country={country}/>
-                </div> )
-              }
+                    </div> )
+                   }
 
                       
-            </div>
-            </div>
+                  </div>
+                </div>
             </div>
            
             {/* //! MAP */}
             <div className=" lg:min-w-[30%] 2xl:min-w-[30%] w-full h-[90vh]  overflow-hidden   hidden xl:block rounded-none p-1 xl:p-0 ">
-            <Map country={country}/>
+               <Map country={country}/>
             </div>
       
-        </div>
-       
-         
+        </div>         
     </div>
     )
 }
