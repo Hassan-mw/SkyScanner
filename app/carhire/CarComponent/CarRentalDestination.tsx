@@ -15,6 +15,7 @@ import {
 import { useState } from "react"
 import Image from "next/image"
 import { Jost } from "next/font/google"
+import { IoAlertCircle } from "react-icons/io5"
  
 
 const jost=Jost({
@@ -223,7 +224,14 @@ function CarRentalDestination() {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
-   </div>
+      </div>
+
+
+
+      <div className="w-full  flex items-start justify-start bg-[#eff3f8] gap-x-2 rounded-sm p-3 mt-14">
+          <div className="text-[#747a82]"><IoAlertCircle /></div>
+          <span style={{fontWeight:200}} className={`${jost.className} text-sm`}>These are estimated prices to help you choose from a large number of options. Each is an average based on the lowest <strong>car rental </strong> prices found for each destination over the last 15 days.</span> 
+      </div>
   
     
         </div>

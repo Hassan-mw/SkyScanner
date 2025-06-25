@@ -6,6 +6,7 @@ import CarSearchbarSmallScreen from "./CarComponent/CarSearchbarSmallScreen"
 import ShowCurrentPageHotel from "./CarComponent/ShowCurrentPageHotels"
 import HotelNearOwncity from "../hotels/hotelsComponent/HotelNearOwnCity"
 import CarRentalDestination from "./CarComponent/CarRentalDestination"
+import CarRentalByCity from "./CarComponent/CarRentalByCity"
 
 
 function MainPageCar() {
@@ -29,7 +30,7 @@ function MainPageCar() {
       <div className="p-3 flex flex-col space-y-44 items-center w-full h-full bg-white max-w-screen-xl ">
         
          <div className="w-full "><CarRentalDestination/></div>
-       {/* <div className="w-full "><HotelPlace/></div> */}
+         <div className="w-full "><CarRentalByCity/></div>
        <div className="w-full flex items-center justify-center">
             <FastFactMainHotel/>
         </div> 
