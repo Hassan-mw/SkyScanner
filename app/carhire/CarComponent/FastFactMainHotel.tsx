@@ -20,6 +20,7 @@ const jost=Jost({
 function FastFactMainHotel() {
     return (
         <div className="w-full h-full flex flex-col space-y-10 items-center justify-center max-w-screen-xl px-3 ">
+          
             {/* First */}
             <div className="w-full h-full flex flex-col space-y-7 items-center justify-center">
                 {/* Upper text */}
@@ -51,24 +52,24 @@ function FastFactMainHotel() {
               
             </div>
             {/* Second */}
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-8 w-full bg-slate-100 px-4 rounded-xl">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-5 py-8 w-full bg-[#eff3f8] px-4 rounded-xl">
             {/* Tag-1 */}
             <div className="flex flex-col items-center justify-center space-y-3  w-full ">
-             <div className="h-40"><img className="size-28 h-32" src="/tag.svg"/></div>
-             <div className="text-xl font-semibold">Great hotel deals</div>
-             <div className="max-w-[400px]">We search for deals with the world’s leading hotels, and share our findings with you.</div>
+             <div className="h-40"><img className="size-28 h-32" src="/car_tag_1.svg"/></div>
+             <div className="text-xl font-semibold">Step 1: Search</div>
+             <div className="max-w-[400px]">Enter your location and see what's available. From family-friendly SUVs to luxury convertibles, you’ll get a great price on every type of hire car.</div>
             </div>
             {/* Tag-2 */}
             <div className="flex flex-col items-center justify-center space-y-3  w-full ">
-             <div className="h-40"><img className="size-28 h-32" src="/Illustration_hotel_bell.svg"/></div>
-             <div className="text-xl font-semibold">Up-to-date pricing</div>
-             <div className="max-w-[400px]">We always show you the most recent pricing overview we can find, so you know exactly what to expect</div>
+             <div className="h-40"><img className="size-28 h-32" src="/car_tag_2.svg"/></div>
+             <div className="text-xl font-semibold">Step 2: Compare</div>
+             <div className="max-w-[400px]">Compare rental cars on fuel policy, mileage, provider rating, flexible booking, cleanliness, customer service and more.</div>
             </div>
             {/* Tag-3 */}
             <div className="flex flex-col items-center justify-center space-y-3  w-full ">
-             <div className="h-40"><img className="size-28 h-32" src="/Illustration_hotel_compare_scales.svg"/></div>
-             <div className="text-xl font-semibold">Precise searching</div>
-             <div className="max-w-[400px]">Find hotels with swimming pools, free cancellation, and flexible booking. Or whatever matters most to you.</div>
+             <div className="h-40"><img className="size-28 h-32" src="/car_tag_3.svg"/></div>
+             <div className="text-xl font-semibold">Step 3: Book</div>
+             <div className="max-w-[400px]">We compare car rental prices on 100s of sites for you, so once you've found your ride, you'll be redirected to book with the provider, with no extra fees.</div>
             </div>
         
           
