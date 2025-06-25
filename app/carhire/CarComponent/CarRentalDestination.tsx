@@ -48,13 +48,11 @@ function CarRentalDestination() {
       opts={{ align: "start"}}
       className="w-full bg-white "
        >
+
       <CarouselContent  className="w-full  ">
       
 
-          <CarouselItem   className="basis-full sm:basis-1/2 lg:basis-1/3 " >
-            <div className=" ">
-             {/* <Card className="border-none bg-blue-600 gap-4"> */}
-
+         <CarouselItem   className="basis-full  flex items-center justify-center sm:basis-1/2 lg:basis-1/3 " >
             <Link
             href={`hotels/${'Pakistan'}`} 
             className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
@@ -65,211 +63,157 @@ function CarRentalDestination() {
               width={300} 
               src="/car_rental_destination.webp"
               alt="image"
-              className="w-full object-cover  rounded-t-md  "
+              className="w-full object-cover object-bottom h-56 rounded-t-md  "
              />
-
-
-            <div className="flex items-center flex-col space-y-2 bg-white rounded-b-md   border  w-full ">
-              
-               <div className="flex  w-full items-start justify-between border-b pb-3 border-slate-300 p-3  ">
-                   {/* Hotel_detail */}
-                  <div className="felx flex-col items-start justify-start space-y-0 ">
-                     <h1 className={`${jost.className} font-semibold text-xl sm:text-md `}>Hotel Bilal</h1>
-                     <span style={{fontWeight:300}} className={`${jost.className} text-xs`}>3.54 km from city center</span>
-                     <div  className="flex items-center justify-start gap-x-1 pt-2">
-                     <div  className="flex items-end justify-end  ">
-                        <span className={`${jost.className} font-semibold text-sm text-black `}>4.2</span>
-                        <span  style={{fontWeight:200}} className={`${jost.className} text-[11px] text-slate-500`}>/5</span> 
-                     </div>
-                        <span className={`${jost.className} font-semibold text-sm text-black `}>Very good</span>
-                        <span style={{fontWeight:200}} className={`${jost.className} pt-1  text-[12px] text-slate-400`}>1 review</span>
-                     </div>
+             
+             <div className="w-full bg-white flex items-center justify-between p-3   rounded-b-md  border">
+                  <div className="flex flex-col items-start justify-start space-y-0">
+                    <h1  className={`${jost.className} text-lg`}>Car hire in Dubai</h1>
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-sm`}>Most popular car type: Economy</span>
                   </div>
-                  {/* Hotel_review */}
-                  <div className="text-xs">⭐⭐⭐⭐⭐</div>
 
-               </div>
+                  <div className="flex flex-col items-end justify-end">
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-xs`}>From</span>
+                    <h1 className={`${jost.className} text-lg`}>Rs3,958</h1>
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-xs`}>per day</span>                  
+                  </div>
+                  
+             </div>
 
-               <div className="flex flex-col items-end justify-end    w-full p-3 ">
-                  <h1 className={`${jost.className} text-lg  text-black`}>Rs 3,643</h1>
-                  <p className="text-[11px] text-slate-600">Per night</p>
-               </div>
-            </div>
+           
           </Link>  
 
 
            
       
-             {/* </Card> */}
-            </div>
+         
           </CarouselItem>
 
+
+        
+      
+
+         <CarouselItem   className="basis-full  flex items-center justify-center sm:basis-1/2 lg:basis-1/3 " >
+            <Link
+            href={`hotels/${'Pakistan'}`} 
+            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
+            >
+
+            <Image 
+              height={300} 
+              width={300} 
+              src="/car_rental_destination1.webp"
+              alt="image"
+              className="w-full object-cover object-bottom h-56 rounded-t-md  "
+             />
+             
+             <div className="w-full bg-white flex items-center justify-between p-3  rounded-b-md  border">
+                  <div className="flex flex-col items-start justify-start space-y-0">
+                    <h1  className={`${jost.className} text-lg`}>Car hire in Dubai</h1>
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-sm`}>Most popular car type: Economy</span>
+                  </div>
+
+                  <div className="flex flex-col items-end justify-end">
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-xs`}>From</span>
+                    <h1 className={`${jost.className} text-lg`}>Rs3,958</h1>
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-xs`}>per day</span>                  
+                  </div>
+                  
+             </div>
+
+           
+          </Link>  
+
+
+           
+      
+         
+          </CarouselItem>
+
+
+        
+
+         <CarouselItem   className="basis-full  flex items-center justify-center sm:basis-1/2 lg:basis-1/3 " >
+            <Link
+            href={`hotels/${'Pakistan'}`} 
+            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
+            >
+
+            <Image 
+              height={300} 
+              width={300} 
+              src="/car_rental_destination2.webp"
+              alt="image"
+              className="w-full object-cover object-bottom h-56 rounded-t-md  "
+             />
+             
+             <div className="w-full bg-white flex items-center justify-between p-3  rounded-b-md  border">
+                  <div className="flex flex-col items-start justify-start space-y-0">
+                    <h1  className={`${jost.className} text-lg`}>Car hire in Dubai</h1>
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-sm`}>Most popular car type: Economy</span>
+                  </div>
+
+                  <div className="flex flex-col items-end justify-end">
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-xs`}>From</span>
+                    <h1 className={`${jost.className} text-lg`}>Rs3,958</h1>
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-xs`}>per day</span>                  
+                  </div>
+                  
+             </div>
+
+           
+          </Link>  
+
+
+           
+      
+         
+          </CarouselItem>
+
+
+        
+
+         <CarouselItem   className="basis-full  flex items-center justify-center sm:basis-1/2 lg:basis-1/3 " >
+            <Link
+            href={`hotels/${'Pakistan'}`} 
+            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
+            >
+
+            <Image 
+              height={300} 
+              width={300} 
+              src="/car_rental_destination3.webp"
+              alt="image"
+              className="w-full object-cover object-bottom h-56 rounded-t-md  "
+             />
+             
+             <div className="w-full bg-white flex items-center justify-between p-3  rounded-b-md  border">
+                  <div className="flex flex-col items-start justify-start space-y-0">
+                    <h1  className={`${jost.className} text-lg`}>Car hire in Dubai</h1>
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-sm`}>Most popular car type: Economy</span>
+                  </div>
+
+                  <div className="flex flex-col items-end justify-end">
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-xs`}>From</span>
+                    <h1 className={`${jost.className} text-lg`}>Rs3,958</h1>
+                    <span style={{fontWeight:200}} className={`${jost.className} text-slate-700 text-xs`}>per day</span>                  
+                  </div>
+                  
+             </div>
+
+           
+          </Link>  
+
+
+           
+      
+         
+          </CarouselItem>
+
+
+        
 
          
-
-          <CarouselItem   className="basis-full sm:basis-1/2 lg:basis-1/3 " >
-            <div className=" ">
-             {/* <Card className="border-none bg-blue-600 gap-4"> */}
-
-            <Link
-            href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
-            >
-
-            <Image 
-              height={300} 
-              width={300} 
-              src="/hotel_2.jpg"
-              alt="image"
-              className="w-full object-cover  rounded-t-md  "
-             />
-
-
-            <div className="flex items-center flex-col space-y-2 bg-white rounded-b-md   border  w-full ">
-              
-               <div className="flex  w-full items-start justify-between border-b pb-3 border-slate-300 p-3  ">
-                   {/* Hotel_detail */}
-                  <div className="felx flex-col items-start justify-start space-y-0 ">
-                     <h1 className={`${jost.className} font-semibold text-xl sm:text-md `}>Hotel Bilal</h1>
-                     <span style={{fontWeight:300}} className={`${jost.className} text-xs`}>3.54 km from city center</span>
-                     <div  className="flex items-center justify-start gap-x-1 pt-2">
-                     <div  className="flex items-end justify-end  ">
-                        <span className={`${jost.className} font-semibold text-sm text-black `}>4.2</span>
-                        <span  style={{fontWeight:200}} className={`${jost.className} text-[11px] text-slate-500`}>/5</span> 
-                     </div>
-                        <span className={`${jost.className} font-semibold text-sm text-black `}>Very good</span>
-                        <span style={{fontWeight:200}} className={`${jost.className} pt-1  text-[12px] text-slate-400`}>1 review</span>
-                     </div>
-                  </div>
-                  {/* Hotel_review */}
-                  <div className="text-xs">⭐⭐⭐⭐⭐</div>
-
-               </div>
-
-               <div className="flex flex-col items-end justify-end    w-full p-3 ">
-                  <h1 className={`${jost.className} text-lg  text-black`}>Rs 3,643</h1>
-                  <p className="text-[11px] text-slate-600">Per night</p>
-               </div>
-            </div>
-          </Link>  
-
-
-           
-      
-             {/* </Card> */}
-            </div>
-          </CarouselItem>
-
-
-          <CarouselItem   className="basis-full sm:basis-1/2 lg:basis-1/3 " >
-            <div className=" ">
-             {/* <Card className="border-none bg-blue-600 gap-4"> */}
-
-            <Link
-            href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
-            >
-
-            <Image 
-              height={300} 
-              width={300} 
-              src="/hotel_3.jpg"
-              alt="image"
-              className="w-full object-cover  rounded-t-md  "
-             />
-
-
-            <div className="flex items-center flex-col space-y-2 bg-white rounded-b-md   border  w-full ">
-              
-               <div className="flex  w-full items-start justify-between border-b pb-3 border-slate-300 p-3  ">
-                   {/* Hotel_detail */}
-                  <div className="felx flex-col items-start justify-start space-y-0 ">
-                     <h1 className={`${jost.className} font-semibold text-xl sm:text-md `}>Hotel Bilal</h1>
-                     <span style={{fontWeight:300}} className={`${jost.className} text-xs`}>3.54 km from city center</span>
-                     <div  className="flex items-center justify-start gap-x-1 pt-2">
-                     <div  className="flex items-end justify-end  ">
-                        <span className={`${jost.className} font-semibold text-sm text-black `}>4.2</span>
-                        <span  style={{fontWeight:200}} className={`${jost.className} text-[11px] text-slate-500`}>/5</span> 
-                     </div>
-                        <span className={`${jost.className} font-semibold text-sm text-black `}>Very good</span>
-                        <span style={{fontWeight:200}} className={`${jost.className} pt-1  text-[12px] text-slate-400`}>1 review</span>
-                     </div>
-                  </div>
-                  {/* Hotel_review */}
-                  <div className="text-xs">⭐⭐⭐⭐⭐</div>
-
-               </div>
-
-               <div className="flex flex-col items-end justify-end    w-full p-3 ">
-                  <h1 className={`${jost.className} text-lg  text-black`}>Rs 3,643</h1>
-                  <p className="text-[11px] text-slate-600">Per night</p>
-               </div>
-            </div>
-          </Link>  
-
-
-           
-      
-             {/* </Card> */}
-            </div>
-          </CarouselItem>
-
-
-         
-
-          <CarouselItem   className="basis-full sm:basis-1/2 lg:basis-1/3 " >
-            <div className=" ">
-             {/* <Card className="border-none bg-blue-600 gap-4"> */}
-
-            <Link
-            href={`hotels/${'Pakistan'}`} 
-            className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
-            >
-
-            <Image 
-              height={300} 
-              width={300} 
-              src="/hotel_4.jpg"
-              alt="image"
-              className="w-full object-cover  rounded-t-md  "
-             />
-
-
-            <div className="flex items-center flex-col space-y-2 bg-white rounded-b-md   border  w-full ">
-              
-               <div className="flex  w-full items-start justify-between border-b pb-3 border-slate-300 p-3  ">
-                   {/* Hotel_detail */}
-                  <div className="felx flex-col items-start justify-start space-y-0 ">
-                     <h1 className={`${jost.className} font-semibold text-xl sm:text-md `}>Hotel Bilal</h1>
-                     <span style={{fontWeight:300}} className={`${jost.className} text-xs`}>3.54 km from city center</span>
-                     <div  className="flex items-center justify-start gap-x-1 pt-2">
-                     <div  className="flex items-end justify-end  ">
-                        <span className={`${jost.className} font-semibold text-sm text-black `}>4.2</span>
-                        <span  style={{fontWeight:200}} className={`${jost.className} text-[11px] text-slate-500`}>/5</span> 
-                     </div>
-                        <span className={`${jost.className} font-semibold text-sm text-black `}>Very good</span>
-                        <span style={{fontWeight:200}} className={`${jost.className} pt-1  text-[12px] text-slate-400`}>1 review</span>
-                     </div>
-                  </div>
-                  {/* Hotel_review */}
-                  <div className="text-xs">⭐⭐⭐⭐⭐</div>
-
-               </div>
-
-               <div className="flex flex-col items-end justify-end    w-full p-3 ">
-                  <h1 className={`${jost.className} text-lg  text-black`}>Rs 3,643</h1>
-                  <p className="text-[11px] text-slate-600">Per night</p>
-               </div>
-            </div>
-          </Link>  
-
-
-           
-      
-             {/* </Card> */}
-            </div>
-          </CarouselItem>
-
 
          
        
