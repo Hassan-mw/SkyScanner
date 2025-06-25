@@ -1,7 +1,9 @@
-import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
 import { IoBag, IoPersonSharp } from 'react-icons/io5'
+import { IoAlertCircle } from "react-icons/io5"
+import { Jost } from 'next/font/google'
+
 
 const jost=Jost({
     subsets:['latin'],
@@ -89,6 +91,15 @@ const CarRentalByCity = () => {
           </div>
 
        </div>
+
+       
+        <div className="w-full  flex items-start justify-start bg-[#eff3f8] gap-x-2 rounded-sm p-3 mt-14">
+                <div className="text-[#747a82]"><IoAlertCircle /></div>
+                <span style={{fontWeight:200}} className={`${jost.className} pb-1 text-sm`}>
+                    <span className='font-medium'>How did we find these car hire prices? </span>We looked at car hire rates over the next 30 days. The ones you see here are the cheapest we found for the most popular kinds of vehicle.</span> 
+        </div>
+         
+           
 
     </div>
   )
