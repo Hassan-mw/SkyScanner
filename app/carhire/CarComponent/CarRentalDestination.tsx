@@ -55,7 +55,7 @@ function CarRentalDestination() {
 
          <CarouselItem   className="basis-full  flex items-center justify-center sm:basis-1/2 lg:basis-1/3 " >
             <Link
-            href={`hotels/${'Pakistan'}`} 
+            href={`carhire/hirelocation/${'dubai'}`} 
             className="hover:cursor-pointer    flex flex-col  items-center justify-center w-full    "
             >
 

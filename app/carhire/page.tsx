@@ -23,17 +23,10 @@ function MainPageCar() {
 
     <div className="flex flex-col items-center justify-center space-y-16 w-full p-6   max-w-screen-xl">
       <ShowCurrentPageHotel/>
+      <CarRentalDestination/>
+      <CarRentalByCity/>
+      <FastFactMainHotel/>
 
-       {/* //! Hotels Logo */}
-       {/* <CustomHotelsLogo text='Compare hotels across your favourite brands' /> */}
-    {/* </div> */}
-      {/* <div className="p-3 flex flex-col space-y-44 items-center w-full h-full bg-white max-w-screen-xl "> */}
-        
-         <div className="w-full "><CarRentalDestination/></div>
-         <div className="w-full "><CarRentalByCity/></div>
-       {/* <div className="w-full flex items-center justify-center"> */}
-            <FastFactMainHotel/>
-        {/* </div>  */}
       </div>
       </div>
 
