@@ -21,10 +21,10 @@ const CarRentalByCity = () => {
        </div>
 
        {/* Array */}
-       <div className='w-full grid grid-cols-2 gap-4 '>
+       <div className='w-full grid  sm:grid-cols-2 lg:grid-cols-3  gap-8  sm:gap-4'>
         
           {/* 1 */}
-          <div className='w-full flex flex-col items-center justify-center border rounded-md shadow-xl'>
+          <div className='w-full flex flex-col items-center justify-center border rounded-md shadow'>
              <Image height={200} width={200} src="/car_image1.png" className='p-1 py-4' alt='Car_iamge' />
              <div className='w-full flex  items-center justify-between p-3 border-t'>
                 {/* Left */}
@@ -58,7 +58,7 @@ const CarRentalByCity = () => {
 
 
           {/* 2 */}
-          <div className='w-full flex flex-col items-center justify-center border rounded-md shadow-xl'>
+          <div className='w-full flex flex-col items-center justify-center border rounded-md shadow'>
              <Image height={200} width={200} src="/car_image1.png" className='p-1 py-4' alt='Car_iamge' />
              <div className='w-full flex  items-center justify-between p-3 border-t'>
                 {/* Left */}
