@@ -12,7 +12,7 @@ const jost=Jost({
 
 function ShowCurrentPageHotel() {
     return (
-      <div className="flex flex-col space-y-2 w-full p-3">
+      <div className="flex flex-col space-y-2 w-full ">
 
     <div className="flex items-start justify-start space-x-2 w-full pb-6"> 
         <div className="flex items-center justify-center space-x-2  font-semibold"> 
