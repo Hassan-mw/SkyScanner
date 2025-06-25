@@ -6,7 +6,7 @@ import CarLocationNavdata from '../../CarComponent/CarLocationNavdata'
 
 const page = () => {
   return (
-    <div className='w-full bg-green-500 flex items-center justify-center'>
+    <div className='w-full bg-white flex items-center justify-center'>
          {/*Search_bar  */}
        {/* <div className="bg-[#05203c] flex items-center justify-center w-full">
           <div className="hidden md:block w-full "> <CarSearchbarLargeScreen/></div>

@@ -1,9 +1,9 @@
-import { Jost } from "next/font/google"
 import Link from "next/link"
 import { FaCalendarAlt } from "react-icons/fa"
 import { FaCarSide } from "react-icons/fa6"
 import { IoIosArrowForward, IoMdPricetag } from "react-icons/io"
 
+import { Jost } from "next/font/google"
 const jost=Jost({
     subsets:['latin'],
     weight:['500']
