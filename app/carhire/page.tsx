@@ -13,7 +13,7 @@ function MainPageCar() {
     return (
   
   
-  <div className="w-full h-full flex flex-col space-y-10 items-center bg-white overflow-y-auto  overflow-x-hidden">
+  <div className="w-full  flex flex-col space-y-10 items-center bg-white overflow-y-auto  overflow-x-hidden">
     
     {/*Search_bar  */}
     <div className="bg-[#05203c] flex items-center justify-center w-full">
