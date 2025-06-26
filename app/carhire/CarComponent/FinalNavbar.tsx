@@ -17,6 +17,7 @@ import { IoIosSearch, IoMdSearch } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Calendar } from "lucide-react";
 import CustomDatePicker from "@/app/Components_Custom/CustomDatePicker";
+import { BsDot } from "react-icons/bs";
 
 
 const jost=Jost({
@@ -50,19 +51,22 @@ const FinalNavbar = () => {
         
 
 return (
-  <div   className="flex justify-center items-center  min-w-full   bg-[#05203c] ">
+  <div   className="flex justify-center items-center  min-w-full   bg-[#05203c] p-3  ">
     
     {/* top */}
-    <div className='w-full max-w-screen-xl py-3  bg-[#1e3750] flex items-center justify-center rounded-md px-[7px]'>
+    <div className='w-full max-w-screen-xl py-2  bg-[#1e3750] flex items-center justify-center rounded-md px-2'>
         {/* Search_Icon */}
         <div className='flex   items-start justify-start '>
-            <div className=' bg-blue-600 flex items-center justify-center size-6 rounded-sm text-white'> <IoIosSearch size={20} /> </div>
+            <div className=' bg-blue-600 flex items-center justify-center size-7 rounded-sm text-white'> <IoIosSearch size={18} /> </div>
         </div>
       
         {/* Flight_Details */}
-        <div className='w-full flex flex-col lg:flex-row items-center justify-center'>
-          <span className='text-sm text-white'>Karachi(Any) - Munich(Any)</span>
-          <span className='text-sm text-white'>. 8 travellers.Economy</span>
+        <div className='w-full flex  text-md text-white items-center justify-center gap-x-1'>
+          <span >Dubai</span>
+          <BsDot />
+          <span > 10/07/2025,10:00</span>
+          <span >-</span>
+          <span > 10/07/2025,10:00</span>
         </div>
     </div>
     
