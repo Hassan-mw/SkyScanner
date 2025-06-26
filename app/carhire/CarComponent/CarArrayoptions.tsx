@@ -14,7 +14,7 @@ const jost=Jost({
 
 const CarArrayoptions = () => {
   return (
-    <div className='w-full flex flex-col items-start justify-start space-y-5'>
+    <div className='w-full flex flex-col items-start justify-start space-y-9'>
         <h1 className={`${jost.className} text-2xl md:text-3xl`}>Find cheap car hire in Dubai</h1>
         {/* Array */}
                <div className='w-full grid  sm:grid-cols-2 md:grid-cols-3  gap-8  sm:gap-4'>
@@ -229,9 +229,9 @@ const CarArrayoptions = () => {
 
 
        {/* Text */}
-       <div className='w-full flex items-center-safe justify-start gap-x-2 bg-[#eff3f8] rounded-md p-2'>
-         <div className='text-slate-500'><IoMdAlert /></div>
-         <span style={{fontWeight:400}} className={`${jost.className} text-sm`}>These are the lowest Dubai car hire prices we found over the next 30 days and are subject to change.</span>
+       <div className='w-full flex items-center-safe justify-start gap-x-2 bg-[#eff3f8] rounded-md p-4 mb-20'>
+         <div className='text-[#626971]'><IoMdAlert /></div>
+         <span style={{fontWeight:400}} className={`${jost.className} text-[#161616] text-sm`}>These are the lowest Dubai car hire prices we found over the next 30 days and are subject to change.</span>
        </div>
        
        {/* Map */}
