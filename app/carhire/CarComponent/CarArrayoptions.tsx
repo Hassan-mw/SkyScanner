@@ -6,6 +6,7 @@ import { IoBag, IoPersonSharp } from 'react-icons/io5'
 import Image from 'next/image'
 import { IoMdAlert } from 'react-icons/io'
 import CarLinkMap from './CarLinkMap'
+import Link from 'next/link'
 const jost=Jost({
     subsets:['latin'],
     weight:['500']
@@ -21,14 +22,14 @@ const CarArrayoptions = () => {
                 
                
         
-        
+        {/* http://localhost:3000/carhire/hirelocation/dubai */}
                   {/* 1 */}
-                  <div className='w-full flex flex-col items-center justify-center border rounded-md shadow'>
+                  <Link href="/carhire/hirelocation/dubai/result/Economy" className='w-full flex flex-col items-center justify-center border rounded-md shadow'>
                      <Image height={200} width={200} src="/car_image2.png" className='p-1 py-4' alt='Car_iamge' />
                      <div className='w-full flex  items-center justify-between p-3 border-t'>
                         {/* Left */}
                         <div className='flex flex-col items-start justify-start '>
-                          <h1 className={`${jost.className} text-xl`}>Compact</h1>
+                          <h1 className={`${jost.className} text-xl`}>Economy</h1>
                           <span style={{fontWeight:200}} className={`${jost.className} text-xs`}>4-5 doors</span>
                           <div className='flex items-center justify-center gap-x-3'>
                              {/*  1  */}
@@ -53,7 +54,7 @@ const CarArrayoptions = () => {
         
                      </div>
         
-                  </div>
+                  </Link>
         
                 
                   {/* 2 */}
@@ -96,7 +97,7 @@ const CarArrayoptions = () => {
                      <div className='w-full flex  items-center justify-between p-3 border-t'>
                         {/* Left */}
                         <div className='flex flex-col items-start justify-start '>
-                          <h1 className={`${jost.className} text-xl`}>Compact</h1>
+                          <h1 className={`${jost.className} text-xl`}>Intermediate</h1>
                           <span style={{fontWeight:200}} className={`${jost.className} text-xs`}>4-5 doors</span>
                           <div className='flex items-center justify-center gap-x-3'>
                              {/*  1  */}
@@ -130,7 +131,7 @@ const CarArrayoptions = () => {
                      <div className='w-full flex  items-center justify-between p-3 border-t'>
                         {/* Left */}
                         <div className='flex flex-col items-start justify-start '>
-                          <h1 className={`${jost.className} text-xl`}>Compact</h1>
+                          <h1 className={`${jost.className} text-xl`}>Mini</h1>
                           <span style={{fontWeight:200}} className={`${jost.className} text-xs`}>4-5 doors</span>
                           <div className='flex items-center justify-center gap-x-3'>
                              {/*  1  */}
@@ -164,7 +165,7 @@ const CarArrayoptions = () => {
                      <div className='w-full flex  items-center justify-between p-3 border-t'>
                         {/* Left */}
                         <div className='flex flex-col items-start justify-start '>
-                          <h1 className={`${jost.className} text-xl`}>Compact</h1>
+                          <h1 className={`${jost.className} text-xl`}>Full size</h1>
                           <span style={{fontWeight:200}} className={`${jost.className} text-xs`}>4-5 doors</span>
                           <div className='flex items-center justify-center gap-x-3'>
                              {/*  1  */}
@@ -198,7 +199,7 @@ const CarArrayoptions = () => {
                      <div className='w-full flex  items-center justify-between p-3 border-t'>
                         {/* Left */}
                         <div className='flex flex-col items-start justify-start '>
-                          <h1 className={`${jost.className} text-xl`}>Compact</h1>
+                          <h1 className={`${jost.className} text-xl`}>Premium</h1>
                           <span style={{fontWeight:200}} className={`${jost.className} text-xs`}>4-5 doors</span>
                           <div className='flex items-center justify-center gap-x-3'>
                              {/*  1  */}

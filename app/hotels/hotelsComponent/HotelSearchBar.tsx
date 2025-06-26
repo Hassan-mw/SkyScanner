@@ -146,7 +146,7 @@ const HotelSearchBar = () => {
         </div>  
     
     
-            // </div>
+       
   )
 }
 
