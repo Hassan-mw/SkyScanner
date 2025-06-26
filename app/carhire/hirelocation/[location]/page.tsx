@@ -5,6 +5,10 @@ import CarLocationNavdata from '../../CarComponent/CarLocationNavdata'
 import CarArrayoptions from '../../CarComponent/CarArrayoptions'
 import CarDetails from '../../CarComponent/CarDetails'
 import BestCarCompaniesComparision from '../../CarComponent/BestCarCompaniesComparision'
+import CarLocationFastFact from '../../CarComponent/CarLocationFastFact'
+import CarRentaltextDetails from '../../CarComponent/CarRentaltextDetails'
+import CarRentalfaq from '../../CarComponent/CarRentalfaq'
+import FlightAndHotel from '../../CarComponent/FlightAndHotel'
 
 
 const page = () => {
@@ -24,6 +28,15 @@ const page = () => {
            <CarDetails/>
 
            <BestCarCompaniesComparision/>
+
+           <CarLocationFastFact/>
+
+           <CarRentaltextDetails/>
+
+           <CarRentalfaq/>
+           
+           <FlightAndHotel/> 
+
        </div>
     </div>
   )
