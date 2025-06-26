@@ -2,6 +2,7 @@ import React from 'react'
 import CarSearchbarLargeScreen from '../../CarComponent/CarSearchbarLargeScreen'
 import CarSearchbarSmallScreen from "../../CarComponent/CarSearchbarSmallScreen"
 import CarLocationNavdata from '../../CarComponent/CarLocationNavdata'
+import CarArrayoptions from '../../CarComponent/CarArrayoptions'
 
 
 const page = () => {
@@ -12,9 +13,11 @@ const page = () => {
           <div className="hidden md:block w-full "> <CarSearchbarLargeScreen/></div>
           <div className="md:hidden w-full "> <CarSearchbarSmallScreen/></div>
        </div> */}
-       <div className='w-full max-w-screen-xl flex items-center justify-center'>
+       <div className='w-full max-w-screen-xl flex flex-col space-y-9 py-5 items-center justify-center p-5'>
            {/* Nav_data  */}
            <CarLocationNavdata/>
+           {/* CarOptions  */}
+           <CarArrayoptions/>
        </div>
     </div>
   )

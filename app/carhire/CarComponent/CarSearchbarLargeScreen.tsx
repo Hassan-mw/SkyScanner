@@ -35,6 +35,14 @@ const CarSearchbarLargeScreen = () => {
     <div className="relative h-[350px] 2xl:h-[550px]  w-full">
     <Image className="hidden 2xl:block object-cover w-[100vw] " fill src="/car.webp" alt="large_screen_bg_image" />
 
+
+    {/* <div className="w-full grid grid-cols-2 gap-x-8 absolute   bottom-0 ">
+   
+    
+    <div className="w-full rounded-tr-full bg-white cursor-context-menu border-[16px] border-white "> </div>
+    <div className="w-full rounded-tl-full bg-white cursor-context-menu border-[16px] border-white "> </div>
+   
+   </div> */}
     {/* //!    data */}
         <div   className="absolute  h-full   w-full top-0  left-0 flex  items-center justify-center    ">
     <div   className=" bg-[#05203c] lg:bg-transparent 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-2 pb-5 max-w-screen-xl  space-y-3 lg:space-y-1 ">
