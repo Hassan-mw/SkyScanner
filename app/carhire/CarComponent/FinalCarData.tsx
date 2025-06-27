@@ -9,6 +9,7 @@ import { IoMdSpeedometer } from 'react-icons/io'
 import { IoBag, IoLockClosedSharp, IoLockOpenSharp, IoPersonSharp } from 'react-icons/io5'
 import { LuBuilding2 } from 'react-icons/lu'
 import { MdArrowBackIosNew, MdArrowForwardIos, MdOutlineLoop, MdOutlineSevereCold } from 'react-icons/md'
+import CarFinalShowCarDetailBtn from './CarFinalShowCarDetailBtn'
 
 
 const jost=Jost({
@@ -27,14 +28,15 @@ const FinalCarData = () => {
      {/* 1 */}
      <div className='w-full border flex flex-col  bg-white   rounded-md shadow  '>
      <div className='w-full  flex flex-col sm:flex-row      '>
-
+      
+       {/* First */}
        <div className='w-full flex items-start justify-between p-4 sm:border-r-2 border-slate-300'>
          {/* Left */}
-         <div className='flex flex-col items-start justify-start'>
+         <div className='flex flex-col space-y-2 items-start justify-start'>
             <h1 className='font-semibold text-2xl'>Suzuki Baleno</h1>
             <span className='text-xs'>or similar mini</span>
             <div className=' sm:hidden '><Image height={60} width={60} className='pt-3' src="/wheego.png" alt='wheego'/></div>
-            <div className='grid grid-cols-2 gap-2'>
+            <div className='grid grid-cols-2 gap-1'>
                {/*  1  */}
                <div className='flex items-center justify-center gap-x-1 bg-[#eff3f8] rounded-sm p-2 mt-2'>
                     <IoPersonSharp />
@@ -56,6 +58,10 @@ const FinalCarData = () => {
                     <span className='text-xs'>Auto</span>
                 </div>
             </div>
+            <div className='flex items-center gap-x-1'>
+               <LuBuilding2 />
+               <span className='text-sm'>Pick-up:ABC+DEF Dubai</span>
+            </div>
          </div>
          {/* Right  */}
          <div className='flex flex-col items-end  justify-center '>
@@ -65,39 +71,28 @@ const FinalCarData = () => {
           </div> 
            
        </div>
-
+        
+        {/* Second */}
         <div className='w-full sm:w-1/2 flex flex-col space-y-1 sm:space-y-4 sm:justify-between p-4 border-t-2  sm:border-none border-slate-300'>
+            {/* Cancelation_btn */}
            <div className='w-full  flex items-center justify-between '>         
-                <div className='sm:hidden flex items-center order-2 justify-center gap-x-1'>
+                <div className='sm:hidden flex items-center sm:order-2 justify-center gap-x-1'>
                     <IoLockOpenSharp size={14} />
                    <span className='text-xs '>Free cancellation</span>
                 </div>
                 <span className={`${jost.className} text-xs sm:text-sm sm:font-semibold text-gray-600`}>1 deal</span>
             </div>
-            <div className='flex flex-col items-end justify-end sm:items-start '>
-                 <h1 className={` text-xl sm:text-3xl font-semibold `}>Rs 3,696</h1>
+            <span className='text-sm hidden sm:block'>Free cancellation</span>
+               {/* price  */}
+            <div className='w-full flex sm:flex-col  items-center justify-between sm:items-start  '>
+              
+            <CarFinalShowCarDetailBtn showDetails={showDetails} setShowDetails={setShowDetails}  />
+                 <h1 className={`sm:order-1 text-xl sm:text-3xl font-semibold `}>Rs 3,696</h1>
                  
             </div>
-            <span className='text-sm hidden sm:block'>Free cancellation</span>
 
-            <div className='hidden sm:block w-full '>
-            <div className='w-full flex items-center justify-center'>
-             { 
-              !showDetails ?
-              <div onClick={()=>setShowDetails(true)} className='hover:cursor-pointer flex w-[90%] rounded-md text-white items-center justify-center gap-x-2 py-1 bg-[#05203c]'>
-                 <span>View deal</span>
-                 <div className='-rotate-90'> <MdArrowBackIosNew /></div>
-
-              </div>
-             :  
-              <div  onClick={()=>setShowDetails(false)}  className='hover:cursor-pointer flex w-[90%] rounded-md  text-[#05203c] items-center justify-center gap-x-2 py-1 bg-[#e0e4e9]'>
-                 <span className='font-semibold'>Hide</span>
-                 <div className='-rotate-90'> <MdArrowForwardIos /></div>
-
-              </div>
-              }
-              </div>
-            </div> 
+           
+         
         </div>  
         
 
