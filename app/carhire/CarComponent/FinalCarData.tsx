@@ -37,7 +37,7 @@ const FinalCarData = () => {
   ]
 
   return (
-    <div className='w-full grid grid-cols-1 p-3 gap-4'>
+    <div className='w-full grid grid-cols-1 gap-4'>
      {
       carDataArray.map((data,index)=>
      

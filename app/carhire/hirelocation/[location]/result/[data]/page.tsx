@@ -5,11 +5,10 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className='w-full flex flex-col bg-white items-center justify-center'>
+    <div className='w-full flex flex-col bg-[#eff3f8] items-center justify-center'>
       <FinalNavbar/>
-      <div className='w-full max-w-screen-xl bg-white p-3 flex flex-col space-y-8'>
+      <div className='w-full max-w-screen-xl  p-3 flex flex-col space-y-8'>
        <SmallScreenFinalFlight/>
-       <FinalCarData/>
       </div>
 
     </div>

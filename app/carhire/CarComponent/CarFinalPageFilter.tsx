@@ -104,16 +104,17 @@ const CarFinalPageFilter = () => {
 
 
        {/* Pick-up */}
-       <div className='w-full flex flex-col space-y-3 pb-6 border-b'>
+       <div className='w-full flex flex-col space-y-3 '>
           <h1 className={`${jost.className} text-xl`}>Pick-up </h1>
           <div className='w-full grid grid-cols-1 gap-2 '>
-             <div className='flex items-center justify-between' >  <span className='text-md'>Automatic</span> <input type='checkbox' className='size-4' />    </div>           
-             <div className='flex items-center justify-between' >  <span className='text-md'>Manual</span> <input type='checkbox' className='size-4' />    </div>           
+             <div className='flex items-center justify-between' >  <span className='text-md'>Electric</span> <input type='checkbox' className='size-4' />    </div>           
+             <div className='flex items-center justify-between' >  <span className='text-md'>Hybird</span> <input type='checkbox' className='size-4' />    </div>           
           
           </div>
 
        </div> 
 
+     
 
 
     </div>
