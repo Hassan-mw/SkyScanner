@@ -19,13 +19,28 @@ const jost=Jost({
 
 
 const FinalCarData = () => {
+  const [show,setShow]=useState(false)
+  const [showDetails,setShowDetails]=useState(0)
 
-  const [showDetails,setShowDetails]=useState(false)
    
+ function handleDetails(id:number,action:boolean){
+    // setShowDetails(null)
+    setShow(action)
+     setShowDetails((p)=>p===0?id:0);
+ 
+    }
+
+
+  const carDataArray=[
+    {id:1},
+    {id:2}
+  ]
+
   return (
-    <div className='w-full grid grid-cols-1 p-3'>
+    <div className='w-full grid grid-cols-1 p-3 gap-4'>
+     {
+      carDataArray.map((data,index)=>
      
-     {/* 1 */}
      <div className='w-full border flex flex-col  bg-white   rounded-md shadow  '>
      <div className='w-full  flex flex-col sm:flex-row      '>
       
@@ -86,7 +101,24 @@ const FinalCarData = () => {
                {/* price  */}
             <div className='w-full flex sm:flex-col  items-center justify-between sm:items-start  '>
               
-            <CarFinalShowCarDetailBtn showDetails={showDetails} setShowDetails={setShowDetails}  />
+              <div className='w-1/2 sm:order-2 sm:w-full sm:pt-5 flex items-center justify-start sm:items-end'>
+                         { 
+                         ( showDetails===data.id && show )?
+
+                          <div onClick={()=>handleDetails(data.id,false)} className='hover:cursor-pointer flex w-[90%] rounded-md  items-center justify-center gap-x-2 py-1 text-[#05203c] bg-[#e0e4e9]'>
+                             <span>Hide</span>
+                             <div className='-rotate-90'> <MdArrowBackIosNew /></div>
+            
+                          </div>
+                          :
+                          <div onClick={()=>handleDetails(data.id,true)} className='hover:cursor-pointer flex w-[90%] rounded-md text-white items-center justify-center gap-x-2 py-1 bg-[#05203c]'>
+                             <span>View deal</span>
+                             <div className='-rotate-90'> <MdArrowBackIosNew /></div>
+            
+                          </div>
+                         
+                          }
+                          </div>
                  <h1 className={`sm:order-1 text-xl sm:text-3xl font-semibold `}>Rs 3,696</h1>
                  
             </div>
@@ -101,7 +133,7 @@ const FinalCarData = () => {
  
 
      </div>
-       {showDetails &&
+       {(showDetails===data.id && show ) &&
         <div className='w-full flex flex-col space-y-2 items-start justify-start  p-3 border-t border-slate-400'>
            
             <div className='w-full flex items-center justify-between'>
@@ -131,6 +163,11 @@ const FinalCarData = () => {
         </div>
         }
      </div>
+
+       )}
+
+
+
 
     </div>
   )
