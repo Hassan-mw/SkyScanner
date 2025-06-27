@@ -3,7 +3,7 @@ import FilersFinalCars from './FilersFinalCars'
 
 const SmallScreenFinalFlight = () => {
   return (
-    <div className='w-full flex flex-col '>
+    <div className='w-full flex flex- z-50 '>
       <FilersFinalCars/>
     </div>
   )
