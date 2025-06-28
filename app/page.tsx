@@ -20,17 +20,17 @@ const page = () => {
           {/* Navigations */}
           <div className='w-full grid grid-cols-3 gap-6'>
               {/* 1 */}
-              <div className='flex flex-col  items-start md:items-center justify-start md:justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
+              <div className='flex flex-col  items-center  justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
                  <IoBedSharp size={20} />
                  <span className={`${jost.className} text-lg`}>Hotels</span>
               </div>
               {/* 2 */}
-              <div className='flex flex-col  items-start md:items-center justify-start md:justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
+              <div className='flex flex-col   items-center  justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
                  <MdDirectionsCarFilled   size={20}  />
                  <span className={`${jost.className} text-lg`}>Car hire</span>
               </div>
               {/* 3 */}
-              <div className='flex flex-col  items-start md:items-center justify-start md:justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
+              <div className='flex flex-col   items-center  justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
                  <RiPlaneFill  size={20}  />
                  <span className={`${jost.className} text-lg`}>flights</span>
               </div>
@@ -111,8 +111,13 @@ const page = () => {
         <AccordionTrigger className={`${jost.className} w-full flex items-start justify-start text-xl font-semibold pb-3 mt-8  border-b`}>
          Our international sites
         </AccordionTrigger>
-        <AccordionContent className='w-full gri grid-cols-1'>
-          <div className='flex items-center justify-start gap-x-3'> <Image height={50} width={50}  src="/uk_flag.jpg" alt='uk_flag'/> </div>
+        <AccordionContent className='w-full grid grid-cols-1 sm:grid-cols-2 gap-2 py-3 '>
+          <div className='flex items-center justify-start gap-x-3'> <Image height={50} width={50}  src="/uk_flag.jpg" alt='uk_flag'/> <span style={{fontWeight:200}} className={`${jost.className} text-sm`}>(GB) Cheap flights</span></div>
+          <div className='flex items-center justify-start gap-x-3'> <Image height={50} width={50}  src="/uk_flag.jpg" alt='au_flag'/> <span style={{fontWeight:200}} className={`${jost.className}  text-sm `}>(AU) Australia - Cheap flights</span></div>
+          <div className='flex items-center justify-start gap-x-3'> <Image height={50} width={50}  src="/uk_flag.jpg" alt='cn_flag'/> <span style={{fontWeight:200}} className={`${jost.className} text-sm `}>(CN) 中国 - 机票</span></div>
+          <div className='flex items-center justify-start gap-x-3'> <Image height={50} width={50}  src="/uk_flag.jpg" alt='in_flag'/> <span style={{fontWeight:200}} className={`${jost.className} text-sm `}>(IN) India - Flight tickets</span></div>
+          <div className='flex items-center justify-start gap-x-3'> <Image height={50} width={50}  src="/uk_flag.jpg" alt='ru_flag'/> <span style={{fontWeight:200}} className={`${jost.className} text-sm `}>(RU)   Россия - авиабилеты</span></div>
+          <div className='flex items-center justify-start gap-x-3'> <Image height={50} width={50}  src="/mx_flag.jpg" alt='ru_flag'/> <span style={{fontWeight:200}} className={`${jost.className} text-sm `}>(MX)   Mexico - ruelos</span></div>
         </AccordionContent>
       </AccordionItem>
     </Accordion>
