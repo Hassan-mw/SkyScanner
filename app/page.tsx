@@ -1,175 +1,125 @@
-import Image from "next/image"
-// import CustomLinksButton from "./components/CustomLinksButton"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@radix-ui/react-accordion'
+import { Jost } from 'next/font/google'
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import { IoBedSharp } from 'react-icons/io5'
+import { MdDirectionsCarFilled } from 'react-icons/md'
+import { RiPlaneFill } from 'react-icons/ri'
+import { json } from 'stream/consumers'
+const jost=Jost({
+    subsets:['latin'],
+    weight:['500']
+})
 
-function page() {
+const page = () => {
   return (
-    <div className="w-full  h-full overflow-x-hidden flex flex-col items-center hide-scroolbar bg-white text-white space-y-10">
-      {/* Header */}
-    <div className="flex flex-col items-center justify-center  w-full min-h-full bg-blue-600">
-      <div className="text-6xl sm:text-7xl lg:text-8xl italic p-6 font-semibold ">Sky Scanner</div>
-      <div className="pl-2 sm:pl-48 text-xl sm:text-2xl lg:text-4xl text-white">"Find the best flights, at the best prices, with just a few clicks!</div>
-    </div>
-    {/* All Options */}
-    <div className="w-full  flex flex-col items-center justify-center bg-white p-4">
-    <div className="w-full max-w-screen-2xl flex flex-col   space-y-8 text-blue-600 p-4 pt-10 ">
-      <div className=" text-3xl sm:text-5xl lg:text-7xl  font-semibold flex items-center justify-center  ">Explore the best facelites</div>
-    {/* 01 */}
-    <div className="flex items-start justify-center  py-12 h-full  ">
-      <div className="flex flex-col  w-1/2 space-y-8">
-      <div className="flex space-x-4 ">
-
-      <div className="font-bold  text-2xl sm:text-3xl ">01</div>
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold  ">Select the Flight</h1>
-      </div>
-          <div className="text-xs sm:text-base  lg:text-2xl xl:text-3xl max-w-[90%]">Search for flights to your destination, compare prices, and find the best deals. Whether for business or leisure, booking your flight is quick and simple.</div>
-          {/* <div><CustomLinksButton style="bg-white text-blue-700 border hover:text-white border-blue-700 hover:bg-blue-700" href="/flights">Search for Flights</CustomLinksButton></div> */}
-      </div>
-      <div className=" md:w-[40%] xl:w-[35%]  w-1/2 "><img className=" min-h-[200px]  rounded-2xl object-fill " src="/person_plane.jpg"/></div>
-    </div>
-    {/* 02 */}
-    <div className="flex items-start justify-center gap-10 sm:gap-14 py-12 h-full  ">
-    <div className=" md:w-[40%] xl:w-[35%]  w-1/2 "><img className=" min-h-[200px] rounded-2xl object-fill " src="/hotel.jpg"/></div>
-
-      <div className="flex flex-col  w-1/2 space-y-8">
-      <div className="flex space-x-4 ">
-          <div className="font-bold text-2xl sm:text-3xl ">02</div>
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold  ">Book Your Stay</h1>
-         </div>
-          <div className="text-xs sm:text-base md:text-xl lg:text-2xl xl:text-3xl max-w-[90%]">Find your ideal hotel with ease. Browse through top-rated accommodations worldwide and enjoy exclusive deals.</div>
-           
-          {/* <div><CustomLinksButton style="bg-white text-blue-700 border hover:text-white border-blue-700 hover:bg-blue-700" href="/hotels">Search for Hotels</CustomLinksButton></div> */}
-      </div>
-    </div>
-    {/* 03 */}
-    <div className="flex items-start justify-center  py-12 h-full  ">
-      <div className="flex flex-col  w-1/2 space-y-8">
-      <div className="flex space-x-4 ">
-    <div className="font-bold  text-2xl sm:text-3xl ">03</div>
-          <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-semibold  ">Hire a Car for Your Journey</h1>
-         </div>
-          <div className="text-xs sm:text-base md:text-xl lg:text-2xl xl:text-3xl max-w-[90%]">Rent a car at the best prices. Choose from a wide range of vehicles to make your trip more comfortable.</div>
-          {/* /<div><CustomLinksButton style="bg-white text-blue-700 border hover:text-white border-blue-700 hover:bg-blue-700" href="/carhire">Search for Car</CustomLinksButton></div> */}
+    <div className='w-full flex items-center justify-center bg-white'>
+       <div className='w-full flex flex-col space-y-9 max-w-screen-xl p-5'>
           
-      </div>
-      <div className=" md:w-[40%] xl:w-[35%]  w-1/2 "><img className=" rounded-2xl object-fill  min-h-[200px] " src="/taxi.jpg"/></div>
-    </div>
-    </div>
-    </div>
-    {/* Trusted company */}
-    <div className="border-t bg-white w-full flex flex-col items-center space-y-10 p-10">
-    <div className="text-slate-600 text-xl sm:text-base md:text-xl lg:text-2xl xl:text-3xl   w-full flex items-center justify-center">Our Partners Trust Us to Deliver Exceptional Travel Experiences</div>
-    <div className="grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-5">
-       <div className="border p-3 rounded-3xl shadow-2xl bg-white"><img className="w-32" src="United Airlines.jpeg"/></div>
-       <div className="border p-3 rounded-3xl shadow-2xl bg-white"><img className="w-32" src="Emirates-logo.jpeg"/></div>
-       <div className="border p-3 rounded-3xl shadow-2xl bg-white"><img className="w-32" src="British Airways.jpeg"/></div>
-       <div className="border p-3 rounded-3xl shadow-2xl bg-white"><img className="w-32" src="Lufthansa.jpeg"/></div>
-  
+          {/* Navigations */}
+          <div className='w-full grid grid-cols-3 gap-6'>
+              {/* 1 */}
+              <div className='flex flex-col  items-start md:items-center justify-start md:justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
+                 <IoBedSharp size={20} />
+                 <span className={`${jost.className} text-lg`}>Hotels</span>
+              </div>
+              {/* 2 */}
+              <div className='flex flex-col  items-start md:items-center justify-start md:justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
+                 <MdDirectionsCarFilled   size={20}  />
+                 <span className={`${jost.className} text-lg`}>Car hire</span>
+              </div>
+              {/* 3 */}
+              <div className='flex flex-col  items-start md:items-center justify-start md:justify-center p-2 rounded-md text-white gap-2 bg-[#05203c]'>
+                 <RiPlaneFill  size={20}  />
+                 <span className={`${jost.className} text-lg`}>flights</span>
+              </div>
+          </div>
+          
+          {/* Image */}
+          <div className='relative w-full'>
+            <Image height={1500} width={1500} className='w-full md:hidden max-h-[800px] md:max-h-[400px] md:object-center object-top object-cover rounded-md'  src="/home_main_image.webp" alt='home_main_image'  />
+            <Image height={1500} width={1500} className='w-full hidden md:block  md:object-center object-bottom object-cover rounded-md'  src="/home_main_image_md.webp" alt='home_main_image'  />
+             <div className='absolute top-7 left-7 flex flex-col  items-start justify-start text-white'>
+               <span style={{fontWeight:300}} className={`${jost.className} text-xl sm:text-2xl md:text-xl`}>Can't decide where to go?</span>
+               <h1  className={`${jost.className} text-3xl sm:text-4xl md:text-3xl `}>Explore every destination</h1> 
+               <span className={`${jost.className} text-sm p-1 mt-3 rounded-md w-36 text-center text-black bg-white hidden md:block`}>Search flights</span> 
+             </div>
+          </div>
 
-    </div>
-   
-    </div>
-    {/* Review */}
-    <div className="flex flex-col  max-w-screen-xl  p-8 items-center text-slate-700 space-y-6 ">
-     <div className="text-slate-600 text-2xl sm:text-base md:text-3xl w-full  flex items-center justify-center  ">User Testimonials</div>
-     <div className="grid md:grid-cols-2 space-y-5 md:space-y-0 gap-10 items-center">
-    {/* 1 */}
-    <div className="flex flex-col space-y-3 border p-3 rounded-2xl shadow-2xl" >
-      <div className="flex items-center gap-6">
-        <div><img className="h-12 w-12 rounded-full" src="/david.jpeg"/></div><div className="text-xl">"David"</div>
-         </div>
-         <div>"I’ve been using this website to book flights and hotels for the past few months, and it has been an absolute game-changer! The interface is super easy to use, and I love how quickly I can compare different options to get the best deal." </div>
-     
-    </div>
-    {/* 2 */}
-    <div className="flex flex-col space-y-3  border p-3 rounded-2xl shadow-2xl" >
-      <div className="flex items-center gap-6">
-        <div><img className="h-12 w-12 rounded-full" src="/p1.jpg"/></div><div className="text-xl">"Alisa"</div>
-         </div>
-         <div>"I’ve been planning all my vacations through this site, and it’s made booking so much easier! The variety of options available is impressive, and the prices are always competitive. I save so much time and money every time!" </div>
-     
-    </div>
-    {/* 3 */}
-    <div className="flex flex-col space-y-3  border p-3 rounded-2xl shadow-2xl" >
-      <div className="flex items-center gap-6">
-        <div><img className="h-12 w-12 rounded-full" src="/p2.jpg"/></div><div className="text-xl">"Sam"</div>
-         </div>
-         <div>"This website has been a lifesaver for booking my flights and accommodations! The search filters are intuitive, and I can always find great deals without any hassle. I recommend it to all my friends who travel frequently."</div>
-     
-    </div>
-    {/* 4 */}
-    <div className="flex flex-col space-y-3  border p-3 rounded-2xl shadow-2xl" >
-      <div className="flex items-center gap-6">
-        <div><img className="h-12 w-12 rounded-full" src="/p3.jpg"/></div><div className="text-xl">"Json"</div>
-         </div>
-         <div>"Booking flights and hotels has never been so seamless! The platform is user-friendly, and the best part is how fast I can finalize my bookings. I’ve had such a positive experience every single time!" </div>
-     
-    </div>
-    </div>
-    </div>
-    {/* Foter */}
-    <div className="flex flex-col  w-full max-w-screen-xl  p-8 items-center text-slate-700 space-y-6 ">
-     <div className="text-slate-600 text-2xl sm:text-base md:text-3xl w-full  flex items-start justify-start  ">Explore More</div>
-     <div className="grid grid-cols-1  md:grid-cols-2 w-full place-items-center gap-4">
-    {/* 1 */}
-    <div className="w-full flex items-center justify-between">
 
-  
-    <div className="flex flex-col space-y-2 " >
-      <div className="text-base font-semibold text-slate-700">Account</div>
-      <div className="flex flex-col text-sm text-slate-600 font-medium">
-        <div>Create account </div>
-        <div>Sign in</div>
-        <div>ISO app</div>
-        <div>Android app </div>
-      </div>
-    </div>
-    {/* 2 */}
-    <div className="flex flex-col space-y-2" >
-      <div className="text-base font-semibold text-slate-700">Company</div>
-      <div className="flex flex-col text-sm text-slate-600 font-medium">
-        <div>About Skyscanner </div>
-        <div>Partners</div>
-        <div>Press</div>
-        <div>Android app </div>
-      </div>
-    </div>
-    {/* 3 */}
-    <div className="flex flex-col space-y-2" >
-      <div className="text-base font-semibold text-slate-700">Resources</div>
-      <div className="flex flex-col text-sm text-slate-600 font-medium">
-        <div>Blog </div>
-        <div>Travel Guides</div>
-        <div>Flight Status</div>
-        <div>Travel Insurance</div>
-      </div>
-    </div>
-    </div>
-     {/*5 */}
-     <div className="flex items-center justify-center w-full ">
+          {/* Text_details */}
+                      {/* Third */}
+           <div className="w-full h-full flex flex-col space-y-4 items-start justify-start">
+                <h1 className={`${jost.className} text-3xl`}>How does Skyscanner work?</h1>
+                 <Accordion type="single" collapsible className="w-full space-y-4">
+                    <AccordionItem value="item-1">
+                        <AccordionTrigger className="w-full flex items-start justify-start text-md font-semibold border-b pb-3">
+                           How does Skyscanner's car hire comparison tool work?
+                        </AccordionTrigger>
+                    <AccordionContent style={{fontWeight:200}} className={`${jost.className} text-sm`}>
+                        We’re a flight, car hire and hotel search engine. We scan all the top airlines and travel providers across the net, so you can compare flight fares and other travel costs in one place. Once you’ve found the best flight, car hire or hotel, you book directly with the provider.
+                    </AccordionContent>
+                   </AccordionItem>
 
-    <div className="flex flex-col space-y-2 " >
-      <div><img className="h-5" src="/logomain.png"/></div>
-      <div className="text-xl text-slate-600 duration-700 w-full flex items-center justify-start space-x-5 ">
-        {/* <div className="hover:text-slate-800"><ion-icon name="logo-facebook"></ion-icon> </div> */}
-        {/* <div className="hover:text-slate-800"><ion-icon name="logo-twitter"></ion-icon></div> */}
-        {/* <div  className="hover:text-slate-800"><ion-icon name="logo-instagram"></ion-icon></div> */}
-      </div>
-      <div className="text-sm w-[200px]">Copyright © 2025 by Skyscanner, Inc. All rights reserved.</div>
-    </div>
-    {/* 4 */}
-    <div className="flex flex-col space-y-3" >
-      <div className="text-base font-semibold text-slate-700">Contack us</div>
-      <div className="flex flex-col space-y-2 text-sm text-slate-600 font-medium">
-        <div  className="text-sm w-[150px]">623 Harrison St., 2nd Floor, San Francisco, CA 94107 </div>
-        <div  className="text-sm w-[140px]">415-201-6370hello@skyscanner.com</div>
-     
-      </div>
-    </div>
-    </div>
-   
-  
-    </div>
-    </div>
+      <AccordionItem value="item-2">
+        <AccordionTrigger  className={`${jost.className} w-full flex items-start justify-start text-md font-semibold pb-3 border-b`}>
+         How can I find the cheapest flight using Skyscanner? 
+        </AccordionTrigger>
+                            <AccordionContent style={{fontWeight:200}} className={`${jost.className} text-sm`}>
+      Finding flights is easy here – over 100 million savvy travellers come to us each month to find cheap flight tickets, hotels and car hire. Here are a few simple tips on how to get the most out of your flight search.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="item-3">
+        <AccordionTrigger className={`${jost.className} w-full flex items-start justify-start text-md font-semibold pb-3 border-b`}>
+         Where should I book a flight to right now?
+        </AccordionTrigger>
+                            <AccordionContent style={{fontWeight:200}} className={`${jost.className} text-sm`}>
+         If you're looking for inspiration for your next trip, search Everywhere to find a cheap flight ticket anywhere.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="item-4">
+        <AccordionTrigger className={`${jost.className} w-full flex items-start justify-start text-md font-semibold  pb-3 border-b`}>
+          Do I book my flight with Skyscanner?
+        </AccordionTrigger>
+                            <AccordionContent style={{fontWeight:200}} className={`${jost.className} text-sm`}>
+          We make planning a breeze with simple search filters, handy hotel reviews and accurate pricing. You can also keep everything in one place by comparing <Link className="text-indigo-600 border-b border-indigo-600" href="flights">flight</Link> and <Link className="text-indigo-600 border-b border-indigo-600" href="carhire">car</Link> hire prices with us.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="item-5">
+        <AccordionTrigger className={`${jost.className} w-full flex items-start justify-start text-md font-semibold pb-3 border-b`}>
+          Do I need a credit card in order to rent a car?
+        </AccordionTrigger>
+                            <AccordionContent style={{fontWeight:200}} className={`${jost.className} text-sm`}>
+          The choice overwhelm is real when searching for a hotel, but don’t panic! Get rid of the multiple tabs and windows, and think about what matters most. You may want to find hotels best for families, couples or business trips. Or filter by must-haves, such as spa facilities or parking.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="item-6">
+        <AccordionTrigger className= {`${jost.className} w-full flex items-start justify-start text-md font-semibold pb-3  border-b`}>
+         Can I hire a van?
+        </AccordionTrigger>
+                    <AccordionContent style={{fontWeight:200}} className={`${jost.className} text-sm`}>
+          Possibly. It’s all down to supply and demand. If you’re booking a hotel in a quiet destination at a quiet time of year, there’ll likely be a steady stream of rooms available, so a last-minute booking will be cheaper. If you’re booking somewhere in a busy destination at a busy time of year, booking in advance will likely save you money.
+        </AccordionContent>
+      </AccordionItem>
+
+      <AccordionItem value="item-7">
+        <AccordionTrigger className={`${jost.className} w-full flex items-start justify-start text-xl font-semibold pb-3 mt-8  border-b`}>
+         Our international sites
+        </AccordionTrigger>
+        <AccordionContent className='w-full gri grid-cols-1'>
+          <div className='flex items-center justify-start gap-x-3'> <Image height={50} width={50}  src="/uk_flag.jpg" alt='uk_flag'/> </div>
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+          </div>
+
+
+       </div>
     </div>
   )
 }
