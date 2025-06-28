@@ -12,10 +12,10 @@ const jost=Jost({
 
 const CarFinalPageFilter = () => {
   return (
-    <div className='w-full flex flex-col space-y-5 p-3  pb-10'>
+    <div className='w-full flex flex-col space-y-5 lg:space-y-10 p-3  pb-10'>
       
        {/* Recomended filters */}
-       <div className='w-full flex flex-col space-y-3 items-start justify-start border-b pb-6'>
+       <div className='lg:hidden w-full flex flex-col space-y-3 items-start justify-start border-b pb-6'>
          <h1 className={`${jost.className} text-xl`}>Recomended filters</h1>
 
          {/* 1 */}
@@ -64,7 +64,7 @@ const CarFinalPageFilter = () => {
        {/* Seats */}
        <div className='w-full flex flex-col space-y-3 pb-6 border-b'>
           <h1 className={`${jost.className} text-xl`}>Seats </h1>
-          <div className='w-full grid grid-cols-3 gap-2 text-xs'>
+          <div className='w-full grid grid-cols-3 gap-2 text-xs lg:text-md'>
              <span className='p-1 flex items-center justify-center rounded-md border'>1-3</span>
              <span className='p-1 flex items-center justify-center rounded-md border'>4-5</span>
              <span className='p-1 flex items-center justify-center rounded-md border'>6+</span>
@@ -75,7 +75,7 @@ const CarFinalPageFilter = () => {
 
 
        {/* Car type */}
-       <div className='w-full flex flex-col space-y-3 pb-6 border-b'>
+       <div className='w-full lg:hidden flex flex-col space-y-3 pb-6 border-b'>
           <h1 className={`${jost.className} text-xl`}>Car type </h1>
           <div className='w-full grid grid-cols-2 gap-2 text-xs'>
              <div className='w-full flex flex-col items-center justify-center space-y-1 shadow rounded-md '><Image  height={100} width={100} src="/car_image1.png" alt='small' /><span className='text-sm'>Small</span></div> 
@@ -104,11 +104,25 @@ const CarFinalPageFilter = () => {
 
 
        {/* Pick-up */}
-       <div className='w-full flex flex-col space-y-3 '>
+       <div className='w-full flex flex-col space-y-3  pb-6 border-b '>
           <h1 className={`${jost.className} text-xl`}>Pick-up </h1>
           <div className='w-full grid grid-cols-1 gap-2 '>
              <div className='flex items-center justify-between' >  <span className='text-md'>Electric</span> <input type='checkbox' className='size-4' />    </div>           
              <div className='flex items-center justify-between' >  <span className='text-md'>Hybird</span> <input type='checkbox' className='size-4' />    </div>           
+          
+          </div>
+
+       </div> 
+
+     
+
+       {/* Supplier */}
+       <div className='w-full flex flex-col space-y-3   pb-6 border-b'>
+          <h1 className={`${jost.className} text-xl`}>Supplier </h1>
+          <div className='w-full grid grid-cols-1 gap-2 '>
+             <div className='flex items-center justify-between' >  <span className='text-md'>AMEX</span> <input type='checkbox' className='size-4' />    </div>           
+             <div className='flex items-center justify-between' >  <span className='text-md'>Drivus</span> <input type='checkbox' className='size-4' />    </div>           
+             <div className='flex items-center justify-between' >  <span className='text-md'>Europcar</span> <input type='checkbox' className='size-4' />    </div>           
           
           </div>
 

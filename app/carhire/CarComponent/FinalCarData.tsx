@@ -32,8 +32,12 @@ const FinalCarData = () => {
 
 
   const carDataArray=[
-    {id:1},
-    {id:2}
+    {id:1,url:'/car_image1.png'},
+    {id:2,url:'car_image2.png'},
+    {id:3,url:'/car_image3.png'},
+    {id:4,url:'/car_image4.png'},
+    {id:5,url:'/car_image5.png'},
+    {id:6,url:'/car_image6.png'}
   ]
 
   return (
@@ -81,7 +85,7 @@ const FinalCarData = () => {
          {/* Right  */}
          <div className='flex flex-col items-end  justify-center '>
             <div className='sm:hidden'> <FaRegHeart size={20} /></div>
-            <div className='hidden sm:block'><Image height={60} width={60} className='pt-3' src="/wheego.png" alt='wheego'/></div>
+            <div className='hidden sm:block'><Image height={60} width={60} className='pt-3' src={data.url} alt='wheego'/></div>
             <Image height={200} width={200}  src="/car_image1.png" className='p-1  py-4 sm:p-0' alt='Car_iamge' />
           </div> 
            

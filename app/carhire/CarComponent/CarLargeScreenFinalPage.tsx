@@ -5,11 +5,11 @@ import CarsoleCarFilterBySize from './CarsoleCarFilterBySize'
 
 const CarLargeScreenFinalPage = () => {
   return (
-    <div className=' w-full'>
+    <div className=' w-full flex flex-col space-y-7'>
         <div className='w-full h-80 rounded-md'>
            <CarFinalmap/>
         </div>
-        <div className='w-full flex flex-col'>
+        <div className='w-full flex flex-col space-y-7'>
             <CarsoleCarFilterBySize/>
             <FinalCarData/>
           
