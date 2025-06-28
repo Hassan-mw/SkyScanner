@@ -3,7 +3,7 @@ import { Jost } from 'next/font/google'
 import Image from 'next/image'
 import React, { useState } from 'react'
 import { BsFuelPumpFill } from 'react-icons/bs'
-import { FaHeart, FaRegHeart, FaStar } from 'react-icons/fa6'
+import { FaArrowRight, FaHeart, FaRegHeart, FaStar } from 'react-icons/fa6'
 import { GoGear } from 'react-icons/go'
 import { IoMdSpeedometer } from 'react-icons/io'
 import { IoBag, IoLockClosedSharp, IoLockOpenSharp, IoPersonSharp } from 'react-icons/io5'
@@ -33,7 +33,7 @@ const FinalCarData = () => {
 
   const carDataArray=[
     {id:1,url:'/car_image1.png'},
-    {id:2,url:'car_image2.png'},
+    {id:2,url:'/car_image2.png'},
     {id:3,url:'/car_image3.png'},
     {id:4,url:'/car_image4.png'},
     {id:5,url:'/car_image5.png'},
@@ -85,21 +85,21 @@ const FinalCarData = () => {
          {/* Right  */}
          <div className='flex flex-col items-end  justify-center '>
             <div className='sm:hidden'> <FaRegHeart size={20} /></div>
-            <div className='hidden sm:block'><Image height={60} width={60} className='pt-3' src={data.url} alt='wheego'/></div>
-            <Image height={200} width={200}  src="/car_image1.png" className='p-1  py-4 sm:p-0' alt='Car_iamge' />
+            <div className='hidden sm:block'><Image height={60} width={60} className='pt-3' src="/wheego.png" alt='wheego'/></div>
+            <Image height={200} width={200}   src={data.url} className='p-1  py-4 sm:p-0' alt='Car_iamge' />
           </div> 
            
        </div>
         
         {/* Second */}
-        <div className='w-full sm:w-1/2 flex flex-col space-y-1 sm:space-y-4 sm:justify-between p-4 border-t-2  sm:border-none border-slate-300'>
-            {/* Cancelation_btn */}
-           <div className='w-full  flex items-center justify-between '>         
-                <div className='sm:hidden flex items-center sm:order-2 justify-center gap-x-1'>
+        <div className='w-full sm:w-1/2 flex flex-col space-y-4 sm:space-y-4 sm:justify-between p-4 border-t-2  sm:border-none border-slate-300'>
+             {/* Cancelation_btn */}
+            <div className='w-full  flex items-center justify-between '>         
+                 <div className='sm:hidden flex items-center sm:order-2 justify-center gap-x-1'>
                     <IoLockOpenSharp size={14} />
                    <span className='text-xs '>Free cancellation</span>
                 </div>
-                <span className={`${jost.className} text-xs sm:text-sm sm:font-semibold text-gray-600`}>1 deal</span>
+                <span className={`${jost.className} text-xs sm:text-sm  text-gray-800`}>1 deals from</span>
             </div>
             <span className='text-sm hidden sm:block'>Free cancellation</span>
                {/* price  */}
@@ -138,32 +138,49 @@ const FinalCarData = () => {
 
      </div>
        {(showDetails===data.id && show ) &&
-        <div className='w-full flex flex-col space-y-2 items-start justify-start  p-3 border-t border-slate-400'>
-           
+        <div className='w-full flex  items-start justify-between  p-3 border-t border-slate-400'>
+         
+         {/* First */}
+         <div className='flex flex-col items-start justify-start  space-y-2'>
             <div className='w-full flex items-center justify-between'>
-               <div className='flex items-center justify-center gap-x-2'>
+               {/* <div className='flex items-center justify-center gap-x-2'> */}
                   <span className='font-semibold'>VIP cars</span>
                   <span className='text-[#f55d42]'><FaStar /></span>
-               </div>
-               <span className='text-lg font-medium'>Rs 3,696 total</span>
+               {/* </div> */}
             </div>
+
             <div className='flex items-center justify-center gap-x-3 mb-2'>
                <div className='flex items-center justify-center '><span className='text-md font-semibold'>8.3</span><span className='pt-1 text-[11px] text-slate-600'>/10</span> </div>
                <span className='text-sm border-b border-black'>Very good deal</span>
             </div>
+
             <div className='flex items-center gap-x-1'>
                <IoMdSpeedometer />
                <span className='text-sm'>Unlimited mileage</span>
             </div>
+
             <div className='flex items-center gap-x-1'>
                <BsFuelPumpFill />
                <span className='text-sm'>Same to same</span>
             </div>
+
             <div className='flex items-center gap-x-1'>
                <LuBuilding2 />
                <span className='text-sm'>Pick-up:ABC+DEF Dubai</span>
             </div>
-          
+         </div> 
+         
+         {/* Second */}
+         <div className='flex h-full  flex-col items-end justify-between '>
+            <span className='text-lg font-medium'>Rs 3,696 total</span>
+            <div className='w-28 flex items-center justify-center gap-x-3  bg-[#05203c] rounded-sm  px-3 py-1 text-white'>
+               <span className={`${jost.className} text-md`}>Select</span>
+               <FaArrowRight size={14} />
+            </div> 
+         </div>
+
+
+
         </div>
         }
      </div>
