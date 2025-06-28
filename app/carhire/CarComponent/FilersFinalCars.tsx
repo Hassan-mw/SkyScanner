@@ -29,17 +29,7 @@ const FilersFinalCars = () => {
       <span onClick={()=>setShowMap(true)} className={`${jost.className} w-full hover:cursor-pointer hover:bg-[#abadb0] duration-500 bg-[#e0e4e9] font-semibold p-2 rounded-md flex items-center justify-center text-sm`}>Map</span>
       </div>
       
-       <div className='w-full flex items-center justify-between'>
-         <span  className={`${jost.className} text-sm`}>28 result found</span>
-         <div className='flex items-center justify-center gap-x-3'>
-           <span className={`${jost.className} text-sm`}>Sort by</span>
-           <select className='w-36 px-2 py-1 border focus:outline-none rounded-sm bg-white'>
-              <option>Abc</option>
-           </select>
-        </div>
-
-      </div>
-
+      
 
      <CarsoleCarFilterBySize/>
         {/* Car_filer_size */}
@@ -49,11 +39,6 @@ const FilersFinalCars = () => {
       
      
 
-    {/* Text */}
-    <div className='w-full flex justify-start p-3 rounded-md bg-white'>
-       <span className='text-sm'>We find prices from all across the web – what providers pay us affects how we sort results. <span className='border-b text-xs'>Learn how Skyscanner workd</span></span>
-    </div>
-      
 
 
       

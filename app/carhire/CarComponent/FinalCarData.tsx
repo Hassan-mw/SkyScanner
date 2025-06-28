@@ -41,7 +41,7 @@ const FinalCarData = () => {
      {
       carDataArray.map((data,index)=>
      
-     <div className='w-full border flex flex-col  bg-white   rounded-md shadow  '>
+     <div key={data.id} className='w-full border flex flex-col  bg-white   rounded-md shadow  '>
      <div className='w-full  flex flex-col sm:flex-row      '>
       
        {/* First */}
