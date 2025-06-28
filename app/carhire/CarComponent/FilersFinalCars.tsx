@@ -20,6 +20,7 @@ import {
   SelectValue,
 } from "@/components/ui/select"
 import Image from 'next/image';
+import { CarouselContent, CarouselItem } from '@/components/ui/carousel';
 
 const FilersFinalCars = () => {
 
@@ -53,9 +54,20 @@ const FilersFinalCars = () => {
         </div>
 
       </div>
-        {/* Car_filer_size */}
-        <div className='w-full grid grid-cols-3 gap-4 text-xs'>
-             {
+
+
+   
+    <CarouselContent  className="w-full  ">
+      
+
+   
+      
+
+    
+        
+
+         <CarouselItem  className="basis-full  flex items-center justify-center sm:basis-1/2 lg:basis-1/3 " >
+           {
              carFilterSizeArray.map((data,index)=>
               <div key={data.id} className='w-full flex flex-col items-center justify-center space-y-1 shadow rounded-md border '>
                   <Image  height={100} width={100} src={data.url} alt='small' />
@@ -65,14 +77,34 @@ const FilersFinalCars = () => {
                   </div> 
               </div>
              )} 
-        </div>
+           
+      
+         
+          </CarouselItem>
+
+
+        
+
+
+         
+
+         
+       
+         
+        
+      </CarouselContent>
+
+        {/* Car_filer_size */}
+        {/* <div className='w-full grid grid-cols-3 gap-4 text-xs'> */}
+            
+        {/* </div> */}
       
      
 
-
-      <div className='w-full flex justify-start p-3 rounded-md bg-white'>
+    {/* Text */}
+    <div className='w-full flex justify-start p-3 rounded-md bg-white'>
        <span className='text-sm'>We find prices from all across the web – what providers pay us affects how we sort results. <span className='border-b text-xs'>Learn how Skyscanner workd</span></span>
-      </div>
+    </div>
       
 
 

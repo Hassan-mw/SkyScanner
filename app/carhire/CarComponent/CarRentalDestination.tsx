@@ -64,7 +64,7 @@ function CarRentalDestination() {
               width={300} 
               src="/car_rental_destination.webp"
               alt="image"
-              className="w-full object-cover object-bottom h-56 rounded-t-md  "
+              className="w-full object-cover object-bottom h-48 rounded-t-md  "
              />
              
              <div className="w-full bg-white flex items-center justify-between p-3   rounded-b-md  border">
@@ -105,7 +105,7 @@ function CarRentalDestination() {
               width={300} 
               src="/car_rental_destination1.webp"
               alt="image"
-              className="w-full object-cover object-bottom h-56 rounded-t-md  "
+              className="w-full object-cover object-bottom h-48 rounded-t-md  "
              />
              
              <div className="w-full bg-white flex items-center justify-between p-3  rounded-b-md  border">
@@ -145,7 +145,7 @@ function CarRentalDestination() {
               width={300} 
               src="/car_rental_destination2.webp"
               alt="image"
-              className="w-full object-cover object-bottom h-56 rounded-t-md  "
+              className="w-full object-cover object-bottom h-48 rounded-t-md  "
              />
              
              <div className="w-full bg-white flex items-center justify-between p-3  rounded-b-md  border">
@@ -185,7 +185,7 @@ function CarRentalDestination() {
               width={300} 
               src="/car_rental_destination3.webp"
               alt="image"
-              className="w-full object-cover object-bottom h-56 rounded-t-md  "
+              className="w-full object-cover object-bottom h-48 rounded-t-md  "
              />
              
              <div className="w-full bg-white flex items-center justify-between p-3  rounded-b-md  border">
