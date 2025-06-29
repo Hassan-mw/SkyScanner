@@ -4,7 +4,7 @@ const planeController=require('./../Controller/planeController')
 
 
 router.route('/')
-.post(planeController.createplane)
+.post(planeController.manageFormData,planeController.createplane)
 
 
 module.exports=router

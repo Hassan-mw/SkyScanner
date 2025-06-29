@@ -6,11 +6,11 @@ const planeRouter=require('./Router/planeRouter')
 
 app.use(express.json())
 
-
 app.use((req,res,next)=>{
-     console.log(req.body.person)
+   console.log(req.file,")))")
     next()
 })
+
 
 app.use('/api/flights',flightRouter)
 app.use('/api/plane',planeRouter)
