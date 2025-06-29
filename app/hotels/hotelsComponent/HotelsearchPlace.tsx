@@ -1,14 +1,9 @@
-import { useState } from "react"
+import { Jost } from "next/font/google";
+import { Dispatch, SetStateAction, useState } from "react";
+import { BsBuildings } from "react-icons/bs";
+ 
 
-// import countryArray from "../service/airportArray"
-function HotelsearchPlane({value,setValue}) {
-    const [selectPlace,setSelectplace]=useState("")
-    // const [selectCountry,setSelectCountry]=useState("Country")
-    // const [value,setValue]=useState('')
-
-    // Combine value
-        // const  selectedVlaue=`${selectCountry} ${selectPlace}`
-    const hotelArray = [
+const hotelArray = [
   { "hotel": "Pearl Continental Lahore", "country": "Pakistan", "city": "Lahore", "province": "Punjab" },
   { "hotel": "Avari Lahore", "country": "Pakistan", "city": "Lahore", "province": "Punjab" },
   { "hotel": "The Nishat", "country": "Pakistan", "city": "Lahore", "province": "Punjab" },
@@ -57,61 +52,90 @@ function HotelsearchPlane({value,setValue}) {
   { "hotel": "Ritz-Carlton Toronto", "country": "Canada", "city": "Toronto", "province": "Ontario" },
   { "hotel": "Four Seasons Toronto", "country": "Canada", "city": "Toronto", "province": "Ontario" },
   { "hotel": "Shangri-La Toronto", "country": "Canada", "city": "Toronto", "province": "Ontario" }
-];
+ ];
 
-    //!  Putting value
-        function handlePlace(data){
-           setValue(data)
-           setSelectplace(data)
-        }
 
-    //!   Clearing input fields
-        function handleClearValue(){
-           setValue("")
-  
-        }
-    //!Filter    
-        const filteredHotel=value===''? hotelArray  : hotelArray.filter((data)=>data.hotel.toLowerCase().includes(value.toLowerCase())) 
-    
-    return (
-        // <div className="h-full w-full bg-white flex flex-col items-center justify-start space-y-5 p-6">
-        <div className="h-[500px] truncate  w-full min-w-[400px] md:max-w-full md:min-w-[500px] lg:min-w-[700px] bg-white flex flex-col items-center justify-start space-y-5 ">
+const jost = Jost({
+  weight: ["400"],
+  subsets: ["latin"],
+});
 
-        {/* Upper head */}
-         {/* <div className="flex items-center justify-between w-full ">
-          <div  onClick={()=>setshowSidebar(false)} className="text-2xl "><ion-icon name="arrow-back-outline"></ion-icon></div>
-          <div className="w-full flex items-center justify-center text-xl font-semibold">Popular destination </div> 
-        </div> */}
-        {/* Form */}
-          <div className="bg-white px-4 py-4 rounded-xl  w-full flex items-center justifuy-between space-x-4 max-w-screen-lg ">
-           {/* <span> From  </span>  */}
-           <div className="w-full border-b border-slate-700">
-            <input value={value} onChange={(e)=>setValue(e.target.value)} className="w-full focus:outline-none"  type="text" placeholder="Search hotel name"/></div>
-              {/* <input type="text" value={selectedVlaue}  placeholder="Select place" autoFocus className="bg-slate-200 w-full border-slate-700 border-b focus:outline-none"/> */}
-                <div onClick={()=>handleClearValue()} className="text-2xl  px-3 py-1 flex items-center justify-center rounded-full   "><ion-icon name="close-circle-outline"></ion-icon></div>  
-  
-               </div>
-        {/* Main body */}
-        <div className="w-full flex flex-col  items-start overflow-y-auto space-y-3 ">
-            {/* Planes */}
-            {filteredHotel.map((data,index)=>
-             <div key={index} className={`flex w-full space-x-3  p-4 rounded-lg ${selectPlace===data.hotel? 'bg-slate-400' :' hover:bg-slate-200' }  `} onClick={()=>handlePlace(data.hotel)}>
-        <span className="text-2xl  "><ion-icon name="business-outline"></ion-icon></span>
-       <div className="flex flex-col ">  
-        <span className="text-2xl  ">{data.hotel}</span>
-        <div className="flex items-center">
-        <span className="text-sm">{data.province}</span>,
-        <span className="text-sm">{data.country}</span>
+function HotelsearchPlane({
+  value,
+  setValue,
+}: {
+  value: string;
+  setValue: Dispatch<SetStateAction<string>>;
+}) {
+  const [selectPlace, setSelectplace] = useState("");
 
+  // Handle input selection
+  function handlePlace(data: string) {
+    setValue(data);
+    setSelectplace(data);
+  }
+
+  // Clear input
+  function handleClearValue() {
+    setValue("");
+  }
+
+  // Filter hotels based on input
+  const filteredHotel =
+    value === ""
+      ? hotelArray
+      : hotelArray.filter((data) =>
+          data.hotel.toLowerCase().includes(value.toLowerCase())
+        );
+
+  return (
+    <div className="h-[500px] truncate w-full min-w-[400px] md:max-w-full bg-white flex flex-col items-center justify-start space-y-5 overflow-y-auto">
+      {/* Search Input */}
+      <div className="bg-white px-4 py-4 rounded-xl w-full flex items-center justify-between space-x-4 max-w-screen-lg">
+        <div className="w-full border-b border-slate-700">
+          <input
+            value={value}
+            onChange={(e) => setValue(e.target.value)}
+            className="w-full focus:outline-none text-lg"
+            type="text"
+            placeholder="Search hotel name"
+          />
         </div>
-       </div>
-        </div>
-            )}
-      
+      </div>
 
-        </div>
-        </div>
-    )
+      {/* Hotel List */}
+      <div className="w-full flex flex-col items-start space-y-3">
+        {filteredHotel.map((data, index) => (
+          <div
+            key={index}
+            className={`flex w-full space-x-3 p-4 border-b border-slate-300 ${
+              selectPlace === data.hotel
+                ? "bg-slate-400"
+                : "hover:bg-slate-200"
+            }`}
+            onClick={() => handlePlace(data.hotel)}
+          >
+            <span className="text-[#626971]">
+              <BsBuildings size={25} />
+            </span>
+            <div className="flex flex-col">
+              <span className={`${jost.className} text-xl`}>{data.hotel}</span>
+              <div style={{ fontWeight: 200 }} className="flex items-center">
+                <span className={`${jost.className} text-xs`}>
+                  {data.province}
+                </span>
+                ,{" "}
+                <span className={`${jost.className} text-xs`}>
+                  {data.country}
+                </span>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 }
 
-export default HotelsearchPlane
+export default HotelsearchPlane;
+

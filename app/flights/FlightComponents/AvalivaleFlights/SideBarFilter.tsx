@@ -28,13 +28,16 @@ function SideBarFilter({range,setRange,setCheckStops}) {
     }
     return (
         <div className="w-full h-full flex flex-col items-center justify-start space-y-2 pt-2">
-            <h1 className={`${jost.className} text-xl flex items-center justify-center gap-x-2  lg:border-b border-slate-900`}><CiFilter /><span style={{fontweight:300}} classname={`${jost.className} text-md`}> Filters </span></h1>
-            {/* <div className="w-full bg-[#e0e4e9] p-1 rounded-md flex items-center justify-center gap-x-2 "><FaBell /><span style={{fontWeight:300}} className={`${jost.className} text-sm`}>Get Price Alters</span></div> */}
-            <h1 className={`${jost.className} text-xl  lg:hidden lg:border-b border-slate-900`}>Filters</h1>
+            <div className={`${jost.className}  flex items-center justify-center gap-x-2  lg:border-b border-slate-900`}>
+               <CiFilter size={20} />
+               <span className={`${jost.className} text-xl`}> Filters </span>
+            </div>
+           
             {/* Results */}
-           <div className="bg-slate-900 flex items-center justify-between w-full lg:hidden  p-3">
-         <div className="text-lg font-medium text-white">Result:3/9</div>
-         <div  className="text-lg font-medium text-white hover:text-slate-500 duration-100">Reset  all filters</div>
+           <div className="bg-[#05203c] flex items-center justify-between w-full lg:hidden  p-3">
+         <span  style={{fontWeight:300}} className={ `${jost.className} text-md font-medium text-white`}>Result: 3 / 9</span>
+         <span style={{fontWeight:300}} className={ `${jost.className} text-md font-medium text-white`}>Reset  all filters</span>
+
            </div>
     
            <Accordion type="single" collapsible className="w-full p-3 space-y-4">

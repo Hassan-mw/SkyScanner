@@ -7,6 +7,9 @@ import { IoBedSharp } from 'react-icons/io5'
 import { MdDirectionsCarFilled } from 'react-icons/md'
 import { RiPlaneFill } from 'react-icons/ri'
 import { json } from 'stream/consumers'
+import FightSearchBarLargeScreens from './flights/FlightComponents/FightSearchBarLargeScreens'
+import FlightSearchBarSmallSceen from './flights/FlightComponents/FlightSearchBarSmallSceen'
+import FightSearchBarLargeHomeScreens from './HomepageComponenets/FightSearchBarLargeHomeScreens'
 const jost=Jost({
     subsets:['latin'],
     weight:['500']
@@ -14,9 +17,19 @@ const jost=Jost({
 
 const page = () => {
   return (
-    <div className='w-full flex items-center justify-center bg-white'>
+    <div className='w-full flex flex-col items-center justify-center bg-white'>
+      
+        {/*Search_bar  */}
+    <div className="bg-[#05203c] flex items-center justify-center w-full">
+     <div className="hidden md:block w-full "> <FightSearchBarLargeHomeScreens/></div>
+     <div className="md:hidden w-full "> <FlightSearchBarSmallSceen/></div>
+    </div>
+
        <div className='w-full flex flex-col space-y-9 max-w-screen-xl p-5'>
           
+
+
+
           {/* Navigations */}
           <div className='w-full grid grid-cols-3 gap-6'>
               {/* 1 */}

@@ -71,7 +71,7 @@ const FightSearchBarLargeScreens = () => {
                 <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
             {/* </div> */}
           </MenubarTrigger>
-        <MenubarContent >
+        <MenubarContent  >
             {/* Data */}
         <PlanesearchPlane value={startPlace} setValue={setStartPlace}  />
         </MenubarContent>

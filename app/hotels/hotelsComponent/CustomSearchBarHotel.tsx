@@ -16,6 +16,7 @@ import { DatePicker } from "@/components/ui/DatePicker";
 import { IoMdSearch } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Calendar } from "lucide-react";
+import RoomPerson from "./RoomPerson";
 
 
 const jost=Jost({
@@ -28,19 +29,12 @@ const CustomSearchBarHotel = () => {
 
     const [value,setValue]=useState('')
     const [checkInDate,setCheckInDate]=useState<Date>()
-    const [startPlace,setStartPlace]=useState('')
     const [returnDate,setReturnDate] =useState<Date>();
     const [adult,setAdult]=useState(1)
     const [children,setChildre]=useState(0)
     const [roomType,setRoomType]=useState('Economy')
-    const [totaltraveller,setTotalTraveller]=useState<Number>(0)
-
-    
-    useEffect(()=>{
-
-    setTotalTraveller(adult+children)
-
-    },[adult,children])
+    const [person,setPerson]=useState(1)
+    const [room,setRoom]=useState(1)
     
     
 
@@ -123,12 +117,12 @@ const CustomSearchBarHotel = () => {
        <MenubarTrigger className="w-full  flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
             <span className="text-white text-[9px] "> Guests and rooms </span>
             <div className="bg-white w-full flex items-start justify-start p-2 rounded-sm  md:rounded-none md:rounded-r-md   ">
-              <span className={`${jost.className} text-sm `}>{`${totaltraveller} ${Array.isArray(totaltraveller) &&   totaltraveller.length >1  ? 'travellers' : 'traveller'}, ${roomType}`}</span>
+              <span className={`${jost.className} text-sm `}>{`${person} Person, ${room} room`}</span>
             </div>      
           </MenubarTrigger>
         <MenubarContent >
-   
-        <PlanePerson adult={adult} setAdult={setAdult} children={children} setChildren={setChildre} roomType={roomType} setRoomType={setRoomType} />
+        <RoomPerson  person={person} room={room} setperson={setPerson}  setRoom={setRoom} />
+      
         </MenubarContent>
     </MenubarMenu>
 

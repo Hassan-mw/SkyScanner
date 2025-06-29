@@ -15,7 +15,7 @@ const PlanePerson = ({adult,setAdult,children,setChildren,roomType,setRoomType}:
   const [countAdults,setCountAdults]=useState(adult);
   const [countChildren,setCountChildren]=useState(children);
   const [className,setClassName]=useState(roomType);
- console.log(countAdults,countChildren)
+
 
     // handle button click
     function handleCount({type,countType}:{type:string,countType:string}){

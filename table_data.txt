@@ -1,0 +1,31 @@
+CREATE TABLE flights (
+ id SERIAL PRIMARY KEY,
+ fromLocation  VARCHAR(50),
+ flightStartplane int,
+ FOREIGN KEY (flightStartplane)  REFERENCES  plane(id),
+ flightEndplane int,
+ FOREIGN KEY (flightEndplane)  REFERENCES  plane(id),
+ toLocation   VARCHAR(50),
+ departDate   VARCHAR(50),
+ returnDate   VARCHAR(50),
+ person   NUMERIC(10,2),
+ type   VARCHAR(50),
+ journey   VARCHAR(50),
+ price  NUMERIC(10,2),
+ totalTime   NUMERIC(10,2),
+ startTime   NUMERIC(10,2),
+ endTime   NUMERIC(10,2),
+ cancel   BOOLEAN,
+ cabinBag BOOLEAN,
+ checkedBag BOOLEAN
+);
+
+
+
+CREATE TABLE plane (
+id SERIAL PRIMARY KEY,
+planeName VARCHAR(50),
+planeLogo VARCHAR(50),
+star SMALLINT CHECK (star>=0 AND star<=5)
+
+);

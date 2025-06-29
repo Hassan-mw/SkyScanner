@@ -44,7 +44,7 @@ const PlaneSearchBarPlace = ({value,setValue}) => {
 
     return (
        
-        <div className="h-[500px]  truncate bg-white w-full min-w-[400px]  rounded-xl  flex flex-col items-center justify-start space-y-5 overflow-y-scroll ">
+        <div className="h-[500px]  truncate bg-white w-full min-w-[400px]  rounded-xl  flex flex-col items-center justify-start space-y-5 ">
 
 
 
