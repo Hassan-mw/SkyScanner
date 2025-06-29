@@ -1,9 +1,9 @@
 const express=require('express')
 const app=express()
 const Pool = require("./Pool/pool");
+const flightRouter=require('./Router/flightRouter')
 
-
-
+app.use('/api/flights',flightRouter)
 
 
 
