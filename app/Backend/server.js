@@ -2,8 +2,18 @@ const express=require('express')
 const app=express()
 const Pool = require("./Pool/pool");
 const flightRouter=require('./Router/flightRouter')
+const planeRouter=require('./Router/planeRouter')
+
+app.use(express.json())
+
+
+app.use((req,res,next)=>{
+     console.log(req.body.person)
+    next()
+})
 
 app.use('/api/flights',flightRouter)
+app.use('/api/plane',planeRouter)
 
 
 
@@ -24,7 +34,7 @@ Pool.connect({
 })
 
 
-app.listen('5000',()=>{
+app.listen('6000',()=>{
    console.log(`server was runing on port 5000`)
 
 })
