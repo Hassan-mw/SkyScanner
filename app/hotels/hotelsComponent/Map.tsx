@@ -65,10 +65,10 @@ iconUrl:markerIcon.src
 
 const Map = ({country}:{country:string}) => {
   return (
-      <div className='w-full h-full  space-y-3 p-1  border-white rounded-md xl:border-green-500 xl:rounded-none xl:p-none'>
+      <div className='w-full h-full space-y-3 p-1  border-white rounded-md xl:border-green-500 xl:rounded-none xl:p-none'>
         
     
-    <MapContainer className='h-full' center={[ 21.5760,   39.1565]} zoom={14}>
+    <MapContainer className='h-full z-10 ' center={[ 21.5760,   39.1565]} zoom={14}>
        <TileLayer 
         
           attribution= '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

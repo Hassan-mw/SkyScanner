@@ -25,7 +25,7 @@ return (
         <div className="w-full flex flex-col    xl:flex-row  max-w-[2000px]">
            
             {/* //! SIDEBAR AT LARGE SCREENS */}
-            <ShowSideBarHotel setShowSideBar={setShowSideBar}/>
+            <div className="hidden 2xl:block bg-red-400 wxl:w-[300px]"><ShowSideBarHotel /></div>
           
             
             {/* //! MIDDLE BOX */}

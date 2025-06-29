@@ -32,15 +32,8 @@ const FilersFinalCars = () => {
       
 
      <CarsoleCarFilterBySize/>
-        {/* Car_filer_size */}
-        {/* <div className='w-full grid grid-cols-3 gap-4 text-xs'> */}
-            
-        {/* </div> */}
+
       
-     
-
-
-
       
     {/* Map */}
     <div className={`fixed top-0 left-0 transform transition-transform ease-in-out bg-black/60  ${showMap ? 'translate-y-0' : '-translate-y-full'} duration-1000 flex items-center justify-center w-full h-full`}>

@@ -62,8 +62,9 @@ const HotelSearchBar = () => {
         <MenubarMenu  >
             <MenubarTrigger className="w-full  flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
                 <span className="text-[9px]  hidden xl:block   text-white">Where do you want to stay?</span>
-                <div className="bg-white    rounded-md  md:rounded-r-none  md:rounded-l-md md:border-r  w-full">
-                     <input type="text"  value={startPlace && startPlace  } placeholder='Enter the destination or hotel name' style={{fontWeight:400}}  className={`  w-full text-sm p-2 placeholder:text-gray-400 focus:outline-none`} />                 
+                <div className="bg-white  h-9  rounded-md  md:rounded-r-none  md:rounded-l-md md:border-r  w-full">
+                   <span style={{fontWeight:300}} className={`${jost.className} h-full w-full  flex items-center p-3 justify-start text-md  `}>{value || 'Hello'}</span>
+                     {/* <input type="text"  value={startPlace && startPlace  } placeholder='Enter the destination or hotel name' style={{fontWeight:400}}  className={`  w-full text-sm p-2 placeholder:text-gray-400 focus:outline-none`} />                  */}
                 </div>      
               </MenubarTrigger>
             <MenubarContent >

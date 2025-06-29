@@ -89,7 +89,7 @@ function HotelsearchPlane({
         );
 
   return (
-    <div className="h-[500px] truncate w-full min-w-[400px] md:max-w-full bg-white flex flex-col items-center justify-start space-y-5 overflow-y-auto">
+    <div className="h-[500px] truncate z-30 w-full min-w-[400px] md:max-w-full bg-white flex flex-col items-center justify-start space-y-5 overflow-y-auto">
       {/* Search Input */}
       <div className="bg-white px-4 py-4 rounded-xl w-full flex items-center justify-between space-x-4 max-w-screen-lg">
         <div className="w-full border-b border-slate-700">

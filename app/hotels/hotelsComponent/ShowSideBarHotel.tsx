@@ -4,14 +4,12 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { GiRotaryPhone } from "react-icons/gi";
 
-function ShowSideBarHotel({setShowSideBar}:{setShowSideBar:Dispatch<SetStateAction<boolean>>}) {
+function ShowSideBarHotel() {
     const [currentPrriceId,setCheckCurentPriceId]=useState(1)
     const [currentStarId,setCheckCurentStarsId]=useState(1)
     console.log(currentPrriceId)
-    function handleClick(){
-        console.log("I AM clicked")
-        setShowSideBar(false)
-    }
+
+
     const priceArray=[
         {id:1,start:0,end:'62,800'},
         {id:2,start:'62,800',end:'125,6000'},
@@ -35,11 +33,11 @@ function ShowSideBarHotel({setShowSideBar}:{setShowSideBar:Dispatch<SetStateActi
         {id:5,type:'pool'},
     ]
     return (
-    <div className={` 2xl:max-w-[280px] w-full   h-[90vh]  hidden 2xl:block overflow-hidden  overflow-y-auto `}>
-    <div className="flex flex-col items-start  px-3   space-y-6 py-4 pb-36  ">
+    <div className={`min-w-[300px] w-full   h-[90vh]  overflow-hidden  overflow-y-auto `}>
+    <div className="w-full flex flex-col items-start  px-3   space-y-6 py-4 pb-36  ">
           
            {/* button */}
-           <span className="2xl:hidden p-2 fixed top-0 left-0 bg-blue-700 hover:bg-blue-900 duration-200 shadow-2xl  text-white rounded-br-2xl text-2xl font-semibold w-1/2 flex items-center justify-center" onClick={()=>setShowSideBar(false)} >Close</span>
+           {/* <span className="2xl:hidden p-2 fixed top-0 left-0 bg-blue-700 hover:bg-blue-900 duration-200 shadow-2xl  text-white rounded-br-2xl text-2xl font-semibold w-1/2 flex items-center justify-center" onClick={()=>setShowSideBar(false)} >Close</span> */}
           
            {/* Startup deals*/}
             <div className="flex items-center justify-start gap-x-3 border-t pt-5 w-full">
