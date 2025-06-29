@@ -27,19 +27,28 @@ exports.manageFormData=upload.single('planeLogo')
 exports.createplane=async(req,res,next)=>{
    
  try{
-    console.log(req.body)
-    const {planeName,star}=req.body
+ 
+   const {planeName,star}=req.body
    const ext=req.file.mimetype.split('/')[1];
    const filename=`prodcut_${Date.now()}.${ext}`
    const filePath=path.join(__dirname,'../../../public',filename)
    await fs.writeFile(filePath,req.file.buffer)
-   
+
    const [rows]=await pool.query(`INSERT INTO plane(planeName,star,planeLogo) VALUES ($1,$2,$3) RETURNING *`,[planeName,star,filename])
-   console.log(rows)
-  
+ 
+   
+   res.status(201).json({
+    status:'succes',
+    messages:'Succesfully created plane data',
+    data:rows[0]
+   })
 
  }catch(err){
- console.log(err,"DDDD")
+ 
+   res.status(500).json({
+    status:'fail',
+    messages:err.message
+   })
   }
 
 }
