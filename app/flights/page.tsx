@@ -5,13 +5,13 @@ import FlightSearchBarSmallSceen from "./FlightComponents/FlightSearchBarSmallSc
 import FightSearchBarLargeScreens from "./FlightComponents/FightSearchBarLargeScreens"
 import ShowDetails from "./FlightComponents/ShowDetails"
 import MoreDetails from "./FlightComponents/MoreDetails"
+import React from 'react'
+import fetchAllFlightData from "../API/flightApi"
 
-
-
-function Country({params}:{params:URLSearchParams}) {
-
-    return (
-     
+const page = async() => {
+    const data=await fetchAllFlightData()
+    console.log(data)
+  return (
     <div className="w-full  flex flex-col space-y-10 items-center bg-white  ">
 
     {/*Search_bar  */}
@@ -32,7 +32,7 @@ function Country({params}:{params:URLSearchParams}) {
 
 
     </div>
-    )
+  )
 }
 
-export default Country
+export default page

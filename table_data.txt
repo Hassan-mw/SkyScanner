@@ -1,10 +1,12 @@
 CREATE TABLE flights (
  id SERIAL PRIMARY KEY,
+ fromCountry  VARCHAR(50),
  fromLocation  VARCHAR(50),
  flightStartplane int,
  FOREIGN KEY (flightStartplane)  REFERENCES  plane(id),
  flightEndplane int,
  FOREIGN KEY (flightEndplane)  REFERENCES  plane(id),
+ toCountry  VARCHAR(50),
  toLocation   VARCHAR(50),
  departDate   VARCHAR(50),
  returnDate   VARCHAR(50),
