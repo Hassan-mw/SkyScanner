@@ -37,6 +37,7 @@ star SMALLINT CHECK (star>=0 AND star<=5)
 
 
 
+
 CREATE TABLE hotels(
 id SERIAL PRIMARY KEY,
 name VARCHAR(50),
@@ -54,5 +55,6 @@ latitude VARCHAR(50),
 longitude  VARCHAR(50),
 image  VARCHAR(50),
 person VARCHAR(50),
+city VARCHAR(50),
 room VARCHAR(50)
 )
