@@ -52,3 +52,16 @@ exports.createplane=async(req,res,next)=>{
   }
 
 }
+
+
+exports.getAllplane=async(req,res,next)=>{
+ try{
+  const data=await pool.query('SELECT * FROM plane')
+   res.status(200).json({
+    status:'success'
+   })
+ }catch(err){
+ console.log(err)
+
+ }
+}

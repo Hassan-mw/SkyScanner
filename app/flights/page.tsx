@@ -6,7 +6,7 @@ import FightSearchBarLargeScreens from "./FlightComponents/FightSearchBarLargeSc
 import ShowDetails from "./FlightComponents/ShowDetails"
 import MoreDetails from "./FlightComponents/MoreDetails"
 import React from 'react'
-import fetchAllFlightData from "../API/flightApi"
+import { fetchAllFlightData } from "../API/flightApi"
 
 const page = async() => {
     const data=await fetchAllFlightData()

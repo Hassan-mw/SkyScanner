@@ -5,17 +5,19 @@ const pool = require('../Pool/pool');
 exports.getAllFlight=async(req,res,next)=>{
    
  try{
-  const [rows]=await pool.query('SELECT * FROM flights')
-  
-  res.status(200).josn({
+  console.log('????????????????????????????????????')
+  const result=await pool.query('SELECT * FROM flights ')
+  console.log(result.rows[0])
+  res.status(200).json({
+    length:result.rows.length,
     status:'success',
-    data:rows[0]
+    data:result.rows
   })
  }catch(err){
   console.log(err)
   res.status(500).json({
     status:'fail',
-    message:err.message
+    message:err
   })
 
   }
