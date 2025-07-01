@@ -31,23 +31,28 @@ exports.manageFormData=upload.fields([
 exports.createCar=async(req,res,next)=>{
    
  try{
-    // console.log(req.files)
-     const {image,companyImage}=req.files
+    // console.log(req.files,'______________')
+    // console.log('??????????????????????????')
+    //  const {image,companyImage}=req.files.imsge
+    const [carImage]=req.files.image
+    const [companyImage]=req.files.companyImage
+   console.log(carImage)
    const {door,price,person,capacity,companyName,size,rating,conditionRating,cleanRating,customerService,easyCollection}=req.body
-   const extCar=req.files.images.mimetype.split('/')[1];
-   const extCompany=carCompanyName.mimetype.split('/')[1];
-   console.log(extCar,extCompany,'PPPPPPPPPPPP')
-   const carFileName=`car_${Date.now()}.${extCar}`
-   const carCompanyName=`carCopany_${Date.now()}.${extComapny}`
-   const carFilePath=path.join(__dirname,'../../../public',carFileName)
+   const extCar=carImage.mimetype.split('/')[1];
+   const extCompany=companyImage.mimetype.split('/')[1];
+   const carName=`carName_${Date.now()}.${extCar}`
+   const carCompanyName=`carCompany_${Date.now()}.${extCar}`
+   const carFilePath=path.join(__dirname,'../../../public',carName)
    const carCompanyFilePath=path.join(__dirname,'../../../public',carCompanyName)
-//    await fs.writeFile(carFilePath,req.file.buffer)
-//    await fs.writeFile(carCompanyFilePath,req.file.buffer)
+   await fs.writeFile(carFilePath,carImage.buffer)
+   await fs.writeFile(carCompanyFilePath,companyImage.buffer)
 
-//    const [rows]=await pool.query(`INSERT INTO cars(image,door,price,person,capacity,companyName,companyImage,size,rating,conditionRating,cleanRating,customerService,easyCollection) VALUES ($1,$2,$3) RETURNING *`,
-//     [image,door,price,person,capacity,companyName,companyImage,size,rating,conditionRating,cleanRating,customerService,easyCollection])
- 
-   
+const [rows] = await pool.query(
+  `INSERT INTO cars (image, door, price, person, capacity, companyName, companyImage, size, rating, conditionRating, cleanRating, customerService, easyCollection) 
+   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *`,
+  [carName, door, price, person, capacity, companyName, carCompanyName, size, rating, conditionRating, cleanRating, customerService, easyCollection]
+);
+
 //    res.status(201).json({
 //     status:'succes',
 //     messages:'Succesfully created plane data',
@@ -55,7 +60,7 @@ exports.createCar=async(req,res,next)=>{
 //    })
 
  }catch(err){
- 
+ console.log(err)
    res.status(500).json({
     status:'fail',
     messages:err.message
