@@ -5,12 +5,14 @@ const Pool = require("./Pool/pool");
 const flightRouter=require('./Router/flightRouter')
 const planeRouter=require('./Router/planeRouter')
 const hotelRouter=require('./Router/hotelRouter')
+const carsRouter=require('./Router/carsRouter')
 app.use(express.json())
 const cors = require('cors');
 app.use(cors({ origin: 'http://localhost:3000' }));
 
 
 
+app.use('/api/cars',carsRouter)
 app.use('/api/hotels',hotelRouter)
 app.use('/api/flights',flightRouter)
 app.use('/api/plane',planeRouter)

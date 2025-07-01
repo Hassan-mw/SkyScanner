@@ -58,3 +58,23 @@ person VARCHAR(50),
 city VARCHAR(50),
 room VARCHAR(50)
 )
+
+
+
+CREATE TABLE cars(
+id SERIAL PRIMARY KEY,
+image VARCHAR(50),
+door SMALLINT CHECK (door>=2 AND door<=6),
+price VARCHAR(50),
+person SMALLINT CHECK (person>=1 AND person<=6),
+capacity SMALLINT CHECK (capacity>=1 AND capacity<=6),
+companyName VARCHAR(50),
+companyImage VARCHAR(50),
+size VARCHAR(50),
+rating  SMALLINT CHECK (rating>=0 AND rating<=5),
+conditionRating SMALLINT CHECK (conditionRating>= 0 AND conditionRating<=5),
+cleanRating SMALLINT CHECK (cleanRating>= 0 AND cleanRating<=5),
+customerService SMALLINT CHECK (customerService>= 0 AND customerService<=5),
+easyCollection SMALLINT CHECK (easyCollection>= 0 AND easyCollection<=5)
+
+)
