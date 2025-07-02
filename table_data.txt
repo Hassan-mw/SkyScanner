@@ -79,9 +79,10 @@ easyCollection SMALLINT CHECK (easyCollection>= 0 AND easyCollection<=5)
 
 )
 
-
 CREATE TABLE carhire (
   id SERIAL PRIMARY KEY,
+  carId INT,
+  FOREIGN KEY (carId) REFERENCES  cars(id),
   stationName VARCHAR(50),
   country VARCHAR(50),
   city VARCHAR(50),
