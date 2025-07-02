@@ -6,12 +6,14 @@ const flightRouter=require('./Router/flightRouter')
 const planeRouter=require('./Router/planeRouter')
 const hotelRouter=require('./Router/hotelRouter')
 const carsRouter=require('./Router/carsRouter')
+const carhire=require('./Router/carhireRouter')
 app.use(express.json())
 const cors = require('cors');
 app.use(cors({ origin: 'http://localhost:3000' }));
 
 
 
+app.use('/api/carhire',carhire)
 app.use('/api/cars',carsRouter)
 app.use('/api/hotels',hotelRouter)
 app.use('/api/flights',flightRouter)
