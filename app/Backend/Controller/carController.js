@@ -31,12 +31,9 @@ exports.manageFormData=upload.fields([
 exports.createCar=async(req,res,next)=>{
    
  try{
-    // console.log(req.files,'______________')
-    // console.log('??????????????????????????')
-    //  const {image,companyImage}=req.files.imsge
-    const [carImage]=req.files.image
-    const [companyImage]=req.files.companyImage
-   console.log(carImage)
+   const [carImage]=req.files.image
+   const [companyImage]=req.files.companyImage
+
    const {door,price,person,capacity,companyName,size,rating,conditionRating,cleanRating,customerService,easyCollection}=req.body
    const extCar=carImage.mimetype.split('/')[1];
    const extCompany=companyImage.mimetype.split('/')[1];
@@ -47,17 +44,17 @@ exports.createCar=async(req,res,next)=>{
    await fs.writeFile(carFilePath,carImage.buffer)
    await fs.writeFile(carCompanyFilePath,companyImage.buffer)
 
-const [rows] = await pool.query(
+const result= await pool.query(
   `INSERT INTO cars (image, door, price, person, capacity, companyName, companyImage, size, rating, conditionRating, cleanRating, customerService, easyCollection) 
    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *`,
   [carName, door, price, person, capacity, companyName, carCompanyName, size, rating, conditionRating, cleanRating, customerService, easyCollection]
 );
-
-//    res.status(201).json({
-//     status:'succes',
-//     messages:'Succesfully created plane data',
-//     data:rows[0]
-//    })
+console.log(result)
+   res.status(201).json({
+    status:'succes',
+    messages:'Succesfully created plane data',
+    data:result.rows[0]
+   })
 
  }catch(err){
  console.log(err)
@@ -74,9 +71,11 @@ const [rows] = await pool.query(
 
 exports.getAllCars=async(req,res,next)=>{
  try{
-  const data=await pool.query('SELECT * FROM plane')
+  const result=await pool.query('SELECT * FROM cars')
    res.status(200).json({
-    status:'success'
+    length:result.rows.length,
+    status:'success',
+    data:result.rows
    })
  }catch(err){
  console.log(err)

@@ -78,3 +78,21 @@ customerService SMALLINT CHECK (customerService>= 0 AND customerService<=5),
 easyCollection SMALLINT CHECK (easyCollection>= 0 AND easyCollection<=5)
 
 )
+
+
+CREATE TABLE carhire (
+  id SERIAL PRIMARY KEY,
+  stationName VARCHAR(50),
+  country VARCHAR(50),
+  city VARCHAR(50),
+  pickupDate VARCHAR(50),
+  pickupTime VARCHAR(50),
+  dropoffDate VARCHAR(50),
+  dropoffTime VARCHAR(50),
+  differentLocation BOOLEAN,
+  type VARCHAR(50),
+  latitude VARCHAR(50),
+  longitude VARCHAR(50),
+  freeCancel BOOLEAN
+);
+
