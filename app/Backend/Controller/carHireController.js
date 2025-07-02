@@ -22,40 +22,37 @@ const upload=multer({
     fileFilter:multerFilter
 })
 
-exports.manageFormData=upload.fields([
-    {name:'image',maxCount:1},
-    {name:'companyImage',maxCount:1}
-])
+exports.manageFormData=upload.single('image')
 
 
 exports.createCarHire=async(req,res,next)=>{
    
  try{
-    console.log('+++++++++++')
-//    const [carImage]=req.files.image
-//    const [companyImage]=req.files.companyImage
+    console.log(req.file,'+++++++++++')
 
-//    const {door,price,person,capacity,companyName,size,rating,conditionRating,cleanRating,customerService,easyCollection}=req.body
-//    const extCar=carImage.mimetype.split('/')[1];
-//    const extCompany=companyImage.mimetype.split('/')[1];
-//    const carName=`carName_${Date.now()}.${extCar}`
-//    const carCompanyName=`carCompany_${Date.now()}.${extCar}`
-//    const carFilePath=path.join(__dirname,'../../../public',carName)
-//    const carCompanyFilePath=path.join(__dirname,'../../../public',carCompanyName)
-//    await fs.writeFile(carFilePath,carImage.buffer)
-//    await fs.writeFile(carCompanyFilePath,companyImage.buffer)
 
-// const result= await pool.query(
-//   `INSERT INTO cars (image, door, price, person, capacity, companyName, companyImage, size, rating, conditionRating, cleanRating, customerService, easyCollection) 
-//    VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *`,
-//   [carName, door, price, person, capacity, companyName, carCompanyName, size, rating, conditionRating, cleanRating, customerService, easyCollection]
-// );
+   const {stationname,carid,country,city,pickupDate,pickupTime,dropoffDate,dropoffTime,differentLocation,type,latitude,longitude,freeCancel}=req.body
+//    console.log(stationname,country,city,pickupDate,pickupTime,dropoffDate,dropoffTime,differentLocation,type,latitude,longitude,freeCancel)
+   const ext=req.file.mimetype.split('/')[1];
+   const filename=`carhire_${Date.now()}.${ext}`
+   const filePath=path.join(__dirname,'../../../public',filename)
+   console.log(filePath,'__________',filename)
+   await fs.writeFile(filePath,req.file.buffer)
+ 
+
+const result= await pool.query(
+  `INSERT INTO carhire (image,stationname,carid,country,city,pickupDate,pickupTime,dropoffDate,dropoffTime,differentLocation,type,latitude,longitude,freeCancel) 
+   VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13,$14) RETURNING *`,
+  [filename,stationname,carid,country,city,pickupDate,pickupTime,dropoffDate,dropoffTime,differentLocation,type,latitude,longitude,freeCancel]
+);
+console.log(result.rows[0])
+
 // console.log(result)
-//    res.status(201).json({
-//     status:'succes',
-//     messages:'Succesfully created plane data',
-//     data:result.rows[0]
-//    })
+   res.status(201).json({
+    status:'succes',
+    messages:'Succesfully created plane data',
+    data:result.rows[0]
+   })
 
  }catch(err){
  console.log(err)
