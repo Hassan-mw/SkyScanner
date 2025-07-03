@@ -97,3 +97,9 @@ CREATE TABLE carhire (
   freeCancel BOOLEAN
 );
 
+
+
+CREATE TABLE countrys(
+countryName VARCHAR(50),
+cityNames    TEXT[]
+)

@@ -4,7 +4,7 @@ const planeController=require('./../Controller/planeController')
 
 
 router.route('/')
-.get(planeController.getAllplane)
+.get(planeController.getAllPlane)
 .post(planeController.manageFormData,planeController.createplane)
 
 router.route('/:id')

@@ -14,11 +14,12 @@ const MainplaneFlightBody = ({data,handleClickSelectFlight}) => {
         <div className="w-full grid grid-cols-1 sm:grid-cols-3   items-center justify-center space-y-1  ">
        
         {/* Plane_Deport_Return */}
-        <div className="w-full pl-2 max-w-[80%] lg:max-w-[95%] flex flex-col  sm:col-span-2 items-center justify-center space-y-1 md:space-y-0 md:space-x-2  ">
+        <div className="w-full sm:pr-3 border-b sm:border-b-0 pb-5 lg:max-w-[95%] flex flex-col  sm:col-span-2 items-center justify-center space-y-1 md:space-y-0 md:space-x-2  ">
           
-          {/* 1 */}
-          <div className="w-full  flex items-center justify-between   gap-x-12    ">
-              <div><Image height={90} width={90}  className=" " src="/pia.png" alt="pia-logo"/></div>
+   
+          <div className="w-full   flex items-center justify-between  gap-x-12    ">
+              <div><Image height={90} width={90}  className=" " src={`/${data.planelogo}`} alt="pia-logo"/></div>
+            
               <div className="w-full flex  items-center justify-center space-x-3">
                 
                 {/* Plane_start */}
@@ -56,7 +57,7 @@ const MainplaneFlightBody = ({data,handleClickSelectFlight}) => {
         {/* Plane_Price_Data */}
           <div className="w-full  sm:col-span-1    flex items-end justify-end sm:items-center sm:justify-center  sm:border-l border-[#e5e5e5]  py-2 ">
           {/*Pricing_btton  */}
-          <div className="flex sm:flex-col items-center justify-center gap-2">
+          <div className="w-full flex sm:flex-col items-center justify-between  gap-2">
         
           {/* price */}
           <div className="flex flex-col items-end">
