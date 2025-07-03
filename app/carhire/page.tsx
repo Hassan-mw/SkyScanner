@@ -9,10 +9,14 @@ import CarRentalDestination from "./CarComponent/CarRentalDestination"
 import CarRentalByCity from "./CarComponent/CarRentalByCity"
 
 
-function MainPageCar() {
-    return (
-  
-  
+import React from 'react'
+import { fetchAllCarHire } from "../API/carhireApi"
+
+const page = async() => {
+  const data=await fetchAllCarHire();
+  console.log(data)
+  return (
+     
   <div className="w-full  flex flex-col space-y-10 items-center bg-white overflow-y-auto  overflow-x-hidden">
     
     {/*Search_bar  */}
@@ -29,9 +33,7 @@ function MainPageCar() {
 
       </div>
       </div>
-
-    )
+  )
 }
 
-export default MainPageCar
-    
+export default page

@@ -64,12 +64,15 @@ console.log(result.rows[0])
 
 }
 
+// exports.getDataByMainPageData=
+
 
 
 
 exports.getAllCarHire=async(req,res,next)=>{
  try{
-  const result=await pool.query('SELECT * FROM cars')
+  const {stationname,pickupDate,pickupTime,dropoffDate,dropoffTime}=req.body
+  const result=await pool.query('SELECT * FROM  carhire')
    res.status(200).json({
     length:result.rows.length,
     status:'success',
