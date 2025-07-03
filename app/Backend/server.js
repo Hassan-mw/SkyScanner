@@ -7,10 +7,17 @@ const planeRouter=require('./Router/planeRouter')
 const hotelRouter=require('./Router/hotelRouter')
 const carsRouter=require('./Router/carsRouter')
 const carhire=require('./Router/carhireRouter')
-app.use(express.json())
 const cors = require('cors');
-app.use(cors({ origin: 'http://localhost:3000' }));
 
+
+app.use(express.json())
+app.use(cors({
+  origin: "http://localhost:3000",
+  credentials: true,
+  methods: ["GET", "POST", "OPTIONS"]
+}));
+
+// app.options("*", cors());
 
 
 app.use('/api/carhire',carhire)
@@ -38,7 +45,7 @@ Pool.connect({
 })
 
 
-app.listen('6000',()=>{
-   console.log(`server was runing on port 6000`)
+app.listen('5000',()=>{
+   console.log(`server was runing on port 5000`)
 
 })

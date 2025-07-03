@@ -7,7 +7,35 @@ const pool = require('../Pool/pool');
 exports.getAllFlight=async(req,res,next)=>{
    
  try{
+  console.log('+++++++++++++')
+  console.log(req.query)
+  const {departDate}=req.query
+  console.log(departDate.split('T')[0])
+  const result=await pool.query('SELECT * FROM flights ')
+  res.status(200).json({
+    length:result.rows.length,
+    status:'success',
+    data:result.rows
+  })
+ }catch(err){
+  // console.log(err)
+  res.status(500).json({
+    status:'fail',
+    message:err
+  })
 
+  }
+  
+}
+
+
+exports.getFlightByData=async(req,res,next)=>{
+   
+ try{
+  console.log('+++++++++++++++++')
+ console.log(req.query)
+   const { startPlace, endPlace } = req.query;
+   console.log(startPlace,endPlace)
   const result=await pool.query('SELECT * FROM flights ')
   res.status(200).json({
     length:result.rows.length,

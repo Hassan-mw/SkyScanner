@@ -13,6 +13,9 @@ import Image from "next/image";
 import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
 import Link from "next/link";
 import { DatePicker } from "@/components/ui/DatePicker";
+import { fetchAllFlightData } from "@/app/API/flightApi";
+import { redirect } from "next/navigation";
+import { FaCalendarAlt } from "react-icons/fa";
 
 
 const jost=Jost({
@@ -38,7 +41,19 @@ const FightSearchBarLargeScreens = () => {
 
     },[adult,children])
     
+    const handleClickButton=async()=>{
+      // if(startPlace && endPlace && departDate && returnDate && totaltraveller && roomType) {
+     const data=await fetchAllFlightData({startPlace,endPlace,departDate,returnDate,totaltraveller,roomType})
+     console.log(data)
+    //  redirect('/flights/PK')
     
+    // }
+   
+
+
+
+    }
+
 
     return (
     <div   className="flex justify-center items-center  min-w-full    ">
@@ -62,11 +77,12 @@ const FightSearchBarLargeScreens = () => {
       
     {/* Journey Start Place */}
     <MenubarMenu  >
-        <MenubarTrigger className="w-full relative h-full bg-white col-span-1  rounded-none rounded-l-md  p-0 ">
-            {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
-               <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
+        <MenubarTrigger className="w-full relative h-full  bg-white col-span-1  rounded-none rounded-l-md  p-0 ">
+               <div className="  flex flex-col items-start  py-3 px-4 justify-start   w-full">
                   <span className="text-[#626971] font-semibold text-sm"> From </span>
-                  <span>{startPlace ? startPlace : 'Anywhere'}</span>
+                   <div className="text-slate-800 truncate pr-1 max-w-full">
+                    <span>{startPlace ? startPlace : 'Anywhere'}</span>
+                    </div>
               </div>
                 <div className="absolute  -right-[22px] top-[14px]   bg-white border-[#05203c] size-10 flex border-[3px] items-center justify-center rounded-full"><FaArrowRightArrowLeft /></div>
             {/* </div> */}
@@ -80,11 +96,12 @@ const FightSearchBarLargeScreens = () => {
 
     {/* Journey End Place*/}
     <MenubarMenu  >
-        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none  pl-5  ">
-            {/* <div className="w-full h-full bg-green-600  relative flex flex-col justify-start   "> */}
-              <div className="  flex flex-col items-start py-3 px-4 justify-start   w-full">
+        <MenubarTrigger className="w-full  max-w-full truncate  h-full bg-white col-span-1  rounded-none  pl-5  ">
+              <div className="  flex flex-col items-start py-3 px-4 justify-start  w-full">
                   <span className="text-[#626971] font-semibold text-sm"> To </span>
-                  <span>{endPlace ? endPlace : 'Anywhere'}</span>
+                  <div className="text-slate-800 truncate pr-1 max-w-full">
+                    <span>{endPlace ? endPlace : 'Anywhere'}</span>
+                    </div>
               </div>
 
            
@@ -95,13 +112,48 @@ const FightSearchBarLargeScreens = () => {
         <PlanesearchPlane value={endPlace} setValue={setEndPlace}  />
         </MenubarContent>
     </MenubarMenu>
+     
+     
 
-    {/* Depart_Date  */}
-    <DatePicker place="Depart" date={departDate} setDate={setDepartDate} />
-      
-    {/*Return_ Date  */}
-    <DatePicker  place="Return" date={returnDate} setDate={setReturnDate} />
-       
+    {/* Depart Date*/}
+    <MenubarMenu  >
+        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none  pl-5  ">
+           <div className="w-full flex flex-col items-start space-y-1   ">
+                 <div className=" min-w-full flex flex-col items-center justify-start p-3 gap-1 rounded-bl-xl  lg:rounded-none  bg-white  sm:p-3">
+                 <div className="text-sm text-gray-500">Depart </div>
+                 <div className="text-black truncate">
+                 {departDate ?<span>{departDate.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
+                 </div>
+               
+                 </div>    
+                 </div>  
+          </MenubarTrigger>
+        <MenubarContent >
+            {/* Data */}
+                 <CustomDatePicker date={departDate}  setDateSelect={setDepartDate} />
+        </MenubarContent>
+    </MenubarMenu>
+
+    {/* Return Date*/}
+    <MenubarMenu  >
+        <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none  pl-5  ">
+           <div className="w-full flex flex-col items-start space-y-1   ">
+                 <div className=" min-w-full flex flex-col items-center justify-start p-3 gap-1 rounded-bl-xl  lg:rounded-none  bg-white  sm:p-3">
+                 <div className="text-sm text-gray-500">Return</div>
+                 <div className="text-black truncate">
+                 {returnDate ?<span>{returnDate.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
+                 </div>
+               
+                 </div>    
+                 </div>  
+          </MenubarTrigger>
+        <MenubarContent >
+            {/* Data */}
+                 <CustomDatePicker date={returnDate}  setDateSelect={setReturnDate} />
+        </MenubarContent>
+    </MenubarMenu>
+     
+    
     {/* Person Selection */}
     <MenubarMenu  >
         <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none rounded-r-xl   p-0 ">
@@ -123,11 +175,11 @@ const FightSearchBarLargeScreens = () => {
     
 
       {/* Buttons_Searching */}
-    <Link href="/flights/PK" className="w-full flex items-center justify-center h-full   rounded-xl ">
+    <div onClick={handleClickButton}  className="w-full flex items-center justify-center h-full   rounded-xl ">
       <div className="w-full ml-3 max-w-[80%] h-full   2xl:max-w-full rounded-xl  flex items-center justify-center text-white font-semibold bg-blue-600 duration-700 hover:bg-blue-700 ">
          <h2 className={`${jost.className} text-sm`}>Search </h2>
       </div>
-    </Link>
+    </div>
 
 
    </Menubar>

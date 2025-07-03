@@ -71,7 +71,8 @@ console.log(result.rows[0])
 
 exports.getAllCarHire=async(req,res,next)=>{
  try{
-  const {stationname,pickupDate,pickupTime,dropoffDate,dropoffTime}=req.body
+  // const {stationname,pickupDate,pickupTime,dropoffDate,dropoffTime}=req.body
+  console.log(req.body,'PPPPP')
   const result=await pool.query('SELECT * FROM  carhire')
    res.status(200).json({
     length:result.rows.length,

@@ -9,8 +9,8 @@ import React from 'react'
 import { fetchAllFlightData } from "../API/flightApi"
 
 const page = async() => {
-    const data=await fetchAllFlightData()
-    console.log(data)
+    // const data=await fetchAllFlightData()
+    // console.log(data)
   return (
     <div className="w-full  flex flex-col space-y-10 items-center bg-white  ">
 
