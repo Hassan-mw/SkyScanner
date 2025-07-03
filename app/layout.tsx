@@ -32,7 +32,7 @@ export default function RootLayout({
              <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="></script>
        </head>
        <body className="w-full h-full flex flex-col  bg-[#05203c] overflow-hidden overflow-x-hidden overflow-y-scroll">
-          <div className=" bg-[#05203c] flex items-center justify-center  w-full"> <Navigation/></div> 
+              <div className=" bg-[#05203c] flex items-center justify-center  w-full"> <Navigation/></div> 
           <DataProvider>
               {children}
               <Footer/>

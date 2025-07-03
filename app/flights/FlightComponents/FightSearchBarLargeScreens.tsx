@@ -1,7 +1,7 @@
 'use client'
 import { Jost } from "next/font/google"
 import { TbSTurnDown } from "react-icons/tb";
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import CustomDatePicker from "../../Components_Custom/CustomDatePicker"
 import PlanesearchPlane from "../../Components_Custom/PlaneSearchBarPlace"
 import PlanePerson from "../../Components_Custom/PlanePerson"
@@ -11,6 +11,7 @@ import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/componen
 
 import { fetchAllFlightData } from "@/app/API/flightApi";
 import { redirect } from "next/navigation";
+import { DataContext } from "@/app/ContextApi/ContextApi";
 
 
 
@@ -21,16 +22,16 @@ const jost=Jost({
 
 const FightSearchBarLargeScreens = () => {
 
-    const [startPlace,setStartPlace]=useState('')
-    const [endPlace,setEndPlace]=useState('')
+    const [startPlace,setStartPlace]=useState('Pakistan')
+    const [endPlace,setEndPlace]=useState('Saudi Arabia')
     const [departDate,setDepartDate] = useState<Date>();
     const [returnDate,setReturnDate] =useState<Date>();
     const [adult,setAdult]=useState(1)
     const [children,setChildre]=useState(0)
     const [roomType,setRoomType]=useState('Economy')
     const [totaltraveller,setTotalTraveller]=useState<number>(0)
-
-    
+    const {flightData,setFlightData}=useContext(DataContext)
+     console.log(flightData)
     useEffect(()=>{
 
     setTotalTraveller(adult+children)
@@ -40,8 +41,10 @@ const FightSearchBarLargeScreens = () => {
     const handleClickButton=async()=>{
       if(startPlace && endPlace && departDate && returnDate && totaltraveller && roomType) {
      const data=await fetchAllFlightData({startPlace,endPlace,departDate,returnDate,totaltraveller,roomType})
-     console.log(data)
-    //  redirect('/flights/PK')
+     console.log(data.data)
+     setFlightData(data.data)
+     localStorage.setItem("flgightData", JSON.stringify(data.data));
+     redirect('/flights/PK')
     
     }
    

@@ -1,9 +1,10 @@
 'use client'
-import { createContext, useContext, useState } from "react";
+import { createContext, Dispatch, SetStateAction, useContext, useState } from "react";
 
 
 interface DataType {
- 
+ flightData:never[]
+ setFlightData: Dispatch<SetStateAction<never[]>>;
 }
 
 
@@ -14,6 +15,7 @@ interface DataType {
 
 function DataProvider({children}:{children:React.ReactNode}){
      const [flightData,setFlightData]=useState([])
+     console.log(flightData)
     return(
         <DataContext.Provider value={{flightData,setFlightData}}>
               {children}

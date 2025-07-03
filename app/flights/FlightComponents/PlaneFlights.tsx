@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import PlaneFilterFlight from  "../FlightComponents/AvalivaleFlights/PlaneFilterFlight"
 import FinalPageFilter from  "../FlightComponents/AvalivaleFlights/FinalPageFilter"
 import SideBarFilter from  "../FlightComponents/AvalivaleFlights/SideBarFilter"
@@ -23,6 +23,8 @@ function PlaneFlights({country,depart,finalcity}) {
     const [showSideBar,setShowSideBar]=useState(false)
     const [showSideBarsort,setShowSideBarSort]=useState(false)
     const [showSelectFlight,setShowSelectFlight]=useState(false)
+    const [data,flightData]=useState([])
+
     const flightsArray=[
         {id:'1',hours:'12.5',startTime:'21.5',endTime:'6',stop:'direct',airline:"Fly Jinnah"},
         {id:'2',hours:'5',startTime:'5',endTime:'12',stop:'1',airline:"Fly Amrrates"},
@@ -32,7 +34,19 @@ function PlaneFlights({country,depart,finalcity}) {
         {id:'3',hours:'20',startTime:'5',endTime:'8',stop:'2',airline:"Pia"},
    
     ]
-// console.log(checkStops)
+
+    useEffect(() => {
+    const saved = localStorage.getItem("flgightData");
+    if (saved) {
+        flightData(JSON.parse(saved));
+    }
+    }, []);
+    const mainData=data.filter(el=>el.fromcountry===country && el.tolocation===depart && el.fromlocation===finalcity )
+      console.log(mainData)
+
+    console.log(data)
+
+     
 
 const filterArray=flightsArray
 
@@ -75,7 +89,7 @@ const filterArray=flightsArray
 
 
         {/*//!  Main_Body  */}
-         <MainplaneFlightBody  filterArray={filterArray}  handleClickSelectFlight={handleClickSelectFlight} /> 
+         <MainplaneFlightBody  data={mainData}  handleClickSelectFlight={handleClickSelectFlight} /> 
 
 
          {/* Show large side bae */}

@@ -1,7 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import image from "../../public/Pakistan.jpg"
 import { Jost } from 'next/font/google'
@@ -11,17 +11,24 @@ const jost=Jost({
     weight:['500'],
     subsets:['latin']
 })
-const DepartArray = () => {
+const DepartArray = ({flights,depart}:{depart:string,flights:string}) => {
        const [filteroptons,setFileroptions]=useState('Cheapest flights')
-  
+      const [data,flightData]=useState([])
+    useEffect(() => {
+    const saved = localStorage.getItem("flgightData");
+    if (saved) {
+      flightData(JSON.parse(saved));
+    }
+  }, []);
+  const arrayData=data.filter(el=>el.tolocation===depart)
 
-
+console.log(arrayData)
   const fileredOptionsArray=[
     {id:1,text:"Cheapest flights"},
     {id:2,text:"All avaliable locations"}
 ]
 const country="India"
-const depart="Islamabad"
+// const depart="Islamabad"
 const city="ab"
 
   return (
@@ -42,9 +49,9 @@ const city="ab"
        {/* Data */}
        <div className="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8"> 
        
-       {/* 1 */}
-       <Link href={`/flights/${country}/departlocation/${depart}/avaliableflights/${city}`}  className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
-        <h1 className={`${jost.className} text-xl`}>Karachi</h1>
+      {arrayData.map((data,index)=>
+       <Link key={index} href={`/flights/${flights}/departlocation/${depart}/avaliableflights/${data.fromlocation}`}  className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
+        <h1 className={`${jost.className} text-xl`}>{data.fromlocation}</h1>
         <div className='w-full flex items-center justify-between'>
         <span className={`text-slate-500 text-xs `} >Flight from</span>
         <span className={`${jost.className} text-xl `}>RS 123,342</span>
@@ -52,29 +59,8 @@ const city="ab"
         <span className={`text-slate-500 text-xs `} >1+ stops</span>
 
        </Link> 
-
-       {/* 1 */}
-       <div className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
-        <h1 className={`${jost.className} text-xl`}>Karachi</h1>
-        <div className='w-full flex items-center justify-between'>
-        <span className={`text-slate-500 text-xs `} >Flight from</span>
-        <span className={`${jost.className} text-xl `}>RS 123,342</span>
-        </div>
-        <span className={`text-slate-500 text-xs `} >1+ stops</span>
-
-       </div> 
-
-       {/* 1 */}
-       <div className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
-        <h1 className={`${jost.className} text-xl`}>Karachi</h1>
-        <div className='w-full flex items-center justify-between'>
-        <span className={`text-slate-500 text-xs `} >Flight from</span>
-        <span className={`${jost.className} text-xl `}>RS 123,342</span>
-        </div>
-        <span className={`text-slate-500 text-xs `} >1+ stops</span>
-
-       </div> 
-
+       )}
+       
        </div>
 
 
