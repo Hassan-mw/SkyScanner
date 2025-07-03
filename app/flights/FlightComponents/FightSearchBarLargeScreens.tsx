@@ -1,8 +1,5 @@
 'use client'
 import { Jost } from "next/font/google"
-
-
-
 import { TbSTurnDown } from "react-icons/tb";
 import { useEffect, useState } from "react"
 import CustomDatePicker from "../../Components_Custom/CustomDatePicker"
@@ -11,11 +8,10 @@ import PlanePerson from "../../Components_Custom/PlanePerson"
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
 import Image from "next/image";
 import { Menubar, MenubarContent, MenubarMenu, MenubarTrigger } from "@/components/ui/menubar";
-import Link from "next/link";
-import { DatePicker } from "@/components/ui/DatePicker";
+
 import { fetchAllFlightData } from "@/app/API/flightApi";
 import { redirect } from "next/navigation";
-import { FaCalendarAlt } from "react-icons/fa";
+
 
 
 const jost=Jost({

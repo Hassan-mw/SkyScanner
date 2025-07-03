@@ -16,6 +16,7 @@ export const fetchAllFlightData = async ({startPlace,endPlace,departDate,returnD
           })
     // const data = await response.json();
     console.log(response.data);
+    return response.data
   } catch (err) {
     console.log("Fetch error:", err);
   }
