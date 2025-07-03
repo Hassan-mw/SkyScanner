@@ -32,7 +32,7 @@ const FightSearchBarLargeScreens = () => {
     const [adult,setAdult]=useState(1)
     const [children,setChildre]=useState(0)
     const [roomType,setRoomType]=useState('Economy')
-    const [totaltraveller,setTotalTraveller]=useState<Number>(0)
+    const [totaltraveller,setTotalTraveller]=useState<number>(0)
 
     
     useEffect(()=>{
@@ -42,12 +42,12 @@ const FightSearchBarLargeScreens = () => {
     },[adult,children])
     
     const handleClickButton=async()=>{
-      // if(startPlace && endPlace && departDate && returnDate && totaltraveller && roomType) {
+      if(startPlace && endPlace && departDate && returnDate && totaltraveller && roomType) {
      const data=await fetchAllFlightData({startPlace,endPlace,departDate,returnDate,totaltraveller,roomType})
      console.log(data)
     //  redirect('/flights/PK')
     
-    // }
+    }
    
 
 

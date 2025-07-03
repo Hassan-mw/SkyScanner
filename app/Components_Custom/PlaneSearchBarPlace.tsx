@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { Jost } from "next/font/google"
 import { BsFillFlagFill } from "react-icons/bs";
 import { FaLocationDot } from "react-icons/fa6";
@@ -8,25 +8,24 @@ const jost=Jost({
     subsets:['latin']
 })
 
-const PlaneSearchBarPlace = ({value,setValue}) => {
+const PlaneSearchBarPlace = ({value,setValue}:{value:string,setValue:Dispatch<SetStateAction<string>>}) => {
     const [selectPlace,setSelectplace]=useState("")
 
    const hotelArray = [
   "Pakistan",
   "India",
-  "China",
-  "Japan",
-  "United Arab Emirates",
+  "Afghanistan",
+  "USA",
   "Singapore",
-  "South Korea",
+  "Iran",
   "Thailand",
-  "Malaysia",
-  "Indonesia"
+  "Saudi Arabia",
+  "Malaysia"
 ];
 
 
     // Putting value
-    function handlePlace(data){
+    function handlePlace(data:string){
       setValue(data)
       setSelectplace(data)
     }
