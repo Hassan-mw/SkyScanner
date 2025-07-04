@@ -8,6 +8,7 @@ const hotelRouter=require('./Router/hotelRouter')
 const carsRouter=require('./Router/carsRouter')
 const carhireRouter=require('./Router/carhireRouter')
 const countrysRouter=require('./Router/countrysRouter')
+const flightDataByFilterRouter=require('./Router/flightDataByFilterRouter')
 const cors = require('cors');
 
 
@@ -18,9 +19,10 @@ app.use(cors({
   methods: ["GET", "POST", "OPTIONS"]
 }));
 
-// app.options("*", cors());
 
 
+
+app.use('/api/flightFilter',flightDataByFilterRouter)
 app.use('/api/countrys',countrysRouter)
 app.use('/api/carhire',carhireRouter)
 app.use('/api/cars',carsRouter)

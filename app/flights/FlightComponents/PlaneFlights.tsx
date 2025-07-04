@@ -15,7 +15,7 @@ import { useRouter } from "next/navigation"
 
 
 
-function PlaneFlights({country,depart,finalcity}) {
+function PlaneFlights({endCountry,startingCountry,startingCity,endingcity}) {
  
     const [range,setRange]=useState('1.5')
     const [id,setId]=useState('')
@@ -30,7 +30,7 @@ function PlaneFlights({country,depart,finalcity}) {
     const [showSelectFlight,setShowSelectFlight]=useState(false)
     const [data,flightData]=useState([])
 
-  console.log(cabinBag,'cabin bag value')
+  console.log(data,'cabin bag value')
 
     const flightsArray=[
         {id:'1',hours:'12.5',startTime:'21.5',endTime:'6',stop:'direct',airline:"Fly Jinnah"},
@@ -50,7 +50,7 @@ function PlaneFlights({country,depart,finalcity}) {
     }, []);
 
 
-    const mainData=data.filter(el=>el.fromcountry===country && el.tolocation===depart && el.fromlocation===finalcity )
+    const mainData=data.filter(el=>el.fromcountry===startingCountry  && el.tocountry===endCountry && el.fromlocation===startingCity && el.tolocation===endingcity )
       console.log(mainData)
 
     console.log(data)
@@ -133,7 +133,7 @@ const filterArray=flightsArray
 
         
        
-          <ShowFlight showSelectFlight={showSelectFlight} id={id} filterArray={filterArray}  checkAirline={checkAirline} country={country} depart={depart} finalcity={finalcity}  setShowSelectFlight={setShowSelectFlight} />
+          {/* <ShowFlight showSelectFlight={showSelectFlight} id={id} filterArray={filterArray}  checkAirline={checkAirline} country={country} depart={depart} finalcity={finalcity}  setShowSelectFlight={setShowSelectFlight} /> */}
     </div>
 
 

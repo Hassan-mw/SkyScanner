@@ -11,7 +11,7 @@ const jost=Jost({
     weight:['500'],
     subsets:['latin']
 })
-const DepartArray = ({flights,depart}:{depart:string,flights:string}) => {
+const DepartArray = ({flights,depart,countryData}:{depart:string,flights:string}) => {
        const [filteroptons,setFileroptions]=useState('Cheapest flights')
       const [data,flightData]=useState([])
     useEffect(() => {
@@ -22,7 +22,7 @@ const DepartArray = ({flights,depart}:{depart:string,flights:string}) => {
   }, []);
   const arrayData=data.filter(el=>el.tolocation===depart)
 
-console.log(arrayData)
+
   const fileredOptionsArray=[
     {id:1,text:"Cheapest flights"},
     {id:2,text:"All avaliable locations"}
@@ -49,9 +49,9 @@ const city="ab"
        {/* Data */}
        <div className="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8"> 
        
-      {arrayData.length>0 ? arrayData.map((data,index)=>
-       <Link key={index} href={`/flights/${flights}/departlocation/${depart}/avaliableflights/${data.fromlocation}`}  className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
-        <h1 className={`${jost.className} text-xl`}>{data.fromlocation}</h1>
+      {countryData.length>0 ? countryData.map((data,index)=>
+       <Link key={index} href={`/flights/${flights}/departlocation/${depart}/avaliableflights/${data}`}  className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
+        <h1 className={`${jost.className} text-xl`}>{data}</h1>
         <div className='w-full flex items-center justify-between'>
         <span className={`text-slate-500 text-xs `} >Flight from</span>
         <span className={`${jost.className} text-xl `}>RS 123,342</span>

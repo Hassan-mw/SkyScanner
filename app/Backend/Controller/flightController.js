@@ -7,16 +7,16 @@ const pool = require('../Pool/pool');
 exports.getAllFlight=async(req,res,next)=>{
    
  try{
-
+ console.log('++++++++++++++++++++++')
  
   const {startPlace,  endPlace,  departDate,  returnDate, totaltraveller, roomType}=req.query
   console.log(departDate.split('T')[0])
 
   const result=await pool.query(`
-SELECT * FROM flights
-JOIN plane ON flights.flightstartplane=plane.id 
-JOIN countrys ON flights.tocountry= countrys.countryname
- WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
+  SELECT * FROM flights
+  JOIN plane ON flights.flightstartplane=plane.id 
+  JOIN countrys ON flights.tocountry= countrys.countryname
+  WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
  
 //   const result=await pool.query(`SELECT * FROM plane
 // JOIN flights ON plane.id=flights.flightstartplane  WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
