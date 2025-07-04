@@ -49,7 +49,7 @@ const city="ab"
        {/* Data */}
        <div className="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8"> 
        
-      {arrayData.map((data,index)=>
+      {arrayData.length>0 ? arrayData.map((data,index)=>
        <Link key={index} href={`/flights/${flights}/departlocation/${depart}/avaliableflights/${data.fromlocation}`}  className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
         <h1 className={`${jost.className} text-xl`}>{data.fromlocation}</h1>
         <div className='w-full flex items-center justify-between'>
@@ -59,7 +59,13 @@ const city="ab"
         <span className={`text-slate-500 text-xs `} >1+ stops</span>
 
        </Link> 
-       )}
+       )
+      :
+      <div className='w-full flex flex-col items-start justify-start space-y-2'>
+        <h1>No data</h1>
+      </div>
+      
+      }
        
        </div>
 

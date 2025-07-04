@@ -11,18 +11,18 @@ const jost=Jost({
     subsets:['latin']
 })
 
-const FlightsArray = ({countryData}) => {
+const FlightsArray = ({fromcountry,tocounry,countryData}) => {
 
-  const [data,flightData]=useState([])
+//   const [data,flightData]=useState([])
 
-    useEffect(() => {
-      const saved = localStorage.getItem("flgightData");
-      if (saved) {
-        flightData(JSON.parse(saved));
-       }
-    }, []);
+//     useEffect(() => {
+//       const saved = localStorage.getItem("flgightData");
+//       if (saved) {
+//         flightData(JSON.parse(saved));
+//        }
+//     }, []);
 
- console.log(data)
+ console.log(countryData)
  const [filteroptons,setFileroptions]=useState('')
 
  const areas = [
@@ -190,14 +190,14 @@ const fileredOptionsArray=[
        <div className="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
             {/* Countres 1 */}
             {countryData.map((data,index)=>
-        <Link href={`${data.fromcountry}/departlocation/${data.tolocation}`}  key={index} className="hover:cursor-pointer h-32 sm:h-80 b  shadow-sm hover:shadow-lg  duration-500   flex sm:flex-col  white items-center justify-center w-full border rounded-md   ">
+        <Link href={`${fromcountry}-${tocounry}/departlocation/${data}`}  key={index} className="hover:cursor-pointer h-32 sm:h-80 b  shadow-sm hover:shadow-lg  duration-500   flex sm:flex-col  white items-center justify-center w-full border rounded-md   ">
         
            {/* Image */}
            <Image height={350} width={350} src={`/${data.tolocationimage}`}  className="h-full sm:max-h-[65%] rounded-l-md sm:rounded-bl-none sm:rounded-t-md object-cover w-full max-w-[30%] sm:max-w-full " alt="bbbb" />
 
         {/* Data */}
         <div className="w-full  h-full max-w-[70%] sm:max-w-full sm:max-h-[35%]  flex flex-col space-y-2 item-center justify-center bg-white p-3 sm:p-5 rounded-r-md sm:rounded-none sm:rounded-b-md  ">
-          <span className={`${jost.className} text-lg sm:text-xl font-semibold`}>{data.tolocation}</span>
+          <span className={`${jost.className} text-lg sm:text-xl font-semibold`}>{data}</span>
 
           <div className='flex flex-col items-center justify-between'>
              {/* flights */}

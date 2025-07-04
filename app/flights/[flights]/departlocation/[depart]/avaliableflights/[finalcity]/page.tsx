@@ -3,15 +3,16 @@ import AvaliableFlightDataChanger from '@/app/flights/FlightComponents/Avalivale
 import PlaneFlights from '@/app/flights/FlightComponents/PlaneFlights'
 import React from 'react'
 
-const page = async({params}) => {
+const page = async({params}:{params:{flights:string,depart:String,finalcity:string}}) => {
   const {flights,depart,finalcity}=await params
-  
-  const id=16
-  const planeData=await FetchAllPlane()
-  // console.log(data)
-    const country='p'
-// const depart='dep'
-// const finalcity='g'
+
+
+  const [fromcountry,tocounry]=flights.split('-')
+  const startingCountry=fromcountry.replace('%20',' ')
+  const endCountry=tocounry.replace('%20',' ')
+  const startingCity=finalcity
+  const endingcity=depart
+
   return (
     <div className="w-full    bg-[#eff3f8] flex flex-col items-center justify-center  ">
          <AvaliableFlightDataChanger/>

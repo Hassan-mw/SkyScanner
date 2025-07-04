@@ -11,9 +11,9 @@ const page = async({params}) => {
   // const {citynames}=countryData.data
   console.log(flights)
   const [fromcountry,tocounry]=flights.split('-')
-  const countryData=await fetAllCountry({flights:fromcountry})
-  //  const {flightData,setFlightData}=useContext(DataContext)
-     console.log(fromcountry,tocounry)
+  const startingCountry=fromcountry.replace('%20',' ')
+  const endCountry=tocounry.replace('%20',' ')
+  const countryData=await fetAllCountry({flights:endCountry})
 
 // 
 
@@ -21,7 +21,7 @@ const page = async({params}) => {
     <div className=' w-full bg-green-500  '>
  
     <SearchFlights  />
-    <FlightsArray fromcountry={fromcountry} tocounry countryData={countryData}  />
+    <FlightsArray fromcountry={startingCountry} tocounry={endCountry} countryData={countryData.citynames}  />
     <FlightDetails/>
 
     </div>
