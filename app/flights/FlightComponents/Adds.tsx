@@ -11,7 +11,7 @@ import { Jost } from 'next/font/google'
 
 const Adds = () => {
   return (
-     <div className="w-[220px] hidden xl:block pt-2  ">
+     <div className="w-[250px] hidden xl:block pt-2  ">
         <div className="w-full  flex flex-col    space-y-4 items-center justify-center">
         
          {/* 1 */}
@@ -38,7 +38,7 @@ const Adds = () => {
         
 
          {/* 2 */}
-         <div className="w-full flex flex-col items-start justify-start space-y-2 p-3 bg-white rounded-md shadow-lg">
+         <div className="w-full flex flex-col items-start justify-start space-y-1 p-3 bg-white rounded-md shadow-lg">
             {/* 1 */}
             <div className="flex items-center justify-between w-full">
              <span className="text-[9px] bg-[#e0e4e9] px-2 py-1 rounded-xs ">Thu, 19 Jun-Thu, 26 Jun</span>
@@ -53,7 +53,7 @@ const Adds = () => {
             
             <div className="w-full bg-[#0062e3] rounded-md flex items-center justify-between">
               {/* Image */}
-              <Image height={130} width={130} src="/car_adds_1.svg" alt="car_ads"/>
+              <Image height={200} width={200} className='size-35' src="/car_adds_1.svg" alt="car_ads"/>
               {/* text */}
               <div className="flex flex-col  text-white items-end justify-end pr-2">
                   <span className="text-[13px]">Car hire from</span>

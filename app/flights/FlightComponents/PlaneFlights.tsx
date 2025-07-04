@@ -8,7 +8,6 @@ import MainplaneFlightBody from "./MainplaneFlightBody";
 import Filter from "./Filter";
 import Sort from "./Sort";
 import Adds from "./Adds";
-import ShowFlight from "./ShowFlight";
 import { usePathname, useSearchParams } from "next/navigation"
 import { useRouter } from "next/navigation"
 
@@ -17,7 +16,6 @@ import { useRouter } from "next/navigation"
 
 function PlaneFlights({planeData,endCountry,startingCountry,startingCity,endingcity}) {
  
-    const [range,setRange]=useState('1.5')
     const [id,setId]=useState('')
     const [totaltime,setTotaltime]=useState('1')
     const [checkStops,setCheckStops]=useState("All")
@@ -41,13 +39,6 @@ function PlaneFlights({planeData,endCountry,startingCountry,startingCity,endingc
         {id:'3',hours:'20',startTime:'5',endTime:'8',stop:'2',airline:"Pia"},
    
     ]
-
-    // useEffect(() => {
-    // const saved = localStorage.getItem("flgightData");
-    // if (saved) {
-    //     flightData(JSON.parse(saved));
-    // }
-    // }, []);
 
 
     const mainData=planeData.filter(el=>el.fromcountry===startingCountry  && el.tocountry===endCountry && el.fromlocation===startingCity && el.tolocation===endingcity )
@@ -100,18 +91,23 @@ const filterArray=flightsArray
   }
   
   }
+
+ 
+  const dataLength=mainData.length || 0
+
     return (
         <div className="w-full flex  min-h-full lg:flex items-center justify-center lg:items-start lg:justify-start  lg:space-x-3 bg-[#eff3f8] ">
        
         {/* Show sidebar at alarge */}
-        <div className="hidden lg:block min-w-[230px]  "><SideBarFilter cabinBag={cabinBag}  setCabinBag={setCabinBag} cabinBagChecked={cabinBagChecked} setCabinBagChecked={setCabinBagChecked}  checkAirline={checkAirline} setCheckAirline={setCheckAirline} checkStops={checkStops} totaltime={totaltime} setTotaltime={setTotaltime} range={range} setRange={setRange}  setCheckStops={setCheckStops} /> </div>  
+        <div className="hidden lg:block min-w-[260px]  ">
+          <SideBarFilter cabinBag={cabinBag}  setCabinBag={setCabinBag} cabinBagChecked={cabinBagChecked} setCabinBagChecked={setCabinBagChecked}  checkAirline={checkAirline} setCheckAirline={setCheckAirline} checkStops={checkStops} totaltime={totaltime} setTotaltime={setTotaltime}   setCheckStops={setCheckStops} /> </div>  
         
         {/* //!  Main_body */}
         <div className="w-full h-full  lg:max-w-[650px]  flex flex-col items-center justify-center  max-w-[900px]  ">
           
           
         {/* Top filter show at large */}
-        <FinalPageFilter handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
+        <FinalPageFilter dataLength={dataLength} handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
 
         {
           mainData.length>0 ? 
@@ -120,7 +116,7 @@ const filterArray=flightsArray
         
 
 
-        {/*//!  Main_Body  */}
+        {/*//!  Main_Body_Array  */}
          <MainplaneFlightBody  data={mainData}  handleClickSelectFlight={handleClickSelectFlight} /> 
            </>
      :
@@ -131,7 +127,7 @@ const filterArray=flightsArray
          {/* Show large side bae */}
 
      
-         <Filter range={range} setRange={setRange}   showSideBar={showSideBar} showSideBarsort={showSideBarsort}  setShowSideBar={setShowSideBar} setCheckStops={setCheckStops}  />
+         <Filter showSideBarsort={showSideBarsort} showSideBar={showSideBar} setShowSideBar={setShowSideBar} cabinBag={cabinBag}  setCabinBag={setCabinBag} cabinBagChecked={cabinBagChecked} setCabinBagChecked={setCabinBagChecked}  checkAirline={checkAirline} setCheckAirline={setCheckAirline} checkStops={checkStops} totaltime={totaltime} setTotaltime={setTotaltime}   setCheckStops={setCheckStops}  />
         
           <Sort checkSort={checkSort} setCheckSort={setCheckSort} showSideBarsort={showSideBarsort} showSideBar={showSideBar} setShowSideBarSort={setShowSideBarSort} /> 
 

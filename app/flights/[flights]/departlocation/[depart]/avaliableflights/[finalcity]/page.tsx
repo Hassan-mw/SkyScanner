@@ -4,7 +4,7 @@ import AvaliableFlightDataChanger from '@/app/flights/FlightComponents/Avalivale
 import PlaneFlights from '@/app/flights/FlightComponents/PlaneFlights'
 import React from 'react'
 
-const page = async({params,searchParams}:{params:{flights:string,depart:String,finalcity:string}}) => {
+const page = async({params,searchParams}:{params:{flights:string,depart:String,finalcity:string},searchParams:URLSearchParams}) => {
   const {flights,depart,finalcity}=await params
   const paramsData=await searchParams
   const planeData=await FetchAllFilterData({paramsData})
@@ -16,7 +16,7 @@ const page = async({params,searchParams}:{params:{flights:string,depart:String,f
   const startingCity=finalcity
   const endingcity=depart
 
-  console.log(startingCity,endCountry,startingCity,endingcity,'++++++++++++_____________++++++++++++++')
+  
   
   
 
@@ -26,7 +26,7 @@ const page = async({params,searchParams}:{params:{flights:string,depart:String,f
       <div className="w-full    max-w-screen-xl flex flex-col items-center justify-center  ">
        {/* Params_changer  */}
           <div className="w-full h-full flex  items-center justify-center space-y-5  ">
-            <div className="w-full h-full pb-8 ">
+            <div className="w-full h-full py-8 ">
              <PlaneFlights  planeData={planeData} startingCountry={startingCountry} endCountry={endCountry}  endingcity={endingcity} startingCity={startingCity} />
             </div>
             </div>

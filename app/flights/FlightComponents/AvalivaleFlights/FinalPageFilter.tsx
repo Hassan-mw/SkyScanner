@@ -14,10 +14,11 @@ import { IoAlertCircle } from "react-icons/io5";
  type finalPageFilerDataType ={
  handleShowSidebar:(data:string)=>void
  setShowSideBar:Dispatch<SetStateAction<boolean>>
- setShowSideBarSort:Dispatch<SetStateAction<boolean>>
+ setShowSideBarSort:Dispatch<SetStateAction<boolean>>;
+ dataLength:number
   }
 
-function finalPageFilters({handleShowSidebar,setShowSideBar,setShowSideBarSort}:finalPageFilerDataType) {
+function finalPageFilters({dataLength,handleShowSidebar,setShowSideBar,setShowSideBarSort}:finalPageFilerDataType) {
     return (
         <div  className=" w-full flex flex-col  items-center justify-center  rounded-2xl px-3 space-y-3 pt-2">
 
@@ -33,7 +34,7 @@ function finalPageFilters({handleShowSidebar,setShowSideBar,setShowSideBarSort}:
             {/* Filter otion show at large */}
              <div className="w-full flex items-center justify-between  pb-2">
              
-            <div className="flex items-center justify-center gap-x-2"> <span  className={`${jost.className} text-md`} >298 results sorted by Best</span> <IoAlertCircle size={20} /></div>
+            <div className="flex items-center justify-center gap-x-2"> <span  className={`${jost.className} text-md`} >{dataLength} results sorted by Best</span> <IoAlertCircle size={20} /></div>
 
                 <div className="hidden lg:block border px-1 border-slate-300 rounded-sm bg-white   ">
                 <select className=" outline-none rounded-sm w-44">
