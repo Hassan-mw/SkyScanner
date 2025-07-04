@@ -6,8 +6,8 @@ import { IoMdAirplane } from 'react-icons/io'
 const MainplaneFlightBody = ({data,handleClickSelectFlight}) => {
   console.log(data,'+++++++++++++++++++')
   return (
-     <div className="w-full h-full grid grid-cols-1 gap-3 p-3 ">
-        {data.map((data,index)=>
+     <div className="w-full h-full grid grid-cols-1 gap-3 p-3  ">
+       {data.map((data,index)=>
 
         <div key={index} className=" w-full  p-2  bg-white  shadow-lg rounded-2xl flex items-center justify-center space-x-4 border ">
 
@@ -80,7 +80,9 @@ const MainplaneFlightBody = ({data,handleClickSelectFlight}) => {
                {/* <div>🖤</div> */}
           </div>
           
-            )}
+            )
+        
+          }
             
            
           

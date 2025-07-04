@@ -15,11 +15,11 @@ import { useRouter } from "next/navigation"
 
 
 
-function PlaneFlights({endCountry,startingCountry,startingCity,endingcity}) {
+function PlaneFlights({planeData,endCountry,startingCountry,startingCity,endingcity}) {
  
     const [range,setRange]=useState('1.5')
     const [id,setId]=useState('')
-    const [totaltime,setTotaltime]=useState('1.5')
+    const [totaltime,setTotaltime]=useState('1')
     const [checkStops,setCheckStops]=useState("All")
     const [checkAirline,setCheckAirline]=useState("All")
     const [cabinBag,setCabinBag]=useState(false)
@@ -28,9 +28,9 @@ function PlaneFlights({endCountry,startingCountry,startingCity,endingcity}) {
     const [showSideBar,setShowSideBar]=useState(false)
     const [showSideBarsort,setShowSideBarSort]=useState(false)
     const [showSelectFlight,setShowSelectFlight]=useState(false)
-    const [data,flightData]=useState([])
+    // const [data,flightData]=useState([])
 
-  console.log(data,'cabin bag value')
+
 
     const flightsArray=[
         {id:'1',hours:'12.5',startTime:'21.5',endTime:'6',stop:'direct',airline:"Fly Jinnah"},
@@ -42,18 +42,18 @@ function PlaneFlights({endCountry,startingCountry,startingCity,endingcity}) {
    
     ]
 
-    useEffect(() => {
-    const saved = localStorage.getItem("flgightData");
-    if (saved) {
-        flightData(JSON.parse(saved));
-    }
-    }, []);
+    // useEffect(() => {
+    // const saved = localStorage.getItem("flgightData");
+    // if (saved) {
+    //     flightData(JSON.parse(saved));
+    // }
+    // }, []);
 
 
-    const mainData=data.filter(el=>el.fromcountry===startingCountry  && el.tocountry===endCountry && el.fromlocation===startingCity && el.tolocation===endingcity )
+    const mainData=planeData.filter(el=>el.fromcountry===startingCountry  && el.tocountry===endCountry && el.fromlocation===startingCity && el.tolocation===endingcity )
       console.log(mainData)
 
-    console.log(data)
+    console.log(mainData)
 
      
     const searchParams=useSearchParams()
@@ -64,7 +64,7 @@ function PlaneFlights({endCountry,startingCountry,startingCity,endingcity}) {
     useEffect(()=>{
       const params=new URLSearchParams(searchParams)
   
-      if(totaltime!=='1.5')  params.set('totaltime',totaltime); else params.delete('totaltime');
+      if(totaltime!=='1')  params.set('totaltime',totaltime); else params.delete('totaltime');
       if(checkStops!=='All')  params.set('journey',checkStops); else params.delete('journey');
       if(checkAirline!=='All')  params.set('planename',checkAirline); else params.delete('planename');
       if(cabinBag!==false)  params.set('cabinbag',cabinBag); else params.delete('cabinbag');
@@ -113,15 +113,21 @@ const filterArray=flightsArray
         {/* Top filter show at large */}
         <FinalPageFilter handleShowSidebar={handleShowSidebar} setShowSideBar={setShowSideBar} setShowSideBarSort={setShowSideBarSort}/>
 
-      
+        {
+          mainData.length>0 ? 
+       <>
          <PlaneFilterFlight/>
-       
+        
 
 
         {/*//!  Main_Body  */}
          <MainplaneFlightBody  data={mainData}  handleClickSelectFlight={handleClickSelectFlight} /> 
-
-
+           </>
+     :
+         <div className='w-full flex items-center justify-center min-h-[200px]'>
+             <h1>Sorry,there are't any flights that match your <strong>filters</strong>.</h1>
+          </div>
+        }
          {/* Show large side bae */}
 
      

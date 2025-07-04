@@ -54,19 +54,19 @@ function SideBarFilter({cabinBag,setCabinBag,checkStops,cabinBagChecked,setCabin
             
            
             <div className="flex items-center space-x-5">
-              <input className="size-5" name="stops" type="radio" value={"direct"} onChange={(e)=>handleChangeStop(e.target.value)} id="stops" />
+              <input className="size-5" name="stops" type="radio" value={"Direct"} onChange={(e)=>handleChangeStop(e.target.value)} id="stops" />
                <span className="font-medium text-xs">Direct</span>
             </div>
 
             <div className="flex items-center space-x-5">
-                <div ><input className="size-5"  name="stops"  type="radio"  value={"1"}  onChange={(e)=>handleChangeStop(e.target.value)} id="stops" /></div>
+                <div ><input className="size-5"  name="stops"  type="radio"  value={"1 Stop"}  onChange={(e)=>handleChangeStop(e.target.value)} id="stops" /></div>
              <div className="flex  items-start ">
                 <span className="font-medium text-xs">1 Stop</span>
              </div>
 
             </div>      
             <div className="flex items-center space-x-5">
-                <div ><input className="size-5"  name="stops"  type="radio"  value={"2"}  onChange={(e)=>handleChangeStop(e.target.value)} id="stops" /></div>
+                <div ><input className="size-5"  name="stops"  type="radio"  value={"2 Stop"}  onChange={(e)=>handleChangeStop(e.target.value)} id="stops" /></div>
              <div className="flex  items-start ">
                 <span className="font-medium text-xs">2+ Stop</span>
              </div>
@@ -81,8 +81,8 @@ function SideBarFilter({cabinBag,setCabinBag,checkStops,cabinBagChecked,setCabin
         <AccordionTrigger  className={`${jost.className} text-lg pb-1 border-slate-600 hover:ring-0   hover:underline-none"`}> Duration</AccordionTrigger>
         <AccordionContent>
         <div className="flex flex-col space-y-2  w-full">
-         <span className="text-xs" >1 hours - {totaltime} hours</span>
-            <div><input className="w-full" value={totaltime} onChange={(e)=>setTotaltime(e.target.value)} type="range" min="1.5" max="23.0"/></div>
+         <span className="text-xs" > {totaltime} hours</span>
+            <div><input className="w-full" value={totaltime} onChange={(e)=>setTotaltime(e.target.value)} type="range" min="1" max="12"/></div>
            </div>
         </AccordionContent>
       </AccordionItem>

@@ -1,3 +1,4 @@
+const pool = require("../Pool/pool");
 
 
 
@@ -11,7 +12,7 @@ exports.getAllFlightFilterData=async(req,res,next)=>{
    let query='SELECT * FROM flights JOIN plane ON flights.flightstartplane=plane.id  JOIN countrys ON flights.tocountry= countrys.countryname '
       const consditions=[];
       const values=[]
- 
+      const allowedFields=['journey','cabinbag','checkedbag','planename','totaltime']
   const querys=[]
       Object.entries( queryData).forEach(([key,value],index)=>{
 
@@ -38,7 +39,7 @@ exports.getAllFlightFilterData=async(req,res,next)=>{
        
     console.log(query,values)
     const {rows}=await pool.query(query,values)
-    console.log(rows)
+    console.log(rows.length,'This is rows length')
 
 //   const result=await pool.query(`
 // SELECT * FROM flights
@@ -48,9 +49,9 @@ exports.getAllFlightFilterData=async(req,res,next)=>{
  
 
 res.status(200).json({
-    length:result.rows.length,
+    // length:result.rows.length,
     status:'success',
-    data:result.rows
+    data:rows
   })
  }catch(err){
   console.log(err)
