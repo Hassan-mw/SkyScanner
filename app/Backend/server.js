@@ -6,7 +6,8 @@ const flightRouter=require('./Router/flightRouter')
 const planeRouter=require('./Router/planeRouter')
 const hotelRouter=require('./Router/hotelRouter')
 const carsRouter=require('./Router/carsRouter')
-const carhire=require('./Router/carhireRouter')
+const carhireRouter=require('./Router/carhireRouter')
+const countrysRouter=require('./Router/countrysRouter')
 const cors = require('cors');
 
 
@@ -20,7 +21,8 @@ app.use(cors({
 // app.options("*", cors());
 
 
-app.use('/api/carhire',carhire)
+app.use('/api/countrys',countrysRouter)
+app.use('/api/carhire',carhireRouter)
 app.use('/api/cars',carsRouter)
 app.use('/api/hotels',hotelRouter)
 app.use('/api/flights',flightRouter)

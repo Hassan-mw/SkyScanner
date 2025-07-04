@@ -1,19 +1,26 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useContext, useState } from 'react'
-
+import  {  useEffect, useState } from 'react'
 import { Jost } from 'next/font/google'
 import { LuExternalLink } from "react-icons/lu";
-import { DataContext } from '@/app/ContextApi/ContextApi'
+
 
 const jost=Jost({
     weight:['500'],
     subsets:['latin']
 })
 
-const FlightsArray = ({data}) => {
-    // const {flightData,setFlightData}=useContext(DataContext)
+const FlightsArray = ({countryData}) => {
+
+  const [data,flightData]=useState([])
+
+    useEffect(() => {
+      const saved = localStorage.getItem("flgightData");
+      if (saved) {
+        flightData(JSON.parse(saved));
+       }
+    }, []);
 
  console.log(data)
  const [filteroptons,setFileroptions]=useState('')
@@ -182,7 +189,7 @@ const fileredOptionsArray=[
        {/* Data */}
        <div className="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8">
             {/* Countres 1 */}
-            {data.map((data,index)=>
+            {countryData.map((data,index)=>
         <Link href={`${data.fromcountry}/departlocation/${data.tolocation}`}  key={index} className="hover:cursor-pointer h-32 sm:h-80 b  shadow-sm hover:shadow-lg  duration-500   flex sm:flex-col  white items-center justify-center w-full border rounded-md   ">
         
            {/* Image */}

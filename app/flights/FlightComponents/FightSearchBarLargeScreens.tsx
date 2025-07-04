@@ -44,7 +44,7 @@ const FightSearchBarLargeScreens = () => {
      console.log(data.data)
      setFlightData(data.data)
      localStorage.setItem("flgightData", JSON.stringify(data.data));
-     redirect('/flights/PK')
+     redirect(`/flights/${startPlace}-${endPlace}`)
     
     }
    

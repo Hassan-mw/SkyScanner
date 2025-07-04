@@ -11,11 +11,17 @@ exports.getAllFlight=async(req,res,next)=>{
  
   const {startPlace,  endPlace,  departDate,  returnDate, totaltraveller, roomType}=req.query
   console.log(departDate.split('T')[0])
-  // const result=await pool.query(`SELECT * FROM flights WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
 
-  const result=await pool.query(`SELECT * FROM plane
-JOIN flights ON plane.id=flights.flightstartplane  WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
-  res.status(200).json({
+  const result=await pool.query(`
+SELECT * FROM flights
+JOIN plane ON flights.flightstartplane=plane.id 
+JOIN countrys ON flights.tocountry= countrys.countryname
+ WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
+ 
+//   const result=await pool.query(`SELECT * FROM plane
+// JOIN flights ON plane.id=flights.flightstartplane  WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
+ 
+res.status(200).json({
     length:result.rows.length,
     status:'success',
     data:result.rows
