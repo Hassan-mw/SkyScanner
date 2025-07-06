@@ -9,25 +9,25 @@ exports.getAllFlight=async(req,res,next)=>{
  try{
  console.log('++++++++++++++++++++++')
  
-  const {startPlace,  endPlace,  departDate,  returnDate, totaltraveller, roomType}=req.query
-  console.log(departDate.split('T')[0])
+  const {startPlace,  endPlace,  startDate,  endDate, totaltraveller, roomType}=req.query
+  console.log(startPlace,  endPlace,  startDate,  endDate, totaltraveller, roomType)
 
   const result=await pool.query(`
   SELECT * FROM flights
   JOIN plane ON flights.flightstartplane=plane.id 
   JOIN countrys ON flights.tocountry= countrys.countryname
-  WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
+  WHERE fromcountry=$1 AND tocountry=$2 AND departdate=$3 AND returndate=$4 AND person=$5 AND type=$6 `,[startPlace,endPlace,startDate,endDate,totaltraveller,roomType])
  
 //   const result=await pool.query(`SELECT * FROM plane
 // JOIN flights ON plane.id=flights.flightstartplane  WHERE fromcountry=$1 AND tocountry=$2`,[startPlace,endPlace])
- 
+ console.log(result.rows.length)
 res.status(200).json({
     length:result.rows.length,
     status:'success',
     data:result.rows
   })
  }catch(err){
-  // console.log(err)
+  console.log(err)
   res.status(500).json({
     status:'fail',
     message:err
