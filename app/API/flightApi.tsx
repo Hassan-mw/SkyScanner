@@ -1,6 +1,6 @@
 import axios from "axios"
 
-export const fetchAllFlightData = async ({startPlace,endPlace,departDate,returnDate,totaltraveller,roomType}:{startPlace:String,endPlace:String,departDate:Date | undefined,returnDate:Date | undefined ,totaltraveller:number,roomType:String}) => {
+export const fetchAllFlightData = async ({startPlace,endPlace,startDate ,endDate,totaltraveller,roomType}:{startPlace:String,endPlace:String,startDate:Date | string,endDate:Date | string ,totaltraveller:number,roomType:String}) => {
   try {
     // console.log(startPlace,endPlace,departDate.toLocaleDateString(),returnDate.toLocaleDateString(),totaltraveller,roomType)
     const response = await axios.get(`http://localhost:5000/api/flights`,
@@ -8,8 +8,8 @@ export const fetchAllFlightData = async ({startPlace,endPlace,departDate,returnD
         params:{
          startPlace,
          endPlace,
-         departDate,
-         returnDate,
+         startDate,
+         endDate,
          totaltraveller,
          roomType
             }

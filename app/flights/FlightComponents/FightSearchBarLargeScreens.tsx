@@ -31,7 +31,7 @@ const FightSearchBarLargeScreens = () => {
     const [roomType,setRoomType]=useState('Economy')
     const [totaltraveller,setTotalTraveller]=useState<number>(0)
     const {flightData,setFlightData}=useContext(DataContext)
-     console.log(flightData)
+     console.log(departDate)
     useEffect(()=>{
 
     setTotalTraveller(adult+children)
@@ -39,10 +39,11 @@ const FightSearchBarLargeScreens = () => {
     },[adult,children])
     
     const handleClickButton=async()=>{
-      if(startPlace && endPlace && departDate && returnDate && totaltraveller && roomType) {
-     const data=await fetchAllFlightData({startPlace,endPlace,departDate,returnDate,totaltraveller,roomType})
-     console.log(data.data)
-     setFlightData(data.data)
+      const startDate=departDate || '2025-09-01'
+      const endDate=returnDate || '2025-09-15'
+      if(startPlace && endPlace  && totaltraveller && roomType) {
+     const data=await fetchAllFlightData({startPlace,endPlace,startDate ,endDate,totaltraveller,roomType})
+
      localStorage.setItem("flgightData", JSON.stringify(data.data));
      redirect(`/flights/${startPlace}-${endPlace}`)
     
@@ -118,12 +119,11 @@ const FightSearchBarLargeScreens = () => {
     <MenubarMenu  >
         <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none  pl-5  ">
            <div className="w-full flex flex-col items-start space-y-1   ">
-                 <div className=" min-w-full flex flex-col items-center justify-start p-3 gap-1 rounded-bl-xl  lg:rounded-none  bg-white  sm:p-3">
+                 <div className=" min-w-full flex flex-col items-start justify-start p-3 gap-1 rounded-bl-xl  lg:rounded-none  bg-white  sm:p-3">
                  <div className="text-sm text-gray-500">Depart </div>
                  <div className="text-black truncate">
-                 {departDate ?<span>{departDate.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
-                 </div>
-               
+                 {departDate ?<span>{departDate.toLocaleDateString()}</span>  :<span className="text-black"> date </span>}
+                 </div>    
                  </div>    
                  </div>  
           </MenubarTrigger>
@@ -137,7 +137,7 @@ const FightSearchBarLargeScreens = () => {
     <MenubarMenu  >
         <MenubarTrigger className="w-full  h-full bg-white col-span-1  rounded-none  pl-5  ">
            <div className="w-full flex flex-col items-start space-y-1   ">
-                 <div className=" min-w-full flex flex-col items-center justify-start p-3 gap-1 rounded-bl-xl  lg:rounded-none  bg-white  sm:p-3">
+                 <div className=" min-w-full flex flex-col items-start justify-start p-3 gap-1 rounded-bl-xl  lg:rounded-none  bg-white  sm:p-3">
                  <div className="text-sm text-gray-500">Return</div>
                  <div className="text-black truncate">
                  {returnDate ?<span>{returnDate.toLocaleDateString() }</span>  :<span className="text-black"> date </span>}
