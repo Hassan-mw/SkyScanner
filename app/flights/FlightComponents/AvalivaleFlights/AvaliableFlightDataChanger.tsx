@@ -18,7 +18,7 @@ const AvaliableFlightDataChanger = () => {
      }
    }, []);
    if(data.length===0) return
-   const {fromcountry,tocountry,returndate,departdate,type,person}=data[0]
+   const {fromcountry,tocountry,type,person}=data[0]
  
    
 
@@ -31,7 +31,7 @@ const AvaliableFlightDataChanger = () => {
      
       {/* Search_Icon */}
       <div className='flex   items-start justify-start '>
-        <div className=' bg-blue-600 flex items-center justify-center size-4 rounded-sm text-white'> <IoIosSearch size={20} /> </div>
+        <div className=' bg-blue-600 flex items-center justify-center size-5 rounded-xs text-white'> <IoIosSearch size={20} /> </div>
       </div>
 
       {/* Flight_Details */}
