@@ -1,31 +1,31 @@
+import React from 'react';
+import SearchFlights from '../FlightComponents/SearchFlights';
+import FlightsArray from '../FlightComponents/FlightsArray';
+import FlightDetails from '../FlightComponents/FlightDetails';
+import { fetAllCountry } from '@/app/API/countryApi';
 
-import React, { useContext, useEffect, useState } from 'react'
-import SearchFlights from '../FlightComponents/SearchFlights'
-import FlightsArray from '../FlightComponents/FlightsArray'
-import FlightDetails from '../FlightComponents/FlightDetails'
-import { DataContext } from '@/app/ContextApi/ContextApi'
-import { fetAllCountry } from '@/app/API/countryApi'
+const page = async ({ params }:{params:{flights:string}}) => {
+  const { flights } = params;
 
-const page = async({params}) => {
-  const {flights}=await params
+  // Split and decode country names
+  const [fromcountry, tocounry] = flights.split('-');
+  const startingCountry = decodeURIComponent(fromcountry);
+  const endCountry = decodeURIComponent(tocounry);
 
-
-  const [fromcountry,tocounry]=flights.split('-')
-  const startingCountry=fromcountry.replace('%20',' ')
-  const endCountry=tocounry.replace('%20',' ')
-  const countryData=await fetAllCountry({flights:endCountry})
-
-
+  // Fetch country data (e.g., city names)
+  const countryData = await fetAllCountry({ flights: endCountry });
 
   return (
-    <div className=' w-full bg-green-500  '>
- 
-    <SearchFlights  />
-    <FlightsArray fromcountry={startingCountry} tocounry={endCountry} countryData={countryData.citynames}  />
-    <FlightDetails/>
-
+    <div className="w-full b">
+      <SearchFlights />
+      <FlightsArray
+        fromcountry={startingCountry}
+        tocountry={endCountry}
+        cities={countryData.citynames}
+      />
+      <FlightDetails />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

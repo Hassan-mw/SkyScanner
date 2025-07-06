@@ -1,78 +1,76 @@
-'use client'
-import Image from 'next/image'
-import Link from 'next/link'
-import React, { useEffect, useState } from 'react'
+'use client';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { Jost } from 'next/font/google';
+import { LuExternalLink } from 'react-icons/lu';
 
-import image from "../../public/Pakistan.jpg"
-import { Jost } from 'next/font/google'
-import { LuExternalLink } from "react-icons/lu";
+const jost = Jost({
+  weight: ['500'],
+  subsets: ['latin'],
+});
 
-const jost=Jost({
-    weight:['500'],
-    subsets:['latin']
-})
-const DepartArray = ({flights,depart,countryData}:{depart:string,flights:string}) => {
-       const [filteroptons,setFileroptions]=useState('Cheapest flights')
-      const [data,flightData]=useState([])
-    useEffect(() => {
-    const saved = localStorage.getItem("flgightData");
-    if (saved) {
-      flightData(JSON.parse(saved));
-    }
-  }, []);
-  const arrayData=data.filter(el=>el.tolocation===depart)
-
-
-  const fileredOptionsArray=[
-    {id:1,text:"Cheapest flights"},
-    {id:2,text:"All avaliable locations"}
-]
-const country="India"
-// const depart="Islamabad"
-const city="ab"
-
+const DepartArray = ({
+  startingCountry,
+  flights,
+  depart,
+  cities,
+}: {
+  startingCountry: string;
+  depart: string;
+  flights: string;
+  cities: string[];
+}) => {
   return (
-  <div className='w-full   flex items-center justify-center bg-[#eff3f8] p-5'>
-     <div className='w-full  max-w-screen-xl flex flex-col space-y-7 py-8 items-center justify-center  '>
- 
-       {/* Hero_Section */}
-       <div className='w-full flex flex-col items-start justify-start space-y-2'>
-          {/* Text */}
-          <h1 className={`${jost.className} text-2xl sm:text-3xl w-full font-semibold`}>Select departure location</h1>
-           {/* filtered-array */}
-           <div className='w-full grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3'>
-             {fileredOptionsArray.map((data,index)=>
-              <span onClick={()=>setFileroptions(data.text)}  key={index} className={`hover:cursor-pointer px-3 py-2 rounded-md text-xs text-center border ${data.text===filteroptons ? 'text-white bg-[#05203c] border-[#05203c]' :' bg-transparent  border-slate-300'}`}>{data.text}</span>)}
-            </div>
-       </div>
-
-       {/* Data */}
-       <div className="w-full grid grid-cols-1 md:grid-cols-2  lg:grid-cols-3 gap-8"> 
-       
-      {countryData.length>0 ? countryData.map((data,index)=>
-       <Link key={index} href={`/flights/${flights}/departlocation/${depart}/avaliableflights/${data}`}  className='w-full flex flex-col items-start justify-start bg-white shadow-md p-4 rounded-md'>
-        <h1 className={`${jost.className} text-xl`}>{data}</h1>
-        <div className='w-full flex items-center justify-between'>
-        <span className={`text-slate-500 text-xs `} >Flight from</span>
-        <span className={`${jost.className} text-xl `}>RS 123,342</span>
+    <div className="w-full flex items-center justify-center bg-[#eff3f8] p-5">
+      <div className="w-full max-w-screen-xl flex flex-col space-y-7 py-8 items-center justify-center">
+        {/* Hero Section */}
+        <div className="w-full flex flex-col items-start justify-start space-y-2">
+          <div className="flex flex-col items-start justify-start space-y-1">
+            <h1 className={`${jost.className} text-2xl sm:text-3xl w-full font-semibold`}>
+              Select Depart Location
+            </h1>
+            <p
+              style={{ fontWeight: 300 }}
+              className={`${jost.className} text-sm text-gray-600`}
+            >
+              Choose your preferred departure city in {startingCountry} for flights to {depart}.
+            </p>
+          </div>
         </div>
-        <span className={`text-slate-500 text-xs `} >1+ stops</span>
 
-       </Link> 
-       )
-      :
-      <div className='w-full flex flex-col items-start justify-start space-y-2'>
-        <h1>No data</h1>
+        {/* Cities Grid */}
+        <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          {cities.map((city, index) => (
+            <Link
+              key={index}
+              href={`/flights/${flights}/departlocation/${depart}/avaliableflights/${city}`}
+              className="hover:cursor-pointer h-32 sm:h-72 shadow-sm hover:shadow-lg duration-500 flex sm:flex-col items-center justify-center w-full border rounded-md"
+            >
+              {/* Image */}
+              <Image
+                height={1000}
+                width={1000}
+                src={`/${city}.jpeg`}
+                className="h-full sm:max-h-[75%] rounded-l-md sm:rounded-bl-none sm:rounded-t-md object-cover w-full max-w-[70%] sm:max-w-full"
+                alt={city}
+              />
+
+              {/* City Name */}
+              <div className="w-[30%] sm:w-full h-full sm:max-h-[25%] flex flex-col sm:flex-row gap-2 items-center justify-center sm:justify-between bg-white p-3 rounded-r-md sm:rounded-none sm:rounded-b-md">
+                <span className={`${jost.className} text-lg sm:text-xl font-semibold`}>
+                  {startingCountry}
+                </span>
+                <span className={`${jost.className} text-lg sm:text-xl font-semibold`}>
+                  {city}
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
       </div>
-      
-      }
-       
-       </div>
-
-
     </div>
-    </div>
-  )
-}
+  );
+};
 
-export default DepartArray
+export default DepartArray;

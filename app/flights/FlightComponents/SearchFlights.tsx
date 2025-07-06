@@ -14,7 +14,7 @@ const jost=Jost({
 
 const SearchFlights = () => {
   
-     const [data,flightData]=useState([])
+    const [data,flightData]=useState([])
     useEffect(() => {
     const saved = localStorage.getItem("flgightData");
     if (saved) {
