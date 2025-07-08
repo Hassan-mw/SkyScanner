@@ -10,8 +10,6 @@ const jost = Jost({
 });
 
 const MainplaneFlightBody = ({ data, handleClickSelectFlight }) => {
- 
-
   return (
     <div className="w-full h-full grid grid-cols-1 gap-3 p-3">
       {data.map((flight, index) => (

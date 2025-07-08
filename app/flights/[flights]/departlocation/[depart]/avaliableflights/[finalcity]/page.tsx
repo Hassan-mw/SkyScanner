@@ -21,9 +21,10 @@ const Page = async ({ params, searchParams }: PageProps) => {
   const endCountry = decodeURIComponent(toCountry);
   const startingCity = finalcity;
   const endingCity = depart;
+  const paramsData=await searchParams
 
-  const planeData = await FetchAllFilterData({ paramsData: searchParams });
-
+  const planeData = await FetchAllFilterData({ paramsData});
+  console.log(planeData,'=+++++++++++++')
   return (
     <div className="w-full min-h-[80vh] bg-[#eff3f8] flex flex-col items-center justify-start">
       {/* Flight Search Filter Header */}

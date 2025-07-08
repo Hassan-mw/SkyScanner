@@ -9,6 +9,7 @@ exports.getAllFlightFilterData=async(req,res,next)=>{
  try{
  console.log('+++++++++++++++++++')
    const  queryData=req.query
+   console.log(queryData,'))))))))))))))))))))(((((((((((((((((((((((((')
    let query='SELECT * FROM flights JOIN plane ON flights.flightstartplane=plane.id  JOIN countrys ON flights.tocountry= countrys.countryname '
       const consditions=[];
       const values=[]

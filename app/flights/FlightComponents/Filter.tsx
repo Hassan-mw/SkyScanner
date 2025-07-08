@@ -16,7 +16,7 @@ interface    DataTypeSideBarFilter {
   setTotaltime:Dispatch<SetStateAction<string>>;
   showSideBar:boolean
   setShowSideBar:Dispatch<SetStateAction<boolean>>;
-  showSideBarsort:Dispatch<SetStateAction<boolean>>;
+  showSideBarsort:boolean;
 }
 
 
