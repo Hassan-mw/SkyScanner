@@ -42,7 +42,7 @@ function PlaneFlights({
   const [checkAirline, setCheckAirline] = useState('All');
   const [cabinBag, setCabinBag] = useState(false);
   const [cabinBagChecked, setCabinBagChecked] = useState(false);
-  const [checkSort, setCheckSort] = useState('Best');
+  const [checkSort, setCheckSort] = useState('');
   const [showSideBar, setShowSideBar] = useState(false);
   const [showSideBarsort, setShowSideBarSort] = useState(false);
   const [showSelectFlight, setShowSelectFlight] = useState(false);
@@ -66,11 +66,12 @@ function PlaneFlights({
     totaltime !== '1' ? params.set('totaltime', totaltime) : params.delete('totaltime');
     checkStops !== 'All' ? params.set('journey', checkStops) : params.delete('journey');
     checkAirline !== 'All' ? params.set('planename', checkAirline) : params.delete('planename');
+    checkSort !== '' ? params.set('sort', checkSort) : params.delete('sort');
     cabinBag && params.set('cabinbag', 'true');
     cabinBagChecked && params.set('checkedbag', 'true');
 
     router.replace(`${pathName}?${params.toString()}`, { scroll: false });
-  }, [totaltime, checkStops, checkAirline, cabinBag, cabinBagChecked]);
+  }, [totaltime, checkStops, checkAirline, cabinBag, cabinBagChecked,checkSort]);
 
   const handleClickSelectFlight = (airline: string, flightId: string) => {
     setShowSelectFlight(true);
@@ -111,6 +112,8 @@ function PlaneFlights({
       {/* Main content */}
       <div className="w-full h-full max-w-[900px] lg:max-w-[650px] flex flex-col items-center justify-center">
         <FinalPageFilter
+          checkSort={checkSort}
+          setCheckSort={setCheckSort}
           dataLength={dataLength}
           handleShowSidebar={handleShowSidebar}
           setShowSideBar={setShowSideBar}

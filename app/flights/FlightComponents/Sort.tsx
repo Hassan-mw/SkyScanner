@@ -1,8 +1,16 @@
-import React from 'react'
+import React, { Dispatch, SetStateAction } from 'react'
 import SideBarSort from './AvalivaleFlights/SideBarSort'
 import { FaArrowLeft } from 'react-icons/fa6'
 
-const Sort = ({checkSort,setCheckSort,showSideBarsort,showSideBar,setShowSideBarSort}) => {
+interface DataTypeSortt {
+   checkSort:string;
+   setCheckSort:Dispatch<SetStateAction<string>>;
+   showSideBarsort:boolean
+   showSideBar:boolean;
+   setShowSideBarSort:Dispatch<SetStateAction<boolean>>;
+}
+
+const Sort = ({checkSort,setCheckSort,showSideBarsort,showSideBar,setShowSideBarSort}:DataTypeSortt) => {
   return (
      <div className={`${  showSideBarsort && !showSideBar  && 'w-full h-full flex items-center justify-center bg-white lg:hidden' }`}>
 

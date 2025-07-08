@@ -16,9 +16,11 @@ import { IoAlertCircle } from "react-icons/io5";
  setShowSideBar:Dispatch<SetStateAction<boolean>>
  setShowSideBarSort:Dispatch<SetStateAction<boolean>>;
  dataLength:number
+ checkSort:string;
+ setCheckSort:Dispatch<SetStateAction<string>>;
   }
 
-function finalPageFilters({dataLength,handleShowSidebar,setShowSideBar,setShowSideBarSort}:finalPageFilerDataType) {
+function finalPageFilters({dataLength,handleShowSidebar,setShowSideBar,setShowSideBarSort,checkSort,setCheckSort}:finalPageFilerDataType) {
     return (
         <div  className=" w-full flex flex-col  items-center justify-center  rounded-2xl px-3 space-y-3 pt-2">
 
@@ -37,10 +39,11 @@ function finalPageFilters({dataLength,handleShowSidebar,setShowSideBar,setShowSi
             <div className="flex items-center justify-center gap-x-2"> <span  className={`${jost.className} text-md`} >{dataLength} results sorted by Best</span> <IoAlertCircle size={20} /></div>
 
                 <div className="hidden lg:block border px-1 border-slate-300 rounded-sm bg-white   ">
-                <select className=" outline-none rounded-sm w-44">
-                <option className={`${jost.className} text-xs`}>Cheap</option>
-                <option className={`${jost.className} text-xs`}>Middle</option>
-                <option className={`${jost.className} text-xs`}>Expensive</option>
+                <select onChange={(e)=>setCheckSort(e.target.value)} className=" outline-none rounded-sm w-44">
+                <option value='' className={`${jost.className}  text-xs`}>All</option>
+                <option value='price' className={`${jost.className}  text-xs`}>Price</option>
+                <option  value='totaltime'  className={`${jost.className} text-xs`}>Total Time</option>
+                <option  value='person'  className={`${jost.className} text-xs`}>Person</option>
                 </select>
                 </div>
               </div>
