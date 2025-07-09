@@ -19,83 +19,60 @@ return (
         
 
           <Link
-            href={`hotels/${'Pakistan-Multan'}`} 
+            href={`hotels/${'Pakistan'}`} 
             className="hover:cursor-pointer hover:shadow-slate-400 duration-300 flex flex-col overflow-hidden hover:shadow items-center justify-center w-full border rounded-xl  "
             >
-
             <Image 
               height={300} 
               width={300} 
-              src="/Multan.jpeg"
+              src="/Islamabad.jpeg"
               alt="image"
-              className="w-full h-44 object-cover"
+              className="w-full h-full max-h-52 object-cover"
              />
 
-
-            <div className="flex items-center justify-between w-full bg-white  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <h1 className="  font-semibold text-xl sm:text-md">Multan</h1>
-                  <p className=" text-xs font-thin">Paksitan</p>
-               </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
-               </div>
+            <div className="flex items-center justify-start w-full bg-white  p-3  ">
+                  <h1 className="  font-semibold text-xl ">Pakistan</h1>
             </div>
           </Link>  
 
+
+
+
           <Link
-            href={`hotels/${'Pakistan-Swat'}`} 
+            href={`hotels/${'India'}`} 
             className="hover:cursor-pointer hover:shadow-slate-400 duration-300 flex flex-col overflow-hidden  items-center justify-center w-full border rounded-md hover:shadow-sm "
             >
 
             <Image 
               height={300} 
               width={300} 
-              src="/Swat.jpeg"
+              src="/Delhi.jpeg"
               alt="image"
-              className="w-full h-44 object-cover"
+              className="w-full h-full max-h-52 object-cover"
              />
-
-
-            <div className="flex items-center justify-between w-full bg-white  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <h1 className="  font-semibold text-xl sm:text-md">Swat</h1>
-                  <p className=" text-xs font-thin">Paksitan</p>
-               </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
-               </div>
+            <div className="flex items-center justify-start w-full bg-white  p-3  ">
+                  <h1 className="  font-semibold text-xl ">India</h1>
             </div>
           </Link>  
 
+
+
+
+
           <Link
-            href={`hotels/${'Pakistan-Skardu'}`} 
+            href={`hotels/${'Afganistan'}`} 
             className="hover:cursor-pointer hover:shadow-slate-400 duration-300 flex flex-col overflow-hidden  items-center justify-center w-full border rounded-md hover:shadow "
             >
 
             <Image 
               height={300} 
               width={300} 
-              src="/Skardu.jpeg"
+              src="/Kabul.jpeg"
               alt="image"
-              className="w-full h-44 object-cover"
+              className="w-full h-full max-h-52 object-cover"
              />
-
-
-            <div className="flex items-center justify-between w-full bg-white  p-3  ">
-               <div className="flex flex-col items-start justify-start   ">
-                  <h1 className="  font-semibold text-xl sm:text-md">Manchester</h1>
-                  <p className=" text-xs font-thin">united Kingdom</p>
-               </div>
-               <div className="flex flex-col items-end justify-end    ">
-                  <p className="text-xs text-slate-700">From</p> 
-                  <h1  className="text-lg text-black font-semibold sm:text-sm">Rs 12,000 </h1> 
-                  <p className="text-xs text-slate-700">per night</p> 
-               </div>
+            <div className="flex items-center justify-start w-full bg-white  p-3  ">
+                  <h1 className="  font-semibold text-xl ">Afganistan</h1>
             </div>
           </Link>  
 

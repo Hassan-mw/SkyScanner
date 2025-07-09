@@ -22,16 +22,21 @@ const jost = Jost({
 function HotelsearchPlane({
   value,
   setValue,
+  country,
+  setCountry
 }: {
   value: string;
   setValue: Dispatch<SetStateAction<string>>;
+  country: string;
+  setCountry: Dispatch<SetStateAction<string>>;
 }) {
   const [selectPlace, setSelectplace] = useState("");
 
   // Handle input selection
-  function handlePlace(data: string) {
-    setValue(data);
-    setSelectplace(data);
+  function handlePlace({data}: {data:{city:string,country:string}}) {
+    setValue(data.city);
+    setSelectplace(data.city);
+    setCountry(data.country)
   }
 
   // Clear input
@@ -68,7 +73,7 @@ function HotelsearchPlane({
           <div
             key={index}
             className={`flex w-full space-x-3 p-4 border-b border-slate-300 cursor-pointer `}
-            onClick={() => handlePlace(data.city)}
+            onClick={() => handlePlace({data})}
           >
             <span className="text-[#626971]">
              <PiBuildingApartmentFill />

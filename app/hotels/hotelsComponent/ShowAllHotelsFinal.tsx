@@ -9,6 +9,7 @@ import { Jost } from "next/font/google";
 import Map from "./Map";
 import CustomSearchBarHotel from "./CustomSearchBarhotel";
 import HotelSearchBar from "./HotelSearchBar";
+import ShowFinalPAgeHotels from "./ShowFinalPAgeHotels";
 
 const jost=Jost({
     subsets:['latin'],
@@ -46,13 +47,9 @@ return (
                       <span style={{fontWeight:300}} className={`${jost.className} text-xs  `}>  We search for prices from hundreds of providers — what they pay us may affect our sort order . <span  style={{fontWeight:300}} className={`${jost.className} text-blue-500  text-xs  `}>Learn how Skyscanner works</span></span>              
                   </div>
 
-                  {/* Main_Data */}
-                  { 
-                  arr.map((data,index)=>
-                   <div key={index} className="w-full">
-                    <ShowHotelsArray text="Go to site" country={country}/>
-                    </div> )
-                   }
+                 
+                    <ShowFinalPAgeHotels/>
+
 
                       
                   </div>

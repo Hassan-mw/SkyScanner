@@ -15,6 +15,7 @@ import CustomDatePicker from "../../Components_Custom/CustomDatePicker"
 import Hotelsearchplace from "./HotelsearchPlace"
 import RoomPerson from "./RoomPerson"
 import { fetchAllHotelsData } from "@/app/API/hotels"
+import { redirect } from "next/navigation"
 
 const jost = Jost({
   weight: ['400'],
@@ -23,6 +24,7 @@ const jost = Jost({
 
 const CustomSearchBarHotel = () => {
   const [value, setValue] = useState('')
+  const [country, setCountry] = useState('')
   const [checkInDate, setCheckInDate] = useState<Date>()
   const [returnDate, setReturnDate] = useState<Date>()
   const [person, setPerson] = useState(2)
@@ -32,10 +34,8 @@ const CustomSearchBarHotel = () => {
     const startDate = checkInDate?.toDateString() || '15/07/25'
     const endDate = returnDate?.toDateString() || '18/07/25'
     const data = await fetchAllHotelsData({ value, startDate, endDate, person, room })
-
-    console.log(data)
-
     if (data.length > 0) {
+      redirect(`/hotels/${country}/${value}`)
       localStorage.setItem('hotelsData', JSON.stringify(data))
     }
   }
@@ -80,7 +80,7 @@ const CustomSearchBarHotel = () => {
                     </div>
                   </MenubarTrigger>
                   <MenubarContent>
-                    <Hotelsearchplace value={value} setValue={setValue} />
+                    <Hotelsearchplace value={value} setValue={setValue} country={country} setCountry={setCountry} />
                   </MenubarContent>
                 </MenubarMenu>
 
