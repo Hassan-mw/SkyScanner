@@ -28,18 +28,18 @@ const AvaliableFlightDataChanger = () => {
   const { fromcountry, tocountry, type, person } = data[0];
 
   return (
-    <div className="w-full flex items-center justify-center bg-[#05203c] pb-3">
+    <div className="w-full flex items-center justify-center bg-[#05203c] p-3">
       <div className="w-full max-w-screen-xl rounded-md flex items-center justify-center p-2 bg-[#1e3750]">
         <div className="w-full py-1 max-w-lg flex items-center gap-3 justify-center">
           {/* Search Icon */}
           <div className="flex items-start justify-start">
-            <div className="bg-blue-600 flex items-center justify-center size-4 rounded-sm text-white">
-              <IoIosSearch size={20} />
+            <div className="bg-blue-600 flex items-center justify-center size-5 rounded-sm text-white">
+              <IoIosSearch size={15} />
             </div>
           </div>
 
           {/* Flight Info */}
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-x-2">
+          <div className="flex flex-row items-center justify-center gap-x-2">
             <span className={`${jost.className} text-md text-white`}>
               {fromcountry} - {tocountry}
             </span>
