@@ -28,14 +28,18 @@ exports.manageFormData=upload.single('image')
 
 exports.getAllHotel=async(req,res,next)=>{
  try{
-   const result=await pool.query(`SELECT * FROM hotels`)
-   console.log(result.rows[0])
-   res.status(200).json({
-    status:'success',
-    data:result.rows
-   })
+  
+  const {value,startDate,endDate,person,room}=req.query
+  console.log(value,startDate,endDate,person,room)
+   const result=await pool.query(`SELECT * FROM hotels WHERE city=$1 AND checkindate=$2 AND checkoutdate=$3 AND person=$4 AND room=$5 `,[value,startDate,endDate,person,room])
+   
+   console.log(result.rows)
+  //  res.status(200).json({
+  //   status:'success',
+  //   data:result.rows
+  //  })
  }catch(err){
-    
+console.log(err)
  }
 }
 

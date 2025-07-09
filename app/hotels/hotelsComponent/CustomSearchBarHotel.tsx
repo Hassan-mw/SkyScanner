@@ -17,6 +17,7 @@ import { IoMdSearch } from "react-icons/io";
 import { FaCalendarAlt } from "react-icons/fa";
 import { Calendar } from "lucide-react";
 import RoomPerson from "./RoomPerson";
+import { fetchAllHotelsData } from "@/app/API/hotels";
 
 
 const jost=Jost({
@@ -30,13 +31,14 @@ const CustomSearchBarHotel = () => {
     const [value,setValue]=useState('')
     const [checkInDate,setCheckInDate]=useState<Date>()
     const [returnDate,setReturnDate] =useState<Date>();
-    const [adult,setAdult]=useState(1)
-    const [children,setChildre]=useState(0)
-    const [roomType,setRoomType]=useState('Economy')
     const [person,setPerson]=useState(1)
     const [room,setRoom]=useState(1)
     
-    
+    const searchHotelsHandle=async()=>{
+      const startDate=checkInDate?.toDateString()
+      const endDate=returnDate?.toDateString()
+       const data=await fetchAllHotelsData({value,startDate,endDate,person,room})
+    }
 
     return (
     <div   className="flex justify-center items-center  min-w-full   bg-[#05203c] ">
@@ -163,10 +165,10 @@ const CustomSearchBarHotel = () => {
 
 
    {/* Buttons_Searching */}
-    <Link href="/flights/PK" className="w-32 flex items-center py-2 justify-center h-full text-white  gap-x-2  rounded-sm bg-blue-600">
+    <div onClick={searchHotelsHandle}className="w-32 flex items-center py-2 justify-center h-full text-white  gap-x-2  rounded-sm bg-blue-600">
          <h2 className={`${jost.className} text-sm`}>Search hotels</h2>
          <FaArrowRight />
-    </Link>
+    </div>
    </div>
 
 
