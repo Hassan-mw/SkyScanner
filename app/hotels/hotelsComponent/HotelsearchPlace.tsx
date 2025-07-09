@@ -67,7 +67,7 @@ function HotelsearchPlane({
         {filteredHotel.map((data, index) => (
           <div
             key={index}
-            className={`flex w-full space-x-3 p-4 border-b border-slate-300 `}
+            className={`flex w-full space-x-3 p-4 border-b border-slate-300 cursor-pointer `}
             onClick={() => handlePlace(data.city)}
           >
             <span className="text-[#626971]">

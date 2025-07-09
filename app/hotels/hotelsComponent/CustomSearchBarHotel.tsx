@@ -5,7 +5,7 @@ import { Jost } from "next/font/google"
 
 import { TbSTurnDown } from "react-icons/tb";
 import { useEffect, useState } from "react"
-import CustomDatePicker from "./CustomDatePicker"
+import CustomDatePicker from '../../Components_Custom/CustomDatePicker';
 import PlanesearchPlane from "../../Components_Custom/PlaneSearchBarPlace"
 import PlanePerson from "../../Components_Custom/PlanePerson"
 import { FaArrowRight, FaArrowRightArrowLeft } from "react-icons/fa6";
@@ -31,12 +31,12 @@ const CustomSearchBarHotel = () => {
     const [value,setValue]=useState('')
     const [checkInDate,setCheckInDate]=useState<Date>()
     const [returnDate,setReturnDate] =useState<Date>();
-    const [person,setPerson]=useState(1)
+    const [person,setPerson]=useState(2)
     const [room,setRoom]=useState(1)
-    
+     console.log(checkInDate)
     const searchHotelsHandle=async()=>{
-      const startDate=checkInDate?.toDateString()
-      const endDate=returnDate?.toDateString()
+      const startDate=checkInDate?.toDateString() || '15/07/25'
+      const endDate=returnDate?.toDateString()  || '18/07/25'
        const data=await fetchAllHotelsData({value,startDate,endDate,person,room})
     }
 
@@ -83,7 +83,7 @@ const CustomSearchBarHotel = () => {
         <MenubarTrigger className="w-1/2   flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
            <div className="text-[9px]   flex text-white">Check-in </div>
             <div className="bg-white w-full flex items-start justify-start p-2 rounded-sm  md:rounded-none  border-r ">
-             <span className={`${jost.className} text-slate-800 truncate text-sm`}>{checkInDate? checkInDate.toLocaleDateString(): '26/7/25'}</span>
+             <span className={`${jost.className} text-slate-800 truncate text-sm`}>{checkInDate? checkInDate.toLocaleDateString(): '15/07/25'}</span>
             </div>      
           </MenubarTrigger>
         <MenubarContent >
@@ -100,7 +100,7 @@ const CustomSearchBarHotel = () => {
         <MenubarTrigger className="w-1/2   flex flex-col space-y-1 items-start justify-start   rounded-md  p-0 ">
            <div className="text-[9px]   flex text-white">Check-out </div>
             <div className="bg-white w-full flex items-start justify-start p-2 rounded-sm  md:rounded-none  border-r ">
-            <span className={`${jost.className} text-slate-800 truncate text-sm`}>{returnDate? returnDate.toLocaleDateString(): '26/7/25'}</span>
+            <span className={`${jost.className} text-slate-800 truncate text-sm`}>{returnDate? returnDate.toLocaleDateString(): '18/07/25'}</span>
             </div>      
           </MenubarTrigger>
         <MenubarContent >
@@ -165,7 +165,7 @@ const CustomSearchBarHotel = () => {
 
 
    {/* Buttons_Searching */}
-    <div onClick={searchHotelsHandle}className="w-32 flex items-center py-2 justify-center h-full text-white  gap-x-2  rounded-sm bg-blue-600">
+    <div onClick={searchHotelsHandle}className="w-32  cursor-pointer flex items-center py-2 justify-center h-full text-white  gap-x-2  rounded-sm bg-blue-600 hover:bg-blue-700 duration-900">
          <h2 className={`${jost.className} text-sm`}>Search hotels</h2>
          <FaArrowRight />
     </div>
