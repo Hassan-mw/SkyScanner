@@ -1,5 +1,4 @@
 
-
 import { fetchAllHotelsData } from "../API/hotels"
 import CustomHotelsLogo from "./hotelsComponent/CustomHotelsLogo"
 import CustomSearchBarHotel from "./hotelsComponent/CustomSearchBarhotel"
@@ -7,21 +6,6 @@ import FastFactMainHotel from "./hotelsComponent/FastFactMainHotel"
 import HotelNearOwncity from "./hotelsComponent/HotelNearOwnCity"
 import HotelPlace from "./hotelsComponent/HotelPlace"
 import ShowCurrentPageHotel from "./hotelsComponent/ShowCurrentPageHotel"
-
-
-
-// function MainPageHotel() {
-//     return (
-      
-     
-
-//     )
-// }
-
-// export default MainPageHotel
-
-
-import React from 'react'
 
 const page = async() => {
   const data=await fetchAllHotelsData()

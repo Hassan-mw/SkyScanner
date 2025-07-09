@@ -1,58 +1,17 @@
 import { Jost } from "next/font/google";
 import { Dispatch, SetStateAction, useState } from "react";
-import { BsBuildings } from "react-icons/bs";
+import { PiBuildingApartmentFill } from "react-icons/pi";
  
 
-const hotelArray = [
-  { "hotel": "Pearl Continental Lahore", "country": "Pakistan", "city": "Lahore", "province": "Punjab" },
-  { "hotel": "Avari Lahore", "country": "Pakistan", "city": "Lahore", "province": "Punjab" },
-  { "hotel": "The Nishat", "country": "Pakistan", "city": "Lahore", "province": "Punjab" },
-  { "hotel": "Ramada Lahore", "country": "Pakistan", "city": "Lahore", "province": "Punjab" },
-  { "hotel": "Lahore Marriott", "country": "Pakistan", "city": "Lahore", "province": "Punjab" },
-  { "hotel": "The Plaza", "country": "United States", "city": "New York", "province": "New York" },
-  { "hotel": "The Ritz-Carlton NY", "country": "United States", "city": "New York", "province": "New York" },
-  { "hotel": "Park Central NY", "country": "United States", "city": "New York", "province": "New York" },
-  { "hotel": "Four Seasons NY", "country": "United States", "city": "New York", "province": "New York" },
-  { "hotel": "Grand Hyatt NY", "country": "United States", "city": "New York", "province": "New York" },
-  { "hotel": "The Ritz London", "country": "United Kingdom", "city": "London", "province": "England" },
-  { "hotel": "Claridge's", "country": "United Kingdom", "city": "London", "province": "England" },
-  { "hotel": "The Dorchester", "country": "United Kingdom", "city": "London", "province": "England" },
-  { "hotel": "Shangri-La Shard", "country": "United Kingdom", "city": "London", "province": "England" },
-  { "hotel": "The Langham London", "country": "United Kingdom", "city": "London", "province": "England" },
-  { "hotel": "The Ritz Paris", "country": "France", "city": "Paris", "province": "Île-de-France" },
-  { "hotel": "Le Meurice", "country": "France", "city": "Paris", "province": "Île-de-France" },
-  { "hotel": "Shangri-La Paris", "country": "France", "city": "Paris", "province": "Île-de-France" },
-  { "hotel": "Hotel de Crillon", "country": "France", "city": "Paris", "province": "Île-de-France" },
-  { "hotel": "Peninsula Paris", "country": "France", "city": "Paris", "province": "Île-de-France" },
-  { "hotel": "Hotel de Russie", "country": "Italy", "city": "Rome", "province": "Lazio" },
-  { "hotel": "St. Regis Rome", "country": "Italy", "city": "Rome", "province": "Lazio" },
-  { "hotel": "Palazzo Manfredi", "country": "Italy", "city": "Rome", "province": "Lazio" },
-  { "hotel": "Hotel Artemide", "country": "Italy", "city": "Rome", "province": "Lazio" },
-  { "hotel": "J.K. Place Roma", "country": "Italy", "city": "Rome", "province": "Lazio" },
-  { "hotel": "Peninsula Tokyo", "country": "Japan", "city": "Tokyo", "province": "Tokyo" },
-  { "hotel": "Park Hyatt Tokyo", "country": "Japan", "city": "Tokyo", "province": "Tokyo" },
-  { "hotel": "Mandarin Tokyo", "country": "Japan", "city": "Tokyo", "province": "Tokyo" },
-  { "hotel": "Shangri-La Tokyo", "country": "Japan", "city": "Tokyo", "province": "Tokyo" },
-  { "hotel": "Andaz Tokyo", "country": "Japan", "city": "Tokyo", "province": "Tokyo" },
-  { "hotel": "Burj Al Arab", "country": "United Arab Emirates", "city": "Dubai", "province": "Dubai" },
-  { "hotel": "Atlantis Palm", "country": "United Arab Emirates", "city": "Dubai", "province": "Dubai" },
-  { "hotel": "Jumeirah Beach", "country": "United Arab Emirates", "city": "Dubai", "province": "Dubai" },
-  { "hotel": "Armani Hotel", "country": "United Arab Emirates", "city": "Dubai", "province": "Dubai" },
-  { "hotel": "Palazzo Versace", "country": "United Arab Emirates", "city": "Dubai", "province": "Dubai" },
-  { "hotel": "Langham Sydney", "country": "Australia", "city": "Sydney", "province": "New South Wales" },
-  { "hotel": "Four Seasons Sydney", "country": "Australia", "city": "Sydney", "province": "New South Wales" },
-  { "hotel": "Park Hyatt Sydney", "country": "Australia", "city": "Sydney", "province": "New South Wales" },
-  { "hotel": "Shangri-La Sydney", "country": "Australia", "city": "Sydney", "province": "New South Wales" },
-  { "hotel": "Darling Hotel", "country": "Australia", "city": "Sydney", "province": "New South Wales" },
-  { "hotel": "Mandarin Bangkok", "country": "Thailand", "city": "Bangkok", "province": "Bangkok" },
-  { "hotel": "Peninsula Bangkok", "country": "Thailand", "city": "Bangkok", "province": "Bangkok" },
-  { "hotel": "Shangri-La Bangkok", "country": "Thailand", "city": "Bangkok", "province": "Bangkok" },
-  { "hotel": "Lebua State Tower", "country": "Thailand", "city": "Bangkok", "province": "Bangkok" },
-  { "hotel": "Anantara Siam", "country": "Thailand", "city": "Bangkok", "province": "Bangkok" },
-  { "hotel": "Ritz-Carlton Toronto", "country": "Canada", "city": "Toronto", "province": "Ontario" },
-  { "hotel": "Four Seasons Toronto", "country": "Canada", "city": "Toronto", "province": "Ontario" },
-  { "hotel": "Shangri-La Toronto", "country": "Canada", "city": "Toronto", "province": "Ontario" }
- ];
+const locationArray = [
+  { country: "Pakistan", city: "Lahore", province: "Punjab" },
+  { country: "Pakistan", city: "Karachi", province: "Sindh" },
+  { country: "Pakistan", city: "Islamabad", province: "Punjab" },
+  { country: "Pakistan", city: "Multan", province: "Punjab" },
+  { country: "Pakistan", city: "Bahawalpur", province: "Punjab" },
+  { country: "Pakistan", city: "Swat", province: "Khyber Pakhtunkhwa" },
+  { country: "Pakistan", city: "Skardu", province: "Gilgit-Baltistan" }
+];
 
 
 const jost = Jost({
@@ -83,9 +42,9 @@ function HotelsearchPlane({
   // Filter hotels based on input
   const filteredHotel =
     value === ""
-      ? hotelArray
-      : hotelArray.filter((data) =>
-          data.hotel.toLowerCase().includes(value.toLowerCase())
+      ? locationArray
+      : locationArray.filter((data) =>
+          data.city.toLowerCase().includes(value.toLowerCase())
         );
 
   return (
@@ -108,24 +67,20 @@ function HotelsearchPlane({
         {filteredHotel.map((data, index) => (
           <div
             key={index}
-            className={`flex w-full space-x-3 p-4 border-b border-slate-300 ${
-              selectPlace === data.hotel
-                ? "bg-slate-400"
-                : "hover:bg-slate-200"
-            }`}
-            onClick={() => handlePlace(data.hotel)}
+            className={`flex w-full space-x-3 p-4 border-b border-slate-300 `}
+            onClick={() => handlePlace(data.city)}
           >
             <span className="text-[#626971]">
-              <BsBuildings size={25} />
+             <PiBuildingApartmentFill />
             </span>
             <div className="flex flex-col">
-              <span className={`${jost.className} text-xl`}>{data.hotel}</span>
-              <div style={{ fontWeight: 200 }} className="flex items-center">
-                <span className={`${jost.className} text-xs`}>
+              <span className={`${jost.className}  h-7 text-xl`}>{data.city}</span>
+              <div style={{ fontWeight: 200 }} className="flex items-center text-gray-900 text-[11px]">
+                <span className={`${jost.className}`}>
                   {data.province}
                 </span>
                 ,{" "}
-                <span className={`${jost.className} text-xs`}>
+                <span className={`${jost.className} `}>
                   {data.country}
                 </span>
               </div>
