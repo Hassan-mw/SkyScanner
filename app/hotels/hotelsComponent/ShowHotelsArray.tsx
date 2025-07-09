@@ -12,7 +12,12 @@ const jost=Jost({
 
 function ShowHotelsArray({country,text}:{country:string,text:string}) {
   const hotelname='hotel123'  
+const arr=[,1,1,1,11,1,1,1,1,1,1]
+
   return (
+       <div className="flex  flex-col items-center justify-center w-full space-y-10">
+          {  arr.map((data,index)=>
+         <div key={index} className="w-full" >
         <div className="w-full h-full flex flex-col   sm:flex-row  ">
 
         {/* IMAGE */}
@@ -53,6 +58,11 @@ function ShowHotelsArray({country,text}:{country:string,text:string}) {
           </div>
          
          </div>
+      </div>
+     
+      
+      </div>
+        )}
       </div>
     )
 }

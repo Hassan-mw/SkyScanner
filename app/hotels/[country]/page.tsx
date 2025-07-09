@@ -8,7 +8,6 @@ import ShowMapOption from "./../hotelsComponent/ShowMapOption"
 
  async function page() {
   //  const {country}=await params
-const arr=[,1,1,1,11,1,1,1,1,1,1]
 //    var map = L.map('map').setView([51.505, -0.09], 13);
 const country="Paksitan"
     return (
@@ -31,18 +30,17 @@ const country="Paksitan"
    {/*//! Hotels all */}
        <div className="flex  flex-col items-center justify-center w-full space-y-10">
 
-          {  arr.map((data,index)=>
-         <div key={index} className="w-full" >
+       
        <ShowHotelsArray text="Visit hotel" country={country}/>
          </div> 
-        )}
+      
 
         <FastFactCountryHotel/>
             </div>
         </div>
    
      
-      </div>
+ 
 
     )
 }
@@ -55,36 +53,3 @@ export default page
 
 
 
-
-
-// import ShowCarFlight from "@/app/(hotelPageoptions)/ShowCarFlight"
-// import ShowHotelHomeFilter from "@/app/(hotelPageoptions)/ShowHotelHomeFilter"
-// import ShowHotelsArray from "@/app/(hotelPageoptions)/ShowHotelsArray"
-// import ShowMapOption from "@/app/(hotelPageoptions)/ShowMapOption"
-
-//  async function page({params}) {
-//    const {country}=await params
-// const arr=[,1,1,1,11,1,1,1,1,1,1]
-// //    var map = L.map('map').setView([51.505, -0.09], 13);
-//     return (
-// <div className="w-full h-full flex flex-col items-center justify-centerspace-y-5 py-14  max-w-screen-xl p-5">
-//    <ShowMapOption country={country}/>
-//    <ShowHotelHomeFilter/>
-//             <div className="flex flex-col items-center justify-center w-full space-y-10">
-           
-//              {/* Hotels */}
-         
-//                {/* SinglrHotel */}
-//           {  arr.map((data,index)=>
-//          <ShowHotelsArray/>
-        
-//         )   }
-           
-//    <ShowCarFlight/>
-              
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default page
