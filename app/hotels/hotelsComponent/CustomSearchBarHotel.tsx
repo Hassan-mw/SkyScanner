@@ -35,7 +35,7 @@ const CustomSearchBarHotel = () => {
     const endDate = returnDate?.toDateString() || '18/07/25'
     const data = await fetchAllHotelsData({ value, startDate, endDate, person, room })
     if (data.length > 0) {
-      redirect(`/hotels/${country}/${value}`)
+      redirect(`/hotels/${country}/${value}?abc='af'`)
       localStorage.setItem('hotelsData', JSON.stringify(data))
     }
   }
