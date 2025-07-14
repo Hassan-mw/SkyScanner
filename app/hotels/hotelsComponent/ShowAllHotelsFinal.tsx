@@ -39,7 +39,7 @@ function ShowAllHotelsFinal({ country, data }: { country: string; data: any }) {
             
             {/* Mini Map (visible only on certain screens) */}
             <div className="w-full border-4 rounded-md border-slate-200 h-[300px] hidden sm:block xl:hidden">
-              <Map data={data} country={country} />
+              {/* <Map data={data} country={country} /> */}
             </div>
           </div>
 

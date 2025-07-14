@@ -1,13 +1,39 @@
 'use client';
 
 
-import { Dispatch, SetStateAction, useState } from "react";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { GiRotaryPhone } from "react-icons/gi";
 
 function ShowSideBarHotel() {
     const [currentPrriceId,setCheckCurentPriceId]=useState(1)
     const [currentStarId,setCheckCurentStarsId]=useState(1)
-    console.log(currentPrriceId)
+      const searchParams = useSearchParams();
+      const pathName = usePathname();
+      const router = useRouter();
+      
+      ////////////
+      const [freeCancel,setFreeCancel]=useState(false)
+      const [breakFast,setBreakFast]=useState(false)
+      const [price,setPrice]=useState('0')
+      const [distance,setDistance]=useState(0)
+      const [room,setRoom]=useState(0)
+      const [websiteName,setWebsiteName]=useState('')
+
+
+    useEffect(() => {
+      const params = new URLSearchParams(searchParams);
+  
+      price !== '1' ? params.set('totaltime', totaltime) : params.delete('totaltime');
+      checkStops !== 'All' ? params.set('journey', checkStops) : params.delete('journey');
+      checkAirline !== 'All' ? params.set('planename', checkAirline) : params.delete('planename');
+      checkSort !== '' ? params.set('sort', checkSort) : params.delete('sort');
+      cabinBag && params.set('cabinbag', 'true');
+      cabinBagChecked && params.set('checkedbag', 'true');
+  
+      router.replace(`${pathName}?${params.toString()}`, { scroll: false });
+    }, []);
+  
 
 
     const priceArray=[
@@ -32,6 +58,15 @@ function ShowSideBarHotel() {
         {id:4,type:'Fitness centre'},
         {id:5,type:'pool'},
     ]
+    const hotelsWebsite=[
+        {id:1,type:'Booking.com'},
+        {id:2,type:'Agoda.com'},
+        {id:3,type:'Expedia.com'},
+        {id:4,type:'Agoda.com'}
+    ]
+
+
+
     return (
     <div className={`min-w-[300px] w-full   h-[90vh]  overflow-hidden  overflow-y-auto `}>
     <div className="w-full flex flex-col items-start  px-3   space-y-6 py-4 pb-36  ">
@@ -50,12 +85,12 @@ function ShowSideBarHotel() {
            <div className="flex flex-col items-start space-y-2">
                {/* CANCELATION */}
                <div className="flex items-center justify-center space-x-2">
-                    <input className="size-3 " type="checkbox"/>
+                    <input checked={freeCancel} onChange={(e)=>setFreeCancel(e.target.checked)} className="size-3 " type="checkbox"/>
                     <span  className="text-md font-normal pb-1 text-[#161616]">Free cancellation</span>
                </div>
                {/* BREAKFAST */}
                <div className="flex items-center justify-center space-x-2">
-                    <input className="size-3 " type="checkbox"/>
+                    <input checked={breakFast} onChange={(e)=>setBreakFast(e.target.checked)} className="size-3 " type="checkbox"/>
                     <span  className="text-md font-normal pb-1 text-[#161616]">Breakfast included</span>
                </div>
           
@@ -63,17 +98,32 @@ function ShowSideBarHotel() {
 
 
             {/* Pricing */}
-            <div className="flex flex-col space-y-2">
-            <span className="text-[#161616] text-lg font-semibold">Price</span>
-            {priceArray.map((data,index)=>          
-              <div key={data.id} className="flex items-center justify-between ">
-                  <div className="flex items-center justify-center space-x-2">
-                     <div><input checked={data.id===currentPrriceId} onChange={()=>setCheckCurentPriceId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
-                     <span className="text-md pb-1 text-[#161616]">Rs {data.start} - Rs {data.end}</span>
-                  </div>
-              </div>
-            )}
+           <div className="flex flex-col space-y-2 w-full">
+              <span className="text-xs">{price===0 ? 'All' : price} Price</span>
+              <input
+                className="w-full"
+                type="range"
+                min="1"
+                max="12"
+                value={price}
+                onChange={(e) => setPrice(e.target.value)}
+              />
             </div>
+
+
+            {/* Distance from city */}
+           <div className="flex flex-col space-y-2 w-full">
+              <span className="text-xs">{distance===0 ? 'All' : distance} </span>
+              <input
+                className="w-full"
+                type="range"
+                min="1"
+                max="12"
+                value={price}
+                onChange={(e) => setDistance(e.target.value)}
+              />
+            </div>
+            
 
 
             {/* Stars */}
@@ -82,25 +132,56 @@ function ShowSideBarHotel() {
             {hotelStarArray.map((data,index)=>          
               <div key={data.id} className="flex items-center justify-between ">
                   <div className="flex items-center justify-center space-x-2">
-                     <div><input checked={data.id===currentStarId} onChange={()=>setCheckCurentStarsId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
+                     <div><input value={websiteName} onChange={()=>setWebsiteName(data.type)}  name="checkboxprice" className="size-4" type="radio"/></div>
                      <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">{data.type}</span><span className="pb-1 text-xs"> {data.start}</span> </div> 
                   </div>
               </div>
             )}
             </div>
 
-            {/* FACALITILES */}
+            
+
+
+
+            {/* Website Name */}
             <div className="flex flex-col space-y-2">
-            <span className="text-[#161616] text-lg font-semibold">Amenities</span>
-            {hotelfacilitiesArray.map((data,index)=>          
+            <span className="text-[#161616] text-lg font-semibold">Avaliable Websites</span>
+            {hotelsWebsite.map((data,index)=>          
               <div key={data.id} className="flex items-center justify-between ">
                   <div className="flex items-center justify-center space-x-2">
-                     <div><input checked={data.id===currentStarId} onChange={()=>setCheckCurentStarsId(data.id)}  name="checkboxprice" className="size-4" type="checkbox"/></div>
-                     <span className="text-md pb-1 text-[#161616]">{data.type}</span>
+                     <div><input checked={data.id===currentStarId} onChange={()=>setCheckCurentStarsId(data.id)}  name="checkboxprice" className="size-4" type="radio"/></div>
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">{data.type}</span></div> 
                   </div>
               </div>
             )}
             </div>
+
+
+
+            {/* Rooms  */}
+            <div className="flex flex-col space-y-2">
+            <span className="text-[#161616] text-lg font-semibold">Avaliable Rooms</span>
+              <div className="flex items-center justify-between ">
+                  <div className="flex items-center justify-center space-x-2">
+                     <div><input checked={room===1} onChange={()=>setRoom(1)}  name="checkboxprice" className="size-4" type="radio"/></div>
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">1 Room</span></div> 
+                  </div>
+              </div>
+              <div className="flex items-center justify-between ">
+                  <div className="flex items-center justify-center space-x-2">
+                     <div><input checked={room===2} onChange={()=>setRoom(2)}  name="checkboxprice" className="size-4" type="radio"/></div>
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">2 Rooms</span></div> 
+                  </div>
+              </div>
+              <div className="flex items-center justify-between ">
+                  <div className="flex items-center justify-center space-x-2">
+                     <div><input checked={room===3} onChange={()=>setRoom(3)}  name="checkboxprice" className="size-4" type="radio"/></div>
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">3 Rooms</span></div> 
+                  </div>
+              </div>
+            
+            </div>
+
 
     </div>
     </div>
