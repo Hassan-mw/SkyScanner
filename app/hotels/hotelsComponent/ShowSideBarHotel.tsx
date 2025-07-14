@@ -16,23 +16,25 @@ function ShowSideBarHotel() {
       const [freeCancel,setFreeCancel]=useState(false)
       const [breakFast,setBreakFast]=useState(false)
       const [price,setPrice]=useState('0')
-      const [distance,setDistance]=useState(0)
-      const [room,setRoom]=useState(0)
+      const [hotelsStar,setHotelsStar]=useState('0')
+      const [distance,setDistance]=useState('0')
+      const [room,setRoom]=useState('0')
       const [websiteName,setWebsiteName]=useState('')
 
 
     useEffect(() => {
       const params = new URLSearchParams(searchParams);
   
-      price !== '1' ? params.set('totaltime', totaltime) : params.delete('totaltime');
-      checkStops !== 'All' ? params.set('journey', checkStops) : params.delete('journey');
-      checkAirline !== 'All' ? params.set('planename', checkAirline) : params.delete('planename');
-      checkSort !== '' ? params.set('sort', checkSort) : params.delete('sort');
-      cabinBag && params.set('cabinbag', 'true');
-      cabinBagChecked && params.set('checkedbag', 'true');
+      price !== '0' ? params.set('price', price) : params.delete('price');
+      distance !== '0' ? params.set('distancecity', distance) : params.delete('distance');
+      room !== '0' ? params.set('room', room) : params.delete('room');
+      hotelsStar !== '0' ? params.set('start', hotelsStar) : params.delete('star');
+      websiteName !== '' ? params.set('websitename', websiteName) : params.delete('websitename');
+      freeCancel && params.set('cancelation', 'true');
+      breakFast && params.set('breakfast', 'true');
   
       router.replace(`${pathName}?${params.toString()}`, { scroll: false });
-    }, []);
+    }, [freeCancel,breakFast,price,distance,hotelsStar,websiteName,room]);
   
 
 
@@ -45,11 +47,11 @@ function ShowSideBarHotel() {
  
     ]
     const hotelStarArray=[
-        {id:1,type:'5 stars',start:'⭐⭐⭐⭐⭐'},
-        {id:2,type:'4 stars',start:'⭐⭐⭐⭐'},
-        {id:3,type:'3 stars',start:'⭐⭐⭐'},
-        {id:4,type:'2 stars',start:'⭐⭐'},
-        {id:5,type:'1 stars',start:'⭐'},
+        {id:1,type:'5 ',start:'⭐⭐⭐⭐⭐'},
+        {id:2,type:'4 ',start:'⭐⭐⭐⭐'},
+        {id:3,type:'3 ',start:'⭐⭐⭐'},
+        {id:4,type:'2 ',start:'⭐⭐'},
+        {id:5,type:'1 ',start:'⭐'},
     ]
     const hotelfacilitiesArray=[
         {id:1,type:'Wi-Fi'},
@@ -99,12 +101,12 @@ function ShowSideBarHotel() {
 
             {/* Pricing */}
            <div className="flex flex-col space-y-2 w-full">
-              <span className="text-xs">{price===0 ? 'All' : price} Price</span>
+              <span className="text-xs">{price==='0' ? 'All Price' : price + 'Price'} </span>
               <input
                 className="w-full"
                 type="range"
-                min="1"
-                max="12"
+                min="0"
+                max="30000"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
               />
@@ -113,13 +115,13 @@ function ShowSideBarHotel() {
 
             {/* Distance from city */}
            <div className="flex flex-col space-y-2 w-full">
-              <span className="text-xs">{distance===0 ? 'All' : distance} </span>
+              <span className="text-xs">{distance==='0' ? 'All Distance' : distance} </span>
               <input
                 className="w-full"
                 type="range"
-                min="1"
-                max="12"
-                value={price}
+                min="0"
+                max="50"
+                value={distance}
                 onChange={(e) => setDistance(e.target.value)}
               />
             </div>
@@ -133,7 +135,7 @@ function ShowSideBarHotel() {
               <div key={data.id} className="flex items-center justify-between ">
                   <div className="flex items-center justify-center space-x-2">
                      <div><input value={websiteName} onChange={()=>setWebsiteName(data.type)}  name="checkboxprice" className="size-4" type="radio"/></div>
-                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">{data.type}</span><span className="pb-1 text-xs"> {data.start}</span> </div> 
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">{data.type} Stars</span><span className="pb-1 text-xs"> {data.start}</span> </div> 
                   </div>
               </div>
             )}
