@@ -26,14 +26,14 @@ import ShowMapOption from "./../hotelsComponent/ShowMapOption"
 
 
   
-   <ShowMapOption country={country}/> 
-   <ShowHotelHomeFilter/>
+   {/* <ShowMapOption country={country}/>  */}
+   {/* <ShowHotelHomeFilter/> */}
    {/*//! Hotels all */}
        <div className="flex  flex-col items-center justify-center w-full space-y-10">
 
        
        <ShowHotelsArray cities={countryData.citynames} country={country}  />
-       {/* <ShowHotelsArray text="Visit hotel" country={country}/> */}
+    
          </div> 
       
 

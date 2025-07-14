@@ -1,13 +1,18 @@
 // import ShowAllHotelsFinal from "@/app/ShowAllHotelsFinal"
 
+import { fetchAllHotelsData } from "@/app/API/hotels"
 import ShowAllHotelsFinal from "../../hotelsComponent/ShowAllHotelsFinal"
 
-async function page({params}) {
-const {country}=await params
-console.log(country)
+const  page=async({params})=> {
+const x=await params
+console.log(x)
+const country='Pakistan'
+const city='Lahore'
+const data=await fetchAllHotelsData({country,city})
+console.log(data,'++++++++++++++++++++++++++++++++')
     return (
         <div className="w-full h-full overflow-hidden">
-            <ShowAllHotelsFinal country={country}/>
+            <ShowAllHotelsFinal data={data}  country={country}/>
         </div>
        
     )

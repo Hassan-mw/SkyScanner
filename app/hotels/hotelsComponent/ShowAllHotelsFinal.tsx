@@ -16,7 +16,7 @@ const jost=Jost({
     weight:['500']
 })
 
-function ShowAllHotelsFinal({country}:{country:string}) {
+function ShowAllHotelsFinal({country,data}:{country:string}) {
 const arr=[,1,1,1,11,1,1,1,1,1,1]
 const [showSideBae,setShowSideBar]=useState(false)
 return (
@@ -34,7 +34,7 @@ return (
                 <div className=" w-full flex flex-col items-center    max-w-screen-xl space-y-3 p-2">
                   <FilterHotelsShower setShowSideBar={setShowSideBar}/>
                   <div className="w-full border-4 rounded-md border-slate-200 h-[300px] hidden sm:block xl:hidden ">
-                    <Map country={country}/>
+                    <Map data={data} country={country}/>
                   </div>
                 </div>
 
@@ -48,7 +48,7 @@ return (
                   </div>
 
                  
-                    <ShowFinalPAgeHotels/>
+                    <ShowFinalPAgeHotels data={data}/>
 
 
                       

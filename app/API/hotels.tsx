@@ -1,25 +1,19 @@
 import axios from "axios"
 
 interface DataType {
-  value:string;
-  startDate:Date | string
-  endDate:Date | string
-  person:number
-  room:number
+ country:string;
+ city:String;
 }
 
-export const fetchAllHotelsData = async ({value,startDate,endDate,person,room}:DataType) => {
+export const fetchAllHotelsData = async ({country,city}:DataType) => {
   
   try {
     const response = await axios.get("http://localhost:5000/api/hotels",
       {
         params:
         {
-          value,
-          startDate,
-          endDate,
-          person,
-          room
+          country,
+          city
    
         }
       }
