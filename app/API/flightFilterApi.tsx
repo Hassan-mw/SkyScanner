@@ -1,7 +1,7 @@
 // 
 import axios from "axios"
 
-export const FetchAllFilterData = async ({paramsData}) => {
+export const FetchAllFilterData = async ({paramsData}:{paramsData:URLSearchParams}) => {
   try {
     console.log(paramsData)
       const parametersData=new URLSearchParams(paramsData).toString();

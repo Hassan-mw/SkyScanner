@@ -7,10 +7,9 @@ const pool = require('../Pool/pool');
 exports.getAllFlight=async(req,res,next)=>{
    
  try{
- console.log('++++++++++++++++++++++')
  
   const {startPlace,  endPlace,  startDate,  endDate, totaltraveller, roomType}=req.query
-  console.log(startPlace,  endPlace,  startDate,  endDate, totaltraveller, roomType)
+
 
   const result=await pool.query(`
   SELECT * FROM flights

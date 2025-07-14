@@ -27,18 +27,68 @@ exports.manageFormData=upload.single('image')
 
 
 exports.getAllHotel=async(req,res,next)=>{
- try{
-  
-  const {country,city}=req.query
+  try{
+   const  queryData=req.query
+   console.log(req.query.sort,'+++++++++++++++++++',req.query)
 
-   const result=await pool.query(`SELECT * FROM hotels WHERE city=$1 AND country=$2 `,[city,country])
-   
-   console.log(result.rows)
-   res.status(200).json({
+   let query='SELECT * FROM hotels'
+      const consditions=[];
+      const values=[]
+      const allowedFields=['price','country','city','planename','totaltime','sort']
+  const querys=[]
+      Object.entries(queryData).forEach(([key,value],index)=>{
+        console.log(typeof key,'PPPPPPPPPPPPPPPPPPPP')
+        if(key==='sort'){
+         console.log('++++++++++++++++++++++++++++++++++++++')
+        } 
+        else{
+            
+        if(allowedFields.includes(key)){
+          values.push(value),
+          consditions.push(`${key} = $${values.length}`)
+        }
+        
+        
+        }
+      } )
+      
+     
+    if(values.length>0){  
+        query+= ' WHERE ' + consditions.join(' AND ')
+      }
+
+     
+
+    if(req.query.sort){
+     
+      query+=  `  ORDER BY ${req.query.sort} `
+    }
+    
+       
+  
+    const {rows}=await pool.query(query,values)
+  
+
+res.status(200).json({
+    // length:result.rows.length,
     status:'success',
-    data:result.rows
-   })
- }catch(err){
+    data:rows
+  })
+ }
+//  try{
+  
+//   const {country,city}=req.query
+
+//    const result=await pool.query(`SELECT * FROM hotels WHERE city=$1 AND country=$2 `,[city,country])
+   
+//    console.log(result.rows)
+//    res.status(200).json({
+//     status:'success',
+//     data:result.rows
+//    })
+//  }
+ 
+ catch(err){
 console.log(err)
  }
 }

@@ -9,8 +9,8 @@ interface DataType {
 export const fetchAllHotelsData = async ({paramsData,country,city}:DataType) => {
   
   try {
-    
-    const response = await axios.get(`http://localhost:5000/api/hotels?${paramsData}`,
+    const parametersData=new URLSearchParams(paramsData).toString();
+    const response = await axios.get(`http://localhost:5000/api/hotels?${parametersData}`,
       {
         params:
         {
