@@ -2,7 +2,7 @@
 
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { Dispatch, SetStateAction, useEffect, useState } from "react";
+import { Dispatch, useEffect, useState } from "react";
 import { GiRotaryPhone } from "react-icons/gi";
 
 function ShowSideBarHotel() {

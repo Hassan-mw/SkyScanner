@@ -26,7 +26,7 @@ function ShowAllHotelsFinal({ country, data }: { country: string; data: any }) {
       <div className="w-full flex flex-col xl:flex-row max-w-[2000px]">
         
         {/* Sidebar on 2XL screens */}
-        <div className="hidden 2xl:block bg-red-400 w-[300px]">
+        <div className="hidden 2xl:block w-[300px]">
           <ShowSideBarHotel />
         </div>
 
