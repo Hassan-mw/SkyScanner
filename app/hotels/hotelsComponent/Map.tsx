@@ -67,8 +67,8 @@ const Map = ({country,data}:{country:string}) => {
     if(data?.length===0) return;
 
   const points = data?.map(item => ({
-  lat: item.latitude,
-  lng: item.longitude
+  lat: Number(item.latitude),
+  lng: Number(item.longitude)
 }));
 console.log(points)
   return (
