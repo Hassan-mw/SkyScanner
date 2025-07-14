@@ -3,12 +3,14 @@ import axios from "axios"
 interface DataType {
  country:string;
  city:String;
+ paramsData:URLSearchParams
 }
 
-export const fetchAllHotelsData = async ({country,city}:DataType) => {
+export const fetchAllHotelsData = async ({paramsData,country,city}:DataType) => {
   
   try {
-    const response = await axios.get("http://localhost:5000/api/hotels",
+    
+    const response = await axios.get(`http://localhost:5000/api/hotels?${paramsData}`,
       {
         params:
         {
