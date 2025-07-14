@@ -23,7 +23,7 @@ const jost = Jost({
 })
 
 const CustomSearchBarHotel = () => {
-  const [value, setValue] = useState('')
+  const [city, setCity] = useState('')
   const [country, setCountry] = useState('')
   const [checkInDate, setCheckInDate] = useState<Date>()
   const [returnDate, setReturnDate] = useState<Date>()
@@ -33,10 +33,13 @@ const CustomSearchBarHotel = () => {
   const searchHotelsHandle = async () => {
     const startDate = checkInDate?.toDateString() || '15/07/25'
     const endDate = returnDate?.toDateString() || '18/07/25'
-    const data = await fetchAllHotelsData({ value, startDate, endDate, person, room })
+    const data = await fetchAllHotelsData({ country,city})
     if (data.length > 0) {
-      redirect(`/hotels/${country}/${value}?abc='af'`)
-      localStorage.setItem('hotelsData', JSON.stringify(data))
+      redirect(`/hotels/${country}/${city}?abc='af'`)
+    }
+    else
+    {
+      alert(`No hotels found with country ${country} and city ${city}`)
     }
   }
 
@@ -72,7 +75,7 @@ const CustomSearchBarHotel = () => {
                     <div className="bg-white rounded-md md:rounded-r-none md:rounded-l-md w-full">
                       <input
                         type="text"
-                        value={value}
+                        value={city}
                         placeholder="Enter the destination or hotel name"
                         style={{ fontWeight: 400 }}
                         className="w-full text-sm p-2 placeholder:text-gray-400 focus:outline-none"
@@ -80,7 +83,7 @@ const CustomSearchBarHotel = () => {
                     </div>
                   </MenubarTrigger>
                   <MenubarContent>
-                    <Hotelsearchplace value={value} setValue={setValue} country={country} setCountry={setCountry} />
+                    <Hotelsearchplace value={city} setValue={setCity} country={country} setCountry={setCountry} />
                   </MenubarContent>
                 </MenubarMenu>
 
