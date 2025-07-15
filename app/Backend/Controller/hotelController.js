@@ -34,7 +34,7 @@ exports.getAllHotel=async(req,res,next)=>{
    let query='SELECT * FROM hotels'
       const consditions=[];
       const values=[]
-      const allowedFields=['price','country','city','planename','totaltime','sort']
+      const allowedFields=['price','room','country','city','cancelation','breakfast','price','distancecity','websitename']
   const querys=[]
       Object.entries(queryData).forEach(([key,value],index)=>{
         console.log(typeof key,'PPPPPPPPPPPPPPPPPPPP')
