@@ -13,7 +13,7 @@ function ShowSideBarHotel() {
       const router = useRouter();
       
       ////////////
-      const [freeCancel,setFreeCancel]=useState()
+      const [freeCancel,setFreeCancel]=useState(false)
       const [breakFast,setBreakFast]=useState(false)
       const [price,setPrice]=useState('0')
       const [hotelsStar,setHotelsStar]=useState('')
@@ -30,21 +30,22 @@ function ShowSideBarHotel() {
       room !== '0' ? params.set('room', room) : params.delete('room');
       hotelsStar !== '' ? params.set('star', hotelsStar) : params.delete('star');
       websiteName !== 'All' ? params.set('websitename', websiteName) : params.delete('websitename');
-      freeCancel && params.set('cancelation', 'true');
-      breakFast && params.set('breakfast', 'true');
-       const hotelsStars= params.get('start') 
-        console.log(hotelsStars)
+      freeCancel ?  params.set('cancelation', 'true') : params.delete('cancelation');
+      breakFast ? params.set('breakfast', 'true') : params.delete('breakfast');
+    
       router.replace(`${pathName}?${params.toString()}`, { scroll: false });
     }, [freeCancel,breakFast,price,distance,hotelsStar,websiteName,room]);
   
 
-    
     useEffect(() => {
-        const urlStar = searchParams.get("star") || "All"; setHotelsStar(urlStar);
-        const urlCancelation = searchParams.get("cancelation") || false ; setFreeCancel(urlCancelation);
-    }, [searchParams]);
-
- console.log(freeCancel)
+    const cancelation = searchParams.get('cancelation') === 'true';
+    setFreeCancel(cancelation); 
+    const urlBreakfase = searchParams.get('breakfast') === 'true';
+    setBreakFast(urlBreakfase); 
+    const urlStar = searchParams.get('star') !==null
+    setHotelsStar(urlStar); 
+     }, []); // Runs once on mount
+ console.log(hotelsStar)
     return (
     <div className={`min-w-[300px] w-full   h-[90vh]  overflow-hidden  overflow-y-auto `}>
     <div className="w-full flex flex-col items-start  px-3   space-y-6 py-4 pb-36  ">
