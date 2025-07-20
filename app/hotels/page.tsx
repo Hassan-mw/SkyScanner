@@ -20,6 +20,7 @@ const Page = async () => {
         <ShowCurrentPageHotel />
         <CustomHotelsLogo />
       </div>
+      
 
       {/* Hotels Content Section */}
       <div className="p-3 flex flex-col space-y-20 items-center w-full h-full bg-white max-w-screen-xl">
