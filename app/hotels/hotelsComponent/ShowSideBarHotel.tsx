@@ -44,8 +44,12 @@ function ShowSideBarHotel() {
     setBreakFast(urlBreakfase); 
     const urlStar = searchParams.get('star') !==null
     setHotelsStar(urlStar); 
-     }, []); // Runs once on mount
- console.log(hotelsStar)
+     }, []); 
+
+
+ 
+
+     
     return (
     <div className={`min-w-[300px] w-full   h-[90vh]  overflow-hidden  overflow-y-auto `}>
     <div className="w-full flex flex-col items-start  px-3   space-y-6 py-4 pb-36  ">
