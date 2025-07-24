@@ -72,15 +72,9 @@ const CustomSearchBarHotel = ({params}:{params:URLSearchParams}) => {
                 <MenubarMenu>
                   <MenubarTrigger className="w-full flex flex-col space-y-1 items-start justify-start rounded-md p-0">
                     <span className="text-[9px] text-white">Where do you want to stay?</span>
-                    <div className="bg-white rounded-md md:rounded-r-none md:rounded-l-md w-full">
-                      <input
-                        type="text"
-                        value={city}
-                        placeholder="Enter the destination or hotel name"
-                        style={{ fontWeight: 400 }}
-                        className="w-full text-sm p-2 placeholder:text-gray-400 focus:outline-none"
-                      />
-                    </div>
+                    <div className="bg-white p-2 rounded-md md:rounded-r-none md:rounded-l-md w-full ">
+                      <span  className="w-full text-sm placeholder:text-gray-400 focus:outline-none flex items-start" >{city || "Enter the destination or hotel name"}</span>
+                    </div> 
                   </MenubarTrigger>
                   <MenubarContent>
                     <Hotelsearchplace value={city} setValue={setCity} country={country} setCountry={setCountry} />
