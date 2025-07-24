@@ -22,7 +22,7 @@ const jost = Jost({
   subsets: ['latin']
 })
 
-const CustomSearchBarHotel = () => {
+const CustomSearchBarHotel = ({params}:{params:URLSearchParams}) => {
   const [city, setCity] = useState('')
   const [country, setCountry] = useState('')
   const [checkInDate, setCheckInDate] = useState<Date>()
@@ -33,7 +33,7 @@ const CustomSearchBarHotel = () => {
   const searchHotelsHandle = async () => {
     const startDate = checkInDate?.toDateString() || '15/07/25'
     const endDate = returnDate?.toDateString() || '18/07/25'
-    const data = await fetchAllHotelsData({ country,city})
+    const data = await fetchAllHotelsData({ paramsData:params,country,city})
     if (data.length > 0) {
       redirect(`/hotels/${country}/${city}?abc='af'`)
     }

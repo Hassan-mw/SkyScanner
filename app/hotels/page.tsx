@@ -6,13 +6,13 @@ import HotelNearOwncity from "./hotelsComponent/HotelNearOwnCity";
 import HotelPlace from "./hotelsComponent/HotelPlace";
 import ShowCurrentPageHotel from "./hotelsComponent/ShowCurrentPageHotel";
 
-const Page = async () => {
+const Page = async ({params}:{params:URLSearchParams}) => {
   return (
     <div className="w-full h-full flex flex-col space-y-10 items-center bg-white overflow-y-auto overflow-x-hidden">
       
       {/* Search Bar */}
       <div className="bg-[#05203c] flex items-center justify-center w-full">
-        <CustomSearchBarHotel />
+        <CustomSearchBarHotel  params={params}/>
       </div>
 
       {/* Page Heading Section */}
