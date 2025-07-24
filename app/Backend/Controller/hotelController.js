@@ -7,7 +7,7 @@ const fs = require('fs').promises;
 const multerStorage = multer.memoryStorage();
 
 const multerFilter=(req,file,cb)=>{
-    console.log(file,"}}}}}")
+   
   if(file.mimetype.startsWith('image')){
     cb(null,true)
   }
@@ -39,11 +39,11 @@ exports.getAllHotel=async(req,res,next)=>{
       Object.entries(queryData).forEach(([key,value],index)=>{
         console.log(typeof key,'PPPPPPPPPPPPPPPPPPPP')
         if(key==='sort'){
-         console.log('++++++++++++++++++++++++++++++++++++++')
+        
         } 
         else{
             
-        if(allowedFields.includes(key)){
+        if(allowedFields.includes(key) &&  value!=='All'){
           values.push(value),
           consditions.push(`${key} = $${values.length}`)
         }
