@@ -35,7 +35,7 @@ const CustomSearchBarHotel = ({params}:{params:URLSearchParams}) => {
     const endDate = returnDate?.toDateString() || '18/07/25'
     const data = await fetchAllHotelsData({ paramsData:params,country,city})
     if (data.length > 0) {
-      redirect(`/hotels/${country}/${city}?abc='af'`)
+      redirect(`/hotels/${country}/${city}?star='All' & room= 'All' & websitename='All' & price='All' & distancecity='All' `)
     }
     else
     {
