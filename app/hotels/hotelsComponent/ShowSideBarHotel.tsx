@@ -16,7 +16,7 @@ function ShowSideBarHotel() {
       const [freeCancel,setFreeCancel]=useState(false)
       const [breakFast,setBreakFast]=useState(false)
       const [price,setPrice]=useState('0')
-      const [hotelsStar,setHotelsStar]=useState('All')
+      const [hotelsStar,setHotelsStar]=useState('')
       const [distance,setDistance]=useState('0')
       const [room,setRoom]=useState('0')
       const [websiteName,setWebsiteName]=useState('All')
@@ -28,7 +28,7 @@ function ShowSideBarHotel() {
       price !== '0' ? params.set('price', price) : params.delete('price');
       distance !== '0' ? params.set('distancecity', distance) : params.delete('distance');
       room !== '0' ? params.set('room', room) : params.delete('room');
-      hotelsStar !== 'All' ? params.set('star', hotelsStar) : params.delete('star');
+      hotelsStar !== '' ? params.set('star', hotelsStar) : params.delete('star');
       websiteName !== 'All' ? params.set('websitename', websiteName) : params.delete('websitename');
       freeCancel ?  params.set('cancelation', 'true') : params.delete('cancelation');
       breakFast ? params.set('breakfast', 'true') : params.delete('breakfast');
@@ -42,13 +42,13 @@ function ShowSideBarHotel() {
     setFreeCancel(cancelation); 
     const urlBreakfase = searchParams.get('breakfast') === 'true';
     setBreakFast(urlBreakfase); 
-    const urlStar = searchParams.get('star') !==null
+    const urlStar = searchParams.get('star') 
     setHotelsStar(urlStar); 
      }, []); 
 
 
  
-
+console.log(hotelsStar,'+++++++++++++++')
      
     return (
     <div className={`min-w-[300px] w-full   h-[90vh]  overflow-hidden  overflow-y-auto `}>
