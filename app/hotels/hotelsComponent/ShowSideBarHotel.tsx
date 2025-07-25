@@ -30,7 +30,7 @@ function ShowSideBarHotel() {
       distance !== '0' ? params.set('distancecity', distance) : params.delete('distance');
       room !== '0' ? params.set('room', room) : params.delete('room');
       hotelsStar !== '' ? params.set('star', hotelsStar) : params.set('star', 'All');
-      websiteName !== '' ? params.set('websitename', websiteName) : params.set('websitename', 'All');
+      websiteName !== 'All' && params.set('websitename', websiteName) ;
       freeCancel ?  params.set('cancelation', 'true') : params.delete('cancelation');
       breakFast ? params.set('breakfast', 'true') : params.delete('breakfast');
     
