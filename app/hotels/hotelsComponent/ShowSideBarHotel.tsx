@@ -20,7 +20,7 @@ function ShowSideBarHotel() {
       const [hotelsStar,setHotelsStar]=useState('')
       const [distance,setDistance]=useState('0')
       const [room,setRoom]=useState('0')
-      const [websiteName,setWebsiteName]=useState('')
+      const [websiteName,setWebsiteName]=useState('All')
 
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function ShowSideBarHotel() {
       distance !== '0' ? params.set('distancecity', distance) : params.delete('distance');
       room !== '0' ? params.set('room', room) : params.delete('room');
       hotelsStar !== '' ? params.set('star', hotelsStar) : params.set('star', 'All');
-      websiteName !== 'All' && params.set('websitename', websiteName) ;
+      websiteName !== 'All' ? params.set('websitename', websiteName) :  params.delete('websitename') ;
       freeCancel ?  params.set('cancelation', 'true') : params.delete('cancelation');
       breakFast ? params.set('breakfast', 'true') : params.delete('breakfast');
     
@@ -45,7 +45,7 @@ function ShowSideBarHotel() {
     setBreakFast(urlBreakfase); 
     const urlStar = searchParams.get('star') 
     setHotelsStar(urlStar); 
-    const urlWebsiteName = searchParams.get('websitename') 
+    const urlWebsiteName = searchParams.get('websitename') || 'All'
     setWebsiteName(urlWebsiteName); 
      }, []); 
 
