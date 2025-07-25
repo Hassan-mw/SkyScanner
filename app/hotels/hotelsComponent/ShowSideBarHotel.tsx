@@ -20,7 +20,7 @@ function ShowSideBarHotel() {
       const [hotelsStar,setHotelsStar]=useState('')
       const [distance,setDistance]=useState('0')
       const [room,setRoom]=useState('0')
-      const [websiteName,setWebsiteName]=useState('All')
+      const [websiteName,setWebsiteName]=useState('')
 
 
     useEffect(() => {
@@ -30,7 +30,7 @@ function ShowSideBarHotel() {
       distance !== '0' ? params.set('distancecity', distance) : params.delete('distance');
       room !== '0' ? params.set('room', room) : params.delete('room');
       hotelsStar !== '' ? params.set('star', hotelsStar) : params.set('star', 'All');
-      websiteName !== 'All' ? params.set('websitename', websiteName) : params.delete('websitename');
+      websiteName !== '' ? params.set('websitename', websiteName) : params.delete('websitename');
       freeCancel ?  params.set('cancelation', 'true') : params.delete('cancelation');
       breakFast ? params.set('breakfast', 'true') : params.delete('breakfast');
     
@@ -45,6 +45,8 @@ function ShowSideBarHotel() {
     setBreakFast(urlBreakfase); 
     const urlStar = searchParams.get('star') 
     setHotelsStar(urlStar); 
+    const urlWebsiteName = searchParams.get('websitename') 
+    setWebsiteName(urlWebsiteName); 
      }, []); 
 
 
@@ -113,11 +115,15 @@ console.log(hotelsStar,'+++++++++++++++')
             {/* Stars */}
             <div className="flex flex-col space-y-2">
             <span className="text-[#161616] text-lg font-semibold">Hotel star rating</span>
-                 {hotelsStar !=='All' && <div onClick={()=>setHotelsStar('')} className="flex items-center justify-start space-x-2 text-red-500">
+                
+                {
+                 hotelsStar !=='All' &&
+                  <div onClick={()=>setHotelsStar('')} className="flex items-center justify-start space-x-2 text-red-500">
                     <MdCancel size={20} />
                     {/* <div><input checked={hotelsStar}  value={'All'} onChange={(e)=>setHotelsStar(e.target.value)}  name="checkboxprice" className="size-4" type="radio"/></div> */}
-                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">Cancel</span> </div> 
-                  </div>}
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]"> Hotels</span> </div> 
+                  </div>
+                }
                     
               <div  className="flex items-center justify-between ">
                   <div className="flex items-center justify-center space-x-2">
@@ -159,7 +165,14 @@ console.log(hotelsStar,'+++++++++++++++')
             {/* Website Name */}
             <div className="flex flex-col space-y-2">
             <span className="text-[#161616] text-lg font-semibold">Avaliable Websites</span>
-              
+              {
+                 websiteName !=='All' &&
+                  <div onClick={()=>setWebsiteName('')} className="flex items-center justify-start space-x-2 text-red-500">
+                    <MdCancel size={20} />
+                    {/* <div><input checked={hotelsStar}  value={'All'} onChange={(e)=>setHotelsStar(e.target.value)}  name="checkboxprice" className="size-4" type="radio"/></div> */}
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]"> Websites</span> </div> 
+                  </div>
+                }
               <div className="flex items-center justify-between ">
                   <div className="flex items-center justify-center space-x-2">
                      <div><input checked={'Booking.com'===websiteName}  value={'Booking.com'} onChange={(e)=>setWebsiteName(e.target.value)}  name="checkboxprice" className="size-4" type="radio"/></div>
