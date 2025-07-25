@@ -113,11 +113,11 @@ console.log(hotelsStar,'+++++++++++++++')
             {/* Stars */}
             <div className="flex flex-col space-y-2">
             <span className="text-[#161616] text-lg font-semibold">Hotel star rating</span>
-                  <div onClick={()=>setHotelsStar('')} className="flex items-center justify-start space-x-2 text-red-500">
+                 {hotelsStar !=='All' && <div onClick={()=>setHotelsStar('')} className="flex items-center justify-start space-x-2 text-red-500">
                     <MdCancel size={20} />
                     {/* <div><input checked={hotelsStar}  value={'All'} onChange={(e)=>setHotelsStar(e.target.value)}  name="checkboxprice" className="size-4" type="radio"/></div> */}
                      <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">Cancel</span> </div> 
-                  </div>
+                  </div>}
                     
               <div  className="flex items-center justify-between ">
                   <div className="flex items-center justify-center space-x-2">
