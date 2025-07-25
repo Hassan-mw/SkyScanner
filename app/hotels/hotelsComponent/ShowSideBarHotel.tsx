@@ -30,7 +30,7 @@ function ShowSideBarHotel() {
       distance !== '0' ? params.set('distancecity', distance) : params.delete('distance');
       room !== '0' ? params.set('room', room) : params.delete('room');
       hotelsStar !== '' ? params.set('star', hotelsStar) : params.set('star', 'All');
-      websiteName !== 'All' ? params.set('websitename', websiteName) :  params.delete('websitename') ;
+      (websiteName !== 'All' || websiteName !== '') ? params.set('websitename', websiteName) :  params.delete('websitename') ;
       freeCancel ?  params.set('cancelation', 'true') : params.delete('cancelation');
       breakFast ? params.set('breakfast', 'true') : params.delete('breakfast');
     
@@ -46,6 +46,7 @@ function ShowSideBarHotel() {
     const urlStar = searchParams.get('star') 
     setHotelsStar(urlStar); 
     const urlWebsiteName = searchParams.get('websitename') || 'All'
+    console.log(urlWebsiteName,'????????????????')
     setWebsiteName(urlWebsiteName); 
      }, []); 
 
@@ -166,7 +167,7 @@ console.log(websiteName,'+++++++++++++++')
             <div className="flex flex-col space-y-2">
             <span className="text-[#161616] text-lg font-semibold">Avaliable Websites</span>
               {
-                 websiteName !=='All' &&
+                 (websiteName !== 'All' || websiteName !== '') &&
                   <div onClick={()=>setWebsiteName('')} className="flex items-center justify-start space-x-2 text-red-500">
                     <MdCancel size={20} />
                     {/* <div><input checked={hotelsStar}  value={'All'} onChange={(e)=>setHotelsStar(e.target.value)}  name="checkboxprice" className="size-4" type="radio"/></div> */}
