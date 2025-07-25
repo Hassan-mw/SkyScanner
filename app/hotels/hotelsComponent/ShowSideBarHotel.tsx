@@ -4,6 +4,7 @@
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Dispatch, useEffect, useState } from "react";
 import { GiRotaryPhone } from "react-icons/gi";
+import { MdCancel } from "react-icons/md";
 
 function ShowSideBarHotel() {
     const [currentPrriceId,setCheckCurentPriceId]=useState(1)
@@ -28,7 +29,7 @@ function ShowSideBarHotel() {
       price !== '0' ? params.set('price', price) : params.delete('price');
       distance !== '0' ? params.set('distancecity', distance) : params.delete('distance');
       room !== '0' ? params.set('room', room) : params.delete('room');
-      hotelsStar !== '' ? params.set('star', hotelsStar) : params.delete('star');
+      hotelsStar !== '' ? params.set('star', hotelsStar) : params.set('star', 'All');
       websiteName !== 'All' ? params.set('websitename', websiteName) : params.delete('websitename');
       freeCancel ?  params.set('cancelation', 'true') : params.delete('cancelation');
       breakFast ? params.set('breakfast', 'true') : params.delete('breakfast');
@@ -112,9 +113,10 @@ console.log(hotelsStar,'+++++++++++++++')
             {/* Stars */}
             <div className="flex flex-col space-y-2">
             <span className="text-[#161616] text-lg font-semibold">Hotel star rating</span>
-                  <div className="flex items-center justify-start space-x-2">
-                    <div><input checked={'All'===hotelsStar}  value={'All'} onChange={(e)=>setHotelsStar(e.target.value)}  name="checkboxprice" className="size-4" type="radio"/></div>
-                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">All Stars</span> </div> 
+                  <div onClick={()=>setHotelsStar('')} className="flex items-center justify-start space-x-2 text-red-500">
+                    <MdCancel size={20} />
+                    {/* <div><input checked={hotelsStar}  value={'All'} onChange={(e)=>setHotelsStar(e.target.value)}  name="checkboxprice" className="size-4" type="radio"/></div> */}
+                     <div className="flex items-center justify-center gap-x-1"><span className="text-lg pb-1 text-[#161616]">Cancel</span> </div> 
                   </div>
                     
               <div  className="flex items-center justify-between ">
