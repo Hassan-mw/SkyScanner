@@ -30,7 +30,7 @@ function ShowSideBarHotel() {
       distance !== '0' ? params.set('distancecity', distance) : params.delete('distance');
       room !== '0' ? params.set('room', room) : params.delete('room');
       hotelsStar !== '' ? params.set('star', hotelsStar) : params.set('star', 'All');
-      websiteName !== '' ? params.set('websitename', websiteName) : params.delete('websitename');
+      websiteName !== '' ? params.set('websitename', websiteName) : params.set('websitename', 'All');
       freeCancel ?  params.set('cancelation', 'true') : params.delete('cancelation');
       breakFast ? params.set('breakfast', 'true') : params.delete('breakfast');
     
@@ -51,7 +51,7 @@ function ShowSideBarHotel() {
 
 
  
-console.log(hotelsStar,'+++++++++++++++')
+console.log(websiteName,'+++++++++++++++')
      
     return (
     <div className={`min-w-[300px] w-full   h-[90vh]  overflow-hidden  overflow-y-auto `}>
