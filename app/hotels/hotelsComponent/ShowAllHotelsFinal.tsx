@@ -14,6 +14,7 @@ const jost = Jost({
   weight: ['500']
 });
 
+
 function ShowAllHotelsFinal({ country, data }: { country: string; data: any }) {
   const [showSideBar, setShowSideBar] = useState(false);
 
