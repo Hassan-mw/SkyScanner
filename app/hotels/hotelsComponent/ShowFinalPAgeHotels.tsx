@@ -7,7 +7,8 @@ const jost=Jost({
 })
 
 const ShowFinalPAgeHotels = ({data}) => {
-const arr=[,1,1,1,11,1,1,1,1,1,1]
+
+  
 
   return (
     
