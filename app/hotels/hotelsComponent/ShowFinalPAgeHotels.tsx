@@ -6,9 +6,13 @@ const jost=Jost({
     weight:['500']
 })
 
-const ShowFinalPAgeHotels = ({data}) => {
-
+interface DataType {
   
+}
+
+const ShowFinalPAgeHotels = ({data}:DataType) => {
+
+
 
   return (
     
