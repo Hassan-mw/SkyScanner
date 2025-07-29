@@ -89,7 +89,7 @@ const page = () => {
     </div>
 
 
-    {/* Copy_right */}
+    {/*  Copy_right  */}
     <span style={{fontWeight:300}} className={`${jost.className} text-md text-white`}>© Skyscanner Ltd 2002 – 2025</span> 
     </div>
     </div>

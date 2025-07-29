@@ -1,10 +1,8 @@
 
 import FastFactMainHotel from "./CarComponent/FastFactMainHotel"
-import CustomHotelsLogo from "./CarComponent/CustomHotelsLogo"
 import CarSearchbarLargeScreen from "./CarComponent/CarSearchbarLargeScreen"
 import CarSearchbarSmallScreen from "./CarComponent/CarSearchbarSmallScreen"
 import ShowCurrentPageHotel from "./CarComponent/ShowCurrentPageHotels"
-import HotelNearOwncity from "../hotels/hotelsComponent/HotelNearOwnCity"
 import CarRentalDestination from "./CarComponent/CarRentalDestination"
 import CarRentalByCity from "./CarComponent/CarRentalByCity"
 
