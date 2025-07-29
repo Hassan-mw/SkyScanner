@@ -13,6 +13,7 @@ const Page = async ({ params ,searchParams}: { params: { country: string; city: 
       <ShowAllHotelsFinal data={data} country={country} />
     </div>
   );
+  
 };
 
 export default Page;
