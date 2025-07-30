@@ -1,7 +1,6 @@
 const express=require('express')
 const app=express()
 const Pool = require("./Pool/pool");
-// const cors = require('cors')
 const flightRouter=require('./Router/flightRouter')
 const planeRouter=require('./Router/planeRouter')
 const hotelRouter=require('./Router/hotelRouter')
