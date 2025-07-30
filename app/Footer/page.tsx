@@ -84,8 +84,6 @@ const page = () => {
       </AccordionItem>
     </Accordion>
     </div> 
-
-
     </div>
 
 
