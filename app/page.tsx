@@ -83,6 +83,7 @@ const page = () => {
                             <AccordionContent style={{fontWeight:200}} className={`${jost.className} text-sm`}>
       Finding flights is easy here – over 100 million savvy travellers come to us each month to find cheap flight tickets, hotels and car hire. Here are a few simple tips on how to get the most out of your flight search.
         </AccordionContent>
+        
       </AccordionItem>
 
       <AccordionItem value="item-3">
