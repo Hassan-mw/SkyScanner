@@ -10,6 +10,7 @@ import { json } from 'stream/consumers'
 import FightSearchBarLargeScreens from './flights/FlightComponents/FightSearchBarLargeScreens'
 import FlightSearchBarSmallSceen from './flights/FlightComponents/FlightSearchBarSmallSceen'
 import FightSearchBarLargeHomeScreens from './HomepageComponenets/FightSearchBarLargeHomeScreens'
+
 const jost=Jost({
     subsets:['latin'],
     weight:['500']
