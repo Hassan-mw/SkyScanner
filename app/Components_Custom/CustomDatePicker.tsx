@@ -15,8 +15,8 @@ const CustomDatePicker = ({date,setDateSelect}) => {
      setDateSelect(selectedDate)
    },[selectedDate])
 
-  return (
-       <div className="h-full w-full rounded-xl bg-white shadow-lg flex flex-col items-center justify-start space-y-5  overflow-auto z-[500]">
+ return (
+    <div className="h-full w-full rounded-xl bg-white shadow-lg flex flex-col items-center justify-start space-y-5  overflow-auto z-[500]">
        <div className="w-full flex items-center justify-center max-w-screen-lg">
       <div className="flex  ">
       <div className="flex flex-col space-y-3 ">
