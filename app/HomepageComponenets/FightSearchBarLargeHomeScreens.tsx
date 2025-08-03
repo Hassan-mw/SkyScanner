@@ -39,8 +39,7 @@
      return (
      <div   className="flex justify-center items-center  min-w-full    ">
   
-     {/* //!    data */}
-     {/* <div   className="absolute  h-full   w-full top-0  left-0 flex  items-center justify-center    "> */}
+  
      <div   className="bg-[#05203c] 2xl:p-6 2xl:rounded-lg flex flex-col items-center justify-center  gap-y-[3px] xl:gap-y-4 w-full px-5 pb-5 max-w-screen-xl  space-y-3 ">
      
      
