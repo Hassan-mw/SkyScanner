@@ -28,7 +28,8 @@ const CustomDatePicker = ({date,setDateSelect}) => {
     
     />   
      </div>
-     </div>   
+        </div>  
+
      </div> 
 
 
@@ -36,5 +37,8 @@ const CustomDatePicker = ({date,setDateSelect}) => {
         </div>
   )
 }
+
+
+
 
 export default CustomDatePicker
