@@ -8,6 +8,7 @@ const jost=Jost({
     subsets:['latin']
 })
 
+
 const PlaneSearchBarPlace = ({value,setValue}:{value:string,setValue:Dispatch<SetStateAction<string>>}) => {
     const [selectPlace,setSelectplace]=useState("")
 
@@ -29,6 +30,7 @@ const PlaneSearchBarPlace = ({value,setValue}:{value:string,setValue:Dispatch<Se
       setValue(data)
       setSelectplace(data)
     }
+
 
     // Clearing input fields
     function handleClearValue(){
@@ -68,6 +70,7 @@ const PlaneSearchBarPlace = ({value,setValue}:{value:string,setValue:Dispatch<Se
 
         {/* Planes */}
         {filteredHotel.map((data,index)=>
+        
         <div key={index} className={`border-b flex items-center w-full space-x-3 cursor-pointer  p-4  `} onClick={()=>handlePlace(data)}>
             <span className="text-xl text-gray-500 "><FaLocationDot /></span>
             <h2 className={`${jost.className} text-2xl  `}>{data}</h2>

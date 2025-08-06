@@ -12,6 +12,7 @@ function Accordion({
   return <AccordionPrimitive.Root data-slot="accordion" {...props} />
 }
 
+
 function AccordionItem({
   className,
   ...props
