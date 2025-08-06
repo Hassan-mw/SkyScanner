@@ -54,9 +54,7 @@ const PlaneSearchBarPlace = ({value,setValue}:{value:string,setValue:Dispatch<Se
         {/* Main body */}
         <div className="w-full flex flex-col  items-start overflow-y-auto space-y-3 py-8 px-3 ">
 
-          {/*//!   FORM  */}
-        {/* <div className="bg-white px-4 py-4 rounded-xl  w-full flex items-center justifuy-between space-x-4 max-w-screen-lg "> */}
-        
+    
 
         {/* Searching button */}
         <div className="w-full flex items-center border-b pb-4 border-gray-200">
@@ -70,12 +68,13 @@ const PlaneSearchBarPlace = ({value,setValue}:{value:string,setValue:Dispatch<Se
 
         {/* Planes */}
         {filteredHotel.map((data,index)=>
-        
+
         <div key={index} className={`border-b flex items-center w-full space-x-3 cursor-pointer  p-4  `} onClick={()=>handlePlace(data)}>
             <span className="text-xl text-gray-500 "><FaLocationDot /></span>
             <h2 className={`${jost.className} text-2xl  `}>{data}</h2>
         </div>
-            )}
+            
+        )}
       
 
         </div>
