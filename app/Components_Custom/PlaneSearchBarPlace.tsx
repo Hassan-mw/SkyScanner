@@ -10,7 +10,8 @@ const jost=Jost({
 
 
 const PlaneSearchBarPlace = ({value,setValue}:{value:string,setValue:Dispatch<SetStateAction<string>>}) => {
-    const [selectPlace,setSelectplace]=useState("")
+   
+  const [selectPlace,setSelectplace]=useState("")
 
    const hotelArray = [
   "Pakistan",

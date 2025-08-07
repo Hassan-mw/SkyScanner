@@ -30,10 +30,6 @@ app.use('/api/flights',flightRouter)
 app.use('/api/plane',planeRouter)
 
 
-
-  
-
-
   
 Pool.connect({
     host:"localhost",
