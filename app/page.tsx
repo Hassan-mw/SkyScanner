@@ -6,8 +6,6 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@r
 import { IoBedSharp } from 'react-icons/io5'
 import { MdDirectionsCarFilled } from 'react-icons/md'
 import { RiPlaneFill } from 'react-icons/ri'
-
-import FightSearchBarLargeScreens from './flights/FlightComponents/FightSearchBarLargeScreens'
 import FlightSearchBarSmallSceen from './flights/FlightComponents/FlightSearchBarSmallSceen'
 import FightSearchBarLargeHomeScreens from './HomepageComponenets/FightSearchBarLargeHomeScreens'
 
