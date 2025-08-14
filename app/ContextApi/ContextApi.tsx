@@ -7,6 +7,7 @@ interface DataType {
  setFlightData: Dispatch<SetStateAction<never[]>>;
 }
 
+
  const DataContext=createContext<DataType>({});
 
 

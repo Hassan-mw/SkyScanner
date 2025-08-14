@@ -5,10 +5,7 @@ import Navigation from "./Navigation/navigation";
 import Footer from "./Footer/page";
 import { DataProvider } from "./ContextApi/ContextApi";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
