@@ -1,4 +1,4 @@
-function CustomHotelsLogo({text}) {
+function CustomHotelsLogo({text}:{text:string}) {
     return (
         <div>
              {/*//! Hottels Logo */}
