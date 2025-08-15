@@ -26,7 +26,7 @@ const jost=Jost({
 
 function CarRentalDestination() {
   const [selectedRegin,setSelectedRegion]=useState('Islambad')
-  //  console.log(params,"Inside showing plane place")
+
    const cityArray=[
     {id:1,city:'Islambad'},
     {id:2,city:'Karachi'},
