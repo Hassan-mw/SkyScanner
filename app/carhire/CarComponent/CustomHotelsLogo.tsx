@@ -1,8 +1,9 @@
-function CustomHotelsLogo({text}:{text:string}) {
+
+  function CustomHotelsLogo({text}:{text:string}) {
     return (
-        <div>
+    <div>
              {/*//! Hottels Logo */}
-  <div className="min-w-full flex flex-col space-y-3 items-start justify-start  max-w-screen-xl">
+         <div className="min-w-full flex flex-col space-y-3 items-start justify-start  max-w-screen-xl">
       <div className="w-full flex  items-start justify-start  text-2xl  sm:text-4xl font-semibold ">{text}</div>
      
       <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-8 gap-x-4 md:gap-x-6  ">
