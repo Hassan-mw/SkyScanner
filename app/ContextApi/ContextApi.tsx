@@ -7,13 +7,13 @@ interface DataType {
  setFlightData: Dispatch<SetStateAction<never[]>>;
 }
 
-
- const DataContext=createContext<DataType>({});
+const DataContext=createContext<DataType>({});
 
 
 function DataProvider({children}:{children:React.ReactNode}){
+
      const [flightData,setFlightData]=useState([])
-     console.log(flightData)
+    
     return(
         <DataContext.Provider value={{flightData,setFlightData}}>
               {children}
