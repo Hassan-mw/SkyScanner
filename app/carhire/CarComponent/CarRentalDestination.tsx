@@ -1,7 +1,4 @@
- 
-
-
- 'use client'
+'use client'
 
 import Link from "next/link"
 
@@ -36,7 +33,7 @@ function CarRentalDestination() {
    ]
     return (
     
-        <div className="w-full flex-col space-y-7 flex items-center justify-center p-3">
+      <div className="w-full flex-col space-y-7 flex items-center justify-center p-3">
        {/* Text */}
        <div className="flex  w-full items-start justify-start">
       <h1 className="text-3xl font-semibold sm:text-4xl">Popular car rental destinations</h1>
