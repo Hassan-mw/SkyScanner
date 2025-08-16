@@ -44,7 +44,7 @@ const FinalNavbar = () => {
         setTotalTraveller(adult+children)
     
         },[adult,children])
-        
+
         
         
 
@@ -57,6 +57,7 @@ return (
         <div className='flex   items-start justify-start '>
             <div className=' bg-blue-600 flex items-center justify-center size-7 rounded-sm text-white'> <IoIosSearch size={18} /> </div>
         </div>
+      
       
         {/* Flight_Details */}
         <div className='w-full flex  text-md text-white items-center justify-center gap-x-1'>
