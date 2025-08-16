@@ -32,6 +32,7 @@ function FastFactMainHotel() {
            </div>
          </div>
 
+
             {/* First */}
             <div className="w-full h-full flex flex-col space-y-7 items-center justify-center">
                 {/* Upper text */}
@@ -46,12 +47,14 @@ function FastFactMainHotel() {
                    <span className="text-sm text-slate-600">Hotel brands to choose from</span>
                    <span className="font-semibold text-xl border-b border-black">Rs17,774</span>
                </div>
+
                 {/* 2 */}
                  <div className="flex flex-col w-full items-start">
                    <div className="text-2xl font-semibold  mb-2"><FaCarSide /></div>         
                    <span className="text-sm text-slate-600">Cheapest provider</span>
                    <span className="font-semibold text-xl border-b border-black">Hertz</span>
                </div>
+               
                 {/* 3 */}
                  <div className="flex flex-col w-full items-start">
                    <div className="text-2xl font-semibold mb-2"><FaHeart size={20} /></div> 
