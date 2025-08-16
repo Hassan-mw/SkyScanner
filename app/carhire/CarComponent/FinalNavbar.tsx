@@ -46,6 +46,7 @@ const FinalNavbar = () => {
         },[adult,children])
         
         
+        
 
 return (
   <div   className="flex justify-center items-center  min-w-full   bg-[#05203c] p-3  ">
