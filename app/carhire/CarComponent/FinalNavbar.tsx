@@ -1,11 +1,8 @@
 
 'use client'
 import { Jost } from "next/font/google"
-
-//  import Hotelsearchplace from "./HotelsearchPlace"
 import { TbSTurnDown } from "react-icons/tb";
 import { useEffect, useState } from "react"
-// import CustomDatePicker from "./CustomDatePicker"
 import PlanesearchPlane from "../../Components_Custom/PlaneSearchBarPlace"
 import PlanePerson from "../../Components_Custom/PlanePerson"
 import { FaArrowRight, FaArrowRightArrowLeft } from "react-icons/fa6";
