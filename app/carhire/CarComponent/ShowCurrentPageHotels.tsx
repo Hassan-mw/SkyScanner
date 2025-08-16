@@ -23,6 +23,7 @@ function ShowCurrentPageHotel() {
     </div>
 
 
+
     <div className="flex flex-col sm:flex-row items-start justify-between w-full space-y-5 sm:space-y-0 sm:space-x-8 font-base  text-slate-900">
         
         {/* 1 */}
@@ -30,7 +31,7 @@ function ShowCurrentPageHotel() {
         <div className="text-sm   pt-1"><FaCarSide size={22} /></div>
         <span className={`${jost.className} text-sm `}>Search for cheap car rental in seconds – anywhere in the world</span>
         </div>
-        
+
 
         {/* 2 */}
         <div className="flex items-start sm:flex-col lg:flex-row text-black   space-x-3 sm:space-x-0 sm:space-y-2 lg:space-y-0  lg:space-x-3">
@@ -38,9 +39,6 @@ function ShowCurrentPageHotel() {
         <span className={`${jost.className} text-sm `}>Compare deals from trusted car hire providers in one place</span>
         </div>
         
-
-
-
         {/* 3 */}
         <div className="flex items-start sm:flex-col lg:flex-row text-black   space-x-3 sm:space-x-0 sm:space-y-2 lg:space-y-0  lg:space-x-3">
         <div className="text-sm  pt-1"><IoMdPricetag size={24} /></div>
