@@ -1,7 +1,6 @@
 'use client'
 
 import Link from "next/link"
-
 import {
   Carousel,
   CarouselContent,
@@ -30,6 +29,7 @@ function CarRentalDestination() {
     {id:3,city:'Lahore'},
     {id:4,city:'Murre'},
     {id:5,city:'Gilgit'},
+    
    ]
     return (
     
