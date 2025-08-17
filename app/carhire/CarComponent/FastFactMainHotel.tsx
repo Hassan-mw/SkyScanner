@@ -5,7 +5,6 @@ import {
     AccordionTrigger,
   } from "@/components/ui/accordion"
 import Link from "next/link"
-   
 import { Jost } from 'next/font/google'
 import { IoIosArrowForward, IoIosBatteryCharging, IoMdKey, IoMdPricetag } from "react-icons/io"
 import { FaCarSide, FaGasPump, FaHeart } from "react-icons/fa6"
