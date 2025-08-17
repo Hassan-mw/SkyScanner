@@ -13,7 +13,6 @@ import Image from "next/image"
 import { IoBedSharp } from "react-icons/io5"
 import { RiPlaneLine } from "react-icons/ri";
 import { FaCalendarAlt } from "react-icons/fa"
-
 const jost=Jost({
     subsets:['latin'],
     weight:['500']
