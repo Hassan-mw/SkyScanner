@@ -37,11 +37,11 @@ const FinalNavbar = () => {
         const [totaltraveller,setTotalTraveller]=useState<Number>(0)
     
         
-        useEffect(()=>{
+    useEffect(()=>{
     
-        setTotalTraveller(adult+children)
+    setTotalTraveller(adult+children)
     
-        },[adult,children])
+    },[adult,children])
 
         
         
