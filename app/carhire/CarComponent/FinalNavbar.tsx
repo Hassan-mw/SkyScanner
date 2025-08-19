@@ -48,6 +48,7 @@ const FinalNavbar = () => {
 return (
   <div   className="flex justify-center items-center  min-w-full   bg-[#05203c] p-3  ">
     
+
     {/* top */}
     <div className='w-full max-w-screen-xl py-2  bg-[#1e3750] flex items-center justify-center rounded-md px-2'>
         {/* Search_Icon */}
@@ -63,6 +64,7 @@ return (
           <span > 10/07/2025,10:00</span>
           <span >-</span>
           <span > 10/07/2025,10:00</span>
+          
         </div>
     </div>
     
