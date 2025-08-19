@@ -22,7 +22,6 @@ const jost=Jost({
 function FastFactMainHotel() {
     return (
         <div className="w-full h-full flex flex-col space-y-16 items-center justify-center max-w-screen-xl py-6  ">
-          
          <div className="w-full flex flex-col space-y-2 items-start justify-start ">
            <h1 className={`${jost.className} text-2xl`}>Your trusted car hire companies, all in one place</h1>
            <div className="flex items-center space-x-5">
