@@ -13,25 +13,25 @@ const jost=Jost({
 const CarRentaltextDetails = () => {
      const data=[
           {
-               title:"",
-               subTitle:""
+               title:"How to book the best car rental deals in Dubai",
+               subTitle:"We’re frequently named as the most trusted travel search site out there. We scan hundreds of trusted travel providers and put it all in one place, allowing you to instantly compare car hire rates and then book with no fees. Here's how to get the most out of your Dubai car rental search."
           },
           {
-               title:"",
-               subTitle:""
+               title:"Book now, cancel later",
+               subTitle:"We clearly highlight car and van hire options in Dubai that have free cancellation. So you can bag the best deal with total flexibility to change your plans if you need to."
           },
      ]
   return (
     <div className='w-full flex flex-col items-start justify-start space-y-3'>
      
      <div className='flex flex-col items-start justify-start space-y-1'>
-          <h1 className={`${jost.className} text-2xl md:text-3xl `}>How to book the best car rental deals in Dubai</h1>
-          <p className='text-sm'>We’re frequently named as the most trusted travel search site out there. We scan hundreds of trusted travel providers and put it all in one place, allowing you to instantly compare car hire rates and then book with no fees. Here's how to get the most out of your Dubai car rental search.</p>
+          <h1 className={`${jost.className} text-2xl md:text-3xl `}></h1>
+          <p className='text-sm'></p>
      </div>
 
      <div className='flex flex-col items-start justify-start space-y-1'>
-          <h1 className={`${jost.className} text-xl `}>Book now, cancel later</h1>
-          <p className='text-sm'>We clearly highlight car and van hire options in Dubai that have free cancellation. So you can bag the best deal with total flexibility to change your plans if you need to.</p>
+          <h1 className={`${jost.className} text-xl `}></h1>
+          <p className='text-sm'></p>
      </div>
 
 
