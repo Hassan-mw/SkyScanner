@@ -20,6 +20,22 @@ const CarRentaltextDetails = () => {
                title:"Book now, cancel later",
                subTitle:"We clearly highlight car and van hire options in Dubai that have free cancellation. So you can bag the best deal with total flexibility to change your plans if you need to."
           },
+          {
+               title:"",
+               subTitle:""
+          },
+          {
+               title:"",
+               subTitle:""
+          },
+          {
+               title:"",
+               subTitle:""
+          },
+          {
+               title:"",
+               subTitle:""
+          },
      ]
   return (
     <div className='w-full flex flex-col items-start justify-start space-y-3'>
