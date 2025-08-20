@@ -16,6 +16,10 @@ const CarRentaltextDetails = () => {
                title:"",
                subTitle:""
           },
+          {
+               title:"",
+               subTitle:""
+          },
      ]
   return (
     <div className='w-full flex flex-col items-start justify-start space-y-3'>
