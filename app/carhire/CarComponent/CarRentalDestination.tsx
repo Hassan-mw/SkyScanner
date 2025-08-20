@@ -22,15 +22,6 @@ const jost=Jost({
 
 function CarRentalDestination() {
   const [selectedRegin,setSelectedRegion]=useState('Islambad')
-
-   const cityArray=[
-    {id:1,city:'Islambad'},
-    {id:2,city:'Karachi'},
-    {id:3,city:'Lahore'},
-    {id:4,city:'Murre'},
-    {id:5,city:'Gilgit'},
-    
-   ]
     return (
     
       <div className="w-full flex-col space-y-7 flex items-center justify-center p-3">
