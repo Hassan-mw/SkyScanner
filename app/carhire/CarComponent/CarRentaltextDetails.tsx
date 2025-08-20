@@ -21,12 +21,12 @@ const CarRentaltextDetails = () => {
                subTitle:"We clearly highlight car and van hire options in Dubai that have free cancellation. So you can bag the best deal with total flexibility to change your plans if you need to."
           },
           {
-               title:"",
-               subTitle:""
+               title:"Book 2 weeks in advance",
+               subTitle:"We crunched some numbers and found that most travellers bag the lowest daily rate when they book 2 weeks in advance. The cheapest month to hire a car in Dubai is July."
           },
           {
-               title:"",
-               subTitle:""
+               title:"Compare fuel policies",
+               subTitle:"To save money on topping up the tank as you take off in Dubai, look out for deals with a 'full to full' fuel policy, as opposed to a 'half-full to full' one."
           },
           {
                title:"",
@@ -40,25 +40,11 @@ const CarRentaltextDetails = () => {
   return (
     <div className='w-full flex flex-col items-start justify-start space-y-3'>
      
+     
+
      <div className='flex flex-col items-start justify-start space-y-1'>
-          <h1 className={`${jost.className} text-2xl md:text-3xl `}></h1>
+          <h1 className={`${jost.className} text-xl  `}> </h1>
           <p className='text-sm'></p>
-     </div>
-
-     <div className='flex flex-col items-start justify-start space-y-1'>
-          <h1 className={`${jost.className} text-xl `}></h1>
-          <p className='text-sm'></p>
-     </div>
-
-
-     <div className='flex flex-col items-start justify-start space-y-1'>
-          <h1 className={`${jost.className} text-xl  `}>Book 2 weeks in advance</h1>
-          <p className='text-sm'>We crunched some numbers and found that most travellers bag the lowest daily rate when they book 2 weeks in advance. The cheapest month to hire a car in Dubai is July.</p>
-     </div>
-
-     <div className='flex flex-col items-start justify-start space-y-1'>
-          <h1 className={`${jost.className} text-xl  `}>Compare fuel policies </h1>
-          <p className='text-sm'>To save money on topping up the tank as you take off in Dubai, look out for deals with a 'full to full' fuel policy, as opposed to a 'half-full to full' one.</p>
      </div>
 
      <div className='flex flex-col items-start justify-start space-y-1'>
