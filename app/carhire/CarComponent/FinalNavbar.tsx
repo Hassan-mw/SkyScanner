@@ -47,13 +47,12 @@ return (
   <div   className="flex justify-center items-center  min-w-full   bg-[#05203c] p-3  ">
     
 
-    {/* top */}
-    <div className='w-full max-w-screen-xl py-2  bg-[#1e3750] flex items-center justify-center rounded-md px-2'>
+       {/* top */}
+       <div className='w-full max-w-screen-xl py-2  bg-[#1e3750] flex items-center justify-center rounded-md px-2'>
         {/* Search_Icon */}
         <div className='flex   items-start justify-start '>
             <div className=' bg-blue-600 flex items-center justify-center size-7 rounded-sm text-white'> <IoIosSearch size={18} /> </div>
         </div>
-      
       
         {/* Flight_Details */}
         <div className='w-full flex  text-md text-white items-center justify-center gap-x-1'>
