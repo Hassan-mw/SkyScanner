@@ -2,6 +2,7 @@
   function CustomHotelsLogo({text}:{text:string}) {
     return (
     <div>
+
       
          <div className="min-w-full flex flex-col space-y-3 items-start justify-start  max-w-screen-xl">
       <div className="w-full flex  items-start justify-start  text-2xl  sm:text-4xl font-semibold ">{text}</div>
