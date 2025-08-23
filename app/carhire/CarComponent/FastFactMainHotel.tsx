@@ -19,7 +19,6 @@ const jost=Jost({
 })
 
 
-
 function FastFactMainHotel() {
     return (
         <div className="w-full h-full flex flex-col space-y-16 items-center justify-center max-w-screen-xl py-6  ">
