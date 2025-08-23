@@ -30,7 +30,6 @@ function FastFactMainHotel() {
            </div>
          </div>
 
-
             {/* First */}
             <div className="w-full h-full flex flex-col space-y-7 items-center justify-center">
                 {/* Upper text */}
