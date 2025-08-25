@@ -54,7 +54,6 @@ const CarsoleCarFilterBySize = () => {
            </div>
    
     </div>
-
     {/* Text */}
     <div className='w-full flex justify-start p-3 rounded-md bg-white'>
        <span className='text-sm'>We find prices from all across the web – what providers pay us affects how we sort results. <span className='border-b text-xs'>Learn how Skyscanner workd</span></span>
