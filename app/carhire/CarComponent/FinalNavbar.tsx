@@ -60,7 +60,6 @@ return (
           <span > 10/07/2025,10:00</span>
           <span >-</span>
           <span > 10/07/2025,10:00</span>
-
         </div>
     </div>
     
