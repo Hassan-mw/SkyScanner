@@ -2,7 +2,7 @@ import React from 'react'
 import { IoMdArrowDropright } from 'react-icons/io'
 import { FaCalendarAlt } from "react-icons/fa"
 import { FaCarSide } from "react-icons/fa6"
-import { IoIosArrowForward, IoMdPricetag } from "react-icons/io"
+import {IoMdPricetag } from "react-icons/io"
 
 
 
