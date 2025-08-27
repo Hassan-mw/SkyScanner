@@ -57,6 +57,7 @@ return (
         <div className='w-full flex  text-md text-white items-center justify-center gap-x-1'>
           <span >Dubai</span>
           <BsDot />
+          
           <span > 10/07/2025,10:00</span>
           <span >-</span>
           <span > 10/07/2025,10:00</span>
