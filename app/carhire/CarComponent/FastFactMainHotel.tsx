@@ -29,7 +29,6 @@ function FastFactMainHotel() {
                <Image height={100} width={100} className="border shadow rounded-md" src="/hertx_car.png" alt="euro_car" />
            </div>
          </div>
-
             {/* First */}
             <div className="w-full h-full flex flex-col space-y-7 items-center justify-center">
                 {/* Upper text */}
