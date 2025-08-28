@@ -36,7 +36,7 @@ const CarRentaltextDetails = () => {
           
      ]
 
-     
+
   return (
     <div className='w-full flex flex-col items-start justify-start space-y-3'>
      {
@@ -48,8 +48,6 @@ const CarRentaltextDetails = () => {
      )
     }
 
-
-     
 
     </div>
   )
