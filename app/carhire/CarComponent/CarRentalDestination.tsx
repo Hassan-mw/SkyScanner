@@ -36,7 +36,6 @@ function CarRentalDestination() {
       opts={{ align: "start"}}
       className="w-full bg-white "
        >
-
       <CarouselContent  className="w-full  ">
       
 
