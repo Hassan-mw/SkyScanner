@@ -30,7 +30,6 @@ function CarRentalDestination() {
       <h1 className="text-3xl font-semibold sm:text-4xl">Popular car rental destinations</h1>
        </div>
 
-
        {/* City Slide */}
       <div className="w-full flex items-center justify-center ">
       <Carousel
