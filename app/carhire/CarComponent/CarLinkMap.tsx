@@ -17,7 +17,6 @@ const CarLinkMap = () => {
          </div>
        </div>
        
-
      </div>
   )
 }
