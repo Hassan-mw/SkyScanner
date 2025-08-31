@@ -9,7 +9,6 @@ const jost=Jost({
     weight:['500']
 })
 
-
 const CarLocationFastFact = () => {
   return (
 <div className="w-full h-full flex flex-col space-y-7 items-center justify-center">
