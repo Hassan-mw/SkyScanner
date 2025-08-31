@@ -45,8 +45,6 @@ function ShowCurrentPageHotel() {
         </div>
     </div>
 
-
-
     </div>
     )
 }
