@@ -10,8 +10,6 @@ const jost=Jost({
     weight:['500']
 })
 
-
-import Image from 'next/image';
 import CarsoleCarFilterBySize from './CarsoleCarFilterBySize';
 
 const FilersFinalCars = () => {
