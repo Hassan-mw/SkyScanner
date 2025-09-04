@@ -36,6 +36,7 @@ function FastFactMainHotel() {
                    <span style={{fontWeight:200}} className={`${jost.className} text-sm text-slate-900`}>Everything you need to know to hit the road happy.</span>
                </div>
                
+               
                <div className="w-full grid grid-cols-2 md:grid-cols-3 gap-8">
                 {/* 1 */}
                  <div className="flex flex-col w-full items-start">
