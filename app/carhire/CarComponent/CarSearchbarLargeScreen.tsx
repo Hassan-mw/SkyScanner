@@ -138,7 +138,7 @@ const CarSearchbarLargeScreen = () => {
     {/* 1 */}
     <div className="flex items-center justify-start text-white gap-x-2 ">
       <input className="size-[15px]" type="checkbox"/>
-      <p className={`${jost.className} text-sm `}>Driver aged between 25- 70</p>
+      <p className={`${jost.className} text-sm `}>Driver aged between 25 - 70</p>
     </div>
 
     {/* 2 */}

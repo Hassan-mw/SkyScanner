@@ -259,21 +259,21 @@ function FastFactMainHotel() {
         
             <h1 className="w-full flex items-start text-3xl font-semibold">Ready to plan a trip?</h1>
 
-            <div className="w-full flex  items-center justify-between border-b border-black pb-2">
+            <Link href="/hotels" className="w-full flex hover:pointer items-center justify-between border-b border-black pb-2">
               <div className="flex items-center justify-center gap-x-3">
                 <IoBedSharp size={20} />
                  <span className="text-2xl font-medium pb-1">Hotes</span>
               </div>
               <IoIosArrowForward />   
-            </div>
+            </Link>
 
-            <div className="w-full flex  items-center justify-between border-b border-black pb-2">
+            <Link href="/flights" className="w-full flex hover:pointer items-center justify-between border-b border-black pb-2">
               <div className="flex items-center justify-center gap-x-3">
                  <div className="rotate-45"> <RiPlaneLine  size={20} /> </div>
                  <span className="text-2xl font-medium pb-1">Flights</span>
               </div>
               <IoIosArrowForward />   
-            </div>
+            </Link>
          
       </div>
 
