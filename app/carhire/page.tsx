@@ -23,6 +23,7 @@ const page = async() => {
        <div className="md:hidden w-full "> <CarSearchbarSmallScreen/></div>
     </div>
 
+
     <div className="flex flex-col items-center justify-center space-y-16 w-full p-6   max-w-screen-xl">
       <ShowCurrentPageHotel/>
       <CarRentalDestination/>
