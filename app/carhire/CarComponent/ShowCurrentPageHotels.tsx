@@ -23,7 +23,6 @@ function ShowCurrentPageHotel() {
     </div>
 
 
-
     <div className="flex flex-col sm:flex-row items-start justify-between w-full space-y-5 sm:space-y-0 sm:space-x-8 font-base  text-slate-900">
         
         {/* 1 */}
