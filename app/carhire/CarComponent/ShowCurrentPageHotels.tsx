@@ -42,7 +42,8 @@ function ShowCurrentPageHotel() {
         <div className="text-sm  pt-1"><IoMdPricetag size={24} /></div>
         <span className={`${jost.className} text-sm `}>Rent a car with a flexible booking policy or free cancellation</span>
         </div>
-        
+
+
     </div>
 
     </div>
