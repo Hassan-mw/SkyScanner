@@ -48,5 +48,4 @@ function ShowCurrentPageHotel() {
     </div>
     )
 }
-
 export default ShowCurrentPageHotel
