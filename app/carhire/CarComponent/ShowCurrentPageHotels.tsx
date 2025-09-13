@@ -43,7 +43,6 @@ function ShowCurrentPageHotel() {
         <span className={`${jost.className} text-sm `}>Rent a car with a flexible booking policy or free cancellation</span>
         </div>
     </div>
-
     </div>
     )
 }
