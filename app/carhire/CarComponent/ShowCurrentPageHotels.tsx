@@ -38,8 +38,6 @@ function ShowCurrentPageHotel() {
         </div>
  
         
-
-      
         {/* 3 */}
         <div className="flex items-start sm:flex-col lg:flex-row text-black   space-x-3 sm:space-x-0 sm:space-y-2 lg:space-y-0  lg:space-x-3">
         <div className="text-sm  pt-1"><IoMdPricetag size={24} /></div>
