@@ -268,6 +268,7 @@ function FastFactMainHotel() {
             </Link>
 
 
+
             <Link href="/flights" className="w-full flex hover:pointer items-center justify-between border-b border-black pb-2">
               <div className="flex items-center justify-center gap-x-3">
                  <div className="rotate-45"> <RiPlaneLine  size={20} /> </div>
