@@ -266,6 +266,8 @@ function FastFactMainHotel() {
               </div>
               <IoIosArrowForward />   
             </Link>
+            
+
 
             <Link href="/flights" className="w-full flex hover:pointer items-center justify-between border-b border-black pb-2">
               <div className="flex items-center justify-center gap-x-3">
