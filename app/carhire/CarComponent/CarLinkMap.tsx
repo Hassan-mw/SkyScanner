@@ -3,11 +3,7 @@ import React from 'react'
 import { FaMap } from 'react-icons/fa6'
 
 const CarLinkMap = () => {
-  return (
-
-
-
-    
+  return (    
    <div className='w-full flex flex-col  h-[400px]  space-y-3'>
         <div className='w-full flex flex-col items-start justify-start '>
            <h1 className="w-full flex items-start justify-start  text-2xl  sm:text-4xl font-semibold ">Select your Dubai pick-up location</h1>   
