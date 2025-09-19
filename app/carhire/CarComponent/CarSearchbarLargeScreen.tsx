@@ -125,7 +125,6 @@ const CarSearchbarLargeScreen = () => {
       </div>
     </Link>
 
-    
  </div>
    </Menubar>
 
