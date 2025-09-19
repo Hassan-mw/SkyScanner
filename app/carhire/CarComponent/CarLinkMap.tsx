@@ -15,7 +15,6 @@ const CarLinkMap = () => {
             <div className=' flex items-center justify-center gap-x-2 bg-[#05203c] p-3 rounded-md w-42 text-white '><FaMap/><span>Explore map</span></div>
          </div>
        </div>
-       
      </div>
   )
 }
