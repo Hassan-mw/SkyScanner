@@ -47,3 +47,5 @@ function ShowCurrentPageHotel() {
     )
 }
 export default ShowCurrentPageHotel
+
+
