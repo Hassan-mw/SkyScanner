@@ -17,6 +17,7 @@ const page = async() => {
      
   <div className="w-full  flex flex-col space-y-10 items-center bg-white overflow-y-auto  overflow-x-hidden">
     
+    
     {/*Search_bar  */}
     <div className="bg-[#05203c] flex items-center justify-center w-full">
        <div className="hidden md:block w-full "> <CarSearchbarLargeScreen/></div>
