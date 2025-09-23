@@ -130,6 +130,7 @@ const CarSearchbarLargeScreen = () => {
    </Menubar>
 
 
+
    {/* //!  Filter icons */}
    <div className="w-full flex flex-col items-start justify-start lg:p-2 space-y-2 lg:space-y-0  ">
    <div className="w-full max-w-xl justify-start    grid grid-cols-2  ">
